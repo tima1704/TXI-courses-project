@@ -1,0 +1,29 @@
+:root {
+  --text-color: #000;
+  --text-light: rgb(101, 104, 120);
+
+  --text-hover-color: #1b612a;
+  --decor-color: #136401;
+
+  --danger-color: #ff0000;
+}
+
+html {
+  font-size: 24px;
+  line-height: 110%;
+}
+
+body {
+  font-family: "PF Bague Sans Pro";
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 100px;
+  max-width: 1920px;
+}
+
+h1 {
+  border-bottom: 5px solid var(--decor-color);
+  padding-bottom: 20px;
+}

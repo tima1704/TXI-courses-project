@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "PF Bague Sans Pro";
+  src: local("PF Bague Sans Pro Regular"), local("PF-Bague-Sans-Pro-Regular"),
+    url("PFBagueSansPro.woff2") format("woff2"),
+    url("PFBagueSansPro.woff") format("woff"),
+    url("PFBagueSansPro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PF Bague Sans Pro";
+  src: local("PF Bague Sans Pro Bold"), local("PF-Bague-Sans-Pro-Bold"),
+    url("PFBagueSansPro-Bold.woff2") format("woff2"),
+    url("PFBagueSansPro-Bold.woff") format("woff"),
+    url("PFBagueSansPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PF Bague Sans Pro";
+  src: local("PF Bague Sans Pro Medium"), local("PF-Bague-Sans-Pro-Medium"),
+    url("PFBagueSansPro-Medium.woff2") format("woff2"),
+    url("PFBagueSansPro-Medium.woff") format("woff"),
+    url("PFBagueSansPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
