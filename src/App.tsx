@@ -1,9 +1,8 @@
 import React from "react";
 // import LoginPage from "Pages";
 import { Header } from "Componens/main/header/header";
-import { CourcesListPage } from "Pages/CourcesList";
-
-
+import { CourceItemPage } from "Pages/CourceItem";
+// import { CourcesListPage } from "Pages/CourcesList";
 
 function App() {
   return (
@@ -11,7 +10,8 @@ function App() {
       <Header />
       {/* <LoginPage /> */}
       <div className="container">
-        <CourcesListPage />
+        {/* <CourcesListPage /> */}
+        <CourceItemPage />
       </div>
     </div>
   );

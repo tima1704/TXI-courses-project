@@ -2,13 +2,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 215px;
+  height: 175px;
+  margin-bottom: 40px;
 }
 
 .logo_menu {
   display: flex;
   align-items: center;
   font-size: 0.66rem;
+}
+
+.logo_menu img {
+  width: 77px;
+  height: 66px;
+  cursor: pointer;
+}
+
+.logo_menu .menu {
+  margin-left: 85px;
 }
 
 .lang {

@@ -1,5 +1,5 @@
 import { CourcesListGrid } from "Componens/showcaseCources/courcesGrid";
-import { useCourcesList } from "Hooks/useCourcesList";
+import { useCourcesList } from "Hooks/api/useCourcesList";
 import { FC } from "react";
 
 export const CourcesListPage: FC = () => {
