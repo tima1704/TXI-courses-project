@@ -1,0 +1,12 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+}
+
+.login_form {
+  padding: 100px;
+  border: 1px solid var(--decor-grey);
+  margin-bottom: 100px;
+}

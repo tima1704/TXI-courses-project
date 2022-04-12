@@ -2,13 +2,14 @@ import { ContentModule } from "Componens/cource/ContentModule";
 import { CourcePrices } from "Componens/cource/prices";
 import { useCource } from "Hooks/api/useCource";
 import { FC } from "react";
+import { useParams } from "react-router-dom";
 
 import styles from "Styles/pageStyles/cource.module.css";
 
 export const CourceItemPage: FC = () => {
-  const id = "4";
+  const params = useParams<string>();
 
-  const { cource, isLoading } = useCource(id);
+  const { cource, isLoading } = useCource(params.id);
 
   return (
     <div>

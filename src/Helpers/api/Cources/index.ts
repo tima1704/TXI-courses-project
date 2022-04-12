@@ -9,7 +9,7 @@ export const CourcesService = {
       return res.data.data;
     });
   },
-  async getCourceById(id: string) {
+  async getCourceById(id?: string) {
     return axios
       .get<ISuccessRes<ICourceItem>>(API_COURCE(id))
       .then((res) => res.data.data);

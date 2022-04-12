@@ -37,10 +37,18 @@ h2 {
   font-weight: 500;
 }
 
+a {
+  color: inherit;
+}
+
 .scale {
   transition: transform ease 0.2s;
 }
 
 .scale:hover {
   transform: scale(1.1);
+}
+
+.body {
+  min-height: calc(100vh - 175px);
 }

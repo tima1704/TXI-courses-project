@@ -1,7 +1,7 @@
 import { CourcesService } from "Helpers/api/Cources";
 import { useQuery } from "react-query";
 
-export const useCource = (id: string) => {
+export const useCource = (id?: string) => {
   const {
     isError,
     isLoading,
