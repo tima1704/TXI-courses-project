@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LoginPage from "Pages";
 import { Header } from "Componens/main/header/header";
 import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes } from "react-router-dom";
 import { URL_LOGIN } from "Constants/URL";
+import { useAppDispatch } from "Hooks/redux";
 
 function App() {
+  const { checkAuth } = useAppDispatch();
+
+  useEffect(() => {
+    checkAuth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="App">
       <Header />
