@@ -22,9 +22,7 @@
   margin-left: 85px;
 }
 
-.lang {
-  font-size: 0.5rem;
-  line-height: 100%;
+.profile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +33,9 @@
   cursor: pointer;
 }
 
-.lang div {
-  margin-top: 1px;
+.profile img {
+  object-fit: cover;
+  width: 42%;
+  height: 50%;
+  margin-top: -2px;
 }

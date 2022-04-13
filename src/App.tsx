@@ -4,6 +4,7 @@ import { Header } from "Componens/main/header/header";
 import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes } from "react-router-dom";
+import { URL_LOGIN } from "Constants/URL";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CourcesListPage />} />
           <Route path="/:id" element={<CourceItemPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path={URL_LOGIN} element={<LoginPage />} />
         </Routes>
       </div>
     </div>
