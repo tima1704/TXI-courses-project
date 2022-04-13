@@ -5,7 +5,7 @@ import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes } from "react-router-dom";
 import { URL_LOGIN } from "Constants/URL";
-import { useAppDispatch } from "Hooks/redux";
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -15,16 +15,29 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const { isAuth, isLoadedApp } = useAppSelector((state) => state.App);
+
   return (
     <div className="App">
-      <Header />
-      <div className="container body">
-        <Routes>
-          <Route path="/" element={<CourcesListPage />} />
-          <Route path="/:id" element={<CourceItemPage />} />
-          <Route path={URL_LOGIN} element={<LoginPage />} />
-        </Routes>
-      </div>
+      {isLoadedApp ? (
+        <div>
+          <Header />
+          {isAuth ? (
+            <div className="container body">
+              <Routes>
+                <Route path="/" element={<CourcesListPage />} />
+                <Route path="/cource/:id" element={<CourceItemPage />} />
+              </Routes>
+            </div>
+          ) : (
+            <Routes>
+              <Route path={URL_LOGIN} element={<LoginPage />} />
+            </Routes>
+          )}
+        </div>
+      ) : (
+        <>LOADING</>
+      )}
     </div>
   );
 }
