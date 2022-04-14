@@ -8,7 +8,6 @@ export const useCource = (id?: string) => {
     data: cource,
   } = useQuery(["cources", id], () => CourcesService.getCourceById(id), {
     enabled: !!id,
-    retry: 1,
   });
 
   return { isError, isLoading, cource };

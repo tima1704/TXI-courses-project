@@ -1,4 +1,3 @@
-import { ErrorPage } from "Componens/common/ErrorPage";
 import { Loading } from "Componens/common/Loading";
 import { ContentModule } from "Componens/cource/ContentModule";
 import { CourcePrices } from "Componens/cource/prices";
@@ -11,11 +10,7 @@ import styles from "Styles/pageStyles/cource.module.css";
 export const CourceItemPage: FC = () => {
   const params = useParams<string>();
 
-  const { cource, isLoading, isError } = useCource(params.id);
-
-  if (isError) {
-    return <ErrorPage errorCode={404} />;
-  }
+  const { cource, isLoading } = useCource(params.id);
 
   return (
     <div>
