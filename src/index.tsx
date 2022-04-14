@@ -13,6 +13,7 @@ import Store from "Redux/Store";
 import "./Styles/reset.css";
 import "./Styles/fonts/fonts.css";
 import "./Styles/index.css";
+import "./Styles/anitmations.css";
 
 const queryClient = new QueryClient();
 

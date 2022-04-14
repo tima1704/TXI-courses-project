@@ -1,3 +1,4 @@
+import { Loading } from "Componens/common/Loading";
 import { ContentModule } from "Componens/cource/ContentModule";
 import { CourcePrices } from "Componens/cource/prices";
 import { useCource } from "Hooks/api/useCource";
@@ -14,9 +15,9 @@ export const CourceItemPage: FC = () => {
   return (
     <div>
       {isLoading ? (
-        <div>Loading</div>
+        <Loading fullScreen />
       ) : (
-        <div>
+        <div className="anim_opacity">
           <h1>{cource?.title}</h1>
           <div className={styles["cource_img"]}>
             <img src={cource?.img} alt="" />

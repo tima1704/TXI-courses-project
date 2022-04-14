@@ -1,0 +1,28 @@
+.loader__wraper {
+  height: calc(100vh - 175px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 90px;
+  height: 90px;
+  animation-name: loader_scale;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes loader_scale {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

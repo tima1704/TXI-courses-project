@@ -1,0 +1,22 @@
+.anim_opacity {
+  animation-name: opacity;
+  animation-duration: 0.6s;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.1;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

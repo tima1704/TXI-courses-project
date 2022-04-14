@@ -6,6 +6,7 @@ import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes } from "react-router-dom";
 import { URL_COURSE_$ID, URL_LOGIN } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
+import { Loading } from "Componens/common/Loading";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -36,7 +37,7 @@ function App() {
           )}
         </div>
       ) : (
-        <>LOADING</>
+        <Loading fullScreen />
       )}
     </div>
   );

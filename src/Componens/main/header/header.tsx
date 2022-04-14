@@ -1,4 +1,4 @@
-// TODO:02 Добавить аватар в кружок 
+// TODO:02 Добавить аватар в кружок
 
 import { FC } from "react";
 
@@ -27,7 +27,9 @@ export const Header: FC = () => {
   const { isAuth } = useAppSelector((state) => state.App);
 
   return (
-    <header className={classNames(styles["header"], "container")}>
+    <header
+      className={classNames(styles["header"], "container", "anim_opacity")}
+    >
       <div className={styles["logo_menu"]}>
         <img src={Logo} alt="Logo" className="scale" onClick={onClickLogo} />
         <div className={styles["menu"]}>menu</div>
