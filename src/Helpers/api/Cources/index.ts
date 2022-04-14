@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { API_COURCE, API_COURCES_ALL } from "Constants/API";
 import { ICource, ICourceItem } from "Types/cources";
 import { ISuccessRes } from "Types/responce";
@@ -12,6 +12,9 @@ export const CourcesService = {
   async getCourceById(id?: string) {
     return axios
       .get<ISuccessRes<ICourceItem>>(API_COURCE(id))
-      .then((res) => res.data.data);
+      .then((res) => res.data.data)
+      .catch((e) => {
+        throw e;
+      });
   },
 };
