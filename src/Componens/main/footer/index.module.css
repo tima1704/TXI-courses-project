@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.footer__left {
+  flex-basis: 50%;
+}
+
+.footer_logo {
+  margin-bottom: 10px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.footer__right {
+  flex-basis: 50%;
+}
+
+.footer__copy {
+  font-size: 0.6rem;
+  line-height: 110%;
+  text-align: end;
+  color: var(--text-light);
+}

@@ -6,8 +6,8 @@ import styles from "./index.module.css";
 
 import classNames from "classnames";
 
-import Logo from "./logo.svg";
-import Profile from "./Profile.svg";
+import Logo from "Svg/logo.svg";
+import Profile from "Svg/profile.svg";
 
 import { useNavigate } from "react-router-dom";
 import { URL_HOME, URL_LOGIN } from "Constants/URL";

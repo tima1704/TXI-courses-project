@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import { URL_COURSE_$ID, URL_LOGIN } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { Loading } from "Componens/common/Loading";
+import { Footer } from "Componens/main/footer";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -35,6 +36,7 @@ function App() {
               <Route path={URL_LOGIN} element={<LoginPage />} />
             </Routes>
           )}
+          <Footer />
         </div>
       ) : (
         <Loading fullScreen />

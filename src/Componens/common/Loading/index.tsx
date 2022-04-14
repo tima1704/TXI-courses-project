@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import Logo from "./logo.svg";
+import Logo from "Svg/logo.svg";
 
 import styles from "./index.module.css";
 
