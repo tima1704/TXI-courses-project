@@ -4,7 +4,7 @@ import { Header } from "Componens/main/header/header";
 import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes } from "react-router-dom";
-import { URL_LOGIN } from "Constants/URL";
+import { URL_COURSE_$ID, URL_LOGIN } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
             <div className="container body">
               <Routes>
                 <Route path="/" element={<CourcesListPage />} />
-                <Route path="/cource/:id" element={<CourceItemPage />} />
+                <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
               </Routes>
             </div>
           ) : (
