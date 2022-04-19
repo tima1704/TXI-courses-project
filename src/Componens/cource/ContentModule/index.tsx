@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
 import { ICourceModule } from "Types/cources";
+import { ContentItem } from "./ContentItem";
 
 import styles from "./index.module.css";
 
@@ -29,7 +30,7 @@ export const ContentModule: FC<ICourceModule> = ({
       <div {...getCollapseProps()}>
         <div className={styles["content__body"]}>
           {courseContents.map(({ id, title, type }) => (
-            <div key={id + type + "content"}>{title}</div>
+            <ContentItem key={id + type + "content"} {...{ id, title, type }} />
           ))}
         </div>
       </div>

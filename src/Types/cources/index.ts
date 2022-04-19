@@ -26,8 +26,10 @@ export interface ICourceModule {
 export interface ICourceContent {
   id: number;
   title: string;
-  type: string;
+  type: CourseContentType;
 }
+
+export type CourseContentType = "text" | "video";
 
 export interface ICourcePrice {
   id: number;

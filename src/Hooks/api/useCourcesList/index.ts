@@ -10,3 +10,7 @@ export const useCourcesList = () => {
 
   return { isError, isLoading, courcesList };
 };
+
+export const useUsetCourcesList = () => {
+  const { isError, isLoading, data } = useQuery(["user", "corces", "list"]);
+};
