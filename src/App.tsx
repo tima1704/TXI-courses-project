@@ -24,18 +24,20 @@ function App() {
       {isLoadedApp ? (
         <div>
           <Header />
-          {isAuth ? (
-            <div className="container body">
+          <div className="container body">
+            {isAuth ? (
               <Routes>
                 <Route path="/" element={<CourcesListPage />} />
                 <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
               </Routes>
-            </div>
-          ) : (
-            <Routes>
-              <Route path={URL_LOGIN} element={<LoginPage />} />
-            </Routes>
-          )}
+            ) : (
+              <Routes>
+                <Route path={URL_LOGIN} element={<LoginPage />} />
+                <Route path="/" element={<CourcesListPage />} />
+                <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
+              </Routes>
+            )}
+          </div>
           <Footer />
         </div>
       ) : (
