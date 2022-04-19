@@ -11,7 +11,7 @@ export interface ICource {
 }
 
 export interface ICourceItem extends ICource {
-  courseModules: [];
+  courseModules: ICourceModule[];
   coursePrices: ICourcePrice[];
 }
 

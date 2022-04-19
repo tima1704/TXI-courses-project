@@ -16,6 +16,7 @@ import { Loading } from "Componens/common/Loading";
 import { Footer } from "Componens/main/footer";
 import { UserCourceList } from "Pages/UserCourceList";
 import { ErrorPage } from "Componens/common";
+import { CourcePlay } from "Componens/CourcePlay";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -46,10 +47,7 @@ function App() {
               {isAuth && (
                 <>
                   <Route path={URL_USER_COURSE} element={<UserCourceList />} />
-                  <Route
-                    path={URL_USER_COURSE_$ID}
-                    element={<CourceItemPage />}
-                  />
+                  <Route path={URL_USER_COURSE_$ID} element={<CourcePlay />} />
                 </>
               )}
               <Route path={URL_LOGIN} element={<LoginPage />} />

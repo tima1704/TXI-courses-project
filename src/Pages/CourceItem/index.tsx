@@ -14,7 +14,7 @@ export const CourceItemPage: FC = () => {
   const { cource, isLoading, isError } = useCource(params.id);
 
   if (isError) {
-    <ErrorPage />;
+   return <ErrorPage />;
   }
 
   return (
