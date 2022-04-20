@@ -11,6 +11,14 @@ export const useCourcesList = () => {
   return { isError, isLoading, courcesList };
 };
 
-export const useUsetCourcesList = () => {
-  const { isError, isLoading, data } = useQuery(["user", "corces", "list"]);
+export const useUserCourcesList = () => {
+  const {
+    isError,
+    isLoading,
+    data: courcesList,
+  } = useQuery(["user", "corces", "list"], CourcesService.getAllUser, {
+    refetchOnWindowFocus: false,
+  });
+
+  return { isError, isLoading, data: courcesList };
 };

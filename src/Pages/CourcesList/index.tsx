@@ -1,9 +1,13 @@
 import { ErrorPage } from "Componens/common/ErrorPage";
 import { Loading } from "Componens/common/Loading";
 import { CourcesListGrid } from "Componens/showcaseCources/courcesGrid";
+import { URL_USER_COURSE } from "Constants/URL";
 import { useCourcesList } from "Hooks/api/useCourcesList";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
+import { Link } from "react-router-dom";
+
+import styles from "Styles/pageStyles/courceList.module.css";
 
 export const CourcesListPage: FC = () => {
   const { courcesList = [], isLoading, isError } = useCourcesList();
@@ -20,7 +24,10 @@ export const CourcesListPage: FC = () => {
         Все курсы{" "}
         {isAuth && (
           <>
-            | <span>Мои курсы</span>
+            |{" "}
+            <Link to={URL_USER_COURSE} className={styles["link"]}>
+              Мои курсы
+            </Link>
           </>
         )}
       </h1>

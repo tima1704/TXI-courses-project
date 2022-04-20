@@ -37,3 +37,37 @@ export interface ICourcePrice {
   currency: string;
   days: number;
 }
+
+export interface ICourceUserItem extends ICource {
+  courseModules: ICourceUserModule[];
+}
+
+export interface ICourceUserModule {
+  id: number;
+  itemNumber: number;
+  status: string;
+  title: string;
+  courseContents: ICourceUserContent[];
+}
+
+export type ICourceUserContent =
+  | ICourceUserContentVideo
+  | ICourceUserContentText;
+
+interface ICourceUserContentVideo {
+  id: number;
+  title: string;
+  type: "video";
+  data: {
+    src: string;
+  };
+}
+
+interface ICourceUserContentText {
+  id: number;
+  title: string;
+  type: "text";
+  data: {
+    text: string;
+  };
+}

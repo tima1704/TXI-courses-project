@@ -1,13 +1,13 @@
 import { ErrorPage, Loading } from "Componens/common";
 import { CourcesListGrid } from "Componens/showcaseCources/courcesGrid";
-import { useCourcesList } from "Hooks/api/useCourcesList";
+import { useUserCourcesList } from "Hooks/api/useCourcesList";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 
 export const UserCourceList: FC = () => {
   const user = useAppSelector((state) => state.App.user);
 
-  const { courcesList = [], isLoading, isError } = useCourcesList(); // TODO | Заменить на юзер
+  const { data: courcesList = [], isLoading, isError } = useUserCourcesList();
 
   if (isError) {
     return <ErrorPage />;
@@ -18,10 +18,14 @@ export const UserCourceList: FC = () => {
   }
 
   return (
-    <div>
+    <div className="anim_opacity">
       <h1>Добрый день, {user?.name}</h1>
       <div>Мои курсы</div>
-      <CourcesListGrid data={courcesList} user />
+      {courcesList.length === 0 ? (
+        "NO by cources"
+      ) : (
+        <CourcesListGrid data={courcesList} user />
+      )}
     </div>
   );
 };
