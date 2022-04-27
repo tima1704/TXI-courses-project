@@ -1,0 +1,78 @@
+stages:
+  - build
+  - deploy
+
+build_test:
+  stage: build
+  services:
+    - docker:dind
+  image: docker:latest
+  environment:
+    name: staging
+  tags:
+    - gitlab-org-docker
+  variables: 
+    APP_IMAGE: "${CI_REGISTRY_IMAGE}:front-course-${CI_COMMIT_SHORT_SHA}"
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t ${APP_IMAGE} .
+    - docker push ${APP_IMAGE}
+  only:
+    - dev
+  when: always
+  except:
+    - tags
+
+build_prod:
+  stage: build
+  services:
+    - docker:dind
+  image: docker:latest
+  environment:
+    name: production
+  tags:
+    - gitlab-org-docker
+  variables:
+    APP_IMAGE: "${CI_REGISTRY_IMAGE}:front-course-${CI_COMMIT_SHORT_SHA}"
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t ${APP_IMAGE} .
+    - docker push ${APP_IMAGE}
+  only:
+    - master
+  when: always
+  except:
+    - tags
+ 
+deploy_test:
+  stage: deploy
+  image: dtzar/helm-kubectl
+  environment:
+    name: staging
+  script:
+    - kubectl create secret -n katiatxi-${CI_ENVIRONMENT_NAME} docker-registry katiatxi-front --docker-server=$CI_REGISTRY --docker-username=$CI_DEPLOY_USER --docker-password=$CI_DEPLOY_PASSWORD --dry-run -o yaml | kubectl apply -f -
+    - kubectl patch serviceaccount default -p "{\"imagePullSecrets\":[{\"name\":\"katiatxi-front\"}]}"
+    - envsubst < ./front.yaml | kubectl -n katiatxi-${CI_ENVIRONMENT_NAME} apply -f -
+  only:
+    - dev
+  when: on_success
+  except:
+    - tags
+
+deploy_prod:
+  stage: deploy
+  image: dtzar/helm-kubectl
+  environment:
+    name: production
+  before_script:
+    - echo "$kubeconfig" | base64 -d > ./config
+    - export KUBECONFIG=./config
+  script:
+    - kubectl create secret -n katiatxi-${CI_ENVIRONMENT_NAME} docker-registry katiatxi-front --docker-server=$CI_REGISTRY --docker-username=$CI_DEPLOY_USER --docker-password=$CI_DEPLOY_PASSWORD --dry-run -o yaml | kubectl apply -f -
+    - kubectl patch serviceaccount default -p "{\"imagePullSecrets\":[{\"name\":\"katiatxi\"}]}"
+    - envsubst < ./front.yaml | kubectl -n katiatxi-${CI_ENVIRONMENT_NAME} apply -f -
+  only:
+    - master
+  when: on_success
+  except:
+    - tags
