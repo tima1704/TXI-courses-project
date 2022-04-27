@@ -1,3 +1,4 @@
+import { Button } from "Componens/common/Button";
 import { FC } from "react";
 
 import styles from "Styles/pageStyles/cource.module.css";
@@ -13,11 +14,10 @@ export const StartCource: FC<StartCourceProps> = ({
   description,
   setModule,
 }) => {
-
   const onClickStart = () => {
     setModule(1);
   };
-  
+
   return (
     <div>
       <div className={styles["cource_img"]}>
@@ -27,7 +27,7 @@ export const StartCource: FC<StartCourceProps> = ({
         <p className={styles["cource_descr"]}>{description}</p>
       </div>
       <div>
-        <button onClick={onClickStart}>START</button>
+        <Button onClick={onClickStart}>START</Button>
       </div>
     </div>
   );

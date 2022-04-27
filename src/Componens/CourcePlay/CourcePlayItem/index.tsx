@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
 import { ICourceContent } from "Types/cources";
 
+import styles from "./index.module.css";
+
 export const CourcePlayItem: FC<ICourceContent> = ({ type, id, title }) => {
   switch (type) {
     case "text":
@@ -32,15 +34,18 @@ const Collapse: FC<CollapseProps> = ({ children, title }) => {
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
   return (
-    <div>
+    <div className={styles["item"]}>
       <div
         {...getToggleProps({
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
         })}
+        className={styles["titleContent"]}
       >
         {title}
       </div>
-      <div {...getCollapseProps()}>{children}</div>
+      <div {...getCollapseProps()}>
+        <div className={styles["content"]}>{children}</div>
+      </div>
     </div>
   );
 };
