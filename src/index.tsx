@@ -1,3 +1,5 @@
+// TODO | Сделать под все запросы обработчик ошибок
+
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
