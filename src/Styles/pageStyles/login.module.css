@@ -6,7 +6,16 @@
 }
 
 .login_form {
-  padding: 100px;
+  padding: 60px 100px;
   border: 1px solid var(--decor-grey);
   margin-bottom: 100px;
+  width: 35%;
+}
+
+.login_title {
+  margin-bottom: 20px;
+}
+
+.login_input {
+  margin-bottom: 25px;
 }

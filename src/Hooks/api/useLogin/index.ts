@@ -16,11 +16,11 @@ export const useLogin = () => {
     onMutate: () => {
       setErrors([]);
     },
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       if (data?.jwt) {
         localStorage.setItem(TOKEN, data.jwt);
       }
-      checkAuth();
+      await checkAuth();
       navigate(URL_USER_COURSE);
     },
     onError: (errorsRes: IValidError[]) => {
