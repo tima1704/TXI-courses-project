@@ -11,6 +11,8 @@
   background: transparent;
   width: 100%;
   cursor: pointer;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .content_btn_open {
