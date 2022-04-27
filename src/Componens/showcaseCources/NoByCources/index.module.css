@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.content {
+  border-left: 3px solid var(--decor-color);
+  padding: 15px;
+  padding-left: 25px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.link {
+  font-size: 0.6rem;
+  color: var(--text-light);
+}
