@@ -1,5 +1,5 @@
 import { TOKEN } from "Constants/App";
-import { URL_HOME } from "Constants/URL";
+import { URL_USER_COURSE } from "Constants/URL";
 import { ProfileService } from "Helpers/api/Profile";
 import { useAppDispatch } from "Hooks/redux";
 import { useState } from "react";
@@ -16,12 +16,12 @@ export const useLogin = () => {
     onMutate: () => {
       setErrors([]);
     },
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       if (data?.jwt) {
         localStorage.setItem(TOKEN, data.jwt);
       }
-      checkAuth();
-      navigate(URL_HOME);
+      await checkAuth();
+      navigate(URL_USER_COURSE);
     },
     onError: (errorsRes: IValidError[]) => {
       setErrors(errorsRes);

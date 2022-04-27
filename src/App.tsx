@@ -44,7 +44,7 @@ function App() {
           <Header />
           <div className="container body">
             <Routes>
-              {isAuth && (
+              {isAuth ? (
                 <>
                   <Route path={URL_USER_COURSE} element={<UserCourceList />} />
                   <Route
@@ -52,8 +52,10 @@ function App() {
                     element={<CourceUserItem />}
                   />
                 </>
+              ) : (
+                <Route path={URL_LOGIN} element={<LoginPage />} />
               )}
-              <Route path={URL_LOGIN} element={<LoginPage />} />
+
               <Route path={URL_HOME} element={<CourcesListPage />} />
               <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
               <Route path="*" element={<ErrorPage />} />

@@ -1,0 +1,15 @@
+.primary {
+  background-color: var(--text-hover-color);
+  border: solid 1px var(--text-hover-color);
+  font-size: 0.6rem;
+  color: var(--text-white);
+  border-radius: 40px;
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 11px;
+}
+
+.primary:hover {
+  cursor: pointer;
+}

@@ -1,5 +1,3 @@
-// TODO:02 Добавить аватар в кружок
-
 import { FC } from "react";
 
 import styles from "./index.module.css";
@@ -9,8 +7,8 @@ import classNames from "classnames";
 import Logo from "Svg/logo.svg";
 import Profile from "Svg/profile.svg";
 
-import { useNavigate } from "react-router-dom";
-import { URL_HOME, URL_LOGIN } from "Constants/URL";
+import { Link, useNavigate } from "react-router-dom";
+import { URL_HOME, URL_LOGIN, URL_USER_COURSE } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 
 export const Header: FC = () => {
@@ -24,7 +22,7 @@ export const Header: FC = () => {
     navigate(URL_LOGIN);
   };
 
-  const { isAuth } = useAppSelector((state) => state.App);
+  const { isAuth, user } = useAppSelector((state) => state.App);
 
   return (
     <header
@@ -35,7 +33,15 @@ export const Header: FC = () => {
         <div className={styles["menu"]}>menu</div>
       </div>
       {isAuth ? (
-        <div>U</div>
+        <Link to={URL_USER_COURSE}>
+          <div className={styles["profile_img"]}>
+            {user?.pic ? (
+              <img src={process.env.REACT_APP_TXI_URL + user.pic} alt="" />
+            ) : (
+              user?.name[0]
+            )}
+          </div>
+        </Link>
       ) : (
         <div
           className={classNames(styles["profile"], "scale")}
