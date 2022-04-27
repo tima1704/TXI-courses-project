@@ -47,6 +47,7 @@ export interface ICourceUserModule {
   itemNumber: number;
   status: string;
   title: string;
+  description: string;
   courseContents: ICourceUserContent[];
 }
 

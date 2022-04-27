@@ -1,0 +1,15 @@
+.title {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+.contentBlock {
+  margin-bottom: 70px;
+}
+
+.buttons {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
