@@ -1,3 +1,21 @@
+.link_back {
+  cursor: pointer;
+  transition: 0.2s color;
+  color: var(--grey-black);
+}
+
+.link_back:hover {
+  color: var(--text-hover-color);
+}
+
+.link_back img {
+  transition: 0.2s filter;
+}
+
+.link_back:hover img {
+  filter: var(--filter-green);
+}
+
 .cource_title {
   font-weight: 700;
   font-size: 2rem;

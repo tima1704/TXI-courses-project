@@ -1,6 +1,7 @@
 :root {
   --text-color: #000;
   --text-light: rgb(101, 104, 120);
+  --grey-black: #656878;
   --text-white: #fff;
 
   --text-hover-color: #1b612a;
@@ -8,6 +9,8 @@
   --decor-grey: #d6d7d9;
 
   --danger-color: #ff0000;
+  --filter-green: brightness(0) saturate(100%) invert(28%) sepia(24%)
+    saturate(1426%) hue-rotate(81deg) brightness(93%) contrast(88%);
 }
 
 html {
