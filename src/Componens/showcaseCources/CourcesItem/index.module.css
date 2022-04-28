@@ -22,9 +22,10 @@
 .item_subTitle {
   display: flex;
   align-items: center;
-  font-size: 11px;
+  font-size: 0.45rem;
   line-height: 18px;
   text-transform: uppercase;
+  color: var(--text-light);
 }
 
 .item_decor {
@@ -48,4 +49,45 @@
 
 .item:hover {
   transform: translateY(-10px);
+}
+
+@media (max-width: 990px) {
+  .item_img {
+    margin-bottom: 25px;
+  }
+
+  .item_subTitle {
+    font-size: 0.4rem;
+  }
+
+  .item_title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .item_descr {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .item_img {
+    margin-bottom: 10px;
+  }
+
+  .item_subTitle {
+    font-size: 0.38rem;
+  }
+
+  .item_title {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .item_wrapper {
+    padding-bottom: 25px;
+  }
+  .item_descr {
+    font-size: 0.48rem;
+  }
 }

@@ -72,3 +72,27 @@ a {
   cursor: pointer;
   margin-top: -4px;
 }
+
+@media (max-width: 990px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 290px) {
+  .container {
+    padding: 0 10px;
+  }
+}
