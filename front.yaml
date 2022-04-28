@@ -76,10 +76,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - course.katiatxi.club
+    - courses.katiatxi.club
     secretName: course-${CI_ENVIRONMENT_NAME}-tls
   rules:
-  - host: course.katiatxi.club
+  - host: courses.katiatxi.club
     http:
       paths:
         - path: /
