@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import LoginPage from "Pages";
-import { Header } from "Componens/main/header/header";
-import { CourceItemPage } from "Pages/CourceItem";
-import { CourcesListPage } from "Pages/CourcesList";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+
 import {
   URL_COURSE_$ID,
   URL_HOME,
@@ -11,12 +8,17 @@ import {
   URL_USER_COURSE,
   URL_USER_COURSE_$ID,
 } from "Constants/URL";
-import { useAppDispatch, useAppSelector } from "Hooks/redux";
-import { Loading } from "Componens/common/Loading";
-import { Footer } from "Componens/main/footer";
+
+import LoginPage from "Pages";
+import { CourceItemPage } from "Pages/CourceItem";
+import { CourcesListPage } from "Pages/CourcesList";
 import { UserCourceList } from "Pages/UserCourceList";
-import { ErrorPage } from "Componens/common";
 import { CourceUserItem } from "Pages/CourceUserItem";
+
+import { ErrorPage, Loading } from "Componens/common";
+import { AppWrapper } from "Componens/main";
+
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -40,29 +42,25 @@ function App() {
   return (
     <div className="App">
       {isLoadedApp ? (
-        <div>
-          <Header />
-          <div className="container body">
-            <Routes>
-              {isAuth ? (
-                <>
-                  <Route path={URL_USER_COURSE} element={<UserCourceList />} />
-                  <Route
-                    path={URL_USER_COURSE_$ID}
-                    element={<CourceUserItem />}
-                  />
-                </>
-              ) : (
-                <Route path={URL_LOGIN} element={<LoginPage />} />
-              )}
+        <AppWrapper>
+          <Routes>
+            {isAuth ? (
+              <>
+                <Route path={URL_USER_COURSE} element={<UserCourceList />} />
+                <Route
+                  path={URL_USER_COURSE_$ID}
+                  element={<CourceUserItem />}
+                />
+              </>
+            ) : (
+              <Route path={URL_LOGIN} element={<LoginPage />} />
+            )}
 
-              <Route path={URL_HOME} element={<CourcesListPage />} />
-              <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
-              <Route path="*" element={<ErrorPage />} />
-            </Routes>
-          </div>
-          <Footer />
-        </div>
+            <Route path={URL_HOME} element={<CourcesListPage />} />
+            <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </AppWrapper>
       ) : (
         <Loading fullScreen />
       )}

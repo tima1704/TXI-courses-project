@@ -6,6 +6,8 @@ import { useCourceUser } from "Hooks/api/useCource";
 import { FC, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import styles from "Styles/pageStyles/cource.module.css";
+
 export const CourceUserItem: FC = () => {
   const params = useParams<string>();
 
@@ -41,7 +43,9 @@ export const CourceUserItem: FC = () => {
   return (
     <div className="anim_opacity">
       <h1>
-        <Icon icon="arrowLeft" className="arrow_left" onClick={onClickBack} />
+        <span className={styles["link_back"]}>
+          <Icon icon="arrowLeft" className="arrow_left" onClick={onClickBack} />
+        </span>
         {cource.title}
       </h1>
 

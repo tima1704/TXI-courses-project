@@ -29,7 +29,7 @@ export const CourceItemPage: FC = () => {
       ) : (
         <div className="anim_opacity">
           <h1 className="h1_grey">
-            <span onClick={onClickBack}>
+            <span onClick={onClickBack} className={styles["link_back"]}>
               <Icon icon="arrowLeft" className="arrow_left" />
               Back
             </span>

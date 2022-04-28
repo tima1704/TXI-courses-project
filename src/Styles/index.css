@@ -1,6 +1,7 @@
 :root {
   --text-color: #000;
   --text-light: rgb(101, 104, 120);
+  --grey-black: #656878;
   --text-white: #fff;
 
   --text-hover-color: #1b612a;
@@ -8,6 +9,8 @@
   --decor-grey: #d6d7d9;
 
   --danger-color: #ff0000;
+  --filter-green: brightness(0) saturate(100%) invert(28%) sepia(24%)
+    saturate(1426%) hue-rotate(81deg) brightness(93%) contrast(88%);
 }
 
 html {
@@ -51,6 +54,10 @@ a {
   color: inherit;
 }
 
+li {
+  list-style: none;
+}
+
 .scale {
   transition: transform ease 0.2s;
 }
@@ -68,4 +75,37 @@ a {
   height: 12px;
   cursor: pointer;
   margin-top: -4px;
+}
+
+@media (max-width: 990px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  h1 {
+    font-size: 0.8rem;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 290px) {
+  .container {
+    padding: 0 10px;
+  }
 }

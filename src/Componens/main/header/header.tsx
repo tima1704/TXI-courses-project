@@ -5,24 +5,29 @@ import styles from "./index.module.css";
 import classNames from "classnames";
 
 import Logo from "Svg/logo.svg";
-import Profile from "Svg/profile.svg";
 
 import { Link, useNavigate } from "react-router-dom";
 import { URL_HOME, URL_LOGIN, URL_USER_COURSE } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
+import { Button } from "Componens/common/Button";
+import { Icon } from "Componens/common/Icon";
 
-export const Header: FC = () => {
+interface IHeader {
+  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Header: FC<IHeader> = ({ setOpenMenu }) => {
   const navigate = useNavigate();
 
   const onClickLogo = () => {
     navigate(URL_HOME, { replace: true });
   };
 
-  const onClickProfile = () => {
-    navigate(URL_LOGIN);
-  };
-
   const { isAuth, user } = useAppSelector((state) => state.App);
+
+  const onClickOpenMenu = () => {
+    setOpenMenu((p) => !p);
+  };
 
   return (
     <header
@@ -30,7 +35,9 @@ export const Header: FC = () => {
     >
       <div className={styles["logo_menu"]}>
         <img src={Logo} alt="Logo" className="scale" onClick={onClickLogo} />
-        <div className={styles["menu"]}>menu</div>
+        <div className={styles["menu"]} onClick={onClickOpenMenu}>
+          menu
+        </div>
       </div>
       {isAuth ? (
         <Link to={URL_USER_COURSE}>
@@ -43,12 +50,16 @@ export const Header: FC = () => {
           </div>
         </Link>
       ) : (
-        <div
-          className={classNames(styles["profile"], "scale")}
-          onClick={onClickProfile}
-        >
-          <img src={Profile} alt="profile" />
-        </div>
+        <Button className={classNames(styles["profile"], "scale")}>
+          <Link to={URL_LOGIN} className={styles["profile_link"]}>
+            Sign in
+          </Link>{" "}
+          {" or "}{" "}
+          <Link to={URL_LOGIN} className={styles["profile_link"]}>
+            Register
+          </Link>{" "}
+          <Icon icon="enter" />
+        </Button>
       )}
     </header>
   );

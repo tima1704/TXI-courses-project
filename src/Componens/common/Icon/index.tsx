@@ -5,6 +5,7 @@ import Image from "./image.svg";
 import Text from "./text.svg";
 import Exit from "./exit.svg";
 import ArrowLeft from "./arrow-left.svg";
+import Enter from "./enter.svg";
 
 const Icons = {
   video: Video,
@@ -12,6 +13,7 @@ const Icons = {
   text: Text,
   exit: Exit,
   arrowLeft: ArrowLeft,
+  enter: Enter,
 };
 
 interface IconProps
@@ -19,7 +21,7 @@ interface IconProps
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   > {
-  icon: "video" | "image" | "text" | "exit" | "arrowLeft";
+  icon: "video" | "image" | "text" | "exit" | "arrowLeft" | "enter";
   className?: string;
 }
 

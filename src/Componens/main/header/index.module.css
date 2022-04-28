@@ -25,19 +25,21 @@
 .profile {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  border: 1px solid var(--decor-color);
-  cursor: pointer;
 }
 
 .profile img {
-  object-fit: cover;
-  width: 42%;
-  height: 50%;
-  margin-top: -2px;
+  margin-bottom: -2px;
+  margin-left: 3px;
+}
+
+.profile_link {
+  margin: 0 4px;
+  transition: 200ms border-color;
+  border-bottom: 1px solid transparent;
+}
+
+.profile_link:hover {
+  border-color: var(--text-white);
 }
 
 .profile_img {
