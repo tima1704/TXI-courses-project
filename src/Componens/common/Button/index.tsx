@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { FC } from "react";
 
 import styles from "./index.module.css";
@@ -8,9 +9,12 @@ interface IButton
     HTMLButtonElement
   > {}
 
-export const Button: FC<IButton> = ({ children, ...props }) => {
+export const Button: FC<IButton> = ({ className = "", children, ...props }) => {
   return (
-    <button {...props} className={styles["primary"]}>
+    <button
+      {...props}
+      className={classNames(styles["primary"], { [className]: className })}
+    >
       {children}
     </button>
   );
