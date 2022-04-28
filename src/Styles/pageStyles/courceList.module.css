@@ -17,4 +17,21 @@
   height: 24px;
   object-fit: contain;
   cursor: pointer;
+  margin-left: 5px;
+}
+
+@media (max-width: 700px) {
+  .my_cources {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .my_cources {
+    font-size: 0.75rem;
+  }
+
+  .icon_exit {
+    height: 18px;
+  }
 }
