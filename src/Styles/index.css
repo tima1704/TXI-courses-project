@@ -34,6 +34,12 @@ h1 {
   padding-bottom: 20px;
 }
 
+.h1_grey {
+  border-bottom: 2px solid var(--decor-grey);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
 h2 {
   border-left: 4px solid var(--decor-color);
   padding-left: 15px;
@@ -55,4 +61,11 @@ a {
 
 .body {
   min-height: calc(100vh - 175px);
+}
+
+.arrow_left {
+  margin-right: 15px;
+  height: 12px;
+  cursor: pointer;
+  margin-top: -4px;
 }

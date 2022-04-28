@@ -1,3 +1,9 @@
+.cource_title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 60px 0;
+}
+
 .cource_img {
   margin: 50px 0;
 }

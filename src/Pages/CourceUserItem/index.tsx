@@ -1,9 +1,10 @@
 import { ErrorPage, Loading } from "Componens/common";
+import { Icon } from "Componens/common/Icon";
 import { CourcePlayer } from "Componens/CourcePlay/CourcePlayer";
 import { StartCource } from "Componens/CourcePlay/StartCource";
 import { useCourceUser } from "Hooks/api/useCource";
 import { FC, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const CourceUserItem: FC = () => {
   const params = useParams<string>();
@@ -24,6 +25,11 @@ export const CourceUserItem: FC = () => {
     return cource?.courseModules.find((item) => item.itemNumber == module);
   }, [cource, module]);
 
+  const navigate = useNavigate();
+  const onClickBack = () => {
+    navigate(-1);
+  };
+
   if (isLoading) {
     return <Loading fullScreen />;
   }
@@ -34,7 +40,10 @@ export const CourceUserItem: FC = () => {
 
   return (
     <div className="anim_opacity">
-      <h1>{cource.title}</h1>
+      <h1>
+        <Icon icon="arrowLeft" className="arrow_left" onClick={onClickBack} />
+        {cource.title}
+      </h1>
 
       {activeModule ? (
         <CourcePlayer
