@@ -12,7 +12,11 @@ import { useAppSelector } from "Hooks/redux";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 
-export const Header: FC = () => {
+interface IHeader {
+  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Header: FC<IHeader> = ({ setOpenMenu }) => {
   const navigate = useNavigate();
 
   const onClickLogo = () => {
@@ -21,13 +25,19 @@ export const Header: FC = () => {
 
   const { isAuth, user } = useAppSelector((state) => state.App);
 
+  const onClickOpenMenu = () => {
+    setOpenMenu((p) => !p);
+  };
+
   return (
     <header
       className={classNames(styles["header"], "container", "anim_opacity")}
     >
       <div className={styles["logo_menu"]}>
         <img src={Logo} alt="Logo" className="scale" onClick={onClickLogo} />
-        <div className={styles["menu"]}>menu</div>
+        <div className={styles["menu"]} onClick={onClickOpenMenu}>
+          menu
+        </div>
       </div>
       {isAuth ? (
         <Link to={URL_USER_COURSE}>
