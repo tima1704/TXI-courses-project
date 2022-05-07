@@ -1,17 +1,19 @@
+import { TRegion } from "Types/common";
+
 export type courseStatus = "active" | "draft" | "closed";
 
 export interface ICource {
   id: number;
-  createdAt: string;
-  description: string;
-  img: string;
-  status: courseStatus;
-  title: string;
-  updatedAt: string;
+  courseMainInfo: {
+    title: string;
+    img: string;
+    description: string;
+    regionId: TRegion;
+  };
 }
 
 export interface ICourceItem extends ICource {
-  courseModules: ICourceModule[];
+  courceModulesMain: { courseModules: ICourceModule[] };
   coursePrices: ICourcePrice[];
 }
 
@@ -39,7 +41,7 @@ export interface ICourcePrice {
 }
 
 export interface ICourceUserItem extends ICource {
-  courseModules: ICourceUserModule[];
+  courceModulesMain: { courseModules: ICourceUserModule[] };
 }
 
 export interface ICourceUserModule {

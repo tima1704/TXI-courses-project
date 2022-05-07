@@ -35,17 +35,21 @@ export const CourceItemPage: FC = () => {
             </span>
           </h1>
 
-          <div className={styles["cource_title"]}>{cource?.title}</div>
+          <div className={styles["cource_title"]}>
+            {cource?.courseMainInfo.title}
+          </div>
           <div className={styles["cource_img"]}>
-            <img src={cource?.img} alt="" />
+            <img src={cource?.courseMainInfo.img} alt="" />
           </div>
           <div>
-            <p className={styles["cource_descr"]}>{cource?.description}</p>
+            <p className={styles["cource_descr"]}>
+              {cource?.courseMainInfo.description}
+            </p>
           </div>
           <div className={styles["cource_modules"]}>
             <h2>Содержание</h2>
             <div>
-              {cource?.courseModules.map((item, index) => (
+              {cource?.courceModulesMain?.courseModules.map((item, index) => (
                 <ContentModule {...item} key={"module" + index} />
               ))}
             </div>

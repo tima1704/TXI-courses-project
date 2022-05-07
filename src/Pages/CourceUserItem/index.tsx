@@ -23,8 +23,10 @@ export const CourceUserItem: FC = () => {
   };
 
   const activeModule = useMemo(() => {
-    // eslint-disable-next-line eqeqeq
-    return cource?.courseModules.find((item) => item.itemNumber == module);
+    return cource?.courceModulesMain.courseModules.find(
+      // eslint-disable-next-line eqeqeq
+      (item) => item.itemNumber == module
+    );
   }, [cource, module]);
 
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ export const CourceUserItem: FC = () => {
         <span className={styles["link_back"]}>
           <Icon icon="arrowLeft" className="arrow_left" onClick={onClickBack} />
         </span>
-        {cource.title}
+        {cource.courseMainInfo.title}
       </h1>
 
       {activeModule ? (
@@ -56,8 +58,8 @@ export const CourceUserItem: FC = () => {
         />
       ) : (
         <StartCource
-          description={cource.description}
-          img={cource.img}
+          description={cource.courseMainInfo.description}
+          img={cource.courseMainInfo.img}
           setModule={setModuleWithLocalStorage}
         />
       )}

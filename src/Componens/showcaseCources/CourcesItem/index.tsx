@@ -12,9 +12,7 @@ interface CourceItemProps extends ICource {
 }
 
 export const CourceItem: FC<CourceItemProps> = ({
-  title,
-  description,
-  img,
+  courseMainInfo,
   id,
   user,
 }) => {
@@ -23,11 +21,13 @@ export const CourceItem: FC<CourceItemProps> = ({
       <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
         <div className={styles["item"]}>
           <div className={styles["item_img"]}>
-            <img src={img} alt="cource" />
+            <img src={courseMainInfo.img} alt="cource" />
           </div>
           <div className={styles["item_subTitle"]}>Video</div>
-          <div className={styles["item_title"]}>{title}</div>
-          <div className={styles["item_descr"]}>{description}</div>
+          <div className={styles["item_title"]}>{courseMainInfo.title}</div>
+          <div className={styles["item_descr"]}>
+            {courseMainInfo.description}
+          </div>
         </div>
       </Link>
     </div>
