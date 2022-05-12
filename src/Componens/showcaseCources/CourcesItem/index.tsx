@@ -6,6 +6,7 @@ import { ICource } from "Types/cources";
 import c from "classnames";
 
 import styles from "./index.module.css";
+import { getUrlImg } from "Helpers/common";
 
 interface CourceItemProps extends ICource {
   user?: boolean;
@@ -21,7 +22,7 @@ export const CourceItem: FC<CourceItemProps> = ({
       <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
         <div className={styles["item"]}>
           <div className={styles["item_img"]}>
-            <img src={courseMainInfo.img} alt="cource" />
+            <img src={getUrlImg(courseMainInfo.img)} alt="cource" />
           </div>
           <div className={styles["item_subTitle"]}>Video</div>
           <div className={styles["item_title"]}>{courseMainInfo.title}</div>
