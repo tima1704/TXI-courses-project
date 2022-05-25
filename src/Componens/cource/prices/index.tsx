@@ -28,7 +28,7 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
         <div className={styles["CurrencyPrice"]}>
           {sum} {currency}
         </div>
-        <div className={styles["prices__item_descr"]}>{days === 3650 ? 'Бесконечно' : days} дней доступа</div>
+        <div className={styles["prices__item_descr"]}>{days === 3650 ? 'Постоянный доступ' : `${days} дней доступа`}</div>
       </div>
       <button className={styles["prices__item_btn"]}>Выбрать</button>
     </div>

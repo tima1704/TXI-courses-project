@@ -80,11 +80,14 @@
 }
 
 .social_row {
+  position: relative;
+  left: 20px;
   display: flex;
   align-items: center;
 }
 .social_row div{
-  margin: 0 0.5rem;
+
+  margin: 0 0.8rem;
 }
 /* Media */
 .menu__nav_item_active{

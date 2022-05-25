@@ -9,6 +9,7 @@ import Enter from "./enter.svg";
 import Telegram from './telegram.svg';
 import YouTube from './youtube.svg';
 import Instagram from "./instagram.svg";
+import File from './file.png';
 const Icons = {
   video: Video,
   image: Image,
@@ -18,6 +19,7 @@ const Icons = {
   enter: Enter,
   telegram: Telegram,
   youTube: YouTube,
+  file: File,
   instagram: Instagram
 };
 
@@ -26,7 +28,7 @@ interface IconProps
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   > {
-  icon: "video" | "image" | "text" | "exit" | "arrowLeft" | "enter" | "youTube" | "telegram" | "instagram";
+  icon: "video" | "image" | "text" | "exit" | "arrowLeft" | "enter" | "youTube" | "telegram" | "instagram" | "file";
   className?: string;
 }
 
