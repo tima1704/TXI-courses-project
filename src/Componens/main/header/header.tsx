@@ -6,7 +6,7 @@ import { Slant as Hamburger } from 'hamburger-react'
 import Logo from "Svg/logo.svg";
 import { Icon } from "Componens/common/Icon";
 import { Link, useNavigate } from "react-router-dom";
-import { URL_HOME, URL_LOGIN, URL_USER_COURSE } from "Constants/URL";
+import { URL_HOME, URL_LOGIN, URL_REGISTER, URL_USER_COURSE } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 import { Button } from "Componens/common/Button";
 
@@ -93,7 +93,7 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
               Sign in
             </Link>{" "}
             {" or "}{" "}
-            <Link to={URL_LOGIN} className={styles["profile_link"]}>
+            <Link to={URL_REGISTER} className={styles["profile_link"]}>
               Register
             </Link>{" "}
             <Icon icon="enter" />

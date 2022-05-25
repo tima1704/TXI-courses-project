@@ -22,7 +22,7 @@ export const CourceItemPage: FC = () => {
   if (isError) {
     return <ErrorPage />
   }
-
+  
   return (
     <div>
       {isLoading ? (
@@ -35,7 +35,6 @@ export const CourceItemPage: FC = () => {
               Back
             </span>
           </h1>
-
           <div className={styles["cource_title"]}>
             {cource?.courseMainInfo.title}
           </div>

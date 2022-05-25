@@ -74,6 +74,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         <div><Icon icon={"youTube"} className={styles["MenuIcons"]}/></div>
         <div className={styles["social_row"]}>
           <div><Icon icon={"telegram"} className={styles["MenuIcons"]}/></div>
+          <div><Icon icon={"instagram"} className={styles["MenuIcons"]}/></div>
         </div>
       </div>
     </div>

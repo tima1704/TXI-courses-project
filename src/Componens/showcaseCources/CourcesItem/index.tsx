@@ -17,6 +17,9 @@ export const CourceItem: FC<CourceItemProps> = ({
   id,
   user,
 }) => {
+  
+  
+  
   return (
     <div className={c(styles["item_wrapper"], "anim_opacity")}>
       <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>

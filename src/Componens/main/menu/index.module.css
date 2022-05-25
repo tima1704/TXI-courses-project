@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: translateY(-210vh);
+  transform: translateY(-110vh);
   transition: 0.4s transform ease-in;
 }
 
@@ -19,6 +19,8 @@
 }
 
 .menu__logo {
+  position: relative;
+  top: 1.5rem;
   height: 40px;
   object-fit: cover;
   margin-bottom: 40px;
@@ -80,6 +82,9 @@
 .social_row {
   display: flex;
   align-items: center;
+}
+.social_row div{
+  margin: 0 0.5rem;
 }
 /* Media */
 .menu__nav_item_active{

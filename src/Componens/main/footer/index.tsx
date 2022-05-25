@@ -31,7 +31,7 @@ export const Footer: FC = () => {
               <Icon icon="telegram"/>
             </a>
             <a>
-              <Icon icon="youTube"/>
+              <Icon icon="instagram"/>
             </a>
           </div>
           <div className={styles["footer__copy"]}>

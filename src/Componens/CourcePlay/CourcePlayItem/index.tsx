@@ -12,46 +12,58 @@ import {
 } from "video-react";
 import styles from "./index.module.css";
 
-export const CourcePlayItem: FC<ICourceUserContent> = ({ type, id, title, data }) => {
-  const contentUrl = useMemo(() => process.env.REACT_APP_API_URL + data + "?token=" +  localStorage.getItem(TOKEN), [data])
+export const CourcePlayItem: FC<ICourceUserContent> = ({
+  type,
+  id,
+  title,
+  data,
+}) => {
+  const contentUrl = useMemo(
+    () =>
+      process.env.REACT_APP_API_URL +
+      data +
+      "?token=" +
+      localStorage.getItem(TOKEN),
+    [data]
+  );
   switch (type) {
     case "text":
       return (
         <Collapse title={title}>
-          <div>asdasdasdasd</div>
+          <p>text content</p>
         </Collapse>
       );
 
     case "video":
       return (
         <Collapse title={title}>
-            <div style={{ width: "45%" }}>
-              <Player src={contentUrl} playsInline>
-                <BigPlayButton position="center" />
-                <LoadingSpinner />
-                <ControlBar>
-                  <PlaybackRateMenuButton rates={[2, 1, 0.5]} />
-                </ControlBar>
-              </Player>
-            </div>
+          <div style={{ width: "40%" }}>
+            <Player src={contentUrl} playsInline>
+              <BigPlayButton position="center" />
+              <LoadingSpinner />
+              <ControlBar>
+                <PlaybackRateMenuButton rates={[2, 1, 0.5]} />
+              </ControlBar>
+            </Player>
+          </div>
         </Collapse>
       );
-      case "file":
-        return (
-          <Collapse title={title}>
-            <div>asasd</div>
-          </Collapse>
-        );
+    case "file":
+      return (
+        <Collapse title={title}>
+          <div>file</div>
+        </Collapse>
+      );
 
-        case "img":
-          return (
-            <Collapse title={title}>
-              <img src={`${contentUrl}`} alt="photo" />
-            </Collapse>
-          );
+    case "img":
+      return (
+        <Collapse title={title}>
+          <img src={contentUrl} alt="" />
+        </Collapse>
+      );
 
     default:
-    return null;
+      return null;
   }
 };
 

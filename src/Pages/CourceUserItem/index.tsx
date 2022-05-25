@@ -2,6 +2,7 @@ import { ErrorPage, Loading } from "Componens/common";
 import { Icon } from "Componens/common/Icon";
 import { CourcePlayer } from "Componens/CourcePlay/CourcePlayer";
 import { StartCource } from "Componens/CourcePlay/StartCource";
+import { log } from "console";
 import { useCourceUser } from "Hooks/api/useCource";
 import { FC, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,7 +13,7 @@ export const CourceUserItem: FC = () => {
   const params = useParams<string>();
 
   const { cource, isLoading, isError } = useCourceUser(params.id || "");
-
+  
   const [module, setModule] = useState(
     localStorage.getItem("cource" + params.id) || 0
   );
@@ -24,10 +25,10 @@ export const CourceUserItem: FC = () => {
 
   const activeModule = useMemo(() => {
     return cource?.courceModulesMain.courseModules.find(
-      // eslint-disable-next-line eqeqeq
       (item) => item.itemNumber == module
     );
   }, [cource, module]);
+  
 
   const navigate = useNavigate();
   const onClickBack = () => {

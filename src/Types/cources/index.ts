@@ -55,22 +55,32 @@ export interface ICourceUserModule {
 
 export type ICourceUserContent =
   | ICourceUserContentVideo
-  | ICourceUserContentText;
+  | ICourceUserContentText
+  | ICourceUserContentFile
+  | ICourceUserContentImg;
 
 interface ICourceUserContentVideo {
   id: number;
   title: string;
   type: "video";
-  data: {
-    src: string;
-  };
+  data: string;
 }
 
 interface ICourceUserContentText {
   id: number;
   title: string;
   type: "text";
-  data: {
-    text: string;
-  };
+  data: string;
+}
+interface ICourceUserContentFile {
+  id: number;
+  title: string;
+  type: "file";
+  data: string;
+}
+interface ICourceUserContentImg {
+  id: number;
+  title: string;
+  type: "img";
+  data: string;
 }
