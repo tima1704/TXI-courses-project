@@ -16,7 +16,6 @@ export const UserCourceList: FC = () => {
   const user = useAppSelector((state) => state.App.user);
 
   const { data: courcesList = [], isLoading, isError } = useUserCourcesList();
-
   const { checkAuth } = useAppDispatch();
   const navigate = useNavigate();
 

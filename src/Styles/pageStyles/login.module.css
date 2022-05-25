@@ -6,16 +6,49 @@
 }
 
 .login_form {
+  transition: 0.5s;
   padding: 60px 100px;
   border: 1px solid var(--decor-grey);
   margin-bottom: 100px;
-  width: 35%;
 }
 
 .login_title {
-  margin-bottom: 20px;
+  transition: 0.5s;
+  margin-bottom: 30px;
 }
 
 .login_input {
+  transition: 0.5s;
   margin-bottom: 25px;
+}
+.login_button{
+ transition: 0.5s; 
+}
+
+@media (max-width: 500px) {
+  .login_input{
+    width: 150px;
+  }
+  .login_title{
+    position: relative;
+    font-size: 20px;
+  }
+  .login_form {
+    padding: 55px 80px;
+  }
+  .login_button{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login_input{
+    width: 120px;
+  }
+  .login_form {
+    padding: 40px 60px;
+  }
+  .login_button{
+    font-size: 13px;
+  }
 }

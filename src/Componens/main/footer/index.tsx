@@ -1,10 +1,10 @@
 import { FC } from "react";
-
 import Logo from "Svg/logo.svg";
-
 import c from "classnames";
-
 import styles from "./index.module.css";
+import { Icon } from "../../common/Icon";
+import { Input } from "Componens/common";
+import { Button } from "Componens/common/Button";
 
 export const Footer: FC = () => {
   return (
@@ -18,23 +18,22 @@ export const Footer: FC = () => {
           />
           {/* <div>
             <form>
-              <input />
-              <button></button>
+              <Input placeholder="Email" />
             </form>
           </div> */}
         </div>
         <div className={styles["footer__right"]}>
-          {/* <div>
+          <div className={styles['flexRight']}>
             <a>
-              <img />
+              <Icon icon="youTube"/>
             </a>
             <a>
-              <img />
+              <Icon icon="telegram"/>
             </a>
             <a>
-              <img />
+              <Icon icon="youTube"/>
             </a>
-          </div> */}
+          </div>
           <div className={styles["footer__copy"]}>
             Copyright 2022 Katia Txi. All rights reserved.
           </div>

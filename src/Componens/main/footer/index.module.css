@@ -8,21 +8,50 @@
 .footer__left {
   flex-basis: 50%;
 }
-
+.footer__right img{
+  width: 3  0px;
+}
 .footer_logo {
   margin-bottom: 10px;
   width: 30px;
   height: 25px;
   cursor: pointer;
 }
-
-.footer__right {
-  flex-basis: 50%;
+.footer__right{
+  display: flex;
+  flex-direction: column;
 }
-
+.footer__right img{
+  cursor: pointer;
+  width: 20px;
+}
+.flexRight{
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.flexRight a{
+  padding: 0px 35px;
+}
 .footer__copy {
   font-size: 0.6rem;
   line-height: 110%;
   text-align: end;
   color: var(--text-light);
+}
+
+
+
+/* media */
+
+
+@media(max-width: 750px) {
+  .footer{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .footer__copy{
+    text-align: center;
+  }
 }

@@ -20,7 +20,7 @@ export const CourceItemPage: FC = () => {
   };
 
   if (isError) {
-    return <ErrorPage />;
+    return <ErrorPage />
   }
 
   return (

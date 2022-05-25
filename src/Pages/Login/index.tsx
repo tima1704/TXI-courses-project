@@ -24,7 +24,10 @@ export const LoginPage: FC = () => {
 
   return (
     <div className={styles["login"]}>
-      <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
+      <form 
+        className={styles["login_form"]}
+        onSubmit={onSubmitLoginData}
+      >
         <div className={styles["login_title"]}>Войти</div>
         <div>
           <Input
@@ -37,6 +40,7 @@ export const LoginPage: FC = () => {
             className={styles["login_input"]}
           />
         </div>
+
         <div>
           <Input
             disabled={isDisabled}
@@ -48,7 +52,12 @@ export const LoginPage: FC = () => {
             error={errors.find((e) => e.name === "password")}
           />
         </div>
-        <Button type="submit" disabled={isDisabled}>
+
+        <Button 
+          type="submit"
+          disabled={isDisabled}
+          className={styles["login_button"]}
+        >
           Вход
         </Button>
       </form>
