@@ -3,9 +3,24 @@
 }
 
 .titleContent {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .content {
   margin-top: 15px;
+}
+
+.text {
+  white-space: pre-line;
+  font-size: 0.65rem;
+  border: 1px solid var(--decor-grey);
+  padding: 20px;
+}
+
+.image {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
 }
