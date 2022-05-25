@@ -81,6 +81,6 @@ interface ICourceUserContentFile {
 interface ICourceUserContentImg {
   id: number;
   title: string;
-  type: "img";
+  type: "image";
   data: string;
 }

@@ -51,6 +51,7 @@ export const CourceUserItem: FC = () => {
         </span>
         {cource.courseMainInfo.title}
       </h1>
+      
 
       {activeModule ? (
         <CourcePlayer
