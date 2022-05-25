@@ -16,6 +16,7 @@ import "./Styles/reset.css";
 import "./Styles/fonts/fonts.css";
 import "./Styles/index.css";
 import "./Styles/anitmations.css";
+import "../node_modules/video-react/dist/video-react.css";
 
 const queryClient = new QueryClient();
 

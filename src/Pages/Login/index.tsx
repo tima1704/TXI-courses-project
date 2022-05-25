@@ -3,13 +3,13 @@
 import { Button } from "Componens/common/Button";
 import { Input } from "Componens/common/Input";
 import { useLogin } from "Hooks/api/useLogin";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
 import styles from "Styles/pageStyles/login.module.css";
 import { ILogin } from "Types/login";
 
 export const LoginPage: FC = () => {
-  const [data, setData] = useState<ILogin>({ email: "", password: "" });
+  const [data, setData] = React.useState<ILogin>({ email: "", password: "" });
 
   const { isDisabled, mutate, errors } = useLogin();
 
@@ -24,7 +24,10 @@ export const LoginPage: FC = () => {
 
   return (
     <div className={styles["login"]}>
-      <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
+      <form 
+        className={styles["login_form"]}
+        onSubmit={onSubmitLoginData}
+      >
         <div className={styles["login_title"]}>Войти</div>
         <div>
           <Input
@@ -34,9 +37,10 @@ export const LoginPage: FC = () => {
             type={"email"}
             error={errors.find((e) => e.name === "email")}
             placeholder="Email"
-            className={styles["login_input"]}
+    
           />
         </div>
+
         <div>
           <Input
             disabled={isDisabled}
@@ -48,7 +52,12 @@ export const LoginPage: FC = () => {
             error={errors.find((e) => e.name === "password")}
           />
         </div>
-        <Button type="submit" disabled={isDisabled}>
+
+        <Button 
+          type="submit"
+          disabled={isDisabled}
+          className={styles["login_button"]}
+        >
           Вход
         </Button>
       </form>

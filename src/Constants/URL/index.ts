@@ -7,6 +7,10 @@ export const URL_COURSE_$ID = "/cource/:id";
 // URL Login
 export const URL_LOGIN = "/login";
 
+// URL rigister
+
+export const URL_REGISTER = "/register"
+
 // URL USER
 export const URL_USER_COURSE = "/p";
 export const URL_USER_COURSE_$ID = "/p" + URL_COURSE_$ID;

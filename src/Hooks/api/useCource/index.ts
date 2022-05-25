@@ -28,3 +28,18 @@ export const useCourceUser = (id: string) => {
 
   return { isError, isLoading, cource };
 };
+export const useCourceUserId = (id: string) => {
+  const {
+    isError,
+    isLoading,
+    data: cource,
+  } = useQuery(
+    ["cources", "user", id],
+    () => CourcesService.getUserCource(id),
+    {
+      enabled: !!id,
+    }
+  );
+
+  return { isError, isLoading, cource };
+};

@@ -13,3 +13,11 @@ export default function HttpHeadersAuthorization() {
     return { Authorization: `Bearer ${tokenSessionStorage}` };
   }
 }
+
+export function getUrlImg(url: string) {
+  if (url.includes("http")) {
+    return url;
+  } else {
+    return process.env.REACT_APP_API_URL + url;
+  }
+}

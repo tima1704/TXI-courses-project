@@ -5,9 +5,7 @@ import { URL_HOME, URL_LOGIN } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import Logo from "Svg/logo.svg";
-
 import styles from "./index.module.css";
 
 interface IMenu {
@@ -73,10 +71,10 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         )}
       </div>
       <div className={styles["social"]}>
-        <div>you</div>
+        <div><Icon icon={"youTube"} className={styles["MenuIcons"]}/></div>
         <div className={styles["social_row"]}>
-          <div>tg</div>
-          <div>inst</div>
+          <div><Icon icon={"telegram"} className={styles["MenuIcons"]}/></div>
+          <div><Icon icon={"instagram"} className={styles["MenuIcons"]}/></div>
         </div>
       </div>
     </div>

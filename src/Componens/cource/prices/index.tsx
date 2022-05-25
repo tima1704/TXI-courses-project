@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { ICourcePrice } from "Types/cources";
-
 import styles from "./index.module.css";
 
 interface CourcePricesProps {
@@ -10,11 +9,11 @@ interface CourcePricesProps {
 export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
   return (
     <div className={styles["prices"]}>
-      <div>
+      <div className={styles["left_contentPrices"]}>
         <h2>Варианты оплаты</h2>
       </div>
 
-      <div>
+      <div  className={styles["right_contentPrices"]}>
         {prices.map((price) => (
           <PriceItem {...price} key={"price" + price.id} />
         ))}
@@ -22,15 +21,14 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
     </div>
   );
 };
-
-const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
+ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
   return (
     <div className={styles["prices__item"]}>
       <div>
-        <div>
+        <div className={styles["CurrencyPrice"]}>
           {sum} {currency}
         </div>
-        <div className={styles["prices__item_descr"]}>{days} дней доступа</div>
+        <div className={styles["prices__item_descr"]}>{days === 3650 ? 'Постоянный доступ' : `${days} дней доступа`}</div>
       </div>
       <button className={styles["prices__item_btn"]}>Выбрать</button>
     </div>

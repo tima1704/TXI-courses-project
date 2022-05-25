@@ -44,4 +44,16 @@ export const CourcesService = {
         throw e;
       });
   },
+  async getUserCourceContent(id: string) {
+    return axios
+    .get<ISuccessRes<ICourceUserItem>>(API_COURCE_USER(id), {
+      headers: HttpHeadersAuthorization(),
+    })
+    .then((res) => {
+      return res.data.data
+    })
+    .catch((e) => {
+      throw e;
+    });
+  },
 };

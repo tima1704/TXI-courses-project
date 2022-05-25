@@ -67,6 +67,7 @@ li {
 }
 
 .body {
+  transition: 0.5s;
   min-height: calc(100vh - 175px);
 }
 
@@ -98,12 +99,23 @@ li {
   .container {
     padding: 0 20px;
   }
-
+  .body {
+    min-height: calc(80vh - 200px);
+  }
   h1 {
     font-size: 0.75rem;
   }
 }
-
+@media (max-width: 400px){
+  .body {
+    min-height: calc(80vh - 150px);
+  }
+}
+@media (max-width: 310px){
+  .body {
+    min-height: calc(70vh - 100px);
+  }
+}
 @media (max-width: 290px) {
   .container {
     padding: 0 10px;

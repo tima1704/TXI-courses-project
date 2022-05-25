@@ -3,6 +3,7 @@ import { Icon } from "Componens/common/Icon";
 import { Loading } from "Componens/common/Loading";
 import { ContentModule } from "Componens/cource/ContentModule";
 import { CourcePrices } from "Componens/cource/prices";
+import { getUrlImg } from "Helpers/common";
 import { useCource } from "Hooks/api/useCource";
 import { FC } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -19,9 +20,9 @@ export const CourceItemPage: FC = () => {
   };
 
   if (isError) {
-    return <ErrorPage />;
+    return <ErrorPage />
   }
-
+  
   return (
     <div>
       {isLoading ? (
@@ -34,12 +35,11 @@ export const CourceItemPage: FC = () => {
               Back
             </span>
           </h1>
-
           <div className={styles["cource_title"]}>
             {cource?.courseMainInfo.title}
           </div>
           <div className={styles["cource_img"]}>
-            <img src={cource?.courseMainInfo.img} alt="" />
+            <img src={getUrlImg(cource?.courseMainInfo.img || "")} alt="" />
           </div>
           <div>
             <p className={styles["cource_descr"]}>

@@ -19,11 +19,15 @@
 }
 
 .menu__logo {
+  position: relative;
+  top: 1.5rem;
   height: 40px;
   object-fit: cover;
   margin-bottom: 40px;
 }
-
+.MenuIcons{
+  width: 40px;
+}
 .menu__nav {
   display: flex;
   justify-content: flex-end;
@@ -35,7 +39,10 @@
   margin-bottom: 20px;
   text-align: right;
   white-space: nowrap;
-  transition: 0.2s color;
+  transition: 0.5s color !important ;
+}
+.menu__nav ul li{
+  cursor: pointer;
 }
 
 .ch {
@@ -73,6 +80,35 @@
 }
 
 .social_row {
+  position: relative;
+  left: 20px;
   display: flex;
   align-items: center;
+}
+.social_row div{
+
+  margin: 0 0.8rem;
+}
+/* Media */
+.menu__nav_item_active{
+  margin-top: 80px;
+}
+@media(max-width: 410px){
+  .menu__nav_item {
+    font-size: 1.1rem;
+    line-height: 100%;
+    transition: 1s !important;
+  }
+}
+@media(max-width: 300px){
+  .menu__nav_item {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 100%;
+    transition: 1s !important;
+  }
+  .menu__nav {
+    display: flex;
+    justify-content: center;
+  }
 }

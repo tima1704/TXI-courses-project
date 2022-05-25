@@ -23,9 +23,10 @@ export const ContentModule: FC<ICourceModule> = ({
         className={styles["content_btn"]}
       >
         <div className={styles["content__title"]}>
-          <div>0{itemNumber}</div> {title}
+          <div>0{itemNumber}</div>
+          <p>{title}</p>
         </div>
-        <button className={styles["content_btn_open"]}>Подробнее</button>
+        <span className={styles["content_btn_open"]}>Подробнее</span>
       </button>
       <div {...getCollapseProps()}>
         <div className={styles["content__body"]}>
