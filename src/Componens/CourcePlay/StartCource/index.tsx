@@ -1,4 +1,5 @@
 import { Button } from "Componens/common/Button";
+import { getUrlImg } from "Helpers/common";
 import { FC } from "react";
 
 import styles from "Styles/pageStyles/cource.module.css";
@@ -8,7 +9,6 @@ interface StartCourceProps {
   description: string;
   setModule: (moduleNumber: number) => void;
 }
-
 
 export const StartCource: FC<StartCourceProps> = ({
   img,
@@ -22,7 +22,7 @@ export const StartCource: FC<StartCourceProps> = ({
   return (
     <div>
       <div className={styles["cource_img"]}>
-        <img src={img} alt="" />
+        <img src={getUrlImg(img)} alt="" />
       </div>
       <div>
         <p className={styles["cource_descr"]}>{description}</p>
