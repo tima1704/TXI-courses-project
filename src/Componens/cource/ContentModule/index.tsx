@@ -23,8 +23,8 @@ export const ContentModule: FC<ICourceModule> = ({
         className={styles["content_btn"]}
       >
         <div className={styles["content__title"]}>
-          <div>0{itemNumber}</div>
-          <p>{title}</p>
+          <div>{itemNumber < 10 ? `0${itemNumber}` : `${itemNumber}`}</div>
+          {title.length > 45 ? <p className={styles["maxText"]}>{title}</p> : <p>{title}</p>}
         </div>
         <span className={styles["content_btn_open"]}>Подробнее</span>
       </button>

@@ -58,7 +58,7 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
     case "img":
       return (
         <Collapse title={title}>
-          <img src={contentUrl} alt="" />
+          <img src={contentUrl} alt="photo" />
         </Collapse>
       );
 

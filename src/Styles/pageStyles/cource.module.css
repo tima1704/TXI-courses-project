@@ -26,6 +26,7 @@
 .cource_img {
   margin: 50px 0;
 }
+
 .cource_modules h2{
   transform: 0.5s;
 }
@@ -39,10 +40,10 @@
 
 .cource_descr {
   margin-bottom: 30px;
-  /* border-bottom: 1px solid var(--text-light); */
   color: var(--text-light);
   font-size: 0.8rem;
-  width: 80%;
+  width: 100%;
+  padding-right: 10px;
 }
 
 .cource_modules {
@@ -59,26 +60,39 @@
 
 
 
+@media(max-width:1050px) {
+  .cource_title{
+    font-size: 25px;
+  }
+}
+
+@media(max-width:723px) {
+  .cource_title{
+    font-size: 20px;
+  }
+}
 
 @media(max-width:700px) {
   .cource_title {
     font-weight: 700;
-    font-size: 1.3rem;
     margin: 50px 0;
   }
   .cource_img{
     display: flex;
     justify-content: center;
   }
+
   .cource_img img{
     height: 250px;
   }
+  
   .cource_modules h2{
     margin-bottom: 50px;
     font-size: 20px;
   }
+
   .cource_descr{
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
@@ -86,21 +100,33 @@
   .cource_modules h2{
     font-size: 20px;
   }
+
   .cource_img img{
     height: 200px;
   }
+
   .cource_title{
-    font-size: 1.1rem;
+    font-size: 15px;
   }
+
   .link_back{
     font-size: 15px;
   }
+
   .arrow_left{
     width: 5px;
     height: 5px;
   }
+
   .cource_descr{
     width: 100%;
+
+
+  }
+}
+@media(max-width:414px) {
+  .cource_title{
+    font-size: 12px;
   }
 }
 
@@ -108,14 +134,18 @@
   .cource_modules h2{
     font-size: 17px;
   }
+
   .cource_descr{
-    font-size: 13px;
+    font-size: 10px;
     margin-bottom: 18px;
   }
+
   .cource_img img{
     height: 150px;
   }
+
   .cource_title{
-    font-size: 0.9rem;
+    font-size: 10px;
   }
+
 }

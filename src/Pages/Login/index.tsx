@@ -29,7 +29,7 @@ export const LoginPage: FC = () => {
         onSubmit={onSubmitLoginData}
       >
         <div className={styles["login_title"]}>Войти</div>
-        <div>
+        <div className={styles["block_inputs"]}>
           <Input
             disabled={isDisabled}
             onChange={onChange}
@@ -41,7 +41,7 @@ export const LoginPage: FC = () => {
           />
         </div>
 
-        <div>
+        <div className={styles["block_inputs"]}>
           <Input
             disabled={isDisabled}
             onChange={onChange}

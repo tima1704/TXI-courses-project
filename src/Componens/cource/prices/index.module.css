@@ -47,19 +47,21 @@
     grid-template-columns: 1fr;
   }
   .prices__item{
-    margin-top: 50px;
+    margin-top: 20px;
+    padding: 20px 5px;
   }
 
 }
 @media(max-width:500px) {
   .left_contentPrices{
+    margin-bottom: 10px;
     font-size: 18px;
   }
   .prices__item{
-    padding: 15pxpx;
+    padding: 16px 5px;
   }
   .prices__item{
-    margin-top: 30px;
+    margin-top: 5px;
   }
   .prices__item_btn{
     font-size: 11px;
