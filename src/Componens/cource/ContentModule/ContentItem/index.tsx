@@ -5,10 +5,11 @@ import { ICourceContent } from "Types/cources";
 import styles from "./index.module.css";
 
 export const ContentItem: FC<ICourceContent> = ({ type, title }) => {
+  console.log(type);
   return (
     <div className={styles["icon_row"]}>
       <Icon icon={type} className={styles["icon"]} />
-      {title}
+      <span>{title}</span>
     </div>
   );
 };
