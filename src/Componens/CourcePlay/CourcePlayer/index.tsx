@@ -21,7 +21,7 @@ export const CourcePlayer: FC<CourcePlayerProps> = ({
       </h3>
       <section className={styles["contentBlock"]}>
         {activeModule.courseContents.map((item, index) => (
-          <CourcePlayItem {...item} key={index + "content"} />
+          <CourcePlayItem {...item} key={index + "content" + item.id} />
         ))}
       </section>
       <div className={styles["buttons"]}>

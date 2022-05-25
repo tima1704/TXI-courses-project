@@ -1,3 +1,4 @@
+import { Icon } from "Componens/common/Icon";
 import { TOKEN } from "Constants/App";
 import { FC, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
@@ -30,7 +31,7 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
     case "text":
       return (
         <Collapse title={title}>
-          <p>text content</p>
+          <p className={styles["text"]}>{data}</p>
         </Collapse>
       );
 
@@ -48,17 +49,21 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
           </div>
         </Collapse>
       );
+
     case "file":
       return (
-        <Collapse title={title}>
-          <div>file</div>
-        </Collapse>
+        <div>
+          <a href={contentUrl} target={"_blank"} rel="noreferrer">
+            <Icon icon="file" />
+            {title}
+          </a>
+        </div>
       );
 
-    case "img":
+    case "image":
       return (
         <Collapse title={title}>
-          <img src={contentUrl} alt="" />
+          <img src={contentUrl} alt="" className={styles["image"]} />
         </Collapse>
       );
 
