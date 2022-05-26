@@ -33,7 +33,7 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
         <Collapse title={title}>
           <div
             className={styles["text"]}
-            dangerouslySetInnerHTML={{ __html: data  }}
+            dangerouslySetInnerHTML={{ __html: data }}
           />
         </Collapse>
       );
@@ -66,9 +66,7 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
     case "image":
       return (
         <Collapse title={title}>
-          <img src={contentUrl} alt="photo" />
           <img src={contentUrl} alt="" className={styles["image"]} />
-
         </Collapse>
       );
 
@@ -96,7 +94,9 @@ const Collapse: FC<CollapseProps> = ({ children, title }) => {
         <span>{title}</span>
       </div>
       <div {...getCollapseProps()}>
-        <div className={styles["content"]}><span>{children}</span></div>
+        <div className={styles["content"]}>
+          <span>{children}</span>
+        </div>
       </div>
     </div>
   );
