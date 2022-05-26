@@ -37,9 +37,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
       className={classNames(styles["header"], "container", "anim_opacity")}
     >
       <div className={styles["logo_menu"]}>
-        <div className={styles['ImgLogoMenu']}>
-          <img src={Logo} alt="Logo" className="scale" />
-        </div>
+          <div className={styles['ImgLogoMenu']}>
+            <img src={Logo} alt="Logo" className="scale" />
+          </div>
         <div className={styles["menu__nav"]}>
           <ul className={isToggle ? styles["activeNav"] : ''}>
             <li
