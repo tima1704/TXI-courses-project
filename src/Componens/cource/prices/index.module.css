@@ -1,5 +1,4 @@
 .prices {
-  transition: 0.5s;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 100px;
@@ -7,7 +6,6 @@
 }
 
 .left_contentPrices{
-  transition: 0.5s;
 }
 .prices__item {
   transition: 0.5s;
@@ -19,10 +17,8 @@
 }
 .CurrencyPrice{
   color: #000;
-  transition: 0.5s;
 }
 .prices__item_btn {
-  transition: 0.5s;
   background-color: var(--decor-color);
   border: solid 1px var(--decor-color);
   font-size: 0.6rem;
@@ -36,7 +32,6 @@
 }
 
 .prices__item_descr {
-  transition: 0.5s;
   font-size: 0.5rem;
   color: var(---text-light);
   margin-top: 5px;

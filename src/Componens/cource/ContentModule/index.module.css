@@ -16,7 +16,6 @@
 }
 
 .content_btn_open {
-  transition: 0.5s;
   background: none;
   border: solid 1px #e0e1e4;
   font-size: 14px;
@@ -37,10 +36,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: 0.5s;
 }
 .content__title p {
-  transition: .5s;
 }
 .content__title div {
   color: var(--text-light);
