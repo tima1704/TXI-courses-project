@@ -188,7 +188,7 @@
   .arrow_left{
     width: 14px;
     height: 10px;
-    margin: 0px;
+    margin: 0;
   }
   .menu span{
     font-size: 0.7rem;
@@ -200,6 +200,7 @@
   .profile{
     display: none;
   }
+
   .menu{
     right: 30px;
     z-index: 100;
