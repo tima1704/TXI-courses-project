@@ -31,7 +31,10 @@ export const CourcePlayItem: FC<ICourceUserContent> = ({
     case "text":
       return (
         <Collapse title={title}>
-          <p className={styles["text"]}>{data}</p>
+          <div
+            className={styles["text"]}
+            dangerouslySetInnerHTML={{ __html: data  }}
+          />
         </Collapse>
       );
 

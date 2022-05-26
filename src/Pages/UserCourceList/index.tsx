@@ -14,7 +14,8 @@ import styles from "Styles/pageStyles/courceList.module.css";
 
 export const UserCourceList: FC = () => {
   const user = useAppSelector((state) => state.App.user);
-
+  console.log(user);
+  
   const { data: courcesList = [], isLoading, isError } = useUserCourcesList();
   const { checkAuth } = useAppDispatch();
   const navigate = useNavigate();
