@@ -14,15 +14,17 @@
  .titleContent span{
   cursor: pointer;
 }
+
 .item img {
   width: 200px;
   margin: 15px 0px;
   display: flex;
 }
+
 .text {
   white-space: pre-line;
   margin: 20px;
-  font-size: 1rem;
+  font-size: 0.7rem;
   border: 1px solid var(--decor-grey);
   padding: 20px;
 }
