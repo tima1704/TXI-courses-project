@@ -16,6 +16,7 @@
   filter: var(--filter-green);
 }
 
+
 .cource_title {
   transition: 0.5s;
   font-weight: 700;
@@ -26,6 +27,7 @@
 .cource_img {
   margin: 50px 0;
 }
+
 .cource_modules h2{
   transform: 0.5s;
 }
@@ -39,12 +41,15 @@
 
 .cource_descr {
   margin-bottom: 30px;
-  /* border-bottom: 1px solid var(--text-light); */
   color: var(--text-light);
   font-size: 0.8rem;
-  width: 80%;
+  width: 100%;
+  padding-right: 10px;
 }
-
+h1{
+  transition: .5s;
+  font-size: 20px;
+}
 .cource_modules {
   padding-bottom: 40px;
   border-bottom: 1px solid var(--decor-grey);
@@ -59,63 +64,112 @@
 
 
 
+@media(max-width:1050px) {
+  .cource_title{
+    font-size: 25px;
+  }
+}
+
+@media(max-width:723px) {
+  .body {
+    transition: 0.5s;
+    min-height: calc(80vh - 175px);
+  }
+  h1{
+    font-size: 20px;
+  }
+}
 
 @media(max-width:700px) {
+  .body {
+    transition: 0.5s;
+    min-height: calc(80vh - 175px);
+  }
   .cource_title {
     font-weight: 700;
-    font-size: 1.3rem;
     margin: 50px 0;
   }
   .cource_img{
     display: flex;
     justify-content: center;
   }
+
   .cource_img img{
     height: 250px;
   }
+  
   .cource_modules h2{
     margin-bottom: 50px;
     font-size: 20px;
   }
+
   .cource_descr{
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
+@media(max-width:596px) {
+  h1{
+    font-size: 15px;
+  }
+}
 @media(max-width:500px) {
+  .body {
+    transition: 0.5s;
+    min-height: calc(80vh - 175px);
+  }
   .cource_modules h2{
     font-size: 20px;
+  }
+  h1{
+    font-size: 13px;
   }
   .cource_img img{
     height: 200px;
   }
+
   .cource_title{
-    font-size: 1.1rem;
+    font-size: 15px;
   }
+
   .link_back{
     font-size: 15px;
   }
+
   .arrow_left{
     width: 5px;
     height: 5px;
   }
+
   .cource_descr{
     width: 100%;
+
+
+  }
+}
+@media(max-width:414px) {
+  .cource_title{
+    font-size: 12px;
   }
 }
 
 @media(max-width:350px) {
   .cource_modules h2{
-    font-size: 17px;
+    font-size: 15px;
+  }
+  .body {
+    transition: 0.5s;
+    min-height: calc(80vh - 175px);
   }
   .cource_descr{
-    font-size: 13px;
+    font-size: 10px;
     margin-bottom: 18px;
   }
+
   .cource_img img{
     height: 150px;
   }
   .cource_title{
-    font-size: 0.9rem;
+    font-size: 100px;
   }
 }

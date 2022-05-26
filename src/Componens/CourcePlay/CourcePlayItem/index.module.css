@@ -11,16 +11,38 @@
 .content {
   margin-top: 15px;
 }
-
+ .titleContent span{
+  cursor: pointer;
+}
+.item img {
+  width: 200px;
+  margin: 15px 0px;
+  display: flex;
+}
 .text {
   white-space: pre-line;
-  font-size: 0.65rem;
+  margin: 20px;
+  font-size: 1rem;
   border: 1px solid var(--decor-grey);
   padding: 20px;
 }
 
-.image {
-  width: 40%;
-  height: auto;
-  object-fit: cover;
+/* media */
+@media(max-width: 830px) {
+  .text{
+    font-size: 16px;
+    line-height: 1.1;
+  }
+  .item img {
+    width: 250px;
+    height: 250px;
+    margin: 15px 0px;
+    display: flex;
+  }
+}
+@media(max-width: 530px) {
+  .text{
+    font-size: 13px ;
+    line-height: 1.1;
+  }
 }

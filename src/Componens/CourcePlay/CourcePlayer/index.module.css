@@ -1,4 +1,5 @@
 .title {
+  transition: .5s;
   margin-top: 25px;
   margin-bottom: 45px;
 }
@@ -13,3 +14,18 @@
   align-items: center;
   justify-content: space-between;
 }
+
+
+/* @media */
+
+
+@media(max-width:590px) {
+  .title{
+    font-size: 15px;
+  }
+} 
+@media(max-width:500px) {
+  .title{
+    font-size: 13px;
+  }
+} 

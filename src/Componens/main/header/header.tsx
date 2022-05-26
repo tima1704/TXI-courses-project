@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./index.module.css";
 import React from "react";
 import classNames from "classnames";
-import { Slant as Hamburger } from 'hamburger-react'
+import { Slant as Hamburger } from 'hamburger-react';
 import Logo from "Svg/logo.svg";
 import { Icon } from "Componens/common/Icon";
 import { Link, useNavigate } from "react-router-dom";
@@ -30,7 +30,6 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
   const { isAuth, user } = useAppSelector((state) => state.App);
 
   const onClickOpenMenu = () =>  setOpenMenu((p) => !p);
-
   const [isOpen, setOpen] = React.useState(false)
 
   return (
@@ -39,7 +38,7 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
     >
       <div className={styles["logo_menu"]}>
         <div className={styles['ImgLogoMenu']}>
-          <img src={Logo} alt="Logo" className="scale" onClick={onClickLogo} />
+          <img src={Logo} alt="Logo" className="scale" />
         </div>
         <div className={styles["menu__nav"]}>
           <ul className={isToggle ? styles["activeNav"] : ''}>
@@ -51,9 +50,12 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
             >
               Катя <span className={styles["ch"]}>Чи</span>
             </li>
-            <li className={styles["menu__nav_item"]}>About Txi</li>
-            <li className={styles["menu__nav_item"]}>Shopping</li>
-            <li className={styles["menu__nav_item"]}>Blog</li>
+            <li
+              className={styles["menu__nav_item"]}>About Txi</li>
+            <li 
+              className={styles["menu__nav_item"]}>Shopping</li>
+            <li 
+              className={styles["menu__nav_item"]}>Blog</li>
           </ul> 
           <span 
             onClick={() => {
