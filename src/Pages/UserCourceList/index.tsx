@@ -38,6 +38,7 @@ export const UserCourceList: FC = () => {
     <div className="anim_opacity">
       <h1 className={styles["title_row"]}>
         <div>
+  
           <Link to={URL_HOME} className={styles["link"]}>
             Все курсы
           </Link>{" "}
