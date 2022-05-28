@@ -2,12 +2,12 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { URL_HOME, URL_LOGIN } from "Constants/URL";
+import Hamburger from "hamburger-react";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "Svg/logo.svg";
 import styles from "./index.module.css";
-
 interface IMenu {
   openMenu: boolean;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -35,12 +35,9 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
     >
       <div>
         <div>
-          <img
-            src={Logo}
-            alt="Logo"
-            className={styles["menu__logo"]}
-            onClick={onClickLogo}
-          />
+          <div className={styles["langsComponent"]}>
+            <button>Rus</button>
+          </div>
         </div>
         <div className={styles["menu__nav"]}>
           <ul>
@@ -59,14 +56,18 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
           </ul>
         </div>
         {!isAuth && (
-          <div>
-            <Button className={styles["btn_login"]}>
-              <Icon icon="enter" />
-              <Link to={URL_LOGIN} onClick={onClickCloseMenu}>
-                Sign in
-              </Link>{" "}
-              or <Link to={URL_LOGIN}>Register</Link>
-            </Button>
+          <div className={styles["contentMenuBtns"]}>
+            <div></div>
+            <div className={styles["butnsMenu"]}>
+              <Button className={styles["signInMenu"]}>
+                <Link to={URL_LOGIN} onClick={onClickCloseMenu}>
+                  Sign
+                </Link>{" "}
+              </Button>
+              <Button>
+                <Link to={URL_LOGIN}>Register</Link>
+              </Button>
+            </div>
           </div>
         )}
       </div>

@@ -6,7 +6,17 @@
 .my_cources {
   margin-top: 20px;
 }
-
+.title_userCurses{
+  display: flex;
+}
+.titleUserCurses{
+  padding-right: 50px;
+}
+.title_userCurses p{
+  margin-right:  20px;
+  font-size: 20px;
+  margin-bottom: 0px !important;
+}
 .title_row {
   display: flex;
   align-items: center;

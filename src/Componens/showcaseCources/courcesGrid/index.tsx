@@ -11,10 +11,16 @@ interface CourcesListGridProps {
 
 export const CourcesListGrid: FC<CourcesListGridProps> = ({ data, user }) => {
   return (
+    <>
     <div className={styles["courcesGrid"]}>
       {data.map((cource, index) => (
-        <CourceItem {...cource} key={index + "courceItem"} user={user} />
+        <>
+        {console.log(cource)}
+          <CourceItem {...cource} key={index + "courceItem"} user={user} />
+          <CourceItem {...cource} key={index + "courceItemTwo"} user={user} />
+        </>
       ))}
     </div>
+    </>
   );
 };

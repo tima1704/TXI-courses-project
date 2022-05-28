@@ -13,26 +13,68 @@
   transform: translateY(-110vh);
   transition: 0.4s transform ease-in;
 }
+.contentMenuBtns{
+  display: flex;
+  justify-content: space-between;
+}
+.butnsMenu{
+  display: flex;
+  flex-direction: column;
+}
+.signInMenu{
+  font-size: 15px;
+  border: 2px #1B612A solid;
+  color: #000;
+  background-color: rgba(0,0,0,0);
+  position: relative;
+  left: 30px;
+  padding: 10px 0px !important;
+  width: 60px !important;
+}
+.butnsMenu button{
+  margin: 10px 0;
+}
+.langsComponent button{
+  position: relative;
+  top: 35px;
+  cursor: pointer;
+  margin-left: 50px;
+  font-weight: 500;
+  border: 2px #1B612A solid;
+  border-radius: 100%;
+  padding: 15px 12px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 17px;
 
+}
 .menu_open {
   transform: translateY(0);
 }
 
-.menu__logo {
+/* .menu__logo {
   position: relative;
   top: 1.5rem;
   height: 40px;
   object-fit: cover;
   margin-bottom: 40px;
-}
+} */
+
 .MenuIcons{
   width: 40px;
 }
 .menu__nav {
+  margin-top: 0px;
   display: flex;
   justify-content: flex-end;
 }
-
+.registerButton{
+  position: relative;
+  bottom: 10px;
+}
+.langsComponent{
+  position: relative;
+  bottom: 30px !important;
+}
 .menu__nav_item {
   font-size: 1.15rem;
   line-height: 100%;

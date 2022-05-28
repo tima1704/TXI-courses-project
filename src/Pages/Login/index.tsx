@@ -36,30 +36,32 @@ export const LoginPage: FC = () => {
             id="email"
             type={"email"}
             error={errors.find((e) => e.name === "email")}
-            placeholder="Email"
-    
+            placeholder="Введите адрес электронной почты"
           />
         </div>
-
         <div className={styles["block_inputs"]}>
           <Input
             disabled={isDisabled}
             onChange={onChange}
             id="password"
-            placeholder="Password"
+            placeholder="Введите пароль"
             type={"password"}
             className={styles["login_input"]}
             error={errors.find((e) => e.name === "password")}
           />
         </div>
-
-        <Button 
-          type="submit"
-          disabled={isDisabled}
-          className={styles["login_button"]}
-        >
-          Вход
-        </Button>
+        <div className={styles["fGPassword"]}>
+          <span>Забыли Пароль ?</span>
+        </div>
+        <div>
+          <Button 
+            type="submit"
+            disabled={isDisabled}
+            className={styles["login_button"]}
+          >
+            Вход
+          </Button>
+        </div>
       </form>
     </div>
   );
