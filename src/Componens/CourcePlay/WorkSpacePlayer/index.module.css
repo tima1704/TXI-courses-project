@@ -1,0 +1,17 @@
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  background-color: var(--text-color);
+  padding: 16px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  text-transform: uppercase;
+  color: var(--text-white);
+}

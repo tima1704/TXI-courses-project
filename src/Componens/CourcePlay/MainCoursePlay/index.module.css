@@ -1,0 +1,16 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: calc(100vh - 200px);
+  min-height: 400px;
+}
+
+.right {
+  grid-column-end: 2;
+}
+
+.workSpace {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  padding-left: 50px;
+}
