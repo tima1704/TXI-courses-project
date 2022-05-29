@@ -3,19 +3,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   height: 175px;
   margin-bottom: 40px;
 }
+.langsComponentUs button{
+  margin-bottom: 25px;
+  cursor: pointer;
+  margin-left: 30px;
+  font-weight: 500;
+  border: 2px #1B612A solid;
+  border-radius: 100%;
+  padding: 13px 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 17px;
+
+}
 .logo_menu {
-  transition: 0.5s;
+  display: flex;
   align-items: center;
+  transition: 0.5s;
   font-size: 0.66rem;
 }
-
 .ImgLogoMenu img {
   z-index: 102;
   position: relative;
-  bottom: 15px;
   transition: 0.5s;
   width: 77px;
   height: 66px;
@@ -24,17 +36,18 @@
 
 .logo_menu .menu {
   transition: 0.5s;
-  position: relative;
   margin-left: 75px;
   font-size: 19.3px;
 }
 .profile {
+  position: relative !important;
   transition: 0.5s;
   display: flex;
   align-items: center;
 }
 
 .profile img {
+  position: relative;
   margin-bottom: -2px;
   margin-left: 3px;
 }
@@ -44,11 +57,25 @@
   transition: 200ms border-color;
   border-bottom: 1px solid transparent;
 }
-
+.profile_img{
+  position: relative;
+  top: 0;
+}
 .profile_link:hover {
   border-color: var(--text-white);
 }
+.langsComponent button{
+  margin-bottom: 25px;
+  cursor: pointer;
+  margin-left: 30px;
+  font-weight: 500;
+  border: 2px #1B612A solid;
+  border-radius: 100%;
+  padding: 13px 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 17px;
 
+}
 .profile_img {
   width: 40px;
   height: 40px;
@@ -61,7 +88,6 @@
 }
 
 .profile_img img {
-
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -72,23 +98,40 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: relative;
-  top: 1px;
+}
+.registerButton{
+  margin-bottom: 25px !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .profile_img{
   position: relative;
   bottom: 20px;
 }
+
 .menu__nav{
   display: flex;
   align-items: center;
   opacity: 1;
+  position: relative;
+  left: 30px;
 }
+
 .menu{
+  color: #fff;
+  margin-right: 0px;
+  padding: 0px;
+  border-radius: 100%;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
   top: 60px;
   display: none;
   position: fixed;
+  background-color: rgb(106, 106, 106);
 }
 .menu span{
   font-size: 0.7rem;
@@ -168,6 +211,9 @@
     margin: 0;
     padding-left: 1rem;
   }
+  .ArrowLeftSpan{
+    right: 30px;
+  }
   .menu__nav ul li {
     font-size: 13px;
     cursor: pointer;
@@ -186,7 +232,7 @@
   .arrow_left{
     width: 14px;
     height: 10px;
-    margin: 0px;
+    margin: 0;
   }
   .menu span{
     font-size: 0.7rem;
@@ -195,18 +241,32 @@
   }
 }
 @media(max-width: 990px){
+  .profile_img{
+    position: relative;
+    right: 70px;
+  }
+  .langsComponentUs{
+    display: none;
+  }
+  .langsComponent{
+    display: none;
+  }
   .profile{
     display: none;
   }
+  .registerButton{
+    display: none;
+  }
   .menu{
+    display: flex;
     right: 30px;
-    z-index: 100;
-    display: block;
-    margin-right: 0px;
-    padding: 0px;
+    z-index: 10000000000000;
   }
 }
 @media(max-width:800px) {
+  .langsComponent{
+    display: none;
+  }
   .arrow_left{
     width: 14px !important;
     height: 14px !important;

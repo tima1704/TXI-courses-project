@@ -1,28 +1,45 @@
 .login {
+  position: relative;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: inherit;
-}
 
+}
 .login_form {
+  width: 500px;
+  background-color: #fff;
+  margin-bottom: 30px;
   transition: 0.5s;
-  padding: 60px 100px;
-  border: 1px solid var(--decor-grey);
-  margin-bottom: 100px;
+  padding: 50px 90px;
+}
+.fGPassword {
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+  bottom: 20px;
+  color: green;
+  transition: .2s color;
+}
+.fGPassword:hover{
+  color: rgb(5, 169, 5);
 }
 
 .login_title {
+  font-weight: 600;
   transition: 0.5s;
   margin-bottom: 30px;
 }
 
 .login_input {
+  padding: 0px !important;
+  width: 100%;
   transition: 0.5s;
   margin-bottom: 30px;
 }
 
 .block_inputs{
+  width: 100%;
   margin: 20px 0;
 }
 

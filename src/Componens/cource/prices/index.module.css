@@ -2,22 +2,47 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  margin-top: 100px;
 }
 
-.left_contentPrices{
+.left_contentPrices h3 {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 52px;
 }
+
+.right_contentPrices {
+  padding-top: 15px;
+}
+
 .prices__item {
-  transition: 0.5s;
-  padding: 30px 15px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--decor-grey);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
 }
-.CurrencyPrice{
-  color: #000;
+
+.prices__item:last-child {
+  border-bottom: none;
 }
+
+.CurrencyPrice {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+
+.prices__item_descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--text-light);
+}
+
 .prices__item_btn {
   background-color: var(--decor-color);
   border: solid 1px var(--decor-color);
@@ -31,34 +56,27 @@
   cursor: pointer;
 }
 
-.prices__item_descr {
-  font-size: 0.5rem;
-  color: var(---text-light);
-  margin-top: 5px;
-}
-
-@media(max-width:950px){
-  .prices { 
+@media (max-width: 950px) {
+  .prices {
     grid-template-columns: 1fr;
   }
-  .prices__item{
+  .prices__item {
     margin-top: 20px;
     padding: 20px 5px;
   }
-
 }
-@media(max-width:500px) {
-  .left_contentPrices{
+@media (max-width: 500px) {
+  .left_contentPrices {
     margin-bottom: 10px;
     font-size: 18px;
   }
-  .prices__item{
+  .prices__item {
     padding: 16px 5px;
   }
-  .prices__item{
+  .prices__item {
     margin-top: 5px;
   }
-  .prices__item_btn{
+  .prices__item_btn {
     font-size: 11px;
     border-radius: 30px;
     padding-top: 10px;
@@ -67,14 +85,14 @@
     padding-bottom: 11px;
   }
 }
-@media(max-width:380px) {
-  .left_contentPrices{
+@media (max-width: 380px) {
+  .left_contentPrices {
     font-size: 16.5px;
   }
-  .CurrencyPrice{
+  .CurrencyPrice {
     font-size: 19px;
   }
-  .prices__item_descr{
+  .prices__item_descr {
     font-size: 10px;
   }
 }

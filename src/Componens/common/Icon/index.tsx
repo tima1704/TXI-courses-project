@@ -6,10 +6,12 @@ import Text from "./text.svg";
 import Exit from "./exit.svg";
 import ArrowLeft from "./arrow-left.svg";
 import Enter from "./enter.svg";
-import Telegram from './telegram.svg';
-import YouTube from './youtube.svg';
+import Telegram from "./telegram.svg";
+import YouTube from "./youtube.svg";
 import Instagram from "./instagram.svg";
-import File from './file.png';
+import File from "./file.png";
+import ChevronDown from "./chevron-down.svg";
+
 const Icons = {
   video: Video,
   image: Image,
@@ -20,7 +22,8 @@ const Icons = {
   telegram: Telegram,
   youTube: YouTube,
   file: File,
-  instagram: Instagram
+  instagram: Instagram,
+  chevronDown: ChevronDown,
 };
 
 interface IconProps
@@ -28,7 +31,18 @@ interface IconProps
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   > {
-  icon: "video" | "image" | "text" | "exit" | "arrowLeft" | "enter" | "youTube" | "telegram" | "instagram" | "file";
+  icon:
+    | "video"
+    | "image"
+    | "text"
+    | "exit"
+    | "arrowLeft"
+    | "enter"
+    | "youTube"
+    | "telegram"
+    | "instagram"
+    | "file"
+    | "chevronDown";
   className?: string;
 }
 

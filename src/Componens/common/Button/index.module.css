@@ -1,8 +1,5 @@
-.primary {
-  background-color: var(--text-hover-color);
-  border: solid 1px var(--text-hover-color);
+.btn {
   font-size: 0.6rem;
-  color: var(--text-white);
   border-radius: 40px;
   padding-top: 12px;
   padding-right: 20px;
@@ -10,6 +7,27 @@
   padding-bottom: 11px;
 }
 
-.primary:hover {
+.btn:hover {
   cursor: pointer;
+}
+
+.primary {
+  background-color: var(--text-hover-color);
+  border: solid 1px var(--text-hover-color);
+
+  color: var(--text-white);
+}
+
+.grey {
+  background-color: var(--grey-black);
+  border: solid 1px var(--grey-black);
+
+  color: var(--text-white);
+}
+
+.white {
+  background-color: var(--text-white);
+  border: solid 1px var(--text-white);
+
+  color: var(--text-color);
 }

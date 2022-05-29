@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
-import { URL_HOME, URL_LOGIN } from "Constants/URL";
+import { URL_LOGIN } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "Svg/logo.svg";
+import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 
 interface IMenu {
@@ -14,12 +13,12 @@ interface IMenu {
 }
 
 export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
-  const navigete = useNavigate();
+  // const navigete = useNavigate();
 
-  const onClickLogo = () => {
-    navigete(URL_HOME);
-    onClickCloseMenu();
-  };
+  // const onClickLogo = () => {
+  //   navigete(URL_HOME);
+  //   onClickCloseMenu();
+  // };
 
   const onClickCloseMenu = () => {
     setOpenMenu(false);
@@ -35,12 +34,9 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
     >
       <div>
         <div>
-          <img
-            src={Logo}
-            alt="Logo"
-            className={styles["menu__logo"]}
-            onClick={onClickLogo}
-          />
+          <div className={styles["langsComponent"]}>
+            <button>Rus</button>
+          </div>
         </div>
         <div className={styles["menu__nav"]}>
           <ul>
@@ -59,22 +55,32 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
           </ul>
         </div>
         {!isAuth && (
-          <div>
-            <Button className={styles["btn_login"]}>
-              <Icon icon="enter" />
-              <Link to={URL_LOGIN} onClick={onClickCloseMenu}>
-                Sign in
-              </Link>{" "}
-              or <Link to={URL_LOGIN}>Register</Link>
-            </Button>
+          <div className={styles["contentMenuBtns"]}>
+            <div></div>
+            <div className={styles["butnsMenu"]}>
+              <Button className={styles["signInMenu"]}>
+                <Link to={URL_LOGIN} onClick={onClickCloseMenu}>
+                  Sign
+                </Link>{" "}
+              </Button>
+              <Button>
+                <Link to={URL_LOGIN}>Register</Link>
+              </Button>
+            </div>
           </div>
         )}
       </div>
       <div className={styles["social"]}>
-        <div><Icon icon={"youTube"} className={styles["MenuIcons"]}/></div>
+        <div>
+          <Icon icon={"youTube"} className={styles["MenuIcons"]} />
+        </div>
         <div className={styles["social_row"]}>
-          <div><Icon icon={"telegram"} className={styles["MenuIcons"]}/></div>
-          <div><Icon icon={"instagram"} className={styles["MenuIcons"]}/></div>
+          <div>
+            <Icon icon={"telegram"} className={styles["MenuIcons"]} />
+          </div>
+          <div>
+            <Icon icon={"instagram"} className={styles["MenuIcons"]} />
+          </div>
         </div>
       </div>
     </div>

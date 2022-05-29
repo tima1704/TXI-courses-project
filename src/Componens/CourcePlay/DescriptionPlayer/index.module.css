@@ -1,0 +1,33 @@
+.descrItem {
+  margin-bottom: 50px;
+  background: var(--text-white);
+}
+
+.topDescr {
+  background: var(--text-color);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+
+  margin-bottom: 40px;
+
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+.content {
+  padding: 0 16px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 24px;
+  /* width: 80%; */
+}

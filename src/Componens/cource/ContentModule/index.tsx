@@ -1,4 +1,6 @@
-import { FC, useState } from "react";
+import classNames from "classnames";
+import { Icon } from "Componens/common/Icon";
+import { FC, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
 import { ICourceModule } from "Types/cources";
 import { ContentItem } from "./ContentItem";
@@ -14,22 +16,40 @@ export const ContentModule: FC<ICourceModule> = ({
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
+  const itemNumberString = useMemo(
+    () => (itemNumber > 9 ? itemNumber : "0" + itemNumber),
+    [itemNumber]
+  );
+
   return (
-    <div className={styles["content"]}>
-      <button
-        {...getToggleProps({
-          onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-        })}
-        className={styles["content_btn"]}
-      >
-        <div className={styles["content__title"]}>
-          <div>{itemNumber < 10 ? `0${itemNumber}` : `${itemNumber}`}</div>
-          {title.length > 45 ? <p className={styles["maxText"]}>{title}</p> : <p>{title}</p>}
+    <div className={styles["item"]}>
+      <div className={styles["moduleRow"]}>
+        <div className={styles["itemNumber"]}>{itemNumberString}</div>
+        <div className={styles["itemTitle"]}>
+          <div className={styles["itemNumberTitle"]}>
+            {itemNumberString} Модуль
+          </div>
+          <div className={styles["titleRow"]}>
+            <div>{title}</div>
+            <div
+              className={styles["btn"]}
+              {...getToggleProps({
+                onClick: () => setExpanded((prevExpanded) => !prevExpanded),
+              })}
+            >
+              Показать контент
+              <Icon
+                icon={"chevronDown"}
+                className={classNames(styles["chevron"], {
+                  [styles["chevronActive"]]: isExpanded,
+                })}
+              />
+            </div>
+          </div>
         </div>
-        <span className={styles["content_btn_open"]}>Подробнее</span>
-      </button>
-      <div {...getCollapseProps()}>
-        <div className={styles["content__body"]}>
+      </div>
+      <div className={styles["contentWrapper"]} {...getCollapseProps()}>
+        <div className={styles["content"]}>
           {courseContents.map(({ id, title, type }) => (
             <ContentItem key={id + type + "content"} {...{ id, title, type }} />
           ))}

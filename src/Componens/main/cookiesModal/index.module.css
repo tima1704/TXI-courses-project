@@ -1,0 +1,31 @@
+.cookieModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 24px;
+  border-radius: 20px;
+  background: var(--black);
+  position: fixed;
+  bottom: 40px;
+  right: 100px;
+  width: 450px;
+}
+
+.none {
+  display: none;
+}
+
+.textCookie {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: var(--text-white);
+  margin-right: 32px;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid var(--text-white);
+  border-radius: 20px;
+}

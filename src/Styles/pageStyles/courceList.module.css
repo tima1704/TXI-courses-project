@@ -6,18 +6,21 @@
 .my_cources {
   margin-top: 20px;
 }
-
+.title_userCurses {
+  display: flex;
+}
+.titleUserCurses {
+  padding-right: 50px;
+}
+.title_userCurses p {
+  margin-right: 20px;
+  font-size: 20px;
+  margin-bottom: 0px !important;
+}
 .title_row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.icon_exit {
-  height: 24px;
-  object-fit: contain;
-  cursor: pointer;
-  margin-left: 5px;
 }
 
 @media (max-width: 700px) {
@@ -29,9 +32,5 @@
 @media (max-width: 460px) {
   .my_cources {
     font-size: 0.75rem;
-  }
-
-  .icon_exit {
-    height: 18px;
   }
 }

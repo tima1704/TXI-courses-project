@@ -11,6 +11,8 @@
   --danger-color: #ff0000;
   --filter-green: brightness(0) saturate(100%) invert(28%) sepia(24%)
     saturate(1426%) hue-rotate(81deg) brightness(93%) contrast(88%);
+
+  --black: #12121a;
 }
 
 html {
@@ -20,6 +22,7 @@ html {
 
 body {
   font-family: "PF Bague Sans Pro";
+  background-color: #fafafa;
 }
 
 button {
@@ -106,12 +109,12 @@ li {
     font-size: 0.75rem;
   }
 }
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .body {
     min-height: calc(80vh - 150px);
   }
 }
-@media (max-width: 310px){
+@media (max-width: 310px) {
   .body {
     min-height: calc(70vh - 100px);
   }
