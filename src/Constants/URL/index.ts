@@ -8,8 +8,10 @@ export const URL_COURSE_$ID = "/cource/:id";
 export const URL_LOGIN = "/login";
 
 // URL rigister
+export const URL_REGISTER = "/register";
 
-export const URL_REGISTER = "/register"
+// URL Contacts
+export const URL_CONTACT = "/contact";
 
 // URL USER
 export const URL_USER_COURSE = "/p";

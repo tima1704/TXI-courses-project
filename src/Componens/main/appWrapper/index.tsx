@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { Footer } from "../footer";
 import { Header } from "../header/header";
 import { Menu } from "../menu";
+import { MenuCourses } from "../menuCourses";
 
 export const AppWrapper: FC = ({ children }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -22,6 +23,7 @@ export const AppWrapper: FC = ({ children }) => {
     <div>
       <Header setOpenMenu={setOpenMenu} />
       <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <MenuCourses />
       <div className="container body">{children}</div>
       <Footer />
     </div>

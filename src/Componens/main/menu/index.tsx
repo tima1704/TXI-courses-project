@@ -1,25 +1,24 @@
 import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
-import { URL_HOME, URL_LOGIN } from "Constants/URL";
-import Hamburger from "hamburger-react";
+import { URL_LOGIN } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 import { FC } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "Svg/logo.svg";
+import { Link } from "react-router-dom";
 import styles from "./index.module.css";
+
 interface IMenu {
   openMenu: boolean;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
-  const navigete = useNavigate();
+  // const navigete = useNavigate();
 
-  const onClickLogo = () => {
-    navigete(URL_HOME);
-    onClickCloseMenu();
-  };
+  // const onClickLogo = () => {
+  //   navigete(URL_HOME);
+  //   onClickCloseMenu();
+  // };
 
   const onClickCloseMenu = () => {
     setOpenMenu(false);
@@ -72,10 +71,16 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         )}
       </div>
       <div className={styles["social"]}>
-        <div><Icon icon={"youTube"} className={styles["MenuIcons"]}/></div>
+        <div>
+          <Icon icon={"youTube"} className={styles["MenuIcons"]} />
+        </div>
         <div className={styles["social_row"]}>
-          <div><Icon icon={"telegram"} className={styles["MenuIcons"]}/></div>
-          <div><Icon icon={"instagram"} className={styles["MenuIcons"]}/></div>
+          <div>
+            <Icon icon={"telegram"} className={styles["MenuIcons"]} />
+          </div>
+          <div>
+            <Icon icon={"instagram"} className={styles["MenuIcons"]} />
+          </div>
         </div>
       </div>
     </div>
