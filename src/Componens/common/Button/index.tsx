@@ -7,13 +7,22 @@ interface IButton
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
-  > {}
+  > {
+  variant?: "primary" | "grey";
+}
 
-export const Button: FC<IButton> = ({ className = "", children, ...props }) => {
+export const Button: FC<IButton> = ({
+  className = "",
+  children,
+  variant = "primary",
+  ...props
+}) => {
   return (
     <button
       {...props}
-      className={classNames(styles["primary"], { [className]: className })}
+      className={classNames(styles["btn"], styles[variant], {
+        [className]: className,
+      })}
     >
       {children}
     </button>
