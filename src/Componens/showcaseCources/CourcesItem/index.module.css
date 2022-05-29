@@ -21,18 +21,18 @@
 .item_title {
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 35px;
   margin-bottom: 32px;
 }
 
 .item_descr {
+  color: var(--text-light);
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  line-height: 18px;
   margin-bottom: 32px;
-  color: var(--text-light);
 }
 
 .item_row {
@@ -46,8 +46,6 @@
   font-size: 30px;
   line-height: 35px;
 }
-
-
 
 .item:hover {
   transform: translateY(-10px);

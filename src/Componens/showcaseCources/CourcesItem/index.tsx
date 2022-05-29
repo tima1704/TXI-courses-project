@@ -30,7 +30,7 @@ export const CourceItem: FC<CourceItemProps> = ({
             {courseMainInfo.description}
           </div>
           <div className={styles["item_row"]}>
-            <div className={styles["price"]}>180$</div>
+            <div className={styles["price"]}>$180</div>
             <Button variant="grey">Купить</Button>
           </div>
         </div>
