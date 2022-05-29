@@ -24,3 +24,10 @@
 
   color: var(--text-white);
 }
+
+.white {
+  background-color: var(--text-white);
+  border: solid 1px var(--text-white);
+
+  color: var(--text-color);
+}

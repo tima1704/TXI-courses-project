@@ -8,7 +8,7 @@ interface IButton
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  variant?: "primary" | "grey";
+  variant?: "primary" | "grey" | "white";
 }
 
 export const Button: FC<IButton> = ({
