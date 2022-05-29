@@ -8,8 +8,8 @@
 
 .left_contentPrices {
   font-weight: 500;
-  font-size: 54px;
-  line-height: 56px;
+  font-size: 50px;
+  line-height: 52px;
 }
 
 .right_contentPrices {
@@ -40,7 +40,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
-  color: var(---text-light);
+  color: var(--text-light);
 }
 
 .prices__item_btn {
