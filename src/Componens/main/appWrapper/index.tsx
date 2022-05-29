@@ -1,5 +1,6 @@
 import { useGetBody } from "Hooks/common";
 import { FC, useEffect, useState } from "react";
+import { CookiesModal } from "../cookiesModal";
 import { Footer } from "../footer";
 import { Header } from "../header/header";
 import { Menu } from "../menu";
@@ -26,6 +27,7 @@ export const AppWrapper: FC = ({ children }) => {
       <MenuCourses />
       <div className="container body">{children}</div>
       <Footer />
+      <CookiesModal />
     </div>
   );
 };
