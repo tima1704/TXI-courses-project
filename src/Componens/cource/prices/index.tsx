@@ -26,7 +26,7 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          {sum} {currency}
+          {currency} {sum}
         </div>
         <div className={styles["prices__item_descr"]}>
           {days === 3650 ? "Постоянный доступ" : `${days} дней доступа`}
