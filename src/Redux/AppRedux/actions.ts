@@ -1,3 +1,4 @@
+import App from "App";
 import { TOKEN } from "Constants/App";
 import { ProfileService } from "Helpers/api/Profile";
 import { Dispatch } from "redux";
