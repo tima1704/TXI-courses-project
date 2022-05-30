@@ -24,9 +24,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
 
   const toggleArrow = () => setArrorRotate(!arrowRotate);
 
-  const { isAuth, user } = useAppSelector((state) => state.App);
+  const { isAuth, user, regions } = useAppSelector((state) => state.App);
 
-  const { isVisible } = useAppSelector((state) => state.Modal);
+  const isVisible = useAppSelector((state) => state.Modal?.isVisible);
 
   const { setModalViewAction, setModalVisibleAction } = useAppDispatch();
 
@@ -37,6 +37,8 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
     setModalVisibleAction();
     setModalViewAction(view);
   };
+
+  console.log(regions);
 
   return (
     <header
@@ -98,7 +100,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
             </div>
           </Link>
           <div className={styles["langsComponentUs"]}>
-            <button>Rus</button>
+            {regions.map((item) => (
+              <div>{item.title}</div>
+            ))}
           </div>
         </div>
       ) : (
@@ -115,7 +119,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
             <Icon icon="enter" />
           </Button>
           <div className={styles["langsComponent"]}>
-            <button>Rus</button>
+            {regions.map((item) => (
+              <div>{item.title}</div>
+            ))}
           </div>
         </div>
       )}

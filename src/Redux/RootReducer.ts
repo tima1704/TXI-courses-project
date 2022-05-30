@@ -6,12 +6,12 @@ import { ModalReducer } from "./ModalReducer/reducer";
 
 export const RootReducer = combineReducers({
   App: AppReducer,
-  Modal: ModalReducer
+  Modal: ModalReducer,
 });
 
 export type RootState = ReturnType<typeof RootReducer>;
 
 export const AllActions = {
   ...AppActions,
-  ...ModalActions
+  ...ModalActions,
 };
