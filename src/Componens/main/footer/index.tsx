@@ -1,42 +1,39 @@
 import { FC } from "react";
 import Logo from "Svg/logo.svg";
-import c from "classnames";
 import styles from "./index.module.css";
 import { Icon } from "../../common/Icon";
-import { Input } from "Componens/common";
-import { Button } from "Componens/common/Button";
+import Config from "Configs";
+import classNames from "classnames";
 
 export const Footer: FC = () => {
   return (
-    <footer className="container anim_opacity">
+    <footer className={"container anim_opacity"}>
       <div className={styles["footer"]}>
-        <div className={styles["footer__left"]}>
+        <div className={styles["footer_top"]}>
           <img
             src={Logo}
-            alt="logo"
-            className={c(styles["footer_logo"], "scale")}
+            className={classNames(styles["footer_logo"], "scale")}
+            alt={"Logo"}
           />
-          {/* <div>
-            <form>
-              <Input placeholder="Email" />
-            </form>
-          </div> */}
+          <div className={styles["social_row"]}>
+            <a href={Config.socials.telegram}>
+              <Icon icon={"telegram"} className={"scale"} />
+            </a>
+            <a href={Config.socials.instagram}>
+              <Icon icon={"instagram"} className={"scale"} />
+            </a>
+            <a href={Config.socials.youTube}>
+              <Icon icon={"youTube"} className={"scale"} />
+            </a>
+          </div>
         </div>
-        <div className={styles["footer__right"]}>
-          <div className={styles['flexRight']}>
-            <a>
-              <Icon icon="youTube"/>
-            </a>
-            <a>
-              <Icon icon="telegram"/>
-            </a>
-            <a>
-              <Icon icon="instagram"/>
-            </a>
+        <div className={styles["footer_botton"]}>
+          <div className={styles["payments_row"]}>
+            <Icon icon={"visa"} className={"scale"} />
+            <Icon icon={"mastercard"} className={"scale"} />
+            <Icon icon={"cloud"} className={"scale"} />
           </div>
-          <div className={styles["footer__copy"]}>
-            Copyright 2022 Katia Txi. All rights reserved.
-          </div>
+          <div>Copyright 2022 KT. All rights reserved.</div>
         </div>
       </div>
     </footer>
