@@ -13,7 +13,7 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
   const { title } = courseMainInfo;
   const { courseModules } = courceModulesMain;
 
-  const [activeContent] = useState(courseModules[0].courseContents[0]);
+  const [activeContent] = useState(courseModules[0].courseContents[1]);
 
   return (
     <div className={styles["main"]}>
