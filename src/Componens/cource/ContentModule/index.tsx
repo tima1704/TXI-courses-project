@@ -49,11 +49,9 @@ export const ContentModule: FC<ICourceModule> = ({
         </div>
       </div>
       <div className={styles["contentWrapper"]} {...getCollapseProps()}>
-        <div className={styles["content"]}>
-          {courseContents.map(({ id, title, type }) => (
-            <ContentItem key={id + type + "content"} {...{ id, title, type }} />
-          ))}
-        </div>
+        {courseContents.map(({ id, title, type }) => (
+          <ContentItem key={id + type + "content"} {...{ id, title, type }} />
+        ))}
       </div>
     </div>
   );

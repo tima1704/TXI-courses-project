@@ -9,7 +9,7 @@ import Enter from "./enter.svg";
 import Telegram from "./telegram.svg";
 import YouTube from "./youtube.svg";
 import Instagram from "./instagram.svg";
-import File from "./file.png";
+import File from "./file.svg";
 import ChevronDown from "./chevron-down.svg";
 
 const Icons = {
