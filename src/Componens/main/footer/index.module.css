@@ -105,4 +105,9 @@
     height: 32px;
     margin-right: 16px;
   }
+
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
