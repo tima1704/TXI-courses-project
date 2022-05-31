@@ -1,8 +1,8 @@
 import { IModalView, ModalActions, ModalActionsTypes } from "./types";
 
 const initalState: IModalView = {
-    isLoggedIn: false,
-    isVisible: false
+  isLoggedIn: false,
+  isVisible: false,
 };
 
 export function ModalReducer(
@@ -12,8 +12,9 @@ export function ModalReducer(
   switch (action.type) {
     case ModalActionsTypes.SET_MODAL_VIEW:
       return { ...state, isLoggedIn: action.payload };
+      
     case ModalActionsTypes.SET_VISIBLE:
-    return { ...state, isVisible: !state.isVisible };
+      return { ...state, isVisible: !state.isVisible };
     default:
       return state;
   }

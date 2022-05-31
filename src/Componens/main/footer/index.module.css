@@ -1,57 +1,113 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
   padding-top: 50px;
   padding-bottom: 100px;
 }
 
-.footer__left {
-  flex-basis: 50%;
-}
-.footer__right img{
-  width: 3  0px;
-}
 .footer_logo {
-  margin-bottom: 10px;
   width: 30px;
   height: 25px;
   cursor: pointer;
 }
-.footer__right{
+
+.footer_top {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
-.footer__right img{
+
+.social_row {
+  display: flex;
+  align-items: center;
+}
+
+.social_row img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.social_row a {
+  margin-left: 32px;
   cursor: pointer;
-  width: 20px;
 }
-.flexRight{
-  text-align: center;
-  margin: 20px 0;
+
+.footer_botton {
   display: flex;
-  justify-content: center;
-}
-.flexRight a{
-  padding: 0px 35px;
-}
-.footer__copy {
-  font-size: 0.6rem;
-  line-height: 110%;
-  text-align: end;
-  color: var(--text-light);
+  align-items: flex-end;
+  justify-content: space-between;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--grey-black);
 }
 
+.footer_botton .copy {
+  opacity: 0.7;
+}
 
+.footer_botton .copy br {
+  display: none;
+}
 
-/* media */
+.payments_row {
+  display: flex;
+  align-items: center;
+}
 
+.payments_row img {
+  width: 40px;
+  height: 40px;
+  margin-right: 32px;
+}
 
-@media(max-width: 750px) {
-  .footer{
-    display: flex;
-    flex-direction: column !important;
+.payments_row img:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 550px) {
+  .footer_top {
+    margin-bottom: 30px;
+    align-items: center;
   }
-  .footer__copy{
-    text-align: center;
+
+  .footer_logo {
+    width: 37.33px;
+    height: 32px;
+  }
+
+  .social_row img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social_row a {
+    margin-left: 16px;
+  }
+
+  .footer_botton {
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  .copy {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .footer_botton .copy br {
+    display: block;
+  }
+
+  .payments_row img {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+  }
+
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }

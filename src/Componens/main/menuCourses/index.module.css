@@ -24,6 +24,7 @@
 
 .menuLink {
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .menuItems {
@@ -39,4 +40,77 @@
 
 .leftInfo .activeMenu {
   margin: 0 10px -2px;
+}
+
+.menuM {
+  padding: 27px 20px 27px 15px;
+  margin-bottom: 45px;
+  border-radius: 20px;
+  background: var(--text-color);
+  color: var(--text-white);
+}
+
+.labelM {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+
+  text-transform: uppercase;
+}
+
+.labelM img {
+  width: 20px;
+  height: 20px;
+  transition: 0.2s transform;
+}
+
+.openM img {
+  transform: rotate(-180deg);
+}
+
+.decorM {
+  padding-top: 27px;
+  border-bottom: 1px solid var(--grey-black);
+  margin-bottom: 27px;
+}
+
+.menuLinkM {
+  display: flex;
+  flex-direction: column;
+}
+
+.navMenu {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+
+  text-align: right;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  opacity: 0.4;
+
+  margin-bottom: 15px;
+}
+
+.navMenu:last-child {
+  margin-bottom: 0;
+}
+
+.activeM {
+  opacity: 1;
+}
+
+@media (max-width: 360px) {
+  .menuM {
+    padding: 18px 20px 18px 15px;
+    border-radius: 12px;
+  }
+  .navMenu:last-child {
+    margin-bottom: 5px;
+  }
 }

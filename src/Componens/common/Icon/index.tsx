@@ -9,8 +9,12 @@ import Enter from "./enter.svg";
 import Telegram from "./telegram.svg";
 import YouTube from "./youtube.svg";
 import Instagram from "./instagram.svg";
-import File from "./file.png";
+import File from "./file.svg";
 import ChevronDown from "./chevron-down.svg";
+import Cloud from "./Cloud.svg";
+import Mastercard from "./Mastercard.svg";
+import Visa from "./Visa.svg";
+import ChevronDownWhite from "./chevron-down-white.svg";
 
 const Icons = {
   video: Video,
@@ -24,6 +28,10 @@ const Icons = {
   file: File,
   instagram: Instagram,
   chevronDown: ChevronDown,
+  cloud: Cloud,
+  mastercard: Mastercard,
+  visa: Visa,
+  chevronDownWhite: ChevronDownWhite,
 };
 
 interface IconProps
@@ -42,7 +50,11 @@ interface IconProps
     | "telegram"
     | "instagram"
     | "file"
-    | "chevronDown";
+    | "chevronDown"
+    | "cloud"
+    | "mastercard"
+    | "visa"
+    | "chevronDownWhite";
   className?: string;
 }
 
