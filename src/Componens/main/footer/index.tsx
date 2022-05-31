@@ -33,7 +33,10 @@ export const Footer: FC = () => {
             <Icon icon={"mastercard"} className={"scale"} />
             <Icon icon={"cloud"} className={"scale"} />
           </div>
-          <div>Copyright 2022 KT. All rights reserved.</div>
+          <div className={styles["copy"]}>
+            Copyright 2022 KT.
+            <br /> All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
