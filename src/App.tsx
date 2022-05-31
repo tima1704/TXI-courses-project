@@ -21,6 +21,7 @@ import { ErrorPage, Loading } from "Componens/common";
 import { AppWrapper } from "Componens/main";
 
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
+import { WidthWrapper } from "Componens/main/widthWrapper";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -43,31 +44,33 @@ function App() {
 
   return (
     <div className="App">
-      {isLoadedApp ? (
-        <AppWrapper>
-          <Routes>
-            {isAuth ? (
-              <>
-                <Route path={URL_USER_COURSE} element={<UserCourceList />} />
-                <Route
-                  path={URL_USER_COURSE_$ID}
-                  element={<CourceUserItem />}
-                />
-              </>
-            ) : (
-              <>
-                <Route path={URL_REGISTER} element={<RegisterPage />} />
-                <Route path={URL_LOGIN} element={<LoginPage />} />
-              </>
-            )}
-            <Route path={URL_HOME} element={<CourcesListPage />} />
-            <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </AppWrapper>
-      ) : (
-        <Loading fullScreen />
-      )}
+      <WidthWrapper>
+        {isLoadedApp ? (
+          <AppWrapper>
+            <Routes>
+              {isAuth ? (
+                <>
+                  <Route path={URL_USER_COURSE} element={<UserCourceList />} />
+                  <Route
+                    path={URL_USER_COURSE_$ID}
+                    element={<CourceUserItem />}
+                  />
+                </>
+              ) : (
+                <>
+                  <Route path={URL_REGISTER} element={<RegisterPage />} />
+                  <Route path={URL_LOGIN} element={<LoginPage />} />
+                </>
+              )}
+              <Route path={URL_HOME} element={<CourcesListPage />} />
+              <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </AppWrapper>
+        ) : (
+          <Loading fullScreen />
+        )}
+      </WidthWrapper>
     </div>
   );
 }

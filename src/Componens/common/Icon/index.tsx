@@ -14,6 +14,7 @@ import ChevronDown from "./chevron-down.svg";
 import Cloud from "./Cloud.svg";
 import Mastercard from "./Mastercard.svg";
 import Visa from "./Visa.svg";
+import ChevronDownWhite from "./chevron-down-white.svg";
 
 const Icons = {
   video: Video,
@@ -30,6 +31,7 @@ const Icons = {
   cloud: Cloud,
   mastercard: Mastercard,
   visa: Visa,
+  chevronDownWhite: ChevronDownWhite,
 };
 
 interface IconProps
@@ -51,7 +53,8 @@ interface IconProps
     | "chevronDown"
     | "cloud"
     | "mastercard"
-    | "visa";
+    | "visa"
+    | "chevronDownWhite";
   className?: string;
 }
 
