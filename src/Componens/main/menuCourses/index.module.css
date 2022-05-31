@@ -104,3 +104,13 @@
 .activeM {
   opacity: 1;
 }
+
+@media (max-width: 360px) {
+  .menuM {
+    padding: 18px 20px 18px 15px;
+    border-radius: 12px;
+  }
+  .navMenu:last-child {
+    margin-bottom: 5px;
+  }
+}
