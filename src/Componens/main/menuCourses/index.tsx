@@ -18,6 +18,10 @@ export const MenuCourses: FC = () => {
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
+  const onClickCollapse = () => {
+    setExpanded((v) => !v);
+  };
+
   return (
     <div className="container">
       {widthScreen > 550 ? (
@@ -73,10 +77,10 @@ export const MenuCourses: FC = () => {
               [styles["openM"]]: isExpanded,
             })}
             {...getToggleProps({
-              onClick: () => setExpanded((prevExpanded) => !prevExpanded),
+              onClick: onClickCollapse,
             })}
           >
-            <div>Label</div>
+            <div>Онлайн обучение</div>
             <Icon icon={"chevronDownWhite"} />
           </div>
           <div className={styles["contentM"]} {...getCollapseProps()}>
@@ -89,6 +93,7 @@ export const MenuCourses: FC = () => {
                     [styles["activeM"]]: isActive,
                   })
                 }
+                onClick={onClickCollapse}
               >
                 Все курсы
               </NavLink>
@@ -100,11 +105,14 @@ export const MenuCourses: FC = () => {
                       [styles["activeM"]]: isActive,
                     })
                   }
+                  onClick={onClickCollapse}
                 >
                   Мои курсы
                 </NavLink>
               ) : (
-                <span className={styles["navMenu"]}>Мои курсы</span>
+                <span className={styles["navMenu"]} onClick={onClickCollapse}>
+                  Мои курсы
+                </span>
               )}
             </div>
           </div>
