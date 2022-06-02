@@ -1,0 +1,96 @@
+
+
+.support{
+     display: flex;
+     justify-content: space-around;
+}
+.title__left h3{
+     font-size: 66px;
+     font-weight: 500;
+     margin-bottom: 40px;
+}
+.content__left span {
+     font-size: 18px;
+     color: rgb(107, 107, 107);
+}
+.content__left p {
+     margin-top: 40px;
+     font-size: 18px;
+     font-weight: 300;
+     color: rgb(107, 107, 107);
+}
+
+
+.rightBlock__supportPage{
+     display: flex;
+     margin-left: 150px;
+     margin-top: 10px;
+}
+.content__right .inputsBlock{
+     display: flex;
+     position: relative;
+     left: 30px;
+}
+.title__right h3{
+     margin-bottom: 40px;
+     font-size: 25px;
+     position: relative;
+     left: 55px;
+}
+.input__content{
+     margin-bottom: 50px;
+     padding: 10px 30px;
+}
+.input__content span{
+     font-size: 13px;
+     font-weight: 500;
+}
+.input__content div input{
+     width: 250px;
+     background-color: rgba(255, 255, 255, 0);
+}
+
+
+.comment__input span{
+     font-size: 13px;
+     font-weight: 500;
+}
+.comment__input {
+     margin-left: 60px;
+     margin-bottom: 40px;
+}
+.comment__input input{
+     background-color: rgba(255, 255, 255, 0);
+}
+
+
+.form_button{
+     margin-left: 60px;
+}
+.form_button button{
+     width: 250px;
+}
+
+
+
+/* ! Media */
+
+@media(max-width: 1330px) {
+     .rightBlock__supportPage{
+          position: relative;
+          left: 10px;
+          margin-left: 100px;
+     }
+     .content__right .inputsBlock{
+          left: 20px;
+     }
+     .comment__input {
+          margin-left: 50px;
+     }
+     .form_button{
+          margin-left: 50px;
+     }
+}
+@media(max-width: 1260px) {
+
+}
