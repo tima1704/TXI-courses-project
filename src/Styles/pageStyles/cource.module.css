@@ -71,6 +71,7 @@
     flex-direction: column-reverse;
     padding-bottom: 0;
     margin-bottom: 25px;
+    border-width: 1px;
   }
 
   .cource_title {
@@ -90,5 +91,6 @@
     line-height: 26px;
     padding-bottom: 50px;
     margin-bottom: 50px;
+    border-width: 1px;
   }
 }

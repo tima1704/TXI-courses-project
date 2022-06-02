@@ -6,6 +6,7 @@ import {
   URL_HOME,
   URL_LOGIN,
   URL_REGISTER,
+  URL_SUPPORT,
   URL_USER_COURSE,
   URL_USER_COURSE_$ID,
 } from "Constants/URL";
@@ -64,6 +65,7 @@ function App() {
               )}
               <Route path={URL_HOME} element={<CourcesListPage />} />
               <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
+              <Route path={URL_SUPPORT} element={<>SUPPOTR PAGE</>} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </AppWrapper>

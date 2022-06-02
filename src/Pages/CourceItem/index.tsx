@@ -40,7 +40,7 @@ export const CourceItemPage: FC = () => {
               <ContentModule {...item} key={"module" + index} />
             ))}
           </div>
-          {/* <CourcePrices prices={cource?.coursePrices || []} /> */}
+          <CourcePrices prices={cource?.coursePrices || []} />
         </div>
       )}
     </div>

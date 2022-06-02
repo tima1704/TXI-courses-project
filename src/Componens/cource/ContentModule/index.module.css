@@ -6,7 +6,7 @@
 
 .moduleRow {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .itemNumber {
@@ -31,6 +31,8 @@
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
+  display: flex;
+  flex-direction: column;
 }
 
 .itemNumberTitle {
@@ -42,9 +44,7 @@
 }
 
 .titleRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  word-wrap: break-word;
 }
 
 .btn {
@@ -53,6 +53,7 @@
   line-height: 21px;
   color: var(--grey-black);
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .chevron {
@@ -67,8 +68,89 @@
   margin-left: 130px;
 }
 
+.heightContentWrapper {
+  height: 10px;
+}
+
 @media (max-width: 800px) {
+  .item {
+    border-width: 1px;
+  }
+  
+  .btn {
+    padding: 5px;
+    margin-left: 0px;
+  }
   .btn span {
+    display: none;
+  }
+
+  .moduleRow {
+    align-items: center;
+  }
+
+  .titleRow {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .itemNumber {
+    width: 50px;
+    height: 50px;
+
+    font-size: 22px;
+    line-height: 22px;
+
+    border-radius: 40px;
+
+    margin-right: 35px;
+  }
+
+  .contentWrapper {
+    margin-left: 88px;
+  }
+}
+
+@media (max-width: 500px) {
+  .moduleRow {
+    align-items: flex-start;
+  }
+
+  .itemNumber {
+    margin-top: 3px;
+    width: 24px;
+    height: 24px;
+
+    font-size: 10px;
+    line-height: 10px;
+
+    margin-right: 8px;
+  }
+
+  .itemTitle {
+    flex-direction: column-reverse;
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .titleRow {
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .itemNumberTitle {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 0px;
+  }
+
+  .contentWrapper {
+    margin-left: 0px;
+  }
+
+  .heightContentWrapper {
     display: none;
   }
 }
