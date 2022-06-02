@@ -10,8 +10,8 @@ export const URL_LOGIN = "/login";
 // URL rigister
 export const URL_REGISTER = "/register";
 
-// URL Contacts
-export const URL_CONTACT = "/contact";
+// URL support
+export const URL_SUPPORT = "/support";
 
 // URL USER
 export const URL_USER_COURSE = "/p";

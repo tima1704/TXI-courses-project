@@ -29,26 +29,25 @@ export const ContentModule: FC<ICourceModule> = ({
           <div className={styles["itemNumberTitle"]}>
             {itemNumberString} Модуль
           </div>
-          <div className={styles["titleRow"]}>
-            <div>{title}</div>
-            <div
-              className={styles["btn"]}
-              {...getToggleProps({
-                onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-              })}
-            >
-              Показать контент
-              <Icon
-                icon={"chevronDown"}
-                className={classNames(styles["chevron"], {
-                  [styles["chevronActive"]]: isExpanded,
-                })}
-              />
-            </div>
-          </div>
+          <div className={styles["titleRow"]}>{title}</div>
+        </div>
+        <div
+          className={styles["btn"]}
+          {...getToggleProps({
+            onClick: () => setExpanded((prevExpanded) => !prevExpanded),
+          })}
+        >
+          <span>Показать контент</span>
+          <Icon
+            icon={"chevronDown"}
+            className={classNames(styles["chevron"], {
+              [styles["chevronActive"]]: isExpanded,
+            })}
+          />
         </div>
       </div>
       <div className={styles["contentWrapper"]} {...getCollapseProps()}>
+        <div className={styles["heightContentWrapper"]} />
         {courseContents.map(({ id, title, type }) => (
           <ContentItem key={id + type + "content"} {...{ id, title, type }} />
         ))}

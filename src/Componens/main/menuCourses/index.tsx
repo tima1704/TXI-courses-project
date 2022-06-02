@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
-import { URL_CONTACT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
+import { URL_SUPPORT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
 import { useAppSelector } from "Hooks/redux";
 import { FC, useContext, useState } from "react";
 import useCollapse from "react-collapsed";
@@ -60,14 +60,14 @@ export const MenuCourses: FC = () => {
             )}
           </div>
           <NavLink
-            to={URL_CONTACT}
+            to={URL_SUPPORT}
             className={({ isActive }) =>
               classNames(styles["menuItems"], {
                 [styles["activeMenu"]]: isActive,
               })
             }
           >
-            CONTACT US
+            Поддержка
           </NavLink>
         </div>
       ) : (
@@ -114,6 +114,17 @@ export const MenuCourses: FC = () => {
                   Мои курсы
                 </span>
               )}
+              <NavLink
+                to={URL_SUPPORT}
+                className={({ isActive }) =>
+                  classNames(styles["navMenu"], {
+                    [styles["activeM"]]: isActive,
+                  })
+                }
+                onClick={onClickCollapse}
+              >
+                Поддержка
+              </NavLink>
             </div>
           </div>
         </div>
