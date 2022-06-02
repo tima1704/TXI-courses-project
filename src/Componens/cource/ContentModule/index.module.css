@@ -73,6 +73,10 @@
 }
 
 @media (max-width: 800px) {
+  .item {
+    border-width: 1px;
+  }
+  
   .btn {
     padding: 5px;
     margin-left: 0px;
@@ -83,6 +87,11 @@
 
   .moduleRow {
     align-items: center;
+  }
+
+  .titleRow {
+    font-size: 22px;
+    line-height: 24px;
   }
 
   .itemNumber {
@@ -102,7 +111,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .moduleRow {
     align-items: flex-start;
   }
@@ -127,6 +136,8 @@
 
   .titleRow {
     margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .itemNumberTitle {

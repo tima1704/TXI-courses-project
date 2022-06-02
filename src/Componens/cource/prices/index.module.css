@@ -60,22 +60,32 @@
   .prices {
     grid-template-columns: 1fr;
   }
-  .prices__item {
-    margin-top: 20px;
-    padding: 20px 5px;
-  }
 }
-@media (max-width: 500px) {
+
+@media (max-width: 550px) {
+  .prices__item {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 40px;
+  }
+
+  .prices {
+    grid-column-gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+
+  .left_contentPrices h3 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 25px;
+  }
+
   .left_contentPrices {
-    margin-bottom: 10px;
-    font-size: 18px;
+    border-bottom: 1px solid var(--decor-grey);
+    margin-bottom: 25px;
   }
-  .prices__item {
-    padding: 16px 5px;
-  }
-  .prices__item {
-    margin-top: 5px;
-  }
+
   .prices__item_btn {
     font-size: 11px;
     border-radius: 30px;
@@ -84,15 +94,33 @@
     padding-left: 20px;
     padding-bottom: 11px;
   }
-}
-@media (max-width: 380px) {
-  .left_contentPrices {
-    font-size: 16.5px;
-  }
+
   .CurrencyPrice {
-    font-size: 19px;
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 5px;
   }
+
   .prices__item_descr {
-    font-size: 10px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .prices__item_btn {
+    font-size: 14px;
+    line-height: 16px;
+
+    border-radius: 20px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  .prices__item_btn {
+    font-size: 12px;
+    line-height: 14px;
+
+    border-radius: 20px;
+    padding: 10px 14px;
   }
 }
