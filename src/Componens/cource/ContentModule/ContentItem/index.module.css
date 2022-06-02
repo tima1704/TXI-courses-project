@@ -27,30 +27,21 @@
   font-size: 14px;
   line-height: 16px;
   color: var(--grey-black);
-  
+
   margin-top: 4px;
 }
 
 /* Meida */
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .icon_row {
-    font-size: 0.61rem;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 12px;
   }
+
   .icon {
-    width: 15px;
-    height: 15px;
-  }
-}
-@media (max-width: 570px) {
-  .icon_row {
-    font-size: 0.4rem;
-    margin-top: 15px;
-    margin-bottom: 8px;
-  }
-  .icon {
-    width: 15px;
-    height: 15px;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
   }
 }
