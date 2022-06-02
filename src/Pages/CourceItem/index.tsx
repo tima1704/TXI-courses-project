@@ -24,11 +24,13 @@ export const CourceItemPage: FC = () => {
         <Loading fullScreen />
       ) : (
         <div className="anim_opacity">
-          <div className={styles["cource_title"]}>
-            {cource?.courseMainInfo.title}
-          </div>
-          <div className={styles["cource_img"]}>
-            <img src={getUrlImg(cource?.courseMainInfo.img || "")} alt="" />
+          <div className={styles["course_top"]}>
+            <div className={styles["cource_title"]}>
+              {cource?.courseMainInfo.title}
+            </div>
+            <div className={styles["cource_img"]}>
+              <img src={getUrlImg(cource?.courseMainInfo.img || "")} alt="" />
+            </div>
           </div>
           <div className={styles["cource_descr"]}>
             <p>{cource?.courseMainInfo.description}</p>
@@ -38,7 +40,7 @@ export const CourceItemPage: FC = () => {
               <ContentModule {...item} key={"module" + index} />
             ))}
           </div>
-          <CourcePrices prices={cource?.coursePrices || []} />
+          {/* <CourcePrices prices={cource?.coursePrices || []} /> */}
         </div>
       )}
     </div>

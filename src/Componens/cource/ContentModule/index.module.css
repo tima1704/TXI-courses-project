@@ -66,3 +66,9 @@
 .contentWrapper {
   margin-left: 130px;
 }
+
+@media (max-width: 800px) {
+  .btn span {
+    display: none;
+  }
+}

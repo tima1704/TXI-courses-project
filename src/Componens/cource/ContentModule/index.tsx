@@ -37,7 +37,7 @@ export const ContentModule: FC<ICourceModule> = ({
                 onClick: () => setExpanded((prevExpanded) => !prevExpanded),
               })}
             >
-              Показать контент
+              <span>Показать контент</span>
               <Icon
                 icon={"chevronDown"}
                 className={classNames(styles["chevron"], {
