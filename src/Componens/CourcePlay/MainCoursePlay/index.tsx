@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import { WidthContext } from "Componens/main/widthWrapper";
+import { FC, useContext, useState } from "react";
 import { ICourceUserItem } from "Types/cources";
 import { DescriptionPlayer } from "../DescriptionPlayer";
 import { MenuModules } from "../MenuModules";
@@ -13,7 +14,11 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
   const { title } = courseMainInfo;
   const { courseModules } = courceModulesMain;
 
-  const [activeContent] = useState(courseModules[0].courseContents[1]);
+  const width = useContext(WidthContext);
+
+  const [activeContent] = useState(
+    width > 1080 ? courseModules[0].courseContents[1] : undefined
+  );
 
   return (
     <div className={styles["main"]}>
@@ -22,7 +27,7 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
         <MenuModules modules={courseModules} />
       </div>
       <div className={styles["workSpace"]}>
-        <WorkSpacePlayer {...activeContent} />
+        {activeContent && <WorkSpacePlayer {...activeContent} />}
       </div>
     </div>
   );

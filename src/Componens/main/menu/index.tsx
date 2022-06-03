@@ -1,11 +1,13 @@
 import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
-import { URL_LOGIN } from "Constants/URL";
-import { useAppSelector } from "Hooks/redux";
-import { FC } from "react";
+import Config from "Configs";
+import { URL_SUPPORT } from "Constants/URL";
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
+import { FC, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./index.module.css";
+import { MenuUser } from "./menuUser";
 
 interface IMenu {
   openMenu: boolean;
@@ -22,9 +24,25 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
 
   const onClickCloseMenu = () => {
     setOpenMenu(false);
+    setLangsOpen(false);
   };
 
-  const { isAuth } = useAppSelector((state) => state.App);
+  const { isAuth, regions, languageApp } = useAppSelector((state) => state.App);
+
+  const { setLanguage } = useAppDispatch();
+
+  const langName = useMemo(() => {
+    return regions.find((item) => item.id === languageApp)?.title || "rus";
+  }, [languageApp, regions]);
+
+  const [langsOpen, setLangsOpen] = useState(false);
+
+  const onClickOpenCloseLangs = () => setLangsOpen((p) => !p);
+
+  const onClickSelectLang = (id: number) => {
+    setLanguage(id);
+    onClickCloseMenu();
+  };
 
   return (
     <div
@@ -32,57 +50,71 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         [styles["menu_open"]]: openMenu,
       })}
     >
-      <div>
-        <div>
-          <div className={styles["langsComponent"]}>
-            <button>Rus</button>
+      {!langsOpen ? (
+        <div className={styles["content"]}>
+          <ul className={styles["links"]}>
+            <li>
+              <a href={"/"}>About Txi</a>
+            </li>
+            <li>
+              <a href={"/"}>Shopping</a>
+            </li>
+            <li>
+              <a href={"/"}>Blog</a>
+            </li>
+          </ul>
+          {!isAuth ? (
+            <div className={styles["authBlock"]}>
+              <Button>Sign Up</Button>
+              <Button className={styles["signIn"]}>Sign in</Button>
+            </div>
+          ) : (
+            <MenuUser />
+          )}
+          <div>
+            <Link
+              to={URL_SUPPORT}
+              onClick={onClickCloseMenu}
+              className={styles["link"]}
+            >
+              SUPPORT
+            </Link>
+          </div>
+          <div className={styles["lang"]} onClick={onClickOpenCloseLangs}>
+            {langName} {">"}
+          </div>
+          <div className={classNames("decorLine", styles["decor"])} />
+          <div className={styles["socialRow"]}>
+            <a href={Config.socials.telegram}>
+              <Icon icon={"telegram"} />
+            </a>
+            <a href={Config.socials.instagram}>
+              <Icon icon={"instagram"} />
+            </a>
+            <a href={Config.socials.youTube}>
+              <Icon icon={"youTube"} />
+            </a>
+          </div>
+          <div className={styles["policy"]}>
+            Copyright 2022 KT. All rights reserved.
           </div>
         </div>
-        <div className={styles["menu__nav"]}>
-          <ul>
-            <li
-              className={classNames(
-                styles["menu__nav_item"],
-                styles["menu__nav_item_active"]
-              )}
-            >
-              Катя <span className={styles["ch"]}>Чи</span>
-            </li>
-            <li className={styles["menu__nav_item"]}>Блог</li>
-            <li className={styles["menu__nav_item"]}>Видео</li>
-            <li className={styles["menu__nav_item"]}>Проекты</li>
-            <li className={styles["menu__nav_item"]}>Покупки</li>
+      ) : (
+        <div className={styles["content"]}>
+          <ul className={styles["langsList"]}>
+            {regions.map((item) => (
+              <li
+                onClick={() => onClickSelectLang(item.id)}
+                className={classNames({
+                  [styles["activeLang"]]: item.id === languageApp,
+                })}
+              >
+                {item.title}
+              </li>
+            ))}
           </ul>
         </div>
-        {!isAuth && (
-          <div className={styles["contentMenuBtns"]}>
-            <div></div>
-            <div className={styles["butnsMenu"]}>
-              <Button className={styles["signInMenu"]}>
-                <Link to={URL_LOGIN} onClick={onClickCloseMenu}>
-                  Sign
-                </Link>{" "}
-              </Button>
-              <Button>
-                <Link to={URL_LOGIN}>Register</Link>
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className={styles["social"]}>
-        <div>
-          <Icon icon={"youTube"} className={styles["MenuIcons"]} />
-        </div>
-        <div className={styles["social_row"]}>
-          <div>
-            <Icon icon={"telegram"} className={styles["MenuIcons"]} />
-          </div>
-          <div>
-            <Icon icon={"instagram"} className={styles["MenuIcons"]} />
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,65 @@
+.menu__nav {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  position: relative;
+  left: 30px;
+}
+
+.menu__nav ul {
+  display: flex;
+  margin: 0;
+  padding-left: 2rem;
+  transition: 0.5s width;
+  width: 390px;
+  overflow: hidden;
+}
+
+.menu__nav ul.activeNav {
+  width: 0;
+  overflow: hidden;
+}
+
+.menu__nav ul.activeNav li {
+  white-space: nowrap;
+}
+
+.active__nav_item {
+  color: rgb(193, 187, 180) !important;
+}
+
+.menu__nav ul li {
+  white-space: nowrap;
+
+  font-size: 13.9px;
+  cursor: pointer;
+  margin: 0 0.8rem;
+  color: rgb(66, 66, 66);
+  text-decoration: none;
+  -webkit-transition: color ease 0.2s;
+  -o-transition: color ease 0.2s;
+  transition: color ease 0.2s;
+  will-change: color;
+}
+.menu__nav ul li:hover {
+  color: #000;
+}
+.ArrowLeftSpan {
+  cursor: pointer;
+  border: 0.05rem solid #d9d5d1;
+  border-radius: 50px;
+  padding: 11px 13px;
+  margin-left: 0.2rem;
+  position: relative;
+  top: 0.1rem;
+}
+
+.arrow_left {
+  width: 14px;
+  height: 10px;
+  margin: 0px;
+}
+
+.activeArrow {
+  transform: rotate(180deg);
+}
