@@ -54,7 +54,6 @@ const supportPageFunc = () => {
                 <Button>Отправить</Button>
               </div>
             </div>
-            <div></div>
           </div>
         </div>
       </div>

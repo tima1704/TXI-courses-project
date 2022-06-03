@@ -31,6 +31,7 @@
   color: var(--grey-black);
   font-weight: 500;
   padding-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .activeMenu {
