@@ -70,7 +70,6 @@ li {
 }
 
 .body {
-  transition: 0.5s;
   min-height: calc(100vh - 175px);
 }
 

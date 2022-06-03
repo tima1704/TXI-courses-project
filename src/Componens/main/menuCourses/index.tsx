@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { URL_SUPPORT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
-import { useAppSelector } from "Hooks/redux";
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useContext, useState } from "react";
 import useCollapse from "react-collapsed";
 import { NavLink } from "react-router-dom";
@@ -11,8 +11,12 @@ import styles from "./index.module.css";
 
 export const MenuCourses: FC = () => {
   const isAuth = useAppSelector((state) => state.App.isAuth);
+  const { setModalViewAction } = useAppDispatch();
 
-  const onClickOpenRegisterPopUp = () => {};
+  const onClickOpenLoginPopUp = () => {
+    setModalViewAction("login");
+    onClickCollapse();
+  };
 
   const widthScreen = useContext(WidthContext);
   const [isExpanded, setExpanded] = useState(false);
@@ -53,7 +57,7 @@ export const MenuCourses: FC = () => {
             ) : (
               <span
                 className={classNames(styles["menuItems"], styles["menuLink"])}
-                onClick={onClickOpenRegisterPopUp}
+                onClick={onClickOpenLoginPopUp}
               >
                 Ваши курсы
               </span>
@@ -110,7 +114,10 @@ export const MenuCourses: FC = () => {
                   Мои курсы
                 </NavLink>
               ) : (
-                <span className={styles["navMenu"]} onClick={onClickCollapse}>
+                <span
+                  className={styles["navMenu"]}
+                  onClick={onClickOpenLoginPopUp}
+                >
                   Мои курсы
                 </span>
               )}
