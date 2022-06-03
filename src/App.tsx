@@ -4,13 +4,11 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import {
   URL_COURSE_$ID,
   URL_HOME,
-  URL_REGISTER,
   URL_SUPPORT,
   URL_USER_COURSE,
   URL_USER_COURSE_$ID,
 } from "Constants/URL";
 
-import { RegisterPage } from "Pages/Register";
 import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { UserCourceList } from "Pages/UserCourceList";
@@ -50,7 +48,7 @@ function App() {
             <Modals />
             <AppWrapper>
               <Routes>
-                {isAuth ? (
+                {isAuth && (
                   <>
                     <Route
                       path={URL_USER_COURSE}
@@ -60,10 +58,6 @@ function App() {
                       path={URL_USER_COURSE_$ID}
                       element={<CourceUserItem />}
                     />
-                  </>
-                ) : (
-                  <>
-                    <Route path={URL_REGISTER} element={<RegisterPage />} />
                   </>
                 )}
                 <Route path={URL_HOME} element={<CourcesListPage />} />

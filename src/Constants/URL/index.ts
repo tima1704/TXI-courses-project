@@ -4,12 +4,6 @@ export const URL_HOME = "/";
 export const URL_COURSE_ID = (id: string | number) => "/cource/" + id;
 export const URL_COURSE_$ID = "/cource/:id";
 
-// URL Login
-export const URL_LOGIN = "/login";
-
-// URL rigister
-export const URL_REGISTER = "/register";
-
 // URL support
 export const URL_SUPPORT = "/support";
 
