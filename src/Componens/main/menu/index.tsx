@@ -44,6 +44,8 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
     onClickCloseMenu();
   };
 
+  const { setModalViewAction } = useAppDispatch();
+
   return (
     <div
       className={classNames(styles["menu"], {
@@ -65,8 +67,23 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
           </ul>
           {!isAuth ? (
             <div className={styles["authBlock"]}>
-              <Button>Sign Up</Button>
-              <Button className={styles["signIn"]}>Sign in</Button>
+              <Button
+                onClick={() => {
+                  setModalViewAction("register");
+                  onClickCloseMenu();
+                }}
+              >
+                Sign Up
+              </Button>
+              <Button
+                className={styles["signIn"]}
+                onClick={() => {
+                  setModalViewAction("login");
+                  onClickCloseMenu();
+                }}
+              >
+                Sign in
+              </Button>
             </div>
           ) : (
             <MenuUser />
