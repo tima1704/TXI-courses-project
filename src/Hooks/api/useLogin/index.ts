@@ -9,7 +9,7 @@ import { IValidError } from "Types/common";
 
 export const useLogin = () => {
   const [errors, setErrors] = useState<IValidError[]>([]);
-  const { checkAuth } = useAppDispatch();
+  const { checkAuth, setModalViewAction } = useAppDispatch();
   const navigate = useNavigate();
 
   const { mutate, isLoading: isDisabled } = useMutation(ProfileService.login, {
@@ -22,6 +22,7 @@ export const useLogin = () => {
       }
       await checkAuth();
       navigate(URL_USER_COURSE);
+      setModalViewAction();
     },
     onError: (errorsRes: IValidError[]) => {
       setErrors(errorsRes);

@@ -15,6 +15,7 @@ import Cloud from "./Cloud.svg";
 import Mastercard from "./Mastercard.svg";
 import Visa from "./Visa.svg";
 import ChevronDownWhite from "./chevron-down-white.svg";
+import Close from "./Close.svg";
 
 const Icons = {
   video: Video,
@@ -32,6 +33,7 @@ const Icons = {
   mastercard: Mastercard,
   visa: Visa,
   chevronDownWhite: ChevronDownWhite,
+  close: Close,
 };
 
 interface IconProps
@@ -54,7 +56,8 @@ interface IconProps
     | "cloud"
     | "mastercard"
     | "visa"
-    | "chevronDownWhite";
+    | "chevronDownWhite"
+    | "close";
   className?: string;
 }
 
