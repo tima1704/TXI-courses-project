@@ -17,6 +17,7 @@
 }
 
 .icon {
+  position: relative;
   margin-right: 16px;
   width: 24px;
   height: 24px;
@@ -30,18 +31,55 @@
 
   margin-top: 4px;
 }
-
-/* Meida */
-@media (max-width: 450px) {
-  .icon_row {
-    font-size: 16px;
-    line-height: 18px;
-    margin-top: 12px;
+  @media (max-width: 1080px) {
+    .icon_row {
+      font-size: 0.61rem;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+    .item__block {
+      position: relative;
+      right: 41px;
+    }
   }
-
-  .icon {
-    margin-right: 16px;
-    width: 24px;
-    height: 24px;
+  @media (max-width: 570px) {
+    .item__block {
+      position: relative;
+      right: 80px;
+    }
+    .icon_row {
+      font-size: 0.61rem;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+    .icon {
+      margin-right: 16px;
+      width: 17px;
+      height: 17px;
+    }
+    .item__block {
+      position: relative;
+      right: 41px;
+    }
   }
-}
+  @media (max-width: 535px) {
+    .item__block {
+      position: relative;
+      right: 72px;
+    }
+  }
+  @media (max-width: 390px) {
+    .item__block {
+      position: relative;
+      right: 96px;
+    }
+    .decor {
+      height: 15px;
+    }
+    .icon_row {
+      font-size: 0.5rem;
+    }
+    .type {
+      margin: 0px;
+    }
+  }
