@@ -17,7 +17,7 @@ import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { UserCourceList } from "Pages/UserCourceList";
 import { CourceUserItem } from "Pages/CourceUserItem";
-
+import SupportPage from "Pages/supportPages";
 import { ErrorPage, Loading } from "Componens/common";
 import { AppWrapper } from "Componens/main";
 
@@ -65,7 +65,7 @@ function App() {
               )}
               <Route path={URL_HOME} element={<CourcesListPage />} />
               <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
-              <Route path={URL_SUPPORT} element={<>SUPPOTR PAGE</>} />
+              <Route path={URL_SUPPORT} element={<SupportPage/>} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </AppWrapper>
