@@ -16,18 +16,21 @@ export const CookiesModal: FC = () => {
   };
 
   return (
-    <div
-      className={classNames(styles["cookieModal"], {
-        [styles["none"]]: acceptCookie,
-      })}
-    >
-      <div className={styles["textCookie"]}>
-        Пользуясь нашим сайтом, вы соглашаетесь с тем, что мы используем cookies
-        🍪
+    <div className={styles["fixed__cookie"]}>
+      <div className={styles["flex__block"]}></div>
+      <div
+        className={classNames(styles["cookieModal"], {
+          [styles["none"]]: acceptCookie,
+        })}
+      >
+        <div className={styles["textCookie"]}>
+          Пользуясь нашим сайтом, вы соглашаетесь с тем, что мы используем cookies
+          🍪
+        </div>
+        <Button onClick={onClickAcceptCookie} className={styles["btn"]}>
+          Согласен
+        </Button>
       </div>
-      <Button onClick={onClickAcceptCookie} className={styles["btn"]}>
-        Согласен
-      </Button>
     </div>
   );
 };
