@@ -1,20 +1,16 @@
 export interface IModalView {
-  isLoggedIn: boolean;
-  isVisible: boolean;
+  type?: TModals;
 }
+
+export type TModals = "login" | "register" | "editProfile";
 
 export enum ModalActionsTypes {
   SET_MODAL_VIEW = "SET_MODAL_VIEW",
-  SET_VISIBLE = "SET_VISIBLE",
 }
+
+export type ModalActions = IModalVIewAction;
 
 export interface IModalVIewAction {
   type: ModalActionsTypes.SET_MODAL_VIEW;
-  payload: boolean;
+  payload: TModals | undefined;
 }
-
-export interface IModalVisibleAction {
-  type: ModalActionsTypes.SET_VISIBLE;
-}
-
-export type ModalActions = IModalVIewAction | IModalVisibleAction;
