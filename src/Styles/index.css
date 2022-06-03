@@ -81,6 +81,12 @@ li {
   margin-top: -4px;
 }
 
+.decorLine {
+  height: 2px;
+  width: 100%;
+  background: var(--decor-grey);
+}
+
 @media (max-width: 990px) {
   .container {
     padding: 0 50px;
@@ -107,6 +113,10 @@ li {
   }
   h1 {
     font-size: 0.75rem;
+  }
+
+  .decorLine {
+    height: 1px;
   }
 }
 @media (max-width: 400px) {

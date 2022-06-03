@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   background-color: #fff;
-  padding: 30px;
+  padding: 0 15px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -13,150 +13,125 @@
   transform: translateY(-110vh);
   transition: 0.4s transform ease-in;
 }
-.contentMenuBtns{
-  display: flex;
-  justify-content: space-between;
-}
-.butnsMenu{
-  display: flex;
-  flex-direction: column;
-}
-.signInMenu{
-  font-size: 15px;
-  border: 2px #1B612A solid;
-  color: #000;
-  background-color: rgba(0,0,0,0);
-  position: relative;
-  left: 30px;
-  padding: 10px 0px !important;
-  width: 60px !important;
-}
-.butnsMenu button{
-  margin: 10px 0;
-}
-.langsComponent button{
-  position: relative;
-  top: 35px;
-  cursor: pointer;
-  margin-left: 50px;
-  font-weight: 500;
-  border: 2px #1B612A solid;
-  border-radius: 100%;
-  padding: 15px 12px;
-  background-color: rgba(255, 255, 255, 0);
-  font-size: 17px;
 
-}
 .menu_open {
   transform: translateY(0);
 }
 
-/* .menu__logo {
-  position: relative;
-  top: 1.5rem;
-  height: 40px;
-  object-fit: cover;
-  margin-bottom: 40px;
-} */
-
-.MenuIcons{
-  width: 40px;
-}
-.menu__nav {
-  margin-top: 0px;
+.content {
+  margin-top: 85px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
-.registerButton{
-  position: relative;
-  bottom: 10px;
-}
-.langsComponent{
-  position: relative;
-  bottom: 30px !important;
-}
-.menu__nav_item {
-  font-size: 1.15rem;
-  line-height: 100%;
-  margin-bottom: 20px;
+
+.links {
+  margin-bottom: 30px;
   text-align: right;
-  white-space: nowrap;
-  transition: 0.5s color !important ;
-}
-.menu__nav ul li{
-  cursor: pointer;
 }
 
-.ch {
-  margin-left: 1px;
+.links a {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+.links li {
+  margin-bottom: 15px;
 }
 
-.menu__nav_item_active {
-  color: var(--text-light);
-}
-
-.btn_login {
-  margin-top: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.btn_login a {
-  margin: 0 4px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.btn_login img {
-  margin-right: 4px;
-}
-
-.social {
+.authBlock {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--text-color);
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
-.social_row {
-  position: relative;
-  left: 20px;
+.authBlock button {
+  width: 45%;
+}
+
+.signIn {
+  background: transparent;
+  border: 1px solid var(--text-white);
+  border-radius: 20px;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--grey-black);
+}
+
+.lang {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.decor {
+  margin: 30px 0;
+}
+
+.socialRow {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
 }
-.social img{
-  width: 30px;
-}
-.social_row img{
-  width: 30px;
-}
-.social_row div{
 
-  margin: 0 0.8rem;
+.socialRow a {
+  margin-left: 32px;
 }
-/* Media */
-.menu__nav_item_active{
-  margin-top: 80px;
+
+.socialRow a:first-child {
+  margin-left: 0px;
 }
-@media(max-width: 410px){
-  .menu__nav_item {
-    font-size: 1.1rem;
-    line-height: 100%;
-    transition: 1s !important;
-  }
+
+.socialRow img {
+  width: 24px;
+  height: 24px;
 }
-@media(max-width: 300px){
-  .menu__nav_item {
-    text-align: left;
-    font-size: 1.1rem;
-    line-height: 100%;
-    transition: 1s !important;
-  }
-  .menu__nav {
-    display: flex;
-    justify-content: center;
-  }
+
+.policy {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+
+  text-align: right;
+
+  color: var(--grey-black);
+
+  opacity: 0.7;
+}
+
+.contentLangs {
+
+}
+
+.langsMenu {
+  
+}
+
+.langsList li {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+
+  text-align: right;
+
+  margin-bottom: 30px;
+}
+
+.activeLang {
+  font-weight: 700 !important;
+
+  color: #1b612a;
+
+  border-bottom: 2px solid #1b612a;
 }
