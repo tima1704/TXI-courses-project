@@ -6,8 +6,8 @@ const supportPageFunc = () => {
   return (
     <section className={styles["support"]}>
       <div className={styles["leftBlock__supportPage"]}>
-        <div className={styles["content__left"]}>
-          <div className={styles["title__left"]}>
+        <div className={styles["content__leftSupport"]}>
+          <div className={styles["title__leftSupport"]}>
             <h3>Поддержка</h3>
           </div>
           <span>support@katiatxi.club</span>
@@ -18,41 +18,44 @@ const supportPageFunc = () => {
         </div>
       </div>
       <div className={styles["rightBlock__supportPage"]}>
-        <div className={styles["content__right"]}>
+        <div className={styles["content__rightSupport"]}>
           <div className={styles["title__right"]}>
             <h3>Какой у вас вопрос?</h3>
           </div>
-          <form>
-            <div className={styles["inputsBlock"]}>
-              <div className={styles["form__content"]}>
-                <div className={styles["input__content"]}>
-                  <span>ИМЯ: *</span>
-                  <Input type="text" placeholder="Введите имя" />
+          <div className={styles["contentFlex"]}>
+            <div>
+              <div className={styles["inputsBlock"]}>
+                <div className={styles["form__content"]}>
+                  <div className={styles["input__content"]}>
+                    <span>ИМЯ: *</span>
+                    <Input type="text" placeholder="Введите имя" />
+                  </div>
+                  <div className={styles["input__content"]}>
+                    <span>НОМЕР ЗАКАЗА: *</span>
+                    <Input type="text" placeholder="Введите номер заказа" />
+                  </div>
                 </div>
-                <div className={styles["input__content"]}>
-                  <span>НОМЕР ЗАКАЗА: *</span>
-                  <Input type="text" placeholder="Введите номер заказа" />
+                <div className={styles["form__content"]}>
+                  <div className={styles["input__content"]}>
+                    <span>ТЕЛЕФОН: *</span>
+                    <Input type="number" placeholder="Введите номер телефона" />
+                  </div>
+                  <div className={styles["input__content"]}>
+                    <span>EMAIL: *</span>
+                    <Input type="email" placeholder="Введите email" />
+                  </div>
                 </div>
               </div>
-              <div className={styles["form__content"]}>
-                <div className={styles["input__content"]}>
-                  <span>ТЕЛЕФОН: *</span>
-                  <Input type="number" placeholder="Введите номер телефона" />
-                </div>
-                <div className={styles["input__content"]}>
-                  <span>EMAIL: *</span>
-                  <Input type="email" placeholder="Введите email" />
-                </div>
+              <div className={styles["comment__input"]}>
+                <span>КОМЕНТАРИЙ / ВОПРОС: *</span>
+                <Input type="text" placeholder="Введите Коментарий / Вопрос " />
+              </div>
+              <div className={styles["form_button"]}>
+                <Button>Отправить</Button>
               </div>
             </div>
-            <div className={styles["comment__input"]}>
-              <span>КОМЕНТАРИЙ / ВОПРОС: *</span>
-              <Input type="text" placeholder="Введите Коментарий / Вопрос " />
-            </div>
-            <div className={styles["form_button"]}>
-              <Button>Отправить</Button>
-            </div>
-          </form>
+            <div></div>
+          </div>
         </div>
       </div>
     </section>
