@@ -7,7 +7,9 @@
   transition: transform 0.5s ease;
   cursor: pointer;
 }
-
+.item_row .price{
+  font-size: 20px;
+}
 .item_img {
   margin-bottom: 32px;
 }
@@ -15,7 +17,7 @@
 .item_img img {
   object-fit: cover;
   width: 100%;
-  height: 320px;
+  height: 250px;
 }
 
 .item_title {
@@ -89,5 +91,10 @@
   }
   .item_descr {
     font-size: 0.48rem;
+  }
+}
+@media (max-width: 320px) {
+  .item_img img{
+    height: 180px;
   }
 }

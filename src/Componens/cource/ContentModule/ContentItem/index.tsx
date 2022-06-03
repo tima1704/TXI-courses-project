@@ -6,7 +6,7 @@ import styles from "./index.module.css";
 
 export const ContentItem: FC<ICourceContent> = ({ type, title }) => {
   return (
-    <div>
+    <div className={styles["item__block"]}>
       <div className={styles["decor"]} />
       <div className={styles["icon_row"]}>
         <Icon icon={type} className={styles["icon"]} />
