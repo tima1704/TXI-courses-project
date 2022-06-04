@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
+import { URL_HOME } from "Constants/URL";
 import { FC, useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
 
@@ -28,10 +30,10 @@ export const MenuHeader: FC = () => {
         <li className={styles["menu__nav_item"]}>
           <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
         </li>
-        <li
-          className={classNames(styles["activeLink"], styles["menu__nav_item"])}
-        >
-          Обучение
+        <li className={styles["menu__nav_item"]}>
+          <Link to={URL_HOME} className={styles["activeLink"]}>
+            Обучение
+          </Link>
         </li>
         <li className={styles["menu__nav_item"]}>
           <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
