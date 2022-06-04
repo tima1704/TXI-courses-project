@@ -16,3 +16,60 @@
 .button span:hover {
   text-decoration: underline;
 }
+
+.userRow {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+
+  cursor: pointer;
+}
+
+.userImg {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+
+  border-radius: 100%;
+
+  margin-left: 12px;
+}
+
+.user:hover .userDropWrapper {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s, 0.15s;
+}
+
+.userDropWrapper {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.4s;
+  z-index: 10;
+  padding-top: 10px;
+  margin-left: 15px;
+}
+
+.userDrop {
+  box-shadow: 0 4px 40px rgb(76 94 115 / 21%);
+  background: var(--text-color);
+  border-radius: 8px;
+  padding: 24px;
+
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.userItems {
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.userItems:last-child {
+  margin-bottom: 0;
+}

@@ -28,13 +28,15 @@
   align-items: center;
 }
 
+.langs {
+  margin-left: 50px;
+}
+
 .lang {
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
   text-transform: uppercase;
-
-  margin-left: 50px;
 
   display: flex;
   align-items: center;
@@ -48,16 +50,41 @@
   cursor: pointer;
 }
 
-.menuM {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.langsDropWrapper {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 
-  background: #656878;
+  transition: 0.4s;
+  z-index: 10;
+  margin-left: -14px;
+  padding-top: 10px;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.langs:hover .langsDropWrapper {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s, 0.15s;
+}
+
+.langsDrop {
+  box-shadow: 0 4px 40px rgb(76 94 115 / 21%);
+  background: var(--text-color);
+  border-radius: 8px;
+  padding: 24px;
+
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.langsDropItems {
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.langsDropItems:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 550px) {
