@@ -4,22 +4,34 @@
   top: 0;
   left: 0;
   background-color: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px;
   height: 100vh;
   width: 100vw;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
   transform: translateY(-110vh);
   transition: 0.4s transform ease-in;
+  overflow-y: auto;
 }
 
 .menu_open {
   transform: translateY(0);
 }
 
+.menu_top {
+  margin-top: 37.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu_top img {
+  cursor: pointer;
+}
+
 .content {
-  margin-top: 85px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -48,6 +60,7 @@
   padding: 15px;
   border-radius: 20px;
   margin-bottom: 30px;
+  max-width: 500px;
 }
 
 .authBlock button {
@@ -110,12 +123,8 @@
   opacity: 0.7;
 }
 
-.contentLangs {
-
-}
-
-.langsMenu {
-  
+.langsList {
+  padding-top: 25px;
 }
 
 .langsList li {

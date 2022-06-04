@@ -18,11 +18,25 @@ export const MenuHeader: FC = () => {
             styles["menu__nav_item_active"]
           )}
         >
-          Катя <span className={styles["ch"]}>Чи</span>
+          <a href={"https://katiatxi.club/ru/about/"}>
+            Катя <span className={styles["ch"]}>Чи</span>
+          </a>
         </li>
-        <li className={styles["menu__nav_item"]}>About Txi</li>
-        <li className={styles["menu__nav_item"]}>Shopping</li>
-        <li className={styles["menu__nav_item"]}>Blog</li>
+        <li className={styles["menu__nav_item"]}>
+          <a href={"https://katiatxi.club/ru/blog/"}>Блог</a>
+        </li>
+        <li className={styles["menu__nav_item"]}>
+          <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
+        </li>
+        <li className={styles["menu__nav_item"]}>
+          <a href={"https://courses.katiatxi.club/"}>Обучение</a>
+        </li>
+        <li className={styles["menu__nav_item"]}>
+          <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
+        </li>
+        <li className={styles["menu__nav_item"]}>
+          <a href={"https://wildhumansclub.com/"}>Покупки</a>
+        </li>
       </ul>
       <span onClick={onClickOpenCloseMenu} className={styles["ArrowLeftSpan"]}>
         <Icon
