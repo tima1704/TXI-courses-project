@@ -4,27 +4,33 @@ import { ICourceUserContent } from "Types/cources";
 
 import styles from "./index.module.css";
 
-export const WorkSpacePlayer: FC<ICourceUserContent> = ({
-  title,
-  type,
+interface WorkSpacePlayerProps {
+  data: ICourceUserContent;
+  onClickNextLesson: () => void;
+}
+
+export const WorkSpacePlayer: FC<WorkSpacePlayerProps> = ({
   data,
+  onClickNextLesson,
 }) => {
   return (
     <div>
       <div className={styles["titleRow"]}>
-        <div className={styles["title"]}>{title}</div>
-        <Button variant="white">Следующий урок</Button>
+        <div className={styles["title"]}>{data.title}</div>
+        <Button variant="white" onClick={onClickNextLesson}>
+          Следующий урок
+        </Button>
       </div>
       <div>
-        {type === "text" && (
+        {data.type === "text" && (
           <div
             className={styles["contentText"]}
-            dangerouslySetInnerHTML={{ __html: data }}
+            dangerouslySetInnerHTML={{ __html: data.data }}
           />
         )}
-        {type === "video" && <div>{data}</div>}
-        {type === "image" && <div>{data}</div>}
-        {type === "file" && <div>{data}</div>}
+        {data.type === "video" && <div>{data.data}</div>}
+        {data.type === "image" && <div>{data.data}</div>}
+        {data.type === "file" && <div>{data.data}</div>}
       </div>
     </div>
   );
