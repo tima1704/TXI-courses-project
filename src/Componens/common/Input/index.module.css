@@ -9,7 +9,7 @@
     0.3s ease opacity;
   width: 100%;
 }
-
+z
 .input:focus {
   border-bottom: 2px solid var(--decor-color);
 }
@@ -29,4 +29,19 @@
   color: var(--danger-color);
   margin-top: 15px;
   min-height: 0.6rem;
+}
+
+@media(max-width: 500px) {
+  .error_message{
+    font-size: 12px;
+    margin: 4px;
+  }
+}
+
+
+@media(max-width: 380px) {
+  .error_message{
+    font-size: 10px;
+    margin: 4px;
+  }
 }

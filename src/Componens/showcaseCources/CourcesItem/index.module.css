@@ -36,7 +36,10 @@
   line-height: 18px;
   margin-bottom: 32px;
 }
-
+.startCours{
+  width: 120px;
+  margin-left: 50px;
+}
 .item_row {
   display: flex;
   align-items: center;
@@ -49,10 +52,15 @@
   line-height: 35px;
 }
 
+
 .item:hover {
   transform: translateY(-10px);
 }
-
+@media (max-width: 1180px) {
+  .startCours {
+    font-size: 10px;
+  }
+}
 @media (max-width: 990px) {
   .item_img {
     margin-bottom: 25px;
