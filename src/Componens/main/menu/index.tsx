@@ -68,13 +68,22 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         <div className={styles["content"]}>
           <ul className={styles["links"]}>
             <li>
-              <a href={"/"}>About Txi</a>
+              <a href={"https://katiatxi.club/ru/about/"}>Катя Чи</a>
             </li>
             <li>
-              <a href={"/"}>Shopping</a>
+              <a href={"https://katiatxi.club/ru/blog/"}>Блог</a>
             </li>
             <li>
-              <a href={"/"}>Blog</a>
+              <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
+            </li>
+            <li>
+              <a href={"https://courses.katiatxi.club/"}>Обучение</a>
+            </li>
+            <li>
+              <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
+            </li>
+            <li>
+              <a href={"https://wildhumansclub.com/"}>Покупки</a>
             </li>
           </ul>
           {!isAuth ? (

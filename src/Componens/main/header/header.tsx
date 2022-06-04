@@ -40,9 +40,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
               <img src={Logo} alt="Logo" className="scale" />
             </Link>
           </div>
-          {widthScreen > 1100 && <MenuHeader />}
+          {widthScreen > 900 && <MenuHeader />}
         </div>
-        {widthScreen > 1100 ? (
+        {widthScreen > 1200 ? (
           <div className={styles["userMenu"]}>
             <MenuAuth />
             <div className={styles["langs"]}>

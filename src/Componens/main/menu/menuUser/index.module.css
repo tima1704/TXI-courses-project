@@ -5,6 +5,7 @@
   color: var(--text-white);
   padding: 15px;
   border-radius: 20px;
+  max-width: 500px;
 }
 
 .menuUserTop {
