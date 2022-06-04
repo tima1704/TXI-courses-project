@@ -87,6 +87,11 @@
   margin-bottom: 0;
 }
 
+.langsDropItemsActive {
+  text-decoration-line: underline;
+  color: var(--grey-black);
+}
+
 @media (max-width: 550px) {
   .header {
     width: 100%;

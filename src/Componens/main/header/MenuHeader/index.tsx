@@ -29,7 +29,12 @@ export const MenuHeader: FC = () => {
           <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://courses.katiatxi.club/"}>Обучение</a>
+          <a
+            href={"https://courses.katiatxi.club/"}
+            className={styles["activeLink"]}
+          >
+            Обучение
+          </a>
         </li>
         <li className={styles["menu__nav_item"]}>
           <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
