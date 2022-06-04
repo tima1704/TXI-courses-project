@@ -1,6 +1,7 @@
 import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
 import { useLogin } from "Hooks/api/useLogin";
+import { useAppDispatch } from "Hooks/redux";
 import { FC, useState } from "react";
 import { ILogin } from "Types/login";
 
@@ -18,6 +19,11 @@ export const LoginModal: FC = () => {
   const onSubmitLoginData: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     mutate(data);
+  };
+
+  const { setModalViewAction } = useAppDispatch();
+  const onClickRegister = () => {
+    setModalViewAction("register");
   };
 
   return (
@@ -52,7 +58,7 @@ export const LoginModal: FC = () => {
           <Button
             type="submit"
             disabled={isDisabled}
-            variant='grey'
+            variant="grey"
             className={styles["login_button"]}
           >
             Войти
@@ -62,8 +68,9 @@ export const LoginModal: FC = () => {
           <Button
             type="button"
             disabled={isDisabled}
-            variant='grey'
+            variant="grey"
             className={styles["create_account"]}
+            onClick={onClickRegister}
           >
             Создать аккаунт
           </Button>
