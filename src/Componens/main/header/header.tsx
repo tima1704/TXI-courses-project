@@ -51,7 +51,10 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
                 <div className={styles["langsDrop"]}>
                   {regions.map((item) => (
                     <div
-                      className={styles["langsDropItems"]}
+                      className={classNames(styles["langsDropItems"], {
+                        [styles["langsDropItemsActive"]]:
+                          item.id === languageApp,
+                      })}
                       onClick={() => onClickSelectLang(item.id)}
                     >
                       {item.title}
