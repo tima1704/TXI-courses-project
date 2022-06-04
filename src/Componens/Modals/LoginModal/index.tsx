@@ -47,14 +47,27 @@ export const LoginModal: FC = () => {
       <div className={styles["fGPassword"]}>
         <span>Забыли Пароль ?</span>
       </div>
-      <div>
-        <Button
-          type="submit"
-          disabled={isDisabled}
-          className={styles["login_button"]}
-        >
-          Вход
-        </Button>
+      <div className={styles["header_sign_in"]}>
+        <div>
+          <Button
+            type="submit"
+            disabled={isDisabled}
+            variant='grey'
+            className={styles["login_button"]}
+          >
+            Войти
+          </Button>
+        </div>
+        <div>
+          <Button
+            type="button"
+            disabled={isDisabled}
+            variant='grey'
+            className={styles["create_account"]}
+          >
+            Создать аккаунт
+          </Button>
+        </div>
       </div>
     </form>
   );

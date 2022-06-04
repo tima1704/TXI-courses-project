@@ -1,28 +1,37 @@
+
+
+
+
 .login_form {
   padding: 0 53px 50px;
 }
-
 .login_title {
   font-weight: 600;
   margin-bottom: 30px;
 }
-
+.header_sign_in{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create_account{
+  color: #000;
+  background-color: rgba(255, 255, 255, 0);
+}
 .login_input {
   padding: 0px !important;
   width: 100%;
   margin-bottom: 30px;
 }
-
 .block_inputs {
   width: 100%;
   margin: 20px 0;
 }
-
 .fGPassword {
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
   position: relative;
-  bottom: 20px;
+  bottom: 25px;
   color: green;
   transition: 0.2s color;
 }
@@ -31,55 +40,60 @@
 }
 
 @media (max-width: 500px) {
-  .login_input {
-    width: 200px;
+  .block_inputs input {
+    width: 220px;
+    font-size: 12px !important;
+  }
+  .fGPassword{
+    font-size: 12px;
   }
   .login_title {
     position: relative;
     font-size: 20px;
   }
-  .login_form {
-    padding: 55px 80px;
+  .login_button{
+    padding: 10px;
+    width: 60px;
+    font-size: 10px;
   }
-  .login_button {
-    font-size: 13px;
+  .create_account{
+    padding: 10px;
+    width: 100px;
+    font-size: 10px;
+    margin-right: 8px;
+    position: relative;
+    left: 2px;
+  }
+  .login_form {
+    position: relative;
+    bottom: 10px;
+    padding: 5px 30px;
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 378px) {
   .block_inputs input {
-    width: 200px !important;
+    width: 220px;
+    font-size: 10px !important;
+  }
+  .fGPassword{
+    font-size: 10px;
   }
   .login_form {
-    padding: 40px 60px;
+    position: relative;
+    bottom: 10px;
+    padding: 0px;
   }
-  .login_button {
-    font-size: 13px;
+  .login_button{
+    padding: 10px;
+    width: 60px;
+    font-size: 10px;
   }
-}
-@media (max-width: 390px) {
-  .login_form {
-    transition: 0.5s;
-    padding: 20px 40px;
-    border: 1px solid var(--decor-grey);
-    margin-bottom: 100px;
-  }
-  .login_title {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 320px) {
-  .login_form {
-    transition: 0.5s;
-    padding: 20px;
-    border: 1px solid var(--decor-grey);
-    margin-bottom: 100px;
-  }
-  .block_inputs input {
-    width: 170px !important;
-  }
-  .login_title {
-    margin-top: 10px;
-    font-size: 17px;
+  .create_account{
+    padding: 10px;
+    width: 100px;
+    font-size: 10px;
+    position: relative;
+    left: 10px;
   }
 }
