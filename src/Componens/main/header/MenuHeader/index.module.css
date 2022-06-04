@@ -46,7 +46,7 @@
 }
 
 .activeLink {
-  color: rgb(214, 215, 217);
+  color: rgb(214, 215, 217) !important;
   /* color: var(--text-light); */
 }
 

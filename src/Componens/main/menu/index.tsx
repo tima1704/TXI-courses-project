@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import Config from "Configs";
-import { URL_SUPPORT } from "Constants/URL";
+import { URL_HOME, URL_SUPPORT } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
@@ -77,7 +77,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
             </li>
             <li>
-              <a href={"https://courses.katiatxi.club/"}>Обучение</a>
+              <Link to={URL_HOME}>Обучение</Link>
             </li>
             <li>
               <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>

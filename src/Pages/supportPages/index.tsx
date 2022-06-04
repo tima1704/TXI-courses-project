@@ -1,10 +1,11 @@
+import classNames from "classnames";
 import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
 import styles from "./index.module.css";
 
 const supportPageFunc = () => {
   return (
-    <section className={styles["support"]}>
+    <section className={classNames(styles["support"], "anim_opacity")}>
       <div className={styles["leftBlock__supportPage"]}>
         <div className={styles["content__leftSupport"]}>
           <div className={styles["title__leftSupport"]}>
