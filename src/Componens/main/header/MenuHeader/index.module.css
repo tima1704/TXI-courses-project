@@ -14,7 +14,6 @@
   width: 390px;
   overflow: hidden;
 }
-
 .menu__nav ul.activeNav {
   width: 0;
   overflow: hidden;
@@ -48,17 +47,15 @@
   cursor: pointer;
   border: 0.05rem solid #d9d5d1;
   border-radius: 50px;
-  padding: 11px 13px;
+  padding: 7px 12px;
   margin-left: 0.2rem;
   position: relative;
   top: 0.1rem;
 }
-
-.arrow_left {
-  width: 14px;
-  height: 10px;
-  margin: 0px;
-}
+.ArrowLeftSpan img{
+  position: relative;
+  bottom: 5px;
+  }
 
 .activeArrow {
   transform: rotate(180deg);
