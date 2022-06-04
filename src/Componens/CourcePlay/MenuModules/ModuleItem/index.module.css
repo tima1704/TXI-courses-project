@@ -55,6 +55,7 @@
   color: var(--grey-black);
   margin-left: 16px;
   cursor: pointer;
+  display: flex;
 }
 
 .titleProgress span {

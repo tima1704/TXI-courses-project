@@ -2,6 +2,8 @@ import { FC } from "react";
 import { ICourceUserModule } from "Types/cources";
 import { ModuleItem } from "./ModuleItem";
 
+import styles from "./index.module.css";
+
 interface MenuModulesProps {
   modules: ICourceUserModule[];
   setActiveContent: React.Dispatch<React.SetStateAction<any | undefined>>;
@@ -14,7 +16,7 @@ export const MenuModules: FC<MenuModulesProps> = ({
   progressModel,
 }) => {
   return (
-    <div>
+    <div className={styles["menu"]}>
       {modules
         .sort((i) => i.itemNumber - i.itemNumber)
         .map((item, index) => (
