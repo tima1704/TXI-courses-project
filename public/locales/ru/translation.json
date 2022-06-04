@@ -1,7 +1,15 @@
 {
+  "common": {
+    "signIn": "Вход"
+  },
   "header": {
     "menu": {
-      "main": ["Катя", "Чи"]
+      "main": ["Катя", "Чи"],
+      "blog": "Блог",
+      "video": "Видео",
+      "education": "Обучение",
+      "projects": "Проекты",
+      "purchases": "Покупки"
     }
   }
 }
