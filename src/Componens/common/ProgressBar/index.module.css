@@ -1,0 +1,101 @@
+.progress {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.row__progress {
+  display: flex;
+  align-items: center;
+}
+.row__progress button {
+  margin-right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(68, 68, 68, 0.913);
+  color: rgb(0, 0, 0);
+}
+.progress_background {
+  width: 400px;
+  transition: 0.3s;
+  border-radius: 30px;
+  height: 4px;
+  background-color: rgba(186, 186, 186, 0.811);
+}
+.progress_item {
+  transition: 0.1s;
+  border-radius: 30px;
+  height: 100%;
+  background-color: rgb(0, 66, 10);
+}
+
+/* !media */
+
+@media (max-width: 1595px) {
+  .progress_background {
+    width: 300px;
+  }
+}
+@media (max-width: 1395px) {
+  .progress_background {
+    width: 250px;
+  }
+}
+@media (max-width: 1277px) {
+  .progress_background {
+    width: 220px;
+  }
+}
+@media (max-width: 1219px) {
+  .progress_background {
+    width: 190px;
+  }
+}
+@media (max-width: 1180px) {
+  .progress_background {
+    width: 210px;
+  }
+  .row__progress button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    font-size: 12px;
+    padding: 5px;
+  }
+  .startCours {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1090px) {
+  .progress_background {
+    opacity: 0;
+    width: 1px;
+  }
+}
+@media (max-width: 699px) {
+  .progress_background {
+    opacity: 1;
+    width: 380px;
+  }
+}
+@media (max-width: 633px) {
+  .progress_background {
+    opacity: 1;
+    width: 300px;
+  }
+}
+@media (max-width: 558px) {
+  .progress_background {
+    opacity: 1;
+    width: 240px;
+  }
+}
+@media (max-width: 490px) {
+  .progress_background {
+    opacity: 0;
+    width: 1px;
+  }
+  .progress_item{
+    width: 1px;
+    opacity: 0;
+  }
+}

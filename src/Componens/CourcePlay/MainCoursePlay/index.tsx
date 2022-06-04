@@ -24,7 +24,7 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
     <div className={styles["main"]}>
       <div className={styles["right"]}>
         <DescriptionPlayer title={title} />
-        <MenuModules modules={courseModules} />
+        <MenuModules modules={courseModules} /> 
       </div>
       <div className={styles["workSpace"]}>
         {activeContent && <WorkSpacePlayer {...activeContent} />}
