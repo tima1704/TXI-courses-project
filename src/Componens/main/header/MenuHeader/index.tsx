@@ -28,13 +28,10 @@ export const MenuHeader: FC = () => {
         <li className={styles["menu__nav_item"]}>
           <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
         </li>
-        <li className={styles["menu__nav_item"]}>
-          <a
-            href={"https://courses.katiatxi.club/"}
-            className={styles["activeLink"]}
-          >
-            Обучение
-          </a>
+        <li
+          className={classNames(styles["activeLink"], styles["menu__nav_item"])}
+        >
+          Обучение
         </li>
         <li className={styles["menu__nav_item"]}>
           <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
