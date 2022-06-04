@@ -11,7 +11,8 @@
   margin: 0;
   padding-left: 2rem;
   transition: 0.5s width;
-  width: 390px;
+  width: 100%;
+  max-width: 565px;
   overflow: hidden;
 }
 
@@ -46,18 +47,9 @@
 }
 .ArrowLeftSpan {
   cursor: pointer;
-  border: 0.05rem solid #d9d5d1;
-  border-radius: 50px;
-  padding: 11px 13px;
   margin-left: 0.2rem;
   position: relative;
   top: 0.1rem;
-}
-
-.arrow_left {
-  width: 14px;
-  height: 10px;
-  margin: 0px;
 }
 
 .activeArrow {
