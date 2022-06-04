@@ -42,8 +42,14 @@
   will-change: color;
 }
 .menu__nav ul li:hover {
-  color: #000;
+  color: var(--text-color);
 }
+
+.activeLink {
+  color: rgb(214, 215, 217);
+  /* color: var(--text-light); */
+}
+
 .ArrowLeftSpan {
   cursor: pointer;
   margin-left: 0.2rem;
