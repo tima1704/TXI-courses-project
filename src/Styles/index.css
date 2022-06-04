@@ -8,7 +8,7 @@
   --decor-color: #136401;
   --decor-grey: #d6d7d9;
 
-  --danger-color: #ff0000;
+  --danger-color: #e15e41;
   --filter-green: brightness(0) saturate(100%) invert(28%) sepia(24%)
     saturate(1426%) hue-rotate(81deg) brightness(93%) contrast(88%);
 
@@ -26,6 +26,10 @@ body {
 }
 
 button {
+  font-family: "PF Bague Sans Pro";
+}
+
+input {
   font-family: "PF Bague Sans Pro";
 }
 
