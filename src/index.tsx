@@ -21,7 +21,7 @@ import "./Styles/anitmations.css";
 import "../node_modules/video-react/dist/video-react.css";
 import { Loading } from "Componens/common";
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>

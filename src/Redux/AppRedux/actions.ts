@@ -3,6 +3,7 @@ import { LANGUAGE, TOKEN } from "Constants/App";
 import { ProfileService } from "Helpers/api/Profile";
 import { getRegions } from "Helpers/api/Regions";
 import i18next from "i18next";
+import { queryClient } from "index";
 import { Dispatch } from "redux";
 import { AppActions, AppActionsTypes } from "./types";
 
@@ -104,6 +105,8 @@ export const setLanguage = (id: number) => {
         : "ru"
     );
   }
-  console.log(languages);
+
+  queryClient.invalidateQueries();
+
   return { type: AppActionsTypes.APP_SET_LANGUAGE, payload: id };
 };
