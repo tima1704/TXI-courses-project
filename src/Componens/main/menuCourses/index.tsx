@@ -27,7 +27,7 @@ export const MenuCourses: FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container anim_opacity">
       {widthScreen > 550 ? (
         <div className={styles["menu"]}>
           <div className={styles["leftInfo"]}>
