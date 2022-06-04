@@ -8,6 +8,7 @@ import c from "classnames";
 import styles from "./index.module.css";
 import { getUrlImg } from "Helpers/common";
 import { Button } from "Componens/common/Button";
+import ProgresBar from "Componens/common/ProgressBar";
 
 interface CourceItemProps extends ICource {
   user?: boolean;
@@ -30,8 +31,18 @@ export const CourceItem: FC<CourceItemProps> = ({
             {courseMainInfo.description}
           </div>
           <div className={styles["item_row"]}>
-            <div className={styles["price"]}>$180</div>
-            <Button variant="grey">Купить</Button>
+            {
+              user ?
+                <>
+                  <ProgresBar />
+                  <Button variant="grey" className={styles["startCours"]}>Начать</Button>
+                </>
+                :
+                <>
+                  <div className={styles["price"]}>$180</div>
+                  <Button variant="grey">Купить</Button>
+                </>
+            }
           </div>
         </div>
       </Link>

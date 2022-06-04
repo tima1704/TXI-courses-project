@@ -15,7 +15,6 @@
   max-width: 565px;
   overflow: hidden;
 }
-
 .menu__nav ul.activeNav {
   width: 0;
   overflow: hidden;
