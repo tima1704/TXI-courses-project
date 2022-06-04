@@ -32,6 +32,11 @@
 .menuNameRow .icon {
   margin-left: 4px;
   margin-top: 3px;
+  transition: 0.4s transform;
+}
+
+.activeIcon {
+  transform: rotate(-180deg);
 }
 
 .decorLine {

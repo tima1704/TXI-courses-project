@@ -1,9 +1,11 @@
+import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { TOKEN } from "Constants/App";
 import { URL_SUPPORT, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
-import { FC } from "react";
+import { FC, useState } from "react";
+import useCollapse from "react-collapsed";
 import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -17,6 +19,12 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
 
   const { checkAuth } = useAppDispatch();
 
+  const [isExpanded, setExpanded] = useState(false);
+  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+  const onClickCollapse = () => {
+    setExpanded((v) => !v);
+  };
+
   const onClickExit = () => {
     localStorage.removeItem(TOKEN);
     checkAuth();
@@ -25,7 +33,12 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
 
   return (
     <div className={styles["menuUser"]}>
-      <div className={styles["menuUserTop"]}>
+      <div
+        className={styles["menuUserTop"]}
+        {...getToggleProps({
+          onClick: onClickCollapse,
+        })}
+      >
         <img
           alt="avatar"
           src={(process.env.REACT_APP_TXI_URL as string) + user?.pic}
@@ -33,10 +46,15 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
         />
         <div className={styles["menuNameRow"]}>
           {user?.name}{" "}
-          <Icon icon={"chevronDownWhite"} className={styles["icon"]} />
+          <Icon
+            icon={"chevronDownWhite"}
+            className={classNames(styles["icon"], {
+              [styles["activeIcon"]]: isExpanded,
+            })}
+          />
         </div>
       </div>
-      <div>
+      <div {...getCollapseProps()}>
         <div className={styles["decorLine"]} />
         <div className={styles["links"]}>
           {/* <div></div> */}
