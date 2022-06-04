@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./index.module.css";
 
@@ -8,6 +9,8 @@ export const MenuHeader: FC = () => {
   const [isToggle, setIsToggle] = useState(false);
 
   const onClickOpenCloseMenu = () => setIsToggle((p) => !p);
+
+  const { t } = useTranslation();
 
   return (
     <div className={styles["menu__nav"]}>
@@ -19,7 +22,8 @@ export const MenuHeader: FC = () => {
           )}
         >
           <a href={"https://katiatxi.club/ru/about/"}>
-            Катя <span className={styles["ch"]}>Чи</span>
+            {t("header.menu.main.0")}{" "}
+            <span className={styles["ch"]}> {t("header.menu.main.1")}</span>
           </a>
         </li>
         <li className={styles["menu__nav_item"]}>
