@@ -3,15 +3,17 @@
   height: 28px;
   padding: 0 1px 5px;
   border: none;
-  border-bottom: 2px solid rgb(105, 105, 105);
+  border-bottom: 1px solid rgb(105, 105, 105);
   font-size: 0.6rem;
   transition: 0.3s ease border-bottom, 0.3s ease background-color,
     0.3s ease opacity;
   width: 100%;
+  font-size: 14px;
+  line-height: 16px;
 }
-z
+
 .input:focus {
-  border-bottom: 2px solid var(--decor-color);
+  border-bottom: 1px solid var(--decor-color);
 }
 
 .input:disabled {
@@ -20,28 +22,25 @@ z
 }
 
 .error {
-  border-bottom: 3px solid var(--danger-color);
+  border-bottom: 1px solid var(--danger-color);
 }
 
 .error_message {
-  font-size: 0.6rem;
-  line-height: 100%;
+  font-size: 11px;
+  line-height: 13px;
   color: var(--danger-color);
-  margin-top: 15px;
-  min-height: 0.6rem;
+  margin-top: 5px;
 }
-
-@media(max-width: 500px) {
-  .error_message{
-    font-size: 12px;
-    margin: 4px;
+ 
+@media (max-width: 500px) {
+  .error_message {
+    margin-top: 5px;
   }
 }
 
-
-@media(max-width: 380px) {
-  .error_message{
+@media (max-width: 380px) {
+  .error_message {
     font-size: 10px;
-    margin: 4px;
+    margin-top: 4px;
   }
 }
