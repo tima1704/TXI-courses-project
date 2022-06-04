@@ -10,6 +10,7 @@ import styles from "./index.module.css";
 import { MenuHeader } from "./MenuHeader";
 import { MenuAuth } from "./MenuAuth";
 import { WidthContext } from "../widthWrapper";
+import { Icon } from "Componens/common/Icon";
 
 interface IHeader {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -61,10 +62,7 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
             </div>
           </div>
         ) : (
-          <div
-            className={styles["menuM"]}
-            onClick={() => setOpenMenu((p) => !p)}
-          ></div>
+          <Icon onClick={() => setOpenMenu((p) => !p)} icon={"menu"} />
         )}
       </div>
     </header>

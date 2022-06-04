@@ -87,19 +87,6 @@
   margin-bottom: 0;
 }
 
-
-.menuM {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-
-  background: #656878;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (max-width: 550px) {
   .header {
     width: 100%;

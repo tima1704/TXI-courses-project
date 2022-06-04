@@ -52,6 +52,18 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         [styles["menu_open"]]: openMenu,
       })}
     >
+      <div className={styles["menu_top"]}>
+        {langsOpen ? (
+          <Icon icon={"arrowLeft"} onClick={onClickOpenCloseLangs} />
+        ) : (
+          <div />
+        )}
+        <Icon
+          icon={"closeGrey"}
+          className={"scale"}
+          onClick={onClickCloseMenu}
+        />
+      </div>
       {!langsOpen ? (
         <div className={styles["content"]}>
           <ul className={styles["links"]}>
