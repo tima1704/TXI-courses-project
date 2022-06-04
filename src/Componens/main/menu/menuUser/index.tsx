@@ -59,10 +59,14 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
         <div className={styles["links"]}>
           {/* <div></div> */}
           <div>
-            <Link to={URL_USER_COURSE}>Мои курсы</Link>
+            <Link to={URL_USER_COURSE} onClick={onClickCloseMenu}>
+              Мои курсы
+            </Link>
           </div>
           <div>
-            <Link to={URL_SUPPORT}>Поддержка</Link>
+            <Link to={URL_SUPPORT} onClick={onClickCloseMenu}>
+              Поддержка
+            </Link>
           </div>
         </div>
         <div className={styles["buttonRow"]}>
