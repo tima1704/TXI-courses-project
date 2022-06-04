@@ -1,0 +1,65 @@
+.menuUser {
+  margin-bottom: 30px;
+  background: var(--text-color);
+  width: 100%;
+  color: var(--text-white);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.menuUserTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.menuUserTop .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.menuNameRow {
+  display: flex;
+  align-items: center;
+}
+
+.menuNameRow .icon {
+  margin-left: 4px;
+  margin-top: 3px;
+}
+
+.decorLine {
+  height: 1px;
+  width: 100%;
+  background: var(--grey-black);
+  margin: 15px 0 30px;
+}
+
+.links {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+}
+
+.links div {
+  margin-bottom: 15px;
+}
+
+.buttonRow {
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid var(--text-white);
+  border-radius: 20px;
+}

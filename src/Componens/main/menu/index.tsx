@@ -86,7 +86,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               </Button>
             </div>
           ) : (
-            <MenuUser />
+            <MenuUser onClickCloseMenu={onClickCloseMenu} />
           )}
           <div>
             <Link

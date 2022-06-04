@@ -36,7 +36,7 @@ export const MenuAuth: FC = () => {
           <div className={styles["userRow"]}>
             <div>{user?.name}</div>
             <img
-              src={"https://katiatxi.club/" + user?.pic}
+              src={(process.env.REACT_APP_TXI_URL as string) + user?.pic}
               alt={"avatar"}
               className={styles["userImg"]}
             />
