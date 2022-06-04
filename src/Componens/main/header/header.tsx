@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Logo from "Svg/logo.svg";
 import { Link } from "react-router-dom";
 import { URL_HOME } from "Constants/URL";
-import { useAppSelector } from "Hooks/redux";
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
 
 import styles from "./index.module.css";
 import { MenuHeader } from "./MenuHeader";
@@ -18,13 +18,17 @@ interface IHeader {
 export const Header: FC<IHeader> = ({ setOpenMenu }) => {
   const { regions, languageApp } = useAppSelector((state) => state.App);
 
-  // const { setModalViewAction, setModalVisibleAction } = useAppDispatch();
+  const { setLanguage } = useAppDispatch();
 
   const widthScreen = useContext(WidthContext);
 
   const langName = useMemo(() => {
     return regions.find((item) => item.id === languageApp)?.title || "rus";
   }, [languageApp, regions]);
+
+  const onClickSelectLang = (id: number) => {
+    setLanguage(id);
+  };
 
   return (
     <header className={classNames("container", "anim_opacity")}>
@@ -40,7 +44,21 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
         {widthScreen > 1100 ? (
           <div className={styles["userMenu"]}>
             <MenuAuth />
-            <div className={styles["lang"]}>{langName}</div>
+            <div className={styles["langs"]}>
+              <div className={styles["lang"]}>{langName}</div>
+              <div className={styles["langsDropWrapper"]}>
+                <div className={styles["langsDrop"]}>
+                  {regions.map((item) => (
+                    <div
+                      className={styles["langsDropItems"]}
+                      onClick={() => onClickSelectLang(item.id)}
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div
