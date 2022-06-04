@@ -9,7 +9,6 @@ const ProgresBar = () => {
                          <div className={styles["progress_item"]} style={{ width: "50%" }}></div>
                     </div>
                </div>
-               <Button variant="grey" className={styles["startCours"]}>Начать обучение</Button>
           </>
      );
 };

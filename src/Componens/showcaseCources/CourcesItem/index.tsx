@@ -33,7 +33,10 @@ export const CourceItem: FC<CourceItemProps> = ({
           <div className={styles["item_row"]}>
             {
               user ?
-                <ProgresBar />
+                <>
+                  <ProgresBar />
+                  <Button variant="grey" className={styles["startCours"]}>Начать</Button>
+                </>
                 :
                 <>
                   <div className={styles["price"]}>$180</div>
