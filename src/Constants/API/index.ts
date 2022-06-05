@@ -7,6 +7,8 @@ export const API_REGIONS = host + "/regions";
 
 export const API_PROGRESS = (id: number | string) => host + "/progress/" + id;
 
+export const API_SUPPORT = host + "/support"
+
 const API_COURCES = host + "/courses";
 export const API_COURCES_ALL = API_COURCES + "/all";
 export const API_COURCE = (id?: string) => API_COURCES + "/" + id;
