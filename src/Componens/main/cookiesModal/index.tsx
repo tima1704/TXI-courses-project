@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { ACCESS_COOKIE } from "Constants/App";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./index.module.css";
 
@@ -14,7 +15,7 @@ export const CookiesModal: FC = () => {
     localStorage.setItem(ACCESS_COOKIE, "true");
     setAcceptCookie(true);
   };
-
+  const { t } = useTranslation();
   return (
     <div className={styles["fixed__cookie"]}>
       <div className={styles["flex__block"]}></div>
@@ -24,11 +25,10 @@ export const CookiesModal: FC = () => {
         })}
       >
         <div className={styles["textCookie"]}>
-          Пользуясь нашим сайтом, вы соглашаетесь с тем, что мы используем cookies
-          🍪
+          {t("cookies.info")}
         </div>
         <Button onClick={onClickAcceptCookie} className={styles["btn"]}>
-          Согласен
+          {t("cookies.agree")}
         </Button>
       </div>
     </div>

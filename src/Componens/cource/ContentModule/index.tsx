@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { FC, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { ICourceModule } from "Types/cources";
 import { ContentItem } from "./ContentItem";
 
@@ -20,6 +21,7 @@ export const ContentModule: FC<ICourceModule> = ({
     () => (itemNumber > 9 ? itemNumber : "0" + itemNumber),
     [itemNumber]
   );
+  const { t } = useTranslation();
 
   return (
     <div className={styles["item"]}>
@@ -27,7 +29,7 @@ export const ContentModule: FC<ICourceModule> = ({
         <div className={styles["itemNumber"]}>{itemNumberString}</div>
         <div className={styles["itemTitle"]}>
           <div className={styles["itemNumberTitle"]}>
-            {itemNumberString} Модуль
+            {itemNumberString} {t("cource.contentModule.module")}
           </div>
           <div className={styles["titleRow"]}>{title}</div>
         </div>
@@ -37,7 +39,7 @@ export const ContentModule: FC<ICourceModule> = ({
             onClick: () => setExpanded((prevExpanded) => !prevExpanded),
           })}
         >
-          <span>Показать контент</span>
+          <span>{t("cource.contentModule.showContent")}</span>
           <Icon
             icon={"chevronDown"}
             className={classNames(styles["chevron"], {

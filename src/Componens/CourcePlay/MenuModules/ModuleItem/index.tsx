@@ -1,6 +1,7 @@
 import { Icon } from "Componens/common/Icon";
 import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { ICourceUserModule } from "Types/cources";
 
 import styles from "./index.module.css";
@@ -16,13 +17,13 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
 }) => {
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-
+  const { t } = useTranslation();
   return (
     <div className={styles["itemModule"]}>
       <div className={styles["row"]}>
         <div className={styles["check"]} />
         <div className={styles["module"]}>
-          <div className={styles["itemNumber"]}>Модуль {index + 1}</div>
+          <div className={styles["itemNumber"]}>{t("CourcePlay..moduleItem.module")} {index + 1}</div>
           <div className={styles["titleRow"]}>
             <div>{title}</div>
             <div

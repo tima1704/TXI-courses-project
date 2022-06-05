@@ -9,6 +9,7 @@ import styles from "./index.module.css";
 import { getUrlImg } from "Helpers/common";
 import { Button } from "Componens/common/Button";
 import ProgresBar from "Componens/common/ProgressBar";
+import { useTranslation } from "react-i18next";
 
 interface CourceItemProps extends ICource {
   user?: boolean;
@@ -19,6 +20,7 @@ export const CourceItem: FC<CourceItemProps> = ({
   id,
   user,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={c(styles["item_wrapper"], "anim_opacity")}>
       <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
@@ -39,8 +41,8 @@ export const CourceItem: FC<CourceItemProps> = ({
                 </>
                 :
                 <>
-                  <div className={styles["price"]}>$180</div>
-                  <Button variant="grey">Купить</Button>
+                  <div className={styles["price"]}>{t("showcaseCoursces.courcesItem.price")}</div>
+                  <Button variant="grey">{t("showcaseCoursces.courcesItem.buy")}</Button>
                 </>
             }
           </div>

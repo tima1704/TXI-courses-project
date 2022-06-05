@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 import { Icon } from "Componens/common/Icon";
 import { useGetBody } from "Hooks/common";
 import classNames from "classnames";
+import { RegisterPage } from "./RegisterModal";
 
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -42,6 +43,7 @@ export const Modals: FC = () => {
           <Icon icon="close" className="scale" onClick={onClickCloseModal} />
         </div>
         {typeModal === "login" && <LoginModal />}
+        {typeModal === "register" && <RegisterPage />}
       </div>
     </div>
   );
