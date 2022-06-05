@@ -4,6 +4,7 @@ import { TOKEN } from "Constants/App";
 import { URL_SUPPORT, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -11,11 +12,13 @@ import styles from "./index.module.css";
 export const MenuAuth: FC = () => {
   const { isAuth, user } = useAppSelector((state) => state.App);
   const { setModalViewAction, checkAuth } = useAppDispatch();
-
+  console.log(user);
+  
   const onClickExit = () => {
     localStorage.removeItem(TOKEN);
     checkAuth();
   };
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -26,10 +29,10 @@ export const MenuAuth: FC = () => {
             onClick={() => setModalViewAction("login")}
           >
             <Icon icon={"enter"} className={styles["buttonIcon"]} />
-            <span>Sign in</span>
+            <span>{t("common.signIn")}</span>
           </div>
-          or{" "}
-          <span onClick={() => setModalViewAction("register")}>Register</span>
+          {t("common.or")}{" "}
+          <span onClick={() => setModalViewAction("register")}>{t("common.signUp")}</span>
         </Button>
       ) : (
         <div className={styles["user"]}>
@@ -45,13 +48,13 @@ export const MenuAuth: FC = () => {
             <div className={styles["userDrop"]}>
               {/* <div>Аккаунт</div> */}
               <div className={styles["userItems"]}>
-                <Link to={URL_USER_COURSE}>Мои курсы</Link>
+                <Link to={URL_USER_COURSE}>{t("header.menuAuth.mycourses")}</Link>
               </div>
               <div className={styles["userItems"]}>
-                <Link to={URL_SUPPORT}>Поддержка</Link>
+                <Link to={URL_SUPPORT}>{t("supportPage.support")}</Link>
               </div>
               <div className={styles["userItems"]} onClick={onClickExit}>
-                Выйти
+                {t("header.menuAuth.goOut")}
               </div>
             </div>
           </div>

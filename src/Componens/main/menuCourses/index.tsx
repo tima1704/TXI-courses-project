@@ -4,6 +4,7 @@ import { URL_SUPPORT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useContext, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { WidthContext } from "../widthWrapper";
 
@@ -18,6 +19,8 @@ export const MenuCourses: FC = () => {
     onClickCollapse();
   };
 
+  const { t } = useTranslation();
+
   const widthScreen = useContext(WidthContext);
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
@@ -31,7 +34,7 @@ export const MenuCourses: FC = () => {
       {widthScreen > 550 ? (
         <div className={styles["menu"]}>
           <div className={styles["leftInfo"]}>
-            <div className={styles["title"]}>Онлайн обучение</div>
+            <div className={styles["title"]}>{t("menuCourses.courseMenu.onlinecourse")}</div>
 
             <NavLink
               to={URL_HOME}
@@ -41,7 +44,7 @@ export const MenuCourses: FC = () => {
                 })
               }
             >
-              Все программы
+              {t("menuCourses.courseMenu.allprograms")}
             </NavLink>
             {isAuth ? (
               <NavLink
@@ -52,14 +55,14 @@ export const MenuCourses: FC = () => {
                   })
                 }
               >
-                Ваши курсы
+                {t("menuCourses.courseMenu.yourcourses")}
               </NavLink>
             ) : (
               <span
                 className={classNames(styles["menuItems"], styles["menuLink"])}
                 onClick={onClickOpenLoginPopUp}
               >
-                Ваши курсы
+                {t("menuCourses.courseMenu.yourcourses")}
               </span>
             )}
           </div>
@@ -71,7 +74,7 @@ export const MenuCourses: FC = () => {
               })
             }
           >
-            Поддержка
+            {t("supportPage.support")}
           </NavLink>
         </div>
       ) : (
@@ -84,7 +87,7 @@ export const MenuCourses: FC = () => {
               onClick: onClickCollapse,
             })}
           >
-            <div>Онлайн обучение</div>
+            <div>{t("menuCourses.courseMenu.onlineLearning")}</div>
             <Icon icon={"chevronDownWhite"} />
           </div>
           <div className={styles["contentM"]} {...getCollapseProps()}>
@@ -99,7 +102,7 @@ export const MenuCourses: FC = () => {
                 }
                 onClick={onClickCollapse}
               >
-                Все курсы
+                {t("menuCourses.courseMenu.allprograms")}
               </NavLink>
               {isAuth ? (
                 <NavLink
@@ -111,14 +114,14 @@ export const MenuCourses: FC = () => {
                   }
                   onClick={onClickCollapse}
                 >
-                  Мои курсы
+                  {t("menuCourses.courseMenu.mycourses")}
                 </NavLink>
               ) : (
                 <span
                   className={styles["navMenu"]}
                   onClick={onClickOpenLoginPopUp}
                 >
-                  Мои курсы
+                  {t("menuCourses.courseMenu.mycourses")}
                 </span>
               )}
               <NavLink
@@ -130,7 +133,7 @@ export const MenuCourses: FC = () => {
                 }
                 onClick={onClickCollapse}
               >
-                Поддержка
+                {t("supportPage.support")}
               </NavLink>
             </div>
           </div>

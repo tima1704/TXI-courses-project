@@ -3,7 +3,7 @@
   height: 28px;
   padding: 0 1px 5px;
   border: none;
-  border-bottom: 1px solid rgb(105, 105, 105);
+  border-bottom: 2px solid rgba(105, 105, 105, 0.553);
   font-size: 0.6rem;
   transition: 0.3s ease border-bottom, 0.3s ease background-color,
     0.3s ease opacity;

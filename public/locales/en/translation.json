@@ -1,0 +1,15 @@
+{
+  "common": {
+    "signIn": "Sign in"
+  },
+  "header": {
+    "menu": {
+      "main": ["Katia", "Txi"],
+      "blog": "Blog",
+      "video": "Video",
+      "education": "Education",
+      "projects": "Projects",
+      "purchases": "Purchases"
+    }
+  }
+}

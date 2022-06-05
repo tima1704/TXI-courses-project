@@ -36,7 +36,7 @@ const SupportPage: FC = () => {
       <div className={styles["rightBlock__supportPage"]}>
         <div className={styles["content__rightSupport"]}>
           <div className={styles["title__right"]}>
-            <h3>Какой у вас вопрос?</h3>
+            <h3>{t("supportPage.WhatIsYourQuestion")}</h3>
           </div>
           <div className={styles["contentFlex"]}>
             <form onSubmit={onSubmit}>

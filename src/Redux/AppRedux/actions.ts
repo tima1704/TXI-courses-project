@@ -2,6 +2,8 @@ import axios from "axios";
 import { LANGUAGE, TOKEN } from "Constants/App";
 import { ProfileService } from "Helpers/api/Profile";
 import { getRegions } from "Helpers/api/Regions";
+import i18next from "i18next";
+import { queryClient } from "index";
 import { Dispatch } from "redux";
 import { AppActions, AppActionsTypes } from "./types";
 
@@ -40,8 +42,20 @@ export const checkLanguages =
 
     if (language && !isNaN(+language)) {
       axios.defaults.params = { lang: language };
+      let languages = (localStorage.getItem("regions") || "") as any;
+      languages = JSON.parse(languages) as any[];
+      if (languages) {
+        i18next.changeLanguage(
+          languages
+            ? // eslint-disable-next-line eqeqeq
+              languages.find((item: any) => item.id == language)?.lang || "ru"
+            : "ru"
+        );
+      }
+
       dispatch({ type: AppActionsTypes.APP_SET_LANGUAGE, payload: +language });
     } else {
+      i18next.changeLanguage("ru");
       localStorage.setItem(LANGUAGE, "1");
       axios.defaults.params = { lang: "1" };
     }
@@ -49,29 +63,50 @@ export const checkLanguages =
     dispatch(fetchRegions());
   };
 
-export const fetchRegions = () => async (dispatch: Dispatch<AppActions>) => {
-  dispatch({ type: AppActionsTypes.APP_FETCH_REGIONS });
+export const fetchRegions =
+  () => async (dispatch: Dispatch<AppActions | any>) => {
+    dispatch({ type: AppActionsTypes.APP_FETCH_REGIONS });
 
-  let regions = [];
+    let regions = [];
 
-  if (localStorage.getItem("regions")) {
-    regions = JSON.parse(localStorage.getItem("regions") as string);
+    if (localStorage.getItem("regions")) {
+      regions = JSON.parse(localStorage.getItem("regions") as string);
+      dispatch({
+        type: AppActionsTypes.APP_FILL_REGIONS,
+        payload: regions || [],
+      });
+    }
+
+    regions = await getRegions();
+    localStorage.setItem("regions", JSON.stringify(regions));
     dispatch({
       type: AppActionsTypes.APP_FILL_REGIONS,
       payload: regions || [],
     });
-  }
+    const language = localStorage.getItem(LANGUAGE);
 
-  regions = await getRegions();
-  localStorage.setItem("regions", JSON.stringify(regions));
-  dispatch({
-    type: AppActionsTypes.APP_FILL_REGIONS,
-    payload: regions || [],
-  });
-};
+    if (language && !isNaN(+language)) {
+      dispatch(setLanguage(+language));
+    } else {
+      dispatch(setLanguage(1));
+    }
+  };
 
 export const setLanguage = (id: number) => {
   axios.defaults.params = { lang: id };
-  localStorage.setItem(LANGUAGE, "1");
+  localStorage.setItem(LANGUAGE, id.toString());
+  let languages = (localStorage.getItem("regions") || "") as any;
+  languages = JSON.parse(languages) as any[];
+  if (languages) {
+    i18next.changeLanguage(
+      languages
+        ? // eslint-disable-next-line eqeqeq
+          languages.find((item: any) => item.id == id)?.lang || "ru"
+        : "ru"
+    );
+  }
+
+  queryClient.invalidateQueries();
+
   return { type: AppActionsTypes.APP_SET_LANGUAGE, payload: id };
 };

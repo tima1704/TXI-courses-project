@@ -1,6 +1,7 @@
 import { Icon } from "Componens/common/Icon";
 import { FC, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { ICourceUserModule } from "Types/cources";
 
 import styles from "./index.module.css";
