@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { URL_HOME } from "Constants/URL";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";

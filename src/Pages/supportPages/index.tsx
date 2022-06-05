@@ -3,9 +3,11 @@ import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
 import { useSupport } from "Hooks/api/useSupport";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./index.module.css";
 
 const SupportPage: FC = () => {
+  const { t } = useTranslation();
   const { errors, data, setData, isDisabled, mutate } = useSupport();
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
