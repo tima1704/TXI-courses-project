@@ -18,6 +18,7 @@ import ChevronDownWhite from "./chevron-down-white.svg";
 import Close from "./Close.svg";
 import CloseGrey from "./Close-grey.svg";
 import Menu from "./menu.svg";
+import Check from "./Check.svg";
 
 const Icons = {
   video: Video,
@@ -38,6 +39,7 @@ const Icons = {
   close: Close,
   closeGrey: CloseGrey,
   menu: Menu,
+  check: Check,
 };
 
 interface IconProps
@@ -63,7 +65,8 @@ interface IconProps
     | "chevronDownWhite"
     | "close"
     | "closeGrey"
-    | "menu";
+    | "menu"
+    | "check";
   className?: string;
 }
 

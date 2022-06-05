@@ -1,10 +1,24 @@
 import classNames from "classnames";
 import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
-import { t } from "i18next";
+import { useSupport } from "Hooks/api/useSupport";
+import { FC } from "react";
 import styles from "./index.module.css";
 
-const supportPageFunc = () => {
+const SupportPage: FC = () => {
+  const { errors, data, setData, isDisabled, mutate } = useSupport();
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setData({ ...data, [e.target.id]: e.target.value });
+  };
+
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    if (isDisabled) return;
+
+    mutate(data);
+  };
+
   return (
     <section className={classNames(styles["support"], "anim_opacity")}>
       <div className={styles["leftBlock__supportPage"]}>
@@ -25,37 +39,79 @@ const supportPageFunc = () => {
             <h3>{t("supportPage.WhatIsYourQuestion")}</h3>
           </div>
           <div className={styles["contentFlex"]}>
-            <div>
+            <form onSubmit={onSubmit}>
               <div className={styles["inputsBlock"]}>
                 <div className={styles["form__content"]}>
                   <div className={styles["input__content"]}>
-                    <span>{t("supportPage.inputsText.name")}</span>
-                    <Input type="text" placeholder={t("supportPage.inputPlaceholder.name")} />
+                    <span>ИМЯ: *</span>
+                    <Input
+                      type="text"
+                      placeholder="Введите имя"
+                      onChange={onChange}
+                      id={"name"}
+                      value={data.name}
+                      disabled={isDisabled}
+                      error={errors.find((e) => e.name === "name")}
+                    />
                   </div>
                   <div className={styles["input__content"]}>
-                    <span>{t("supportPage.inputsText.numberOrder")}</span>
-                    <Input type="text" placeholder={t("supportPage.inputPlaceholder.numberOrder")} />
+                    <span>НОМЕР ЗАКАЗА:</span>
+                    <Input
+                      type="text"
+                      placeholder="Введите номер заказа"
+                      onChange={onChange}
+                      id={"orderNumber"}
+                      value={data.orderNumber}
+                      disabled={isDisabled}
+                      error={errors.find((e) => e.name === "orderNumber")}
+                    />
                   </div>
                 </div>
                 <div className={styles["form__content"]}>
                   <div className={styles["input__content"]}>
-                    <span>{t("supportPage.inputsText.phone")}</span>
-                    <Input type="number" placeholder={t("supportPage.inputPlaceholder.phone")} />
+                    <span>ТЕЛЕФОН: *</span>
+                    <Input
+                      type={"tel"}
+                      placeholder="Введите номер телефона"
+                      onChange={onChange}
+                      id={"phone"}
+                      value={data.phone}
+                      disabled={isDisabled}
+                      error={errors.find((e) => e.name === "phone")}
+                    />
                   </div>
                   <div className={styles["input__content"]}>
-                    <span>{t("supportPage.inputsText.email")}</span>
-                    <Input type="email" placeholder={t("supportPage.inputPlaceholder.email")} />
+                    <span>EMAIL: *</span>
+                    <Input
+                      type="email"
+                      placeholder="Введите email"
+                      onChange={onChange}
+                      id={"email"}
+                      value={data.email}
+                      disabled={isDisabled}
+                      error={errors.find((e) => e.name === "email")}
+                    />
                   </div>
                 </div>
               </div>
               <div className={styles["comment__input"]}>
-                <span>{t("supportPage.inputsText.commentQuestion")}</span>
-                <Input type="text" placeholder={t("supportPage.inputPlaceholder.commentQuestion")} />
+                <span>КОМЕНТАРИЙ / ВОПРОС: *</span>
+                <Input
+                  type="text"
+                  placeholder="Введите Коментарий / Вопрос"
+                  onChange={onChange}
+                  id={"description"}
+                  value={data.description}
+                  disabled={isDisabled}
+                  error={errors.find((e) => e.name === "description")}
+                />
               </div>
               <div className={styles["form_button"]}>
-                <Button>{t("supportPage.inputsText.send")}</Button>
+                <Button type={"submit"} disabled={isDisabled}>
+                  Отправить
+                </Button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -63,4 +119,4 @@ const supportPageFunc = () => {
   );
 };
 
-export default supportPageFunc;
+export default SupportPage;

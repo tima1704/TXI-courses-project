@@ -8,6 +8,12 @@
   display: flex;
 }
 
+.checkIcon {
+  margin-top: 2px;
+  margin-right: 16px;
+  margin-left: -2px;
+}
+
 .check {
   margin-top: 4px;
   border: 2px solid #e0e1e4;
@@ -49,6 +55,7 @@
   color: var(--grey-black);
   margin-left: 16px;
   cursor: pointer;
+  display: flex;
 }
 
 .titleProgress span {

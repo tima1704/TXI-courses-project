@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import Config from "Configs";
-import { URL_SUPPORT } from "Constants/URL";
+import { URL_HOME, URL_SUPPORT } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -78,7 +78,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               <a href={"https://katiatxi.club/ru/video/"}>{t("burger.mobmenu.video")}</a>
             </li>
             <li>
-              <a href={"https://courses.katiatxi.club/"}>{t("burger.mobmenu.education")}</a>
+              <Link to={URL_HOME}>{t("burger.mobmenu.education")}</Link>
             </li>
             <li>
               <a href={"https://katiatxi.club/ru/projects/"}>{t("burger.mobmenu.projects")}</a>
