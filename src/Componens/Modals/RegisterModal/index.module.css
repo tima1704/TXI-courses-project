@@ -18,19 +18,19 @@
   font-size: 14px;
   letter-spacing: 0.5px;
 }
-.text_footer a {
-  margin: 0px;
-  text-align: left;
-  color: gray;
-  font-weight: 500;
-  font-size: 13px;
-}
 .text_footer {
   margin-top: 20px;
   line-height: 17px;
-  padding-right: 70px;
+  font-size: 16px;
+  width: 70%;
+
+  text-align: left;
+  color: gray;
+  font-weight: 400;
+  font-size: 13px;
 }
-.text_footer span{
+
+.text_footer span {
   padding-bottom: 0.05px;
   text-decoration: underline 1px rgba(0, 0, 0, 0.537);
 }

@@ -5,7 +5,6 @@ import { useAppDispatch } from "Hooks/redux";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ILogin } from "Types/login";
-import { Modals } from "..";
 
 import styles from "./index.module.css";
 
@@ -31,7 +30,9 @@ export const LoginModal: FC = () => {
 
   return (
     <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
-      <div className={styles["login_title"]}>{t("modals.loginModal.title")}</div>
+      <div className={styles["login_title"]}>
+        {t("modals.loginModal.title")}
+      </div>
       <div className={styles["block_inputs"]}>
         <Input
           disabled={isDisabled}
