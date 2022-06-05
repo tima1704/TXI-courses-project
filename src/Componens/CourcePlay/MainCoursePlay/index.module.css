@@ -1,7 +1,7 @@
 .main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh);
   min-height: 400px;
 }
 

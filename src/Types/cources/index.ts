@@ -42,6 +42,12 @@ export interface ICourcePrice {
 
 export interface ICourceUserItem extends ICource {
   courceModulesMain: { courseModules: ICourceUserModule[] };
+  progress: IProgress;
+}
+
+export interface IProgress {
+  percent: number;
+  progressModel: any;
 }
 
 export interface ICourceUserModule {
