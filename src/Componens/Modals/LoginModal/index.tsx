@@ -54,7 +54,7 @@ export const LoginModal: FC = () => {
         />
       </div>
       <div className={styles["fGPassword"]}>
-        <span>{t("modals.loginModal.createAccount")}</span>
+        <span>{t("modals.loginModal.ForgotPassword")}</span>
       </div>
       <div className={styles["header_sign_in"]}>
         <div>
