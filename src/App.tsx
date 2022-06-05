@@ -7,6 +7,7 @@ import {
   URL_SUPPORT,
   URL_USER_COURSE,
   URL_USER_COURSE_$ID,
+  URL_TRANSACTIONS,
 } from "Constants/URL";
 
 import { CourceItemPage } from "Pages/CourceItem";
@@ -20,6 +21,7 @@ import { AppWrapper } from "Componens/main";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { WidthWrapper } from "Componens/main/widthWrapper";
 import { Modals } from "Componens/Modals";
+import Transactions from "Pages/Transactions";
 
 function App() {
   const { checkAuth } = useAppDispatch();
@@ -64,6 +66,7 @@ function App() {
                 <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
                 <Route path={URL_SUPPORT} element={<SupportPage />} />
                 <Route path="*" element={<ErrorPage />} />
+                <Route path={URL_TRANSACTIONS} element={<Transactions/>} />
               </Routes>
             </AppWrapper>
           </>
