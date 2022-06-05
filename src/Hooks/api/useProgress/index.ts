@@ -1,9 +1,15 @@
+import { ProgressServices } from "Helpers/api/Progress";
 import { useState } from "react";
 import { useMutation } from "react-query";
+import { IProgress } from "Types/cources";
 
-export const useProgress = () => {
-  const [progressModel, setProgressModel] = useState<any>({});
-  const [progressPercent, setProgressPercent] = useState<number>(0);
+export const useProgress = (progress: IProgress) => {
+  const [progressModel, setProgressModel] = useState<any>(
+    progress?.progressModel || {}
+  );
+  const [progressPercent, setProgressPercent] = useState<number>(
+    +progress?.percent || 0
+  );
 
   return {
     progressModel,
@@ -13,8 +19,20 @@ export const useProgress = () => {
   };
 };
 
+interface IProgressVariables {
+  progressModel: object;
+  percent: number;
+  courseId: string;
+}
+
 export const useProgressSave = () => {
-  const { mutate } = useMutation(({ progressModel, percentage }: any) => {
-    return new Promise(() => {});
-  });
+  const { mutate } = useMutation(
+    ({ progressModel, percent, courseId }: IProgressVariables) =>
+      ProgressServices.createOrUpdateServices(courseId, {
+        progressModel,
+        percent,
+      })
+  );
+
+  return { mutate };
 };

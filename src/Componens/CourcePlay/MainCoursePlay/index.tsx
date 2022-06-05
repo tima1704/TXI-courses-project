@@ -1,7 +1,8 @@
-import { WidthContext } from "Componens/main/widthWrapper";
-import { useProgress } from "Hooks/api/useProgress";
-import { FC, useCallback, useContext, useMemo, useState } from "react";
-import { ICourceUserItem } from "Types/cources";
+// import { WidthContext } from "Componens/main/widthWrapper";
+import { useProgress, useProgressSave } from "Hooks/api/useProgress";
+import { FC, useCallback, useMemo, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ICourceUserContent, ICourceUserItem } from "Types/cources";
 import { DescriptionPlayer } from "../DescriptionPlayer";
 import { MenuModules } from "../MenuModules";
 import { WorkSpacePlayer } from "../WorkSpacePlayer";
@@ -11,21 +12,26 @@ import styles from "./index.module.css";
 export const MainCoursePlay: FC<ICourceUserItem> = ({
   courseMainInfo,
   courceModulesMain,
+  progress,
 }) => {
   const { title } = courseMainInfo;
   const { courseModules } = courceModulesMain;
 
-  const width = useContext(WidthContext);
+  // const width = useContext(WidthContext);
 
-  const [activeContent, setActiveContent] = useState(
-    width > 1080 ? courseModules[0].courseContents[1] : undefined
-  );
+  const [activeContent, setActiveContent] = useState<
+    ICourceUserContent | undefined
+  >(undefined);
+
   const {
     progressModel,
     setProgressModel,
     setProgressPercent,
     progressPercent,
-  } = useProgress();
+  } = useProgress(progress);
+
+  const { mutate } = useProgressSave();
+  const { id: courseId } = useParams<string>();
 
   const lengthContent = useMemo(() => {
     let lengthContent = 0;
@@ -90,11 +96,14 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
     setProgressPercent(newProgressPercent);
 
     // SAVE PROGRESS
+    mutate({
+      progressModel: newProgressModel,
+      percent: newProgressPercent,
+      courseId: courseId as string,
+    });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseModules, activeContent, progressModel, lengthContent]);
-
-  console.log({ progressModel, progressPercent });
 
   return (
     <div className={styles["main"]}>
