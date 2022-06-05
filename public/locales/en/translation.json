@@ -1,0 +1,116 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "signUp": "Registration",
+    "or": "or"
+  },
+  "header": {
+    "menu": {
+      "main": ["Katia", "Txi"],
+      "blog": "Push",
+      "video": "Video",
+      "education": "Training",
+      "projects": "Projects",
+      "purchases": "Purchases"
+    },
+    "menuAuth": {
+      "mycourses": "My courses",
+      "goOut": "Go out"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright 2022 kt.All rights reserved."
+  },
+  "burger": {
+    "mobmenu": {
+      "main": ["Katia", "Txi"],
+      "blog": "Push",
+      "video": "Video",
+      "education": "Training",
+      "projects": "Projectss",
+      "purchases": "Purchaseses"
+    }
+  },
+  "menuCourses": {
+    "courseMenu": {
+      "onlinecourse": "Online training",
+      "allprograms": "All programs",
+      "yourcourses": "Your courseses",
+      "onlineLearning": "Online training",
+      "mycourses": "My coursess"
+    }
+  },
+  "cource": {
+    "contentModule": {
+      "module": "Module",
+      "showContent": "Show content"
+    },
+    "price": {
+      "PaymentOptions": "Payment options:",
+      "choose": "Choose"
+    }
+  },
+  "supportPage": {
+    "support": "Support",
+    "emailSupport": "support@katiatxi.club",
+    "textSupport": "We will be happy to get your review or help you with any questions by Ovash order..",
+    "WhatIsYourQuestion": "What is your question?",
+    "inputsText": {
+      "name": "NAME: *",
+      "numberOrder": "ORDER NUMBER: *",
+      "phone": "Phone*",
+      "email": "EMAIL: *",
+      "commentQuestion": "Commentary / Questionon: *",
+      "send": "Send"
+    },
+    "inputPlaceholder": {
+      "name": "Enter your namename",
+      "numberOrder": "Enter the order numberer",
+      "phone": "Enter the phone number",
+      "email": "Enter mail",
+      "commentQuestion": "Enter the comment / questionn "
+    }
+  },
+  "modals": {
+    "loginModal": {
+      "title": "Sign In",
+      "ForgotPassword": "Forgot your password?",
+      "signIn": "Sign In",
+      "createAccount": "Create an accountnt",
+      "loginPlaceholder": {
+        "email": "Enter email address",
+        "password": "enter password"
+      }
+    },
+    "registerModal": {
+      "title": "Create an accountnt",
+      "createAccount": "Create an accountnt",
+      "signIn": "To come inme in",
+      "text": "Pressing “Create an account” I agree to process personal data",
+      "inputPlaceholder": {
+        "name": "How can I call you?",
+        "email": "Enter email address",
+        "password": "Create a password"
+      }
+    }
+  },
+  "showcaseCoursces": {
+    "courcesItem": {
+      "price": "$180",
+      "buy": "buy"
+    },
+    "noByCource": {
+      "noCource": "You have no bought courses",
+      "RouteToCource": "Go to the courses"
+    }
+  },
+  "CourcePlay": {
+    "moduleItem": {
+      "module": "Module"
+    }
+  },
+  "cookies": {
+    "info": "Using our site, you agree that we use cookies🍪",
+    "agree": "I agree"
+  }
+}

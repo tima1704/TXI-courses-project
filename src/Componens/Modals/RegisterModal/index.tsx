@@ -3,41 +3,40 @@ import { Button } from "Componens/common/Button";
 import { useLogin } from "Hooks/api/useLogin";
 import { useAppDispatch } from "Hooks/redux";
 import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./index.module.css";
 export const RegisterPage: FC = () => {
   const { setModalViewAction } = useAppDispatch();
   const onClickLogin = () => {
     setModalViewAction("login");
   };
-
-  // const [data, setData] = React.useState<ILogin>({ email: "", password: "" })
-  const { isDisabled, mutate, errors } = useLogin();
+  const { t } = useTranslation();
   return (
     <div className={styles["login"]}>
       <form
         className={styles["login_form"]}
       >
-        <div className={styles["login_title"]}>Создать аккаунт</div>
+        <div className={styles["login_title"]}>{t("modals.registerModal.title")}</div>
         <div className={styles["user_img"]}></div>
         <div>
           <Input
             id="name"
             type={"name"}
-            placeholder="Как к вам обращаться?"
+            placeholder={t("modals.registerModal.inputPlaceholder.name")}
           />
         </div>
         <div>
           <Input
             id="email"
             type={"email"}
-            placeholder="Введите адрес электронной почты"
+            placeholder={t("modals.registerModal.inputPlaceholder.email")}
           />
         </div>
         <div>
           <Input
             id="password"
             type={"password"}
-            placeholder="Придумайте пароль"
+            placeholder={t("modals.registerModal.inputPlaceholder.password")}
           />
         </div>
         <div className={styles["footer_register"]}>
@@ -55,7 +54,7 @@ export const RegisterPage: FC = () => {
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          <a href="">Нажимая “Создать аккаунт” я  соглашаюсь  на обработку персональных данных</a>
+          <a href="">Нажимая “Создать аккаунт” я  соглашаюсь  на обработку <span>персональных данных</span></a>
         </div>
       </form>
     </div>

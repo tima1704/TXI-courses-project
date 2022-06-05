@@ -1,111 +1,129 @@
 .login {
-     position: relative;
-     background-color: #fff;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
-   
-   .login_form {
-     width: 500px;
-     background-color: #fff;
-     margin-bottom: 30px;
-     padding: 50px 90px;
-   }
-   
-   .login_form input {
-     margin: 9px 0;
-   }
-   
-   .login_form button {
-     margin-top: 30px;
-   }
-   
-   .fGPassword {
-     cursor: pointer;
-     font-size: 13px;
-     position: relative;
-     bottom: 20px;
-     color: green;
-     transition: 0.2s color;
-   }
-   
-   .fGPassword:hover {
-     color: rgb(5, 169, 5);
-   }
-   
-   .login_title {
-     font-weight: 600;
-     transition: 0.5s;
-     margin-bottom: 30px;
-   }
-   
-   .login_input {
-     padding: 0px !important;
-     width: 100%;
-     transition: 0.5s;
-     margin-bottom: 30px;
-   }
-   
-   .block_inputs {
-     width: 100%;
-     margin: 20px 0;
-   }
-   
-   .login_button {
-     transition: 0.5s;
-   }
-   
-   @media (max-width: 500px) {
-     .login_input {
-       width: 200px;
-     }
-     .login_title {
-       position: relative;
-       font-size: 20px;
-     }
-     .login_form {
-       padding: 55px 80px;
-     }
-     .login_button {
-       font-size: 13px;
-     }
-   }
-   
-   @media (max-width: 430px) {
-     .block_inputs input {
-       width: 200px !important;
-     }
-     .login_form {
-       padding: 40px 60px;
-     }
-     .login_button {
-       font-size: 13px;
-     }
-   }
-   @media (max-width: 390px) {
-     .login_form {
-       transition: 0.5s;
-       padding: 20px 40px;
-       border: 1px solid var(--decor-grey);
-       margin-bottom: 100px;
-     }
-     .login_title {
-       margin-top: 10px;
-     }
-   }
-   @media (max-width: 320px) {
-     .login_form {
-       transition: 0.5s;
-       padding: 20px;
-       border: 1px solid var(--decor-grey);
-       margin-bottom: 100px;
-     }
-     .block_inputs input {
-       width: 170px !important;
-     }
-     .login_title {
-       margin-top: 10px;
-       font-size: 17px;
-     }
-   }
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 50px;
+}
+.user_img {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-color: gray;
+  margin-bottom: 30px;
+}
+.login_form input {
+  margin: 15px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.text_footer a {
+  margin: 0px;
+  text-align: left;
+  color: gray;
+  font-weight: 500;
+  font-size: 13px;
+}
+.text_footer {
+  margin-top: 20px;
+  line-height: 17px;
+  padding-right: 70px;
+}
+.text_footer span{
+  padding-bottom: 0.05px;
+  text-decoration: underline 1px rgba(0, 0, 0, 0.537);
+}
+.footer_register {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginBtn {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  width: 115px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(127, 127, 127, 0.434);
+}
+.login_form button {
+  font-size: 14px;
+  margin-top: 30px;
+}
+.create_button {
+  width: 155px;
+  font-size: 12px;
+}
+
+.login_title {
+  font-weight: 500;
+  transition: 0.5s;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+.block_inputs {
+  width: 100%;
+  margin: 20px 0;
+}
+@media (max-width: 500px) {
+  .login {
+    margin: 30px 10px;
+  }
+  .user_img {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: gray;
+    margin-bottom: 25px;
+  }
+  .create_button {
+    width: 140px;
+    font-size: 13px !important;
+  }
+  .loginBtn {
+    width: 90px;
+  }
+
+  .text_footer a {
+    font-size: 11px;
+  }
+}
+@media (max-width: 378px) {
+  .login {
+    margin: 5px 0px;
+  }
+  .login_title {
+    margin-bottom: 30px;
+  }
+  .loginBtn {
+    width: 70px;
+    padding: 10px !important;
+    font-size: 11px !important;
+  }
+
+  .text_footer {
+    text-decoration: underline;
+    margin-top: 10px;
+    line-height: 10px;
+    padding-right: 70px;
+  }
+  .create_button {
+    padding: 10px;
+    width: 120px;
+    font-size: 10px !important;
+  }
+  .login_form input {
+    margin: 15px 0;
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  .user_img {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: gray;
+    margin-bottom: 20px;
+  }
+}

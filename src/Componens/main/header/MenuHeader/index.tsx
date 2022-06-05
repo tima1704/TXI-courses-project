@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { URL_HOME } from "Constants/URL";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -10,6 +11,8 @@ export const MenuHeader: FC = () => {
   const [isToggle, setIsToggle] = useState(false);
 
   const onClickOpenCloseMenu = () => setIsToggle((p) => !p);
+
+  const { t } = useTranslation();
 
   return (
     <div className={styles["menu__nav"]}>
@@ -21,14 +24,17 @@ export const MenuHeader: FC = () => {
           )}
         >
           <a href={"https://katiatxi.club/ru/about/"}>
-            Катя <span className={styles["ch"]}>Чи</span>
+            {t("header.menu.main.0")}{" "}
+            <span className={styles["ch"]}> {t("header.menu.main.1")}</span>
           </a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/blog/"}>Блог</a>
+          <a href={"https://katiatxi.club/ru/blog/"}>{t("header.menu.blog")}</a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
+          <a href={"https://katiatxi.club/ru/video/"}>
+            {t("header.menu.video")}
+          </a>
         </li>
         <li className={styles["menu__nav_item"]}>
           <Link to={URL_HOME} className={styles["activeLink"]}>
@@ -36,10 +42,14 @@ export const MenuHeader: FC = () => {
           </Link>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
+          <a href={"https://katiatxi.club/ru/projects/"}>
+            {t("header.menu.projects")}
+          </a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://wildhumansclub.com/"}>Покупки</a>
+          <a href={"https://wildhumansclub.com/"}>
+            {t("header.menu.purchases")}
+          </a>
         </li>
       </ul>
       <span onClick={onClickOpenCloseMenu} className={styles["ArrowLeftSpan"]}>

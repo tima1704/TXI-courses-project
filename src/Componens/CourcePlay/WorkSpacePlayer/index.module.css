@@ -8,6 +8,11 @@
   padding: 16px;
 }
 
+.content {
+  height: calc(100vh - 233px);
+  overflow-y: auto;
+}
+
 .title {
   font-weight: 700;
   font-size: 11px;

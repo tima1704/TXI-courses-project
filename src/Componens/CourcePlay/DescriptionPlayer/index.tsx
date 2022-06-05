@@ -1,3 +1,4 @@
+import ProgresBar from "Componens/common/ProgressBar";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -5,9 +6,13 @@ import styles from "./index.module.css";
 
 interface IDescriptionPlayer {
   title: string;
+  progressPercent: number;
 }
 
-export const DescriptionPlayer: FC<IDescriptionPlayer> = ({ title }) => {
+export const DescriptionPlayer: FC<IDescriptionPlayer> = ({
+  title,
+  progressPercent,
+}) => {
   const navigete = useNavigate();
 
   const onClickBack = () => {
@@ -22,7 +27,9 @@ export const DescriptionPlayer: FC<IDescriptionPlayer> = ({ title }) => {
       </div>
       <div className={styles["content"]}>
         <div className={styles["title"]}>{title}</div>
-        <div>PROGRESS</div>
+        <div>
+          <ProgresBar value={progressPercent} />
+        </div>
       </div>
     </div>
   );
