@@ -30,7 +30,6 @@ export const LoginModal: FC = () => {
     setModalViewAction("editProfile");
   };
   const { t } = useTranslation();
-
   return (
     <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
       <div className={styles["login_title"]}>
