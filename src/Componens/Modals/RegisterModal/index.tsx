@@ -44,17 +44,17 @@ export const RegisterPage: FC = () => {
             type="submit"
             className={styles["create_button"]}
           >
-            Создать аккаунт
+            {t("modals.registerModal.createAccount")}
           </Button>
           <Button
             onClick={onClickLogin}
             className={styles["loginBtn"]}
             type="button">
-            Войти
+            {t("modals.registerModal.signIn")}
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          <a href="">Нажимая “Создать аккаунт” я  соглашаюсь  на обработку <span>персональных данных</span></a>
+          <a href="">{t("modals.registerModal.text.0")}<span>{t("modals.registerModal.text.1")}</span></a>
         </div>
       </form>
     </div>

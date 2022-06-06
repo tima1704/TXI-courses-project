@@ -68,7 +68,7 @@
       "numberOrder": "Enter the order numberer",
       "phone": "Enter the phone number",
       "email": "Enter mail",
-      "commentQuestion": "Enter the comment / questionn "
+      "commentQuestion": "Enter the comment / question"
     }
   },
   "modals": {
@@ -84,9 +84,9 @@
     },
     "registerModal": {
       "title": "Create an accountnt",
-      "createAccount": "Create an accountnt",
-      "signIn": "To come inme in",
-      "text": "Pressing “Create an account” I agree to process personal data",
+      "createAccount": "Create account",
+      "signIn": "Sign in",
+      "text": ["Pressing “Create an account” I agree to process ", "personal data"],
       "inputPlaceholder": {
         "name": "How can I call you?",
         "email": "Enter email address",
