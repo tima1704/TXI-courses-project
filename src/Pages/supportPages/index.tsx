@@ -3,9 +3,11 @@ import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
 import { useSupport } from "Hooks/api/useSupport";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./index.module.css";
 
 const SupportPage: FC = () => {
+  const { t } = useTranslation();
   const { errors, data, setData, isDisabled, mutate } = useSupport();
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -24,29 +26,28 @@ const SupportPage: FC = () => {
       <div className={styles["leftBlock__supportPage"]}>
         <div className={styles["content__leftSupport"]}>
           <div className={styles["title__leftSupport"]}>
-            <h3>Поддержка</h3>
+            <h3>{t("supportPage.support")}</h3>
           </div>
-          <span>support@katiatxi.club</span>
+          <span>{t("supportPage.emailSupport")}</span>
           <p>
-            Мы будем рады получить ваш отзыв или помочь вам с любыми вопросами о
-            вашем заказе.
+            {t("supportPage.textSupport")}
           </p>
         </div>
       </div>
       <div className={styles["rightBlock__supportPage"]}>
         <div className={styles["content__rightSupport"]}>
           <div className={styles["title__right"]}>
-            <h3>Какой у вас вопрос?</h3>
+            <h3>{t("supportPage.WhatIsYourQuestion")}</h3>
           </div>
           <div className={styles["contentFlex"]}>
             <form onSubmit={onSubmit}>
               <div className={styles["inputsBlock"]}>
                 <div className={styles["form__content"]}>
                   <div className={styles["input__content"]}>
-                    <span>ИМЯ: *</span>
+                    <span>{t("supportPage.inputsText.name")}</span>
                     <Input
                       type="text"
-                      placeholder="Введите имя"
+                      placeholder={t("supportPage.inputPlaceholder.name")}
                       onChange={onChange}
                       id={"name"}
                       value={data.name}
@@ -55,10 +56,10 @@ const SupportPage: FC = () => {
                     />
                   </div>
                   <div className={styles["input__content"]}>
-                    <span>НОМЕР ЗАКАЗА:</span>
+                    <span>{t("supportPage.inputsText.numberOrder")}</span>
                     <Input
                       type="text"
-                      placeholder="Введите номер заказа"
+                      placeholder={t("supportPage.inputPlaceholder.numberOrder")}
                       onChange={onChange}
                       id={"orderNumber"}
                       value={data.orderNumber}
@@ -69,10 +70,10 @@ const SupportPage: FC = () => {
                 </div>
                 <div className={styles["form__content"]}>
                   <div className={styles["input__content"]}>
-                    <span>ТЕЛЕФОН: *</span>
+                    <span>{t("supportPage.inputsText.phone")}</span>
                     <Input
                       type={"tel"}
-                      placeholder="Введите номер телефона"
+                      placeholder={t("supportPage.inputPlaceholder.phone")}
                       onChange={onChange}
                       id={"phone"}
                       value={data.phone}
@@ -81,10 +82,10 @@ const SupportPage: FC = () => {
                     />
                   </div>
                   <div className={styles["input__content"]}>
-                    <span>EMAIL: *</span>
+                    <span>{t("supportPage.inputsText.email")}</span>
                     <Input
                       type="email"
-                      placeholder="Введите email"
+                      placeholder={t("supportPage.inputPlaceholder.email")}
                       onChange={onChange}
                       id={"email"}
                       value={data.email}
@@ -95,10 +96,10 @@ const SupportPage: FC = () => {
                 </div>
               </div>
               <div className={styles["comment__input"]}>
-                <span>КОМЕНТАРИЙ / ВОПРОС: *</span>
+                <span>{t("supportPage.inputsText.commentQuestion")}</span>
                 <Input
                   type="text"
-                  placeholder="Введите Коментарий / Вопрос"
+                  placeholder={t("supportPage.inputPlaceholder.commentQuestion")}
                   onChange={onChange}
                   id={"description"}
                   value={data.description}
@@ -108,7 +109,7 @@ const SupportPage: FC = () => {
               </div>
               <div className={styles["form_button"]}>
                 <Button type={"submit"} disabled={isDisabled}>
-                  Отправить
+                  {t("supportPage.inputsText.send")}
                 </Button>
               </div>
             </form>

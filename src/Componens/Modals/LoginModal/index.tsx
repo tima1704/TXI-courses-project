@@ -3,6 +3,7 @@ import { Button } from "Componens/common/Button";
 import { useLogin } from "Hooks/api/useLogin";
 import { useAppDispatch } from "Hooks/redux";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ILogin } from "Types/login";
 
 import styles from "./index.module.css";
@@ -25,10 +26,16 @@ export const LoginModal: FC = () => {
   const onClickRegister = () => {
     setModalViewAction("register");
   };
+  const onClickEdditAccount = () => {
+    setModalViewAction("editProfile");
+  };
+  const { t } = useTranslation();
 
   return (
     <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
-      <div className={styles["login_title"]}>Войти</div>
+      <div className={styles["login_title"]}>
+        {t("modals.loginModal.title")}
+      </div>
       <div className={styles["block_inputs"]}>
         <Input
           disabled={isDisabled}
@@ -36,7 +43,7 @@ export const LoginModal: FC = () => {
           id="email"
           type={"email"}
           error={errors.find((e) => e.name === "email")}
-          placeholder="Введите адрес электронной почты"
+          placeholder={t("modals.loginModal.loginPlaceholder.email")}
         />
       </div>
       <div className={styles["block_inputs"]}>
@@ -44,24 +51,23 @@ export const LoginModal: FC = () => {
           disabled={isDisabled}
           onChange={onChange}
           id="password"
-          placeholder="Введите пароль"
+          placeholder={t("modals.loginModal.loginPlaceholder.password")}
           type={"password"}
           className={styles["login_input"]}
           error={errors.find((e) => e.name === "password")}
         />
       </div>
       <div className={styles["fGPassword"]}>
-        <span>Забыли Пароль ?</span>
+        <span onClick={onClickEdditAccount}>{t("modals.loginModal.ForgotPassword")}</span>
       </div>
       <div className={styles["header_sign_in"]}>
         <div>
           <Button
             type="submit"
             disabled={isDisabled}
-            variant="grey"
             className={styles["login_button"]}
           >
-            Войти
+            {t("modals.loginModal.signIn")}
           </Button>
         </div>
         <div>
@@ -72,7 +78,7 @@ export const LoginModal: FC = () => {
             className={styles["create_account"]}
             onClick={onClickRegister}
           >
-            Создать аккаунт
+            {t("modals.loginModal.createAccount")}
           </Button>
         </div>
       </div>

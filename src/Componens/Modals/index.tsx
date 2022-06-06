@@ -1,12 +1,14 @@
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useEffect } from "react";
 import { LoginModal } from "./LoginModal";
+import FgPassword from "./FgPasswordModal";
 
 import styles from "./index.module.css";
 import { Icon } from "Componens/common/Icon";
 import { useGetBody } from "Hooks/common";
 import classNames from "classnames";
-
+import { RegisterPage } from "./RegisterModal";
+import ErrorCourceModal from './TextModals/errorCourseModal'
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
@@ -42,6 +44,9 @@ export const Modals: FC = () => {
           <Icon icon="close" className="scale" onClick={onClickCloseModal} />
         </div>
         {typeModal === "login" && <LoginModal />}
+        {typeModal === "register" && <RegisterPage />}
+        {typeModal === "editProfile" && <FgPassword/>}
+        {typeModal === "errorCoursePaid" && <ErrorCourceModal/>}
       </div>
     </div>
   );

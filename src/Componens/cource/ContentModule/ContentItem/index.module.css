@@ -31,55 +31,78 @@
 
   margin-top: 4px;
 }
-  @media (max-width: 1080px) {
-    .icon_row {
-      font-size: 0.61rem;
-      margin-top: 15px;
-      margin-bottom: 8px;
-    }
-    .item__block {
-      position: relative;
-      right: 41px;
-    }
+@media (max-width: 1080px) {
+  .icon_row {
+    font-size: 0.61rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
   }
-  @media (max-width: 570px) {
-    .item__block {
-      position: relative;
-      right: 80px;
-    }
-    .icon_row {
-      font-size: 0.61rem;
-      margin-top: 15px;
-      margin-bottom: 8px;
-    }
-    .icon {
-      margin-right: 16px;
-      width: 17px;
-      height: 17px;
-    }
-    .item__block {
-      position: relative;
-      right: 41px;
-    }
+  .item__block {
+    position: relative;
+    right: 41px;
   }
-  @media (max-width: 535px) {
-    .item__block {
-      position: relative;
-      right: 72px;
-    }
+}
+@media (max-width: 570px) {
+  .item__block {
+    position: relative;
+    right: 80px;
   }
-  @media (max-width: 390px) {
-    .item__block {
-      position: relative;
-      right: 96px;
-    }
-    .decor {
-      height: 15px;
-    }
-    .icon_row {
-      font-size: 0.5rem;
-    }
-    .type {
-      margin: 0px;
-    }
+  .icon_row {
+    font-size: 0.61rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
   }
+  .icon {
+    margin-right: 16px;
+    width: 17px;
+    height: 17px;
+  }
+  .item__block {
+    position: relative;
+    right: 41px;
+  }
+}
+@media (max-width: 540px) {
+  .item__block {
+    position: relative;
+    right: 66px;
+  }
+}
+@media (max-width: 450px) {
+  .item__block {
+    position: relative;
+    right: 75px;
+  }
+  .decor {
+    height: 15px;
+  }
+  .icon_row {
+    font-size: 0.5rem;
+  }
+  .type {
+    margin: 0px;
+  }
+}
+@media (max-width: 340px){
+  .item__block {
+    position: relative;
+    right: 90px;
+  }
+}
+.icon {
+  margin-right: 13px;
+  position: relative;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+}
+.decor {
+  height: 10px;
+}
+.icon_row {
+  font-size: 0.5rem;
+}
+.type {
+  margin: 0px;
+  font-size: 12px;
+}

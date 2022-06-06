@@ -68,6 +68,13 @@
   margin-left: 130px;
 }
 @media (max-width: 1080px) {
+  .itemNumberTitle {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    color: var(--grey-black);
+    margin-bottom: 4px;
+  }
   .titleRow {
     font-size: 20px;
   }
@@ -79,13 +86,19 @@
     height: 50px;
     font-size: 23px;
     line-height: 35px;
-
     margin-right: 40px;
+    position: relative;
+    bottom: 15px;
   }
 }
 @media (max-width: 800px) {
   .btn span {
     display: none;
+  }
+}
+@media (max-width: 550px) {
+  .item{
+    border-bottom: 1px solid var(--decor-grey);
   }
 }
 @media (max-width: 540px) {
@@ -95,6 +108,14 @@
     font-size: 19px;
     margin-right: 30px;
     line-height: 35px;
+    bottom: 10px;
+  }
+  .itemNumberTitle {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: var(--grey-black);
+    margin-bottom: 0px;
   }
   .titleRow {
     font-size: 17px;
@@ -108,7 +129,6 @@
   .titleRow {
     font-size: 15px;
   }
-
   .itemNumber {
     width: 37px;
     height: 37px;
@@ -117,6 +137,8 @@
   .itemNumberTitle {
     font-size: 12px;
     margin: 0px;
+    position: relative;
+    top: 4px;
   }
 }
 @media (max-width: 390px) {
@@ -124,14 +146,18 @@
     font-size: 12px;
   }
   .itemNumber {
-    width: 22px;
-    height: 22px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
     margin-right: 20px;
-    font-size: 11px;
-    margin-bottom: 15px;
+    font-size: 13px;
+    margin-bottom: 13px;
   }
   .itemNumberTitle {
-    font-size: 11px;
-    margin: 0px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: var(--grey-black);
+    margin-bottom: 0px;
   }
 }

@@ -5,6 +5,7 @@ import Config from "Configs";
 import { URL_HOME, URL_SUPPORT } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 import { MenuUser } from "./menuUser";
@@ -13,7 +14,6 @@ interface IMenu {
   openMenu: boolean;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
 export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
   // const navigete = useNavigate();
 
@@ -43,6 +43,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
     setLanguage(id);
     onClickCloseMenu();
   };
+  const { t } = useTranslation();
 
   const { setModalViewAction } = useAppDispatch();
 
@@ -68,22 +69,22 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         <div className={styles["content"]}>
           <ul className={styles["links"]}>
             <li>
-              <a href={"https://katiatxi.club/ru/about/"}>Катя Чи</a>
+              <a href={"https://katiatxi.club/ru/about/"}> {t("burger.mobmenu.main.0")}{t("burger.mobmenu.main.1")}</a>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/blog/"}>Блог</a>
+              <a href={"https://katiatxi.club/ru/blog/"}>{t("burger.mobmenu.blog")}</a>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/video/"}>Видео</a>
+              <a href={"https://katiatxi.club/ru/video/"}>{t("burger.mobmenu.video")}</a>
             </li>
             <li>
-              <Link to={URL_HOME}>Обучение</Link>
+              <Link to={URL_HOME}>{t("burger.mobmenu.education")}</Link>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/projects/"}>Проекты</a>
+              <a href={"https://katiatxi.club/ru/projects/"}>{t("burger.mobmenu.projects")}</a>
             </li>
             <li>
-              <a href={"https://wildhumansclub.com/"}>Покупки</a>
+              <a href={"https://wildhumansclub.com/"}>{t("burger.mobmenu.purchases")}</a>
             </li>
           </ul>
           {!isAuth ? (
@@ -94,7 +95,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
                   onClickCloseMenu();
                 }}
               >
-                Sign Up
+                {t("common.signUp")}
               </Button>
               <Button
                 className={styles["signIn"]}
@@ -103,7 +104,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
                   onClickCloseMenu();
                 }}
               >
-                Sign in
+                {t("common.signIn")}
               </Button>
             </div>
           ) : (
@@ -115,7 +116,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               onClick={onClickCloseMenu}
               className={styles["link"]}
             >
-              SUPPORT
+              {t("supportPage.support")}
             </Link>
           </div>
           <div className={styles["lang"]} onClick={onClickOpenCloseLangs}>
@@ -134,7 +135,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
             </a>
           </div>
           <div className={styles["policy"]}>
-            Copyright 2022 KT. All rights reserved.
+            {t("footer.copyright")}
           </div>
         </div>
       ) : (

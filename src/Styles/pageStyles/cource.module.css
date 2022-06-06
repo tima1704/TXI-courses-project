@@ -44,7 +44,6 @@
     padding-bottom: 70px;
     margin-bottom: 70px;
   }
-
   .cource_title {
     font-size: 40px;
     line-height: 45px;
@@ -75,7 +74,7 @@
   }
 
   .cource_title {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
     line-height: 27px;
     margin: 25px 0;
