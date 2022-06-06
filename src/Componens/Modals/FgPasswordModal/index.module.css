@@ -1,0 +1,62 @@
+.Forgot_Modal{
+     padding: 20px 40px;
+}
+.title_modal h3{
+     font-weight: 500;
+     font-size: 24px;
+     margin-bottom: 20px;
+}
+.text_modal p{
+     font-size: 13px;
+     line-height: 16px;
+     color: #656878;
+}
+.title_modal{
+     margin-bottom: 35px;
+}
+.body_modal input{
+     width: 100%;
+     margin-bottom: 70px;
+}
+
+@media(max-width: 500px) {
+     .body_modal input{
+          width: 100%;
+          margin-bottom: 50px;
+     }
+     .Forgot_Modal{
+          padding: 20px 20px;
+     }
+     .title_modal h3{
+          font-weight: 500;
+          font-size: 20px;
+          margin-bottom: 20px;
+     }
+     .text_modal p{
+          font-size: 12px;
+          line-height: 15px;
+          color: #656878;
+     }
+}
+@media(max-width: 378px) {
+     .body_modal input{
+          width: 100%;
+          margin-bottom: 50px;
+     }
+     .Forgot_Modal{
+          padding: 10px 10px;
+     }
+     .title_modal{
+          margin-bottom: 25px;
+     }
+     .title_modal h3{
+          font-weight: 500;
+          font-size: 18px;
+          margin-bottom: 18px;
+     }
+     .text_modal p{
+          font-size: 10px;
+          line-height: 13px;
+          color: #656878;
+     }
+}
