@@ -2,7 +2,13 @@
   "common": {
     "signIn": "Вход",
     "signUp": "Регистрация",
-    "or": "или"
+    "or": "или",
+    "transactionsStatus": {
+      "paid": "Оплачено",
+      "processing": "Обрабатывается",
+      "fail": "Отклонено",
+      "rejected": "Возвращено"
+    }
   },
   "header": {
     "menu": {
