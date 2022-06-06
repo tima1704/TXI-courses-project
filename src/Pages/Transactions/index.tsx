@@ -3,6 +3,7 @@ import { WidthContext } from "Componens/main/widthWrapper";
 import { TransactionStatus } from "Componens/Transations";
 import { useCourcesList } from "Hooks/api/useCourcesList";
 import { useTransactions } from "Hooks/api/useTransactions";
+import moment from "moment";
 import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus } from "Types/transactions";
@@ -85,10 +86,12 @@ const TransactionsFunc: FC = () => {
                           {item.course?.courseMainInfo.title}
                         </td>
                         <td className={styles["date_table"]}>
-                          {item.createdAt}
+                          {moment(item.createdAt).format("DD.MM.YYYY")}
                         </td>
                         <td className={styles["lastdate_table"]}>
-                          {item.expirationDate}
+                          {moment(new Date(+item.expirationDate)).format(
+                            "DD.MM.YYYY"
+                          )}
                         </td>
                         <td className={styles["status_table"]}>
                           {item.status}
