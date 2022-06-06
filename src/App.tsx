@@ -10,11 +10,14 @@ import {
   URL_TRANSACTIONS,
 } from "Constants/URL";
 
-import { CourceItemPage } from "Pages/CourceItem";
-import { CourcesListPage } from "Pages/CourcesList";
-import { UserCourceList } from "Pages/UserCourceList";
-import { CourceUserItem } from "Pages/CourceUserItem";
-import { SupportPage } from "Pages";
+import {
+  SupportPage,
+  CourceUserItem,
+  UserCourceList,
+  CourcesListPage,
+  CourceItemPage,
+} from "Pages";
+
 import { ErrorPage, Loading } from "Componens/common";
 import { AppWrapper } from "Componens/main";
 
