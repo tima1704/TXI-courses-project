@@ -9,12 +9,12 @@ interface TransactionStatusProps {
 export const TransactionStatus: FC<TransactionStatusProps> = ({ status }) => {
   const { t } = useTranslation();
   if (status === "paid") {
-    return <div>{t("")}</div>;
+    return <div>{t("paid")}</div>;
   }
 
   if (status === "processing") {
-    return <div>{t("")}</div>;
+    return <div>{t("processing")}</div>;
   }
 
-  return <div>{t("")}</div>;
+  return <div>{t("rejected")}</div>;
 };
