@@ -1,0 +1,47 @@
+.content_modal {
+  margin: 35px 50px;
+}
+.title_modal h3 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.body_modal {
+  margin-bottom: 40px;
+}
+.body_modal p {
+  font-size: 13px;
+  line-height: 16px;
+  color: #656878;
+}
+.body_modal input {
+  width: 100%;
+  margin: 11px 0;
+}
+
+@media (max-width: 500px) {
+  .body_modal {
+    margin-bottom: 30px;
+  }
+  .content_modal {
+    margin: 25px 25px;
+  }
+}
+@media (max-width: 378px) {
+  .title_modal h3 {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 19ox;
+    margin-bottom: 20px;
+  }
+  .body_modal {
+    margin-bottom: 20px;
+  }
+  .content_modal {
+    margin: 25px 0px;
+  }
+  .header_module button{
+       width: 100px;
+       font-size: 11px;
+  }
+}

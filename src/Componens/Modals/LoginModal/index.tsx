@@ -27,10 +27,9 @@ export const LoginModal: FC = () => {
     setModalViewAction("register");
   };
   const onClickEdditAccount = () => {
-    setModalViewAction("editProfile");
+    setModalViewAction("editProfile")
   };
   const { t } = useTranslation();
-
   return (
     <form className={styles["login_form"]} onSubmit={onSubmitLoginData}>
       <div className={styles["login_title"]}>

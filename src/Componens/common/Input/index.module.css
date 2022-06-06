@@ -13,7 +13,7 @@
 }
 
 .input:focus {
-  border-bottom: 1px solid var(--decor-color);
+  border-bottom: 2px solid var(--decor-color);
 }
 
 .input:disabled {

@@ -8,7 +8,11 @@ import { Icon } from "Componens/common/Icon";
 import { useGetBody } from "Hooks/common";
 import classNames from "classnames";
 import { RegisterPage } from "./RegisterModal";
-import ErrorCourceModal from './TextModals/errorCourseModal'
+import ErrorCourceModal from './TextModals/errorcourseModal';
+import MailModal from "./TextModals/mailSent";
+import SomeWrong from "./TextModals/somethingWrong";
+import PasswordChanged from "./TextModals/passwordChanged";
+import NewPassword from "./NewPasswordModal";
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
@@ -47,6 +51,10 @@ export const Modals: FC = () => {
         {typeModal === "register" && <RegisterPage />}
         {typeModal === "editProfile" && <FgPassword/>}
         {typeModal === "errorCoursePaid" && <ErrorCourceModal/>}
+        {typeModal === "sentMail" && <MailModal/>}
+        {typeModal === "someWrong" && <SomeWrong/>}
+        {typeModal === "passwordChanged" && <PasswordChanged/>}
+        {typeModal === "newPassword" && <NewPassword/>}
       </div>
     </div>
   );

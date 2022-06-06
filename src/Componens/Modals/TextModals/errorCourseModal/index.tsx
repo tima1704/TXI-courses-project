@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./index.module.css";
+import styles from "../index.module.css";
 const errorCourseModal: React.FC = () => {
      return (
           <div className={styles["contentModal"]}>

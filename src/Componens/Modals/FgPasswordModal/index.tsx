@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../common/Button"
+import { Input } from "Componens/common";
 const ForgotPasswordModal = () => {
      const { t } = useTranslation();
      return (
@@ -12,9 +13,11 @@ const ForgotPasswordModal = () => {
                     </div>
                </div>
                <div className={styles["body_modal"]}>
-                    <input
-                         type="email"
-                         placeholder={t("modals.forgotPassword.forgotPlaceHolder.email")} />
+                    <form>
+                         <Input
+                              type="email"
+                              placeholder={t("modals.forgotPassword.forgotPlaceHolder.email")} />
+                    </form>
                </div>
                <div className={styles["footer_modal"]}>
                     <Button
