@@ -12,6 +12,7 @@ import ErrorCourceModal from './TextModals/errorcourseModal';
 import MailModal from "./TextModals/mailSent";
 import SomeWrong from "./TextModals/somethingWrong";
 import PasswordChanged from "./TextModals/passwordChanged";
+import NewPassword from "./NewPasswordModal";
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
@@ -53,6 +54,7 @@ export const Modals: FC = () => {
         {typeModal === "sentMail" && <MailModal/>}
         {typeModal === "someWrong" && <SomeWrong/>}
         {typeModal === "passwordChanged" && <PasswordChanged/>}
+        {typeModal === "newPassword" && <NewPassword/>}
       </div>
     </div>
   );
