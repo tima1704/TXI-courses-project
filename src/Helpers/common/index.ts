@@ -23,6 +23,10 @@ export function getUrlImg(url: string) {
 }
 
 export function Pay(options: any, onSuccess?: () => void) {
-  var widget = new (window as any).cp.CloudPayments();
+  const cp = (window as any).cp;
+  if (!cp) {
+    return;
+  }
+  var widget = new cp.CloudPayments();
   widget.pay("charge", options, { onSuccess: onSuccess });
 }
