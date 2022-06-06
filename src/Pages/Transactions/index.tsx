@@ -129,7 +129,7 @@ const TransactionsFunc: FC = () => {
                           </div>
                           <div>
                             <span>{t("transactions.headers.date")}</span>
-                            <p>{item.createdAt}</p>
+                            <p>{moment(item.createdAt).format("DD.MM.YYYY")}</p>
                           </div>
                         </div>
                         <div className={styles["price_content"]}>
@@ -142,7 +142,11 @@ const TransactionsFunc: FC = () => {
                           </div>
                           <div>
                             <span>{t("transactions.headers.lastdate")}</span>
-                            <p>{item.expirationDate}</p>
+                            <p>
+                              {moment(new Date(+item.expirationDate)).format(
+                                "DD.MM.YYYY"
+                              )}
+                            </p>
                           </div>
                         </div>
                       </div>
