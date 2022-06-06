@@ -24,5 +24,5 @@ export function getUrlImg(url: string) {
 
 export function Pay(options: any, onSuccess?: () => void) {
   var widget = new (window as any).cp.CloudPayments();
-  widget.pay("charge", options, { onSuccess: onSuccess && onSuccess() });
+  widget.pay("charge", options, { onSuccess: onSuccess });
 }
