@@ -1,7 +1,7 @@
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { TOKEN } from "Constants/App";
-import { URL_SUPPORT, URL_USER_COURSE } from "Constants/URL";
+import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
@@ -12,8 +12,7 @@ import styles from "./index.module.css";
 export const MenuAuth: FC = () => {
   const { isAuth, user } = useAppSelector((state) => state.App);
   const { setModalViewAction, checkAuth } = useAppDispatch();
-  console.log(user);
-  
+
   const onClickExit = () => {
     localStorage.removeItem(TOKEN);
     checkAuth();
@@ -32,7 +31,9 @@ export const MenuAuth: FC = () => {
             <span>{t("common.signIn")}</span>
           </div>
           {t("common.or")}{" "}
-          <span onClick={() => setModalViewAction("register")}>{t("common.signUp")}</span>
+          <span onClick={() => setModalViewAction("register")}>
+            {t("common.signUp")}
+          </span>
         </Button>
       ) : (
         <div className={styles["user"]}>
@@ -48,7 +49,14 @@ export const MenuAuth: FC = () => {
             <div className={styles["userDrop"]}>
               {/* <div>Аккаунт</div> */}
               <div className={styles["userItems"]}>
-                <Link to={URL_USER_COURSE}>{t("header.menuAuth.mycourses")}</Link>
+                <Link to={URL_USER_COURSE}>
+                  {t("header.menuAuth.mycourses")}
+                </Link>
+              </div>
+              <div className={styles["userItems"]}>
+                <Link to={URL_TRANSACTIONS}>
+                  {t("header.menuAuth.transactions")}
+                </Link>
               </div>
               <div className={styles["userItems"]}>
                 <Link to={URL_SUPPORT}>{t("supportPage.support")}</Link>

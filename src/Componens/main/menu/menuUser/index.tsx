@@ -2,10 +2,11 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { TOKEN } from "Constants/App";
-import { URL_SUPPORT, URL_USER_COURSE } from "Constants/URL";
+import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -30,6 +31,8 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
     checkAuth();
     onClickCloseMenu();
   };
+
+  const { t } = useTranslation();
 
   return (
     <div className={styles["menuUser"]}>
@@ -60,18 +63,23 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
           {/* <div></div> */}
           <div>
             <Link to={URL_USER_COURSE} onClick={onClickCloseMenu}>
-              Мои курсы
+              {t("header.menuAuth.mycourses")}
+            </Link>
+          </div>
+          <div>
+            <Link to={URL_TRANSACTIONS} onClick={onClickCloseMenu}>
+              {t("header.menuAuth.transactions")}
             </Link>
           </div>
           <div>
             <Link to={URL_SUPPORT} onClick={onClickCloseMenu}>
-              Поддержка
+              {t("supportPage.support")}
             </Link>
           </div>
         </div>
         <div className={styles["buttonRow"]}>
           <Button onClick={onClickExit} className={styles["btn"]}>
-            Выйти
+            {t("header.menuAuth.goOut")}
           </Button>
         </div>
       </div>
