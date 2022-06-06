@@ -27,6 +27,9 @@ export const LoginModal: FC = () => {
   const onClickRegister = () => {
     setModalViewAction("register");
   };
+  const onClickEdditAccount = () => {
+    setModalViewAction("editProfile");
+  };
   const { t } = useTranslation();
 
   return (
@@ -54,7 +57,7 @@ export const LoginModal: FC = () => {
         />
       </div>
       <div className={styles["fGPassword"]}>
-        <span>{t("modals.loginModal.ForgotPassword")}</span>
+        <span onClick={onClickEdditAccount}>{t("modals.loginModal.ForgotPassword")}</span>
       </div>
       <div className={styles["header_sign_in"]}>
         <div>

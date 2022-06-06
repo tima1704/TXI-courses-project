@@ -1,0 +1,66 @@
+.contentModal{
+     text-align: center;
+     margin: 40px 0;
+}
+.title_modal h3{
+     margin: 20px 0;
+     font-size: 22px;
+}
+.body_modal p{
+     cursor: pointer;
+     line-height: 22px;
+     font-size: 15px;
+     color: #656878;
+
+}
+.body_modal span{
+     transition: 0.2s;
+     text-decoration: underline;
+}
+.body_modal span:hover{
+     color: rgb(0, 0, 0);
+}
+@media(max-width: 506px) {
+     .title_modal h3{
+          margin: 20px 0;
+          font-size: 19px;
+     }
+     .body_modal p{
+          cursor: pointer;
+          line-height: 19px;
+          font-size: 13px;
+          color: #656878;
+     }
+}
+
+@media(max-width: 450px) {
+     .contentModal{
+          padding: 0 20px;
+     }
+     .title_modal h3{
+          margin: 20px 0;
+          font-size: 15px;
+     }
+     .body_modal p{
+          cursor: pointer;
+          line-height: 19px;
+          font-size: 10px;
+          color: #656878;
+     }
+}
+
+@media(max-width: 378px) {
+     .contentModal{
+          padding: 0 20px;
+     }
+     .title_modal h3{
+          margin: 20px 0;
+          font-size: 13px;
+     }
+     .body_modal p{
+          cursor: pointer;
+          line-height: 12px;
+          font-size: 9px;
+          color: #656878;
+     }
+}
