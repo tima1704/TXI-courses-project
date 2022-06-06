@@ -3,7 +3,7 @@ import { API_PAYMENTS } from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
 import { ISuccessRes, IValidErrorRes } from "Types/responce";
 
-interface IRes {
+export interface IInvoice {
   invoiceId: number;
   amount: number;
   currency: string;
@@ -12,7 +12,7 @@ interface IRes {
 export const PaymentsServices = {
   async createPaymentInvoise(priceId: number) {
     return axios
-      .post<ISuccessRes<IRes>>(
+      .post<ISuccessRes<IInvoice>>(
         API_PAYMENTS,
         { priceId },
         { headers: HttpHeadersAuthorization() }
