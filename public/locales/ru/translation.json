@@ -100,6 +100,17 @@
       "forgotPlaceHolder": {
         "email": "Введите ваш e-mail"
       }
+    },
+    "textModules": {
+
+    },
+    "newPassword": {
+      "title": "Новый пароль",
+      "newPasswordInput": {
+        "password": "Новый пароль",
+        "confirmPassword": "Подтвердите пароль"
+      },
+      "apply": "Применить"
     }
   },
   "showcaseCoursces": {
