@@ -1,3 +1,4 @@
+import { usePayment } from "Hooks/api/usePayment";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { ICourcePrice } from "Types/cources";
@@ -25,6 +26,17 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
 };
 const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
   const { t } = useTranslation();
+
+  const { isAuth, isLoading, mutate, setModalViewAction } = usePayment();
+
+  const onClickPayCourse = () => {
+    if (isAuth) {
+      mutate(id);
+    } else {
+      setModalViewAction("login");
+    }
+  };
+
   return (
     <div className={styles["prices__item"]}>
       <div>
@@ -35,7 +47,13 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
           {days === 3650 ? "Постоянный доступ" : `${days} дней доступа`}
         </div>
       </div>
-      <button className={styles["prices__item_btn"]}>{t("cource.price.choose")}</button>
+      <button
+        className={styles["prices__item_btn"]}
+        onClick={onClickPayCourse}
+        disabled={isLoading}
+      >
+        {t("cource.price.choose")}
+      </button>
     </div>
   );
 };
