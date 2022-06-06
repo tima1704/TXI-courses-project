@@ -2,7 +2,13 @@
   "common": {
     "signIn": "Вход",
     "signUp": "Регистрация",
-    "or": "или"
+    "or": "или",
+    "transactionsStatus": {
+      "paid": "Оплачено",
+      "processing": "Обрабатывается",
+      "fail": "Отклонено",
+      "rejected": "Возвращено"
+    }
   },
   "header": {
     "menu": {
@@ -54,6 +60,10 @@
         "daysAccess": "дней доступа"
       }
     }
+  },
+  "noCourses": {
+    "title": "У вас нет купленных курсов",
+    "link": "Перейти к курсам"
   },
   "transactions": {
     "title": "Транзакции",

@@ -94,7 +94,7 @@ const TransactionsFunc: FC = () => {
                           )}
                         </td>
                         <td className={styles["status_table"]}>
-                          {item.status}
+                          <TransactionStatus status={item.status} />
                         </td>
                         <td className={styles["price_table"]}>
                           {item.coursePrice?.currency}

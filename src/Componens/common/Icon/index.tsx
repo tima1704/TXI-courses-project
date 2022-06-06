@@ -19,6 +19,9 @@ import Close from "./Close.svg";
 import CloseGrey from "./Close-grey.svg";
 import Menu from "./menu.svg";
 import Check from "./Check.svg";
+import Success from "./Success.svg";
+import Spinner from "./Spinner.svg";
+import Error from "./Error.svg";
 
 const Icons = {
   video: Video,
@@ -40,6 +43,9 @@ const Icons = {
   closeGrey: CloseGrey,
   menu: Menu,
   check: Check,
+  success: Success,
+  spinner: Spinner,
+  error: Error,
 };
 
 interface IconProps
@@ -66,7 +72,10 @@ interface IconProps
     | "close"
     | "closeGrey"
     | "menu"
-    | "check";
+    | "check"
+    | "success"
+    | "spinner"
+    | "error";
   className?: string;
 }
 
