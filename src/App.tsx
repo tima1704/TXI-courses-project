@@ -66,7 +66,7 @@ function App() {
                 <Route path={URL_COURSE_$ID} element={<CourceItemPage />} />
                 <Route path={URL_SUPPORT} element={<SupportPage />} />
                 <Route path="*" element={<ErrorPage />} />
-                <Route path={URL_TRANSACTIONS} element={<Transactions/>} />
+                <Route path={URL_TRANSACTIONS} element={<Transactions />} />
               </Routes>
             </AppWrapper>
           </>

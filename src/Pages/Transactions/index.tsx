@@ -13,7 +13,8 @@ const transactArray = [
     date: "19.05.2022",
     lastdate: "24.07.2022",
     status: "processing",
-    price: "$140",
+    price: "140",
+    currency: "usd",
   },
   {
     id: 2,
