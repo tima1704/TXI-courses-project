@@ -29,7 +29,7 @@ export const ContentModule: FC<ICourceModule> = ({
         <div className={styles["itemNumber"]}>{itemNumberString}</div>
         <div className={styles["itemTitle"]}>
           <div className={styles["itemNumberTitle"]}>
-            {itemNumberString} {t("cource.contentModule.module")}
+            {itemNumberString}{t("cource.contentModule.module")}
           </div>
           <div className={styles["titleRow"]}>{title}</div>
         </div>

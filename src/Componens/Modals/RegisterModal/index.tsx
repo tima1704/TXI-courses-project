@@ -107,20 +107,17 @@ export const RegisterPage: FC = () => {
             className={styles["create_button"]}
             disabled={isDisabled}
           >
-            Создать аккаунт
+            {t("modals.registerModal.createAccount")}
           </Button>
           <Button
             onClick={onClickLogin}
             className={styles["loginBtn"]}
-            type="button"
-            disabled={isDisabled}
-          >
-            Войти
+            type="button">
+            {t("modals.registerModal.signIn")}
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          Нажимая “Создать аккаунт” я соглашаюсь на обработку{" "}
-          <span>персональных данных</span>
+          <a href="">{t("modals.registerModal.text.0")}<span>{t("modals.registerModal.text.1")}</span></a>
         </div>
       </form>
     </div>

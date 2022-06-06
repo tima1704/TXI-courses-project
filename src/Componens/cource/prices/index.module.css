@@ -18,7 +18,7 @@
 
 .prices__item {
   padding-bottom: 32px;
-  border-bottom: 1px solid var(--decor-grey);
+  border-bottom: 2px solid var(--decor-grey);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -67,6 +67,7 @@
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 40px;
+    border-bottom: 1px solid var(--decor-grey);
   }
 
   .prices {
