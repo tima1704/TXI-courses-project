@@ -42,7 +42,7 @@ export const CourceItem: FC<CourceItemProps> = ({
                 :
                 <>
                   <div className={styles["price"]}>{t("showcaseCoursces.courcesItem.price")}</div>
-                  <Button variant="grey">{t("showcaseCoursces.courcesItem.buy")}</Button>
+                  <Button variant="primary">{t("showcaseCoursces.courcesItem.buy")}</Button>
                 </>
             }
           </div>

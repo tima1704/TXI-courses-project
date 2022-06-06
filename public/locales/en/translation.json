@@ -76,7 +76,7 @@
       "title": "Sign In",
       "ForgotPassword": "Forgot your password?",
       "signIn": "Sign In",
-      "createAccount": "Create an accountnt",
+      "createAccount": "Create account",
       "loginPlaceholder": {
         "email": "Enter email address",
         "password": "enter password"
