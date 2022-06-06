@@ -14,7 +14,7 @@ import { CourceItemPage } from "Pages/CourceItem";
 import { CourcesListPage } from "Pages/CourcesList";
 import { UserCourceList } from "Pages/UserCourceList";
 import { CourceUserItem } from "Pages/CourceUserItem";
-import SupportPage from "Pages/SupportPages";
+import SupportPage from "Pages/supportPages";
 import { ErrorPage, Loading } from "Componens/common";
 import { AppWrapper } from "Componens/main";
 
