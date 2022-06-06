@@ -1,16 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from "../index.module.css";
-const someWrongModal : React.FC = () => {
+const SomeWrongModal : React.FC = () => {
+     const { t } = useTranslation();
      return (
           <div className={styles["contentModal"]}>
                <div className={styles["title_modal"]}>
-                    <h3>Что-то пошло не так!</h3>
+                    <h3>{t("modals.someWrong.title")}</h3>
                </div>
                <div className={styles["body_modal"]}>
-                    <p>Упс! Ссылка, которую вы использовали, недействительна. Если вы забыли свой пароль, сформируйте новый запрос.</p>
+                    <p>{t("modals.someWrong.text")}</p>
                </div>
           </div>
      );
 };
 
-export default someWrongModal;
+export default SomeWrongModal;

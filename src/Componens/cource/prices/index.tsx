@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import { ICourcePrice } from "Types/cources";
 import styles from "./index.module.css";
 import { useAppSelector } from "Hooks/redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { URL_USER_COURSE_ID } from "Constants/URL";
 
 interface CourcePricesProps {
   prices: ICourcePrice[];
@@ -33,7 +35,8 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
 
   const { isLoading, mutate, setModalViewAction, pay, setPay } = usePayment();
 
-  // const navigate = useNavigate();
+  const { id: courseId } = useParams<string>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (pay && user) {
@@ -43,16 +46,21 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
       const invoiceId = pay.invoiceId;
       const email = user?.email || "";
       const accountId = user?.id || "";
-      Pay({
-        publicId: publcId,
-        description: "",
-        amount: amount,
-        currency: currency,
-        accountId: accountId,
-        invoiceId: invoiceId,
-        email: email,
-        skin: "mini",
-      });
+      Pay(
+        {
+          publicId: publcId,
+          description: "",
+          amount: amount,
+          currency: currency,
+          accountId: accountId,
+          invoiceId: invoiceId,
+          email: email,
+          skin: "mini",
+        },
+        () => {
+          navigate(URL_USER_COURSE_ID(courseId as string));
+        }
+      );
       setPay(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -73,7 +81,7 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
           {currency} {sum}
         </div>
         <div className={styles["prices__item_descr"]}>
-          {days === 3650 ? "Постоянный доступ" : `${days} дней доступа`}
+          {days === 3650 ? `${t("cource.price.priceItem.permanentAccess")}` : `${days} ${t("cource.price.priceItem.daysAccess")}`}
         </div>
       </div>
       <button
