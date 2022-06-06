@@ -37,7 +37,7 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
 
   useEffect(() => {
     if (pay && user) {
-      const publcId = process.env.REACT_APP_TXI_URL_COURSE;
+      const publcId = process.env.REACT_APP_PUBLIC_API_CLOUD_PAYMENTS;
       const amount = +pay.amount;
       const currency = pay.currency;
       const invoiceId = pay.invoiceId;
