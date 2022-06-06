@@ -21,3 +21,8 @@ export function getUrlImg(url: string) {
     return process.env.REACT_APP_API_URL + url;
   }
 }
+
+export function Pay(options: any) {
+  var widget = new (window as any).cp.CloudPayments();
+  widget.pay("charge", options);
+}

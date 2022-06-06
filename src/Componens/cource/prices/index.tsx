@@ -1,8 +1,10 @@
+import { Pay } from "Helpers/common";
 import { usePayment } from "Hooks/api/usePayment";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ICourcePrice } from "Types/cources";
 import styles from "./index.module.css";
+import { useAppSelector } from "Hooks/redux";
 
 interface CourcePricesProps {
   prices: ICourcePrice[];
@@ -27,7 +29,34 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
 const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
   const { t } = useTranslation();
 
-  const { isAuth, isLoading, mutate, setModalViewAction } = usePayment();
+  const { isAuth, user } = useAppSelector((s) => s.App);
+
+  const { isLoading, mutate, setModalViewAction, pay, setPay } = usePayment();
+
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    if (pay && user) {
+      const publcId = process.env.REACT_APP_TXI_URL_COURSE;
+      const amount = +pay.amount;
+      const currency = pay.currency;
+      const invoiceId = pay.invoiceId;
+      const email = user?.email || "";
+      const accountId = user?.id || "";
+      Pay({
+        publicId: publcId,
+        description: "",
+        amount: amount,
+        currency: currency,
+        accountId: accountId,
+        invoiceId: invoiceId,
+        email: email,
+        skin: "mini",
+      });
+      setPay(undefined);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pay, user]);
 
   const onClickPayCourse = () => {
     if (isAuth) {
