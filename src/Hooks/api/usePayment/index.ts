@@ -49,8 +49,10 @@ export const usePayment = () => {
           //   },
         );
       },
-      onError: () => {
-        // TODO | MODAL КУРС КУПЛЕН
+      onError: (err) => {
+        if (Array.isArray(err)) {
+          setModalViewAction("errorCoursePaid");
+        }
       },
     }
   );
