@@ -8,7 +8,7 @@ import { Icon } from "Componens/common/Icon";
 import { useGetBody } from "Hooks/common";
 import classNames from "classnames";
 import { RegisterPage } from "./RegisterModal";
-import ErrorCourceModal from "./TextModals/ErrorcourseModal";
+import ErrorCourceModal from "./TextModals/errorCourseModal";
 import MailModal from "./TextModals/mailSent";
 import SomeWrong from "./TextModals/somethingWrong";
 import PasswordChanged from "./TextModals/passwordChanged";
