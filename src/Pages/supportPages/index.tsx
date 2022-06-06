@@ -6,7 +6,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./index.module.css";
 
-const SupportPage: FC = () => {
+export const SupportPage: FC = () => {
   const { t } = useTranslation();
   const { errors, data, setData, isDisabled, mutate } = useSupport();
 
@@ -29,9 +29,7 @@ const SupportPage: FC = () => {
             <h3>{t("supportPage.support")}</h3>
           </div>
           <span>{t("supportPage.emailSupport")}</span>
-          <p>
-            {t("supportPage.textSupport")}
-          </p>
+          <p>{t("supportPage.textSupport")}</p>
         </div>
       </div>
       <div className={styles["rightBlock__supportPage"]}>
@@ -59,7 +57,9 @@ const SupportPage: FC = () => {
                     <span>{t("supportPage.inputsText.numberOrder")}</span>
                     <Input
                       type="text"
-                      placeholder={t("supportPage.inputPlaceholder.numberOrder")}
+                      placeholder={t(
+                        "supportPage.inputPlaceholder.numberOrder"
+                      )}
                       onChange={onChange}
                       id={"orderNumber"}
                       value={data.orderNumber}
@@ -99,7 +99,9 @@ const SupportPage: FC = () => {
                 <span>{t("supportPage.inputsText.commentQuestion")}</span>
                 <Input
                   type="text"
-                  placeholder={t("supportPage.inputPlaceholder.commentQuestion")}
+                  placeholder={t(
+                    "supportPage.inputPlaceholder.commentQuestion"
+                  )}
                   onChange={onChange}
                   id={"description"}
                   value={data.description}
@@ -119,5 +121,3 @@ const SupportPage: FC = () => {
     </section>
   );
 };
-
-export default SupportPage;
