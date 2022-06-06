@@ -18,3 +18,4 @@ export const API_COURCE_PLAY = `${API_COURCES}`;
 
 // Payments
 export const API_PAYMENTS = host + "/payment";
+export const API_PAYMENTS_TRANSACTIONS = API_PAYMENTS + "/all";

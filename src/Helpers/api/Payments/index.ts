@@ -1,7 +1,8 @@
 import axios, { AxiosError } from "axios";
-import { API_PAYMENTS } from "Constants/API";
+import { API_PAYMENTS, API_PAYMENTS_TRANSACTIONS } from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
 import { ISuccessRes, IValidErrorRes } from "Types/responce";
+import { ITransaction } from "Types/transactions";
 
 export interface IInvoice {
   invoiceId: number;
@@ -24,6 +25,18 @@ export const PaymentsServices = {
         if (e.response?.data.errors) {
           throw e.response.data.errors;
         }
+        throw e;
+      });
+  },
+  async getAllTransactions() {
+    return axios
+      .get<ISuccessRes<ITransaction[]>>(API_PAYMENTS_TRANSACTIONS, {
+        headers: HttpHeadersAuthorization(),
+      })
+      .then((res) => {
+        return res.data.data;
+      })
+      .catch((e) => {
         throw e;
       });
   },

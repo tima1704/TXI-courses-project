@@ -1,47 +1,47 @@
+import { ErrorPage, Loading } from "Componens/common";
 import { WidthContext } from "Componens/main/widthWrapper";
 import { TransactionStatus } from "Componens/Transations";
-import { useContext } from "react";
+import { useCourcesList } from "Hooks/api/useCourcesList";
+import { useTransactions } from "Hooks/api/useTransactions";
+import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus } from "Types/transactions";
 
 import styles from "./index.module.css";
 
-const transactArray = [
-  {
-    id: 1,
-    itemid: 23245,
-    name: "Мир энергий с Александрой Доранн: Пробуждение",
-    date: "19.05.2022",
-    lastdate: "24.07.2022",
-    status: "processing",
-    price: "140",
-    currency: "usd",
-  },
-  {
-    id: 2,
-    itemid: 23244,
-    name: "Мир энергий с Александрой Доранн: Основы",
-    date: "19.05.2022",
-    lastdate: "24.06.2022",
-    status: "paid",
-    price: "$160",
-  },
-  {
-    id: 3,
-    itemid: 23243,
-    name: "Мир энергий: Серия курсов",
-    date: "08.10.2021",
-    lastdate: "18.12.2021",
-    status: "rejected",
-    price: "$180",
-  },
-];
-
-const TransactionsFunc = () => {
+const TransactionsFunc: FC = () => {
   const widthScreen = useContext(WidthContext);
+
   const { t } = useTranslation();
+
+  const { data, isError, isLoading } = useTransactions();
+  const {
+    courcesList,
+    isError: isErrorCourses,
+    isLoading: isLoadingCourses,
+  } = useCourcesList();
+
+  const dataTransactions = useMemo(() => {
+    if (data && courcesList) {
+      return data.map((item) => ({
+        ...item,
+        course: courcesList.find((course) => course.id === item.courseId),
+      }));
+    }
+
+    return [];
+  }, [data, courcesList]);
+
+  if (isError || isErrorCourses) {
+    return <ErrorPage />;
+  }
+
+  if (isLoading || isLoadingCourses) {
+    return <Loading fullScreen />;
+  }
+
   return (
-    <div className={styles["anim_opacity"]}>
+    <div className={"anim_opacity"}>
       {widthScreen > 820 ? (
         <div className={styles["transaction_element"]}>
           <div className={styles["table_transactions"]}>
@@ -51,33 +51,52 @@ const TransactionsFunc = () => {
             <table className={styles["table"]}>
               <thead className={styles["table_header"]}>
                 <tr>
-                  <th className={styles["order_table"]}>{t("transactions.headers.order")}</th>
-                  <th className={styles["product_table"]}>{t("transactions.headers.product")}</th>
-                  <th className={styles["date_table"]}>{t("transactions.headers.date")}</th>
-                  <th className={styles["lastdate_table"]}>{t("transactions.headers.lastdate")}</th>
-                  <th className={styles["status_table"]}>{t("transactions.headers.status")}</th>
-                  <th className={styles["price_table"]}>{t("transactions.headers.price_table")}</th>
+                  <th className={styles["order_table"]}>
+                    {t("transactions.headers.order")}
+                  </th>
+                  <th className={styles["product_table"]}>
+                    {t("transactions.headers.product")}
+                  </th>
+                  <th className={styles["date_table"]}>
+                    {t("transactions.headers.date")}
+                  </th>
+                  <th className={styles["lastdate_table"]}>
+                    {t("transactions.headers.lastdate")}
+                  </th>
+                  <th className={styles["status_table"]}>
+                    {t("transactions.headers.status")}
+                  </th>
+                  <th className={styles["price_table"]}>
+                    {t("transactions.headers.price_table")}
+                  </th>
                 </tr>
               </thead>
               <tbody className={styles["body_table"]}>
-                {transactArray.length < 1 ? (
+                {dataTransactions.length < 1 ? (
                   <tr>
                     <td>{t("transactions.noitems")}</td>
                   </tr>
                 ) : (
-                  transactArray.map((item) => {
+                  dataTransactions.map((item) => {
                     return (
                       <tr>
-                        <td className={styles["order_table"]}>{item.itemid}</td>
-                        <td className={styles["product_table"]}>{item.name}</td>
-                        <td className={styles["date_table"]}>{item.date}</td>
+                        <td className={styles["order_table"]}>{item.id}</td>
+                        <td className={styles["product_table"]}>
+                          {item.course?.courseMainInfo.title}
+                        </td>
+                        <td className={styles["date_table"]}>
+                          {item.createdAt}
+                        </td>
                         <td className={styles["lastdate_table"]}>
-                          {item.lastdate}
+                          {item.expirationDate}
                         </td>
                         <td className={styles["status_table"]}>
                           {item.status}
                         </td>
-                        <td className={styles["price_table"]}>{item.price}</td>
+                        <td className={styles["price_table"]}>
+                          {item.coursePrice?.currency}
+                          {item.coursePrice?.sum}
+                        </td>
                       </tr>
                     );
                   })
@@ -93,33 +112,34 @@ const TransactionsFunc = () => {
               <h3>{t("transactions.title")}</h3>
             </div>
             <div className={styles["content__transaction"]}>
-              {transactArray.length < 1 ? (
+              {dataTransactions.length < 1 ? (
                 <div>{t("transactions.noitems")}</div>
               ) : (
-                transactArray.map((item) => {
+                dataTransactions.map((item) => {
                   return (
                     <div className={styles["element_transaction"]}>
                       <div className={styles["top_content"]}>
                         <div className={styles["item_top"]}>
                           <div>
                             <span>{t("transactions.headers.order")}</span>
-                            <p>{item.itemid}</p>
+                            <p>{item.id}</p>
                           </div>
                           <div>
                             <span>{t("transactions.headers.date")}</span>
-                            <p>{item.date}</p>
+                            <p>{item.createdAt}</p>
                           </div>
                         </div>
                         <div className={styles["price_content"]}>
                           <div>
                             <span>{t("transactions.headers.price_table")}</span>
                             <p className={styles["priceMobile"]}>
-                              {item.price}
+                              {item.coursePrice?.currency}
+                              {item.coursePrice?.sum}
                             </p>
                           </div>
                           <div>
                             <span>{t("transactions.headers.lastdate")}</span>
-                            <p>{item.lastdate}</p>
+                            <p>{item.expirationDate}</p>
                           </div>
                         </div>
                       </div>
@@ -127,7 +147,7 @@ const TransactionsFunc = () => {
                         <div className={styles["product_item"]}>
                           <div>
                             <span>{t("transactions.headers.product")}</span>
-                            <p>{item.name}</p>
+                            <p>{item.course?.courseMainInfo.title}</p>
                           </div>
                         </div>
                         <div className={styles["status_item"]}>
