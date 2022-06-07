@@ -16,6 +16,7 @@
   -ms-overflow-style: none;
 }
 .row {
+  scrollbar-width: none;
   color: #000;
   display: flex;
   align-items: center;
