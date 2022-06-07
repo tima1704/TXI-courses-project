@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import Config from "Configs";
-import { URL_HOME, URL_SUPPORT } from "Constants/URL";
+import { URL_HOME } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -110,7 +110,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
           ) : (
             <MenuUser onClickCloseMenu={onClickCloseMenu} />
           )}
-          <div>
+          {/* <div>
             <Link
               to={URL_SUPPORT}
               onClick={onClickCloseMenu}
@@ -118,7 +118,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
             >
               {t("supportPage.support")}
             </Link>
-          </div>
+          </div> */}
           <div className={styles["lang"]} onClick={onClickOpenCloseLangs}>
             {langName} {">"}
           </div>
