@@ -1,7 +1,9 @@
 .wrapper {
+  width: 100vw;
   height: 22px;
   margin: 0 -30px;
 }
+
 .decorline {
   margin-bottom: -22px;
   border-bottom: 1px solid var(--decor-grey);
@@ -31,6 +33,6 @@
   border-bottom: 1px solid var(--decor-color);
   padding-bottom: 8px;
 }
-.linkItemDisable{
-     font-weight: 600;
+.linkItemDisable {
+  font-weight: 600;
 }
