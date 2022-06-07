@@ -14,8 +14,10 @@
   background: transparent;
   -webkit-appearance: none;
   -ms-overflow-style: none;
+  display: none;
 }
 .row {
+  -ms-overflow-style: none;
   scrollbar-width: none;
   color: #000;
   display: flex;
