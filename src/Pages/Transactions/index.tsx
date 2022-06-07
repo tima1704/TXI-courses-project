@@ -7,7 +7,6 @@ import moment from "moment";
 import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus } from "Types/transactions";
-
 import styles from "../../Styles/pageStyles/Transactions.module.css";
 
 const TransactionsFunc: FC = () => {
@@ -80,55 +79,27 @@ const TransactionsFunc: FC = () => {
                 ) : (
                   dataTransactions.map((item) => {
                     return (
-                      <>
-                        {
-                          item.status === "paid" ? (
-                            <tr className={styles["activeColor"]}>
-                              <td className={styles["order_table"]}>{item.id}</td>
-                              <td className={styles["product_table"]}>
-                                {item.course?.courseMainInfo.title}
-                              </td>
-                              <td className={styles["date_table"]}>
-                                {moment(item.createdAt).format("DD.MM.YYYY")}
-                              </td>
-                              <td className={styles["lastdate_table"]}>
-                                {moment(new Date(+item.expirationDate)).format(
-                                  "DD.MM.YYYY"
-                                )}
-                              </td>
-                              <td className={styles["status_table"]}>
-                                <TransactionStatus status={item.status} />
-                              </td>
-                              <td className={styles["price_table"]}>
-                                {item.coursePrice?.currency}
-                                {item.coursePrice?.sum}
-                              </td>
-                            </tr>
-                          ) : (
-                            <tr>
-                              <td className={styles["order_table"]}>{item.id}</td>
-                              <td className={styles["product_table"]}>
-                                {item.course?.courseMainInfo.title}
-                              </td>
-                              <td className={styles["date_table"]}>
-                                {moment(item.createdAt).format("DD.MM.YYYY")}
-                              </td>
-                              <td className={styles["lastdate_table"]}>
-                                {moment(new Date(+item.expirationDate)).format(
-                                  "DD.MM.YYYY"
-                                )}
-                              </td>
-                              <td className={styles["status_table"]}>
-                                <TransactionStatus status={item.status} />
-                              </td>
-                              <td className={styles["price_table"]}>
-                                {item.coursePrice?.currency}
-                                {item.coursePrice?.sum}
-                              </td>
-                            </tr>
-                          )
-                        }
-                      </>
+                      <tr className={styles["asdasd"]}>
+                        <td className={styles["order_table"]}>{item.id}</td>
+                        <td className={styles["product_table"]}>
+                          {item.course?.courseMainInfo.title}
+                        </td>
+                        <td className={styles["date_table"]}>
+                          {moment(item.createdAt).format("DD.MM.YYYY")}
+                        </td>
+                        <td className={styles["lastdate_table"]}>
+                          {moment(new Date(+item.expirationDate)).format(
+                            "DD.MM.YYYY"
+                          )}
+                        </td>
+                        <td className={styles["status_table"]}>
+                          <TransactionStatus status={item.status} />
+                        </td>
+                        <td className={styles["price_table"]}>
+                          {item.coursePrice?.currency}
+                          {item.coursePrice?.sum}
+                        </td>
+                      </tr>
                     );
                   })
                 )}

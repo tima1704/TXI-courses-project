@@ -12,9 +12,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.activeColor{
-  background-color: #F6F6F6;
-}
+
 .table_header tr {
   text-align: left;
 }
@@ -27,6 +25,13 @@
   border-right: 0.01rem solid rgba(255, 255, 255, 0.231);
 }
 
+table tr:nth-child(2n) td {
+  background: #f6f6f6;
+}
+
+table tr:nth-child(2n + 1) td {
+  background: #ffff;
+}
 .title_transact h3 {
   font-size: 60px;
   font-weight: 500;
@@ -77,7 +82,6 @@
   }
 }
 
-/* Mobile transactions */
 .title_transactMobile h3 {
   font-size: 60px;
   font-weight: 500;
