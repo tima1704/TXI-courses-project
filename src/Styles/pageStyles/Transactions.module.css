@@ -12,7 +12,9 @@
   justify-content: center;
   flex-direction: column;
 }
-
+.activeColor{
+  background-color: #F6F6F6;
+}
 .table_header tr {
   text-align: left;
 }
