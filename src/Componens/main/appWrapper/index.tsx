@@ -19,7 +19,8 @@ export const AppWrapper: FC = ({ children }) => {
       } else {
         bodyRef.current.style.overflowY = "auto";
       }
-  }, [bodyRef, openMenu]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openMenu]);
 
   const { pathname } = useLocation();
 

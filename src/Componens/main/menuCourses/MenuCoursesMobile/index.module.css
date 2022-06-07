@@ -13,6 +13,7 @@
   height: 0;
   background: transparent;
   -webkit-appearance: none;
+  -ms-overflow-style: none;
 }
 .row {
   color: #000;
