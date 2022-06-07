@@ -23,7 +23,7 @@ export const AppWrapper: FC = ({ children }) => {
 
   const { pathname } = useLocation();
 
-  if (pathname.includes("/p/cource/")) {
+  if (pathname.includes("/personal/cource/")) {
     return <div>{children}</div>;
   }
 
