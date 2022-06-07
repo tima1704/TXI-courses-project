@@ -168,12 +168,15 @@
 }
 
 @media (max-width: 720px) {
-  
   .rightBlock__supportPage {
     display: block;
     margin-left: 0px;
     padding-right: 10px;
     margin: 40px 0;
+  }
+  .input__content {
+    padding: 20px 0px;
+    width: 100%;
   }
   .input__content div input {
     margin-bottom: 10px;
@@ -190,19 +193,14 @@
   }
   .leftBlock__supportPage {
     text-align: left;
-    padding-left: 10px;
   }
   .inputsBlock {
-    text-align: left;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
   }
   .form__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
   .input__content {
     padding: 0px;
@@ -239,10 +237,8 @@
     width: 490px;
   }
   .rightBlock__supportPage {
-    display: flex;
-    justify-content: center;
     position: relative;
-    left: 10px;
+    left: 0px;
   }
 }
 
@@ -251,7 +247,7 @@
     margin-right: 35px;
   }
   .input__content div input {
-    width: 440px;
+    width: 450px;
   }
   .title__leftSupport h3 {
     font-size: 45px;
@@ -272,7 +268,7 @@
   }
 }
 
-@media (max-width: 535px) {
+@media (max-width: 525px) {
   .content__leftSupport p {
     padding: 0px !important;
   }
@@ -286,7 +282,7 @@
     padding: 0px !important;
   }
   .input__content div input {
-    width: 390px;
+    width: 420px;
   }
   .input__content {
     margin-right: 20px;
@@ -295,36 +291,41 @@
     width: 270px;
   }
 }
-@media (max-width: 462px) {
+@media (max-width: 480px) {
   .input__content div input {
-    width: 350px;
+    width: 400px;
   }
   .title__leftSupport h3 {
-    padding: 0 5px !important;
+    padding: 0 5px;
     font-size: 35px;
     font-weight: 500;
     margin-bottom: 40px;
   }
   .content__leftSupport span {
-    padding: 0 5px !important;
+    padding: 0 5px;
     font-size: 14px;
     color: rgb(107, 107, 107);
   }
   .content__leftSupport p {
-    padding: 0 5px !important;
+    padding: 0 5px;
     margin-top: 25px;
     font-size: 14px;
   }
 }
-@media (max-width: 422px) {
+@media (max-width: 440px) {
   .input__content div input {
-    width: 320px;
+    width: 370px;
+  }
+}
+@media (max-width: 423px) {
+  .input__content div input {
+    width: 350px;
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 399px) {
   .input__content div input {
-    width: 295px;
+    width: 330px;
   }
   .form_button button {
     width: 240px;
@@ -343,10 +344,15 @@
     font-size: 14px;
   }
 }
-
-@media (max-width: 345px) {
+@media (max-width: 376px) {
   .input__content div input {
-    width: 265px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 355px) {
+  .input__content div input {
+    width: 290px;
   }
   .form_button button {
     width: 180px;
@@ -355,6 +361,12 @@
 
 @media (max-width: 331px) {
   .input__content div input {
-    width: 245px;
+    width: 270px;
+  }
+}
+
+@media (max-width: 320px) {
+  .input__content div input {
+    width: 250px;
   }
 }

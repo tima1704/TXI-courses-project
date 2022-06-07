@@ -7,8 +7,7 @@ import moment from "moment";
 import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus } from "Types/transactions";
-
-import styles from "./index.module.css";
+import styles from "Styles/pageStyles/Transactions.module.css";
 
 const TransactionsFunc: FC = () => {
   const widthScreen = useContext(WidthContext);
@@ -80,7 +79,7 @@ const TransactionsFunc: FC = () => {
                 ) : (
                   dataTransactions.map((item) => {
                     return (
-                      <tr>
+                      <tr className={styles["asdasd"]}>
                         <td className={styles["order_table"]}>{item.id}</td>
                         <td className={styles["product_table"]}>
                           {item.course?.courseMainInfo.title}
