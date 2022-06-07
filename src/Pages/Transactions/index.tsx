@@ -79,7 +79,7 @@ const TransactionsFunc: FC = () => {
                 ) : (
                   dataTransactions.map((item) => {
                     return (
-                      <tr className={styles["asdasd"]}>
+                      <tr>
                         <td className={styles["order_table"]}>{item.id}</td>
                         <td className={styles["product_table"]}>
                           {item.course?.courseMainInfo.title}
