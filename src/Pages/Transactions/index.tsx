@@ -7,7 +7,7 @@ import moment from "moment";
 import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus } from "Types/transactions";
-import styles from "../../Styles/pageStyles/Transactions.module.css";
+import styles from "Styles/pageStyles/Transactions.module.css";
 
 const TransactionsFunc: FC = () => {
   const widthScreen = useContext(WidthContext);
