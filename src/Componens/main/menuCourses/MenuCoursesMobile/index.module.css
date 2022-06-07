@@ -10,7 +10,9 @@
 }
 .row::-webkit-scrollbar {
   width: 0;
+  height: 0;
   background: transparent;
+  -webkit-appearance: none;
 }
 .row {
   color: #000;
