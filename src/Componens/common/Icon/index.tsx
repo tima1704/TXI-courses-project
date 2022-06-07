@@ -22,6 +22,8 @@ import Check from "./Check.svg";
 import Success from "./Success.svg";
 import Spinner from "./Spinner.svg";
 import Error from "./Error.svg";
+import ArrowLeftWhite from "./arrow-left-white.svg";
+import CloseWhite from "./Close-white.svg";
 
 const Icons = {
   video: Video,
@@ -46,6 +48,8 @@ const Icons = {
   success: Success,
   spinner: Spinner,
   error: Error,
+  arrowLeftWhite: ArrowLeftWhite,
+  closeWhite: CloseWhite,
 };
 
 interface IconProps
@@ -75,7 +79,9 @@ interface IconProps
     | "check"
     | "success"
     | "spinner"
-    | "error";
+    | "error"
+    | "arrowLeftWhite"
+    | "closeWhite";
   className?: string;
 }
 

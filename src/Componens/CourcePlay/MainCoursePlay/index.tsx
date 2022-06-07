@@ -1,4 +1,5 @@
 // import { WidthContext } from "Componens/main/widthWrapper";
+import classNames from "classnames";
 import { useProgress, useProgressSave } from "Hooks/api/useProgress";
 import { FC, useCallback, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -105,9 +106,17 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseModules, activeContent, progressModel, lengthContent]);
 
+  const onCLickCanselActiveContent = () => {
+    setActiveContent(undefined);
+  };
+
   return (
     <div className={styles["main"]}>
-      <div className={styles["right"]}>
+      <div
+        className={classNames(styles["right"], {
+          [styles["none"]]: activeContent,
+        })}
+      >
         <DescriptionPlayer title={title} progressPercent={progressPercent} />
         <MenuModules
           modules={courseModules}
@@ -115,11 +124,16 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
           progressModel={progressModel}
         />
       </div>
-      <div className={styles["workSpace"]}>
+      <div
+        className={classNames(styles["workSpace"], {
+          [styles["none"]]: !activeContent,
+        })}
+      >
         {activeContent && (
           <WorkSpacePlayer
             data={activeContent}
             onClickNextLesson={onClickNextLesson}
+            onCLickCansel={onCLickCanselActiveContent}
           />
         )}
       </div>

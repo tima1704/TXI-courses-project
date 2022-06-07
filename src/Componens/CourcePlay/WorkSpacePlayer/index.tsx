@@ -1,61 +1,64 @@
 import { Button } from "Componens/common/Button";
-import { host } from "Constants/API";
-import { TOKEN } from "Constants/App";
-import { FC, useMemo } from "react";
+import { Icon } from "Componens/common/Icon";
+import { WidthContext } from "Componens/main/widthWrapper";
+import { t } from "i18next";
+import { FC, useContext } from "react";
 import { ICourceUserContent } from "Types/cources";
-
-import {
-  BigPlayButton,
-  ControlBar,
-  LoadingSpinner,
-  PlaybackRateMenuButton,
-  Player,
-  // @ts-ignore:disable-next-line
-} from "video-react";
+import { FileContent } from "./FileContent";
+import { ImageContent } from "./ImageContent";
 
 import styles from "./index.module.css";
+import { TextContent } from "./TextContent";
+import { VideoContent } from "./VideoContent";
 
 interface WorkSpacePlayerProps {
   data: ICourceUserContent;
   onClickNextLesson: () => void;
+  onCLickCansel: () => void;
 }
 
 export const WorkSpacePlayer: FC<WorkSpacePlayerProps> = ({
   data,
   onClickNextLesson,
+  onCLickCansel,
 }) => {
-  const urlContent = useMemo(() => {
-    return host + data.data + "?token=" + localStorage.getItem(TOKEN);
-  }, [data.data]);
+  const width = useContext(WidthContext);
 
   return (
     <div>
       <div className={styles["titleRow"]}>
-        <div className={styles["title"]}>{data.title}</div>
-        <Button variant="white" onClick={onClickNextLesson}>
-          Следующий урок
-        </Button>
+        {width > 900 ? (
+          <div className={styles["title"]}>{data.title}</div>
+        ) : (
+          <Button variant={"grey"} onClick={onCLickCansel}>
+            {t("common.back")}
+          </Button>
+        )}
+        {width > 900 ? (
+          <Button variant="white" onClick={onClickNextLesson}>
+            {t("cource.nextLesson")}
+          </Button>
+        ) : (
+          <Icon
+            icon={"arrowLeftWhite"}
+            style={{ transform: "rotate(180deg)" }}
+            onClick={onClickNextLesson}
+          />
+        )}
       </div>
       <div className={styles["content"]}>
         {data.type === "text" && (
-          <div
-            className={styles["contentText"]}
-            dangerouslySetInnerHTML={{ __html: data.data }}
-          />
+          <TextContent data={data.data} title={data.title} />
         )}
         {data.type === "video" && (
-          <div style={{ width: "100%" }}>
-            <Player src={urlContent} playsInline>
-              <BigPlayButton position="center" />
-              <LoadingSpinner />
-              <ControlBar>
-                <PlaybackRateMenuButton rates={[2, 1, 0.5]} />
-              </ControlBar>
-            </Player>
-          </div>
+          <VideoContent data={data.data} title={data.title} />
         )}
-        {data.type === "image" && <img alt="img" src={urlContent} />}
-        {data.type === "file" && <div>{data.data}</div>}
+        {data.type === "image" && (
+          <ImageContent data={data.data} title={data.title} />
+        )}
+        {data.type === "file" && (
+          <FileContent data={data.data} title={data.title} />
+        )}
       </div>
     </div>
   );

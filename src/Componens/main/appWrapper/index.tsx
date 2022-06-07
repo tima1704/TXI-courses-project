@@ -1,5 +1,6 @@
 import { useGetBody } from "Hooks/common";
 import { FC, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { CookiesModal } from "../cookiesModal";
 import { Footer } from "../footer";
 import { Header } from "../header/header";
@@ -19,6 +20,12 @@ export const AppWrapper: FC = ({ children }) => {
         bodyRef.current.style.overflowY = "auto";
       }
   }, [bodyRef, openMenu]);
+
+  const { pathname } = useLocation();
+
+  if (pathname.includes("/p/cource/")) {
+    return <div>{children}</div>;
+  }
 
   return (
     <div>

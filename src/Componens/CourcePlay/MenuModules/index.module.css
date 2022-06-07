@@ -3,3 +3,16 @@
   max-height: calc(100vh - 200px - 250px);
   padding-right: 5px;
 }
+
+@media (max-width: 900px) {
+  .menu {
+    padding: 0 30px;
+    max-height: calc(100vh - 280px);
+  }
+}
+
+@media (max-width: 380px) {
+  .menu {
+    padding: 0 15px;
+  }
+}

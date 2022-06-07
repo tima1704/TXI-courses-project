@@ -31,3 +31,17 @@
   margin-bottom: 24px;
   /* width: 80%; */
 }
+
+@media (max-width: 900px) {
+  .topDescr {
+    flex-direction: row-reverse;
+  }
+
+  .descrItem {
+    margin-bottom: 30px;
+  }
+
+  .content {
+    padding: 0 16px 30px;
+  }
+}

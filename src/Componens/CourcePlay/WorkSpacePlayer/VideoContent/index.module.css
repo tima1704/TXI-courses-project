@@ -1,0 +1,13 @@
+.title {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .title {
+    padding: 16px;
+    display: block;
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 500;
+  }
+}

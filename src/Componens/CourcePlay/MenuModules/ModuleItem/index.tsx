@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { FC, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
@@ -30,6 +31,8 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
     }
   }, [progressModel]);
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles["itemModule"]}>
       <div className={styles["row"]}>
@@ -44,14 +47,19 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
             onClick: () => setExpanded((prevExpanded) => !prevExpanded),
           })}
         >
-          <div className={styles["itemNumber"]}>Модуль {index + 1}</div>
+          <div className={styles["itemNumber"]}>
+            {t("cource.contentModule.module")} {index + 1}
+          </div>
           <div className={styles["titleRow"]}>
             <div>{title}</div>
             <div className={styles["titleProgress"]}>
               <span>
                 {checkModule || 0}/{courseContents.length}
               </span>
-              <Icon icon={"chevronDown"} />
+              <Icon
+                icon={"chevronDown"}
+                className={classNames({ [styles["activeIMG"]]: isExpanded })}
+              />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export interface ICource {
     img: string;
     description: string;
     regionId: TRegion;
+    progress?: string;
   };
 }
 
