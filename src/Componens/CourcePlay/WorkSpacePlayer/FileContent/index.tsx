@@ -14,9 +14,11 @@ export const FileContent: FC<IFileContent> = ({ data, title }) => {
   }, [data]);
 
   return (
-    <div>
-      <Icon icon={"file"} />
-      <a href={urlContent}>{title}</a>
+    <div style={{ marginTop: 25 }}>
+      <a href={urlContent} target={"_blank"} rel="noreferrer">
+        <Icon icon={"file"} />
+        {title}
+      </a>
     </div>
   );
 };
