@@ -24,7 +24,16 @@ export const TransactionStatus: FC<TransactionStatusProps> = ({ status }) => {
   }
 
   if (status === "reject") {
-    return <div>{t("common.transactionsStatus.rejected")}</div>;
+    return (
+      <div className={classNames(styles["status"], styles["reject"])}>
+        <div>
+          {t("common.transactionsStatus.rejected")}
+        </div>
+        <div>
+          <Icon icon="reject" />
+        </div>
+      </div>
+    )
   }
 
   if (status === "fail") {

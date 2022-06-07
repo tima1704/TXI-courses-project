@@ -18,6 +18,10 @@
   color: #15a14d;
   border-color: #15a14d;
 }
+.reject{
+  color: #656878;
+  border-color: #656878;
+}
 
 .processing {
   color: #7b8ff8;

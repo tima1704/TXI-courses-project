@@ -31,7 +31,7 @@ export const ContentModule: FC<ICourceModule> = ({
           <div className={styles["itemNumberTitle"]}>
             {itemNumberString}{t("cource.contentModule.module")}
           </div>
-          <div className={styles["titleRow"]}>{title}</div>
+          <div className={title.length > 40 ? styles["BigtitleRow"] : styles["titleRow"]}>{title}</div>
         </div>
         <div
           className={styles["btn"]}
