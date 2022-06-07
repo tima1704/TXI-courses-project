@@ -21,3 +21,14 @@
   color: var(--text-white);
 }
 
+@media (max-width: 1200px) {
+  .content {
+    height: calc(100vh - 172px);
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    height: calc(100vh - 72px);
+  }
+}

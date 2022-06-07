@@ -38,7 +38,7 @@ export const MenuHeader: FC = () => {
         </li>
         <li className={styles["menu__nav_item"]}>
           <Link to={URL_HOME} className={styles["activeLink"]}>
-            Обучение
+            {t("header.menu.education")}
           </Link>
         </li>
         <li className={styles["menu__nav_item"]}>
