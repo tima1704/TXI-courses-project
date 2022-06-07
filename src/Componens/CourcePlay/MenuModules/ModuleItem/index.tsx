@@ -36,7 +36,7 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
   return (
     <div className={styles["itemModule"]}>
       <div className={styles["row"]}>
-        {checkModule && checkModule === courseContents.length ? (
+        {checkModule && checkModule >= courseContents.length ? (
           <Icon icon={"check"} className={styles["checkIcon"]} />
         ) : (
           <div className={styles["check"]} />
@@ -54,7 +54,10 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
             <div>{title}</div>
             <div className={styles["titleProgress"]}>
               <span>
-                {checkModule || 0}/{courseContents.length}
+                {courseContents.length < checkModule
+                  ? courseContents.length
+                  : checkModule || 0}
+                /{courseContents.length}
               </span>
               <Icon
                 icon={"chevronDown"}
