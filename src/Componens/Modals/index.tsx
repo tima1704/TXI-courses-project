@@ -31,7 +31,8 @@ export const Modals: FC = () => {
       } else {
         bodyRef.current.style.overflowY = "auto";
       }
-  }, [bodyRef, typeModal]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typeModal]);
 
   if (!typeModal) {
     return null;
