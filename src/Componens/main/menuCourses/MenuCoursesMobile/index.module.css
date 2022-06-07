@@ -1,0 +1,36 @@
+.wrapper {
+  height: 22px;
+  margin: 0 -30px;
+}
+.decorline {
+  margin-bottom: -22px;
+  border-bottom: 1px solid var(--decor-grey);
+}
+.row::-webkit-scrollbar {
+  width: 0;
+}
+.row {
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-size: 9px;
+  line-height: 13px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.linkItem {
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0px 7px;
+  padding: 0px 7px 9px;
+}
+.linkItem:first-child {
+  margin: 0px 7px 0px 30px;
+}
+.linkItemActive {
+  border-bottom: 1px solid var(--decor-color);
+  padding-bottom: 8px;
+}
+.linkItemDisable{
+     font-weight: 600;
+}

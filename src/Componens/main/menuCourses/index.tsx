@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { WidthContext } from "../widthWrapper";
 
 import styles from "./index.module.css";
+import { MenuCoursesModile } from "./MenuCoursesMobile";
 
 export const MenuCourses: FC = () => {
   const isAuth = useAppSelector((state) => state.App.isAuth);
@@ -22,55 +23,58 @@ export const MenuCourses: FC = () => {
 
   return (
     <div className="container anim_opacity">
-      {/* {widthScreen > 550 ? ( */}
-      <div className={styles["menu"]}>
-        <div className={styles["leftInfo"]}>
-          <div className={styles["title"]}>
-            {t("menuCourses.courseMenu.onlinecourse")}
-          </div>
+      {widthScreen > 550 ? (
+        <div className={styles["menu"]}>
+          <div className={styles["leftInfo"]}>
+            <div className={styles["title"]}>
+              {t("menuCourses.courseMenu.onlinecourse")}
+            </div>
 
-          <NavLink
-            to={URL_HOME}
-            className={({ isActive }) =>
-              classNames(styles["menuItems"], styles["menuLink"], {
-                [styles["activeMenu"]]: isActive,
-              })
-            }
-          >
-            {t("menuCourses.courseMenu.allprograms")}
-          </NavLink>
-          {isAuth ? (
             <NavLink
-              to={URL_USER_COURSE}
+              to={URL_HOME}
               className={({ isActive }) =>
                 classNames(styles["menuItems"], styles["menuLink"], {
                   [styles["activeMenu"]]: isActive,
                 })
               }
             >
-              {t("menuCourses.courseMenu.yourcourses")}
+              {t("menuCourses.courseMenu.allprograms")}
             </NavLink>
-          ) : (
-            <span
-              className={classNames(styles["menuItems"], styles["menuLink"])}
-              onClick={onClickOpenLoginPopUp}
-            >
-              {t("menuCourses.courseMenu.yourcourses")}
-            </span>
-          )}
+            {isAuth ? (
+              <NavLink
+                to={URL_USER_COURSE}
+                className={({ isActive }) =>
+                  classNames(styles["menuItems"], styles["menuLink"], {
+                    [styles["activeMenu"]]: isActive,
+                  })
+                }
+              >
+                {t("menuCourses.courseMenu.yourcourses")}
+              </NavLink>
+            ) : (
+              <span
+                className={classNames(styles["menuItems"], styles["menuLink"])}
+                onClick={onClickOpenLoginPopUp}
+              >
+                {t("menuCourses.courseMenu.yourcourses")}
+              </span>
+            )}
+          </div>
+          <NavLink
+            to={URL_SUPPORT}
+            className={({ isActive }) =>
+              classNames(styles["menuItems"], {
+                [styles["activeMenu"]]: isActive,
+              })
+            }
+          >
+            {t("supportPage.support")}
+          </NavLink>
         </div>
-        <NavLink
-          to={URL_SUPPORT}
-          className={({ isActive }) =>
-            classNames(styles["menuItems"], {
-              [styles["activeMenu"]]: isActive,
-            })
-          }
-        >
-          {t("supportPage.support")}
-        </NavLink>
-      </div>
-      {/* ) : (
+      ) : (
+        <MenuCoursesModile/>
+      )
+      /* ) : (
         <div className={styles["menuM"]}>
           <div
             className={classNames(styles["labelM"], {
