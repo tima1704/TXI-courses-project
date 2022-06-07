@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { IlinkMenu, LinksMenu } from "./constants";
+import { LinksMenu } from "./constants";
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { t } from "i18next";
