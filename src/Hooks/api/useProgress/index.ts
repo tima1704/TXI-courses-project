@@ -1,5 +1,5 @@
 import { ProgressServices } from "Helpers/api/Progress";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import { IProgress } from "Types/cources";
 
@@ -10,6 +10,11 @@ export const useProgress = (progress: IProgress) => {
   const [progressPercent, setProgressPercent] = useState<number>(
     +progress?.percent || 0
   );
+
+  useEffect(() => {
+    setProgressModel(progress?.progressModel || {});
+    setProgressPercent(+progress?.percent || 0);
+  }, [progress]);
 
   return {
     progressModel,
