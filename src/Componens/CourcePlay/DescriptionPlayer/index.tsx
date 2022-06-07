@@ -1,5 +1,7 @@
+import { Icon } from "Componens/common/Icon";
 import ProgresBar from "Componens/common/ProgressBar";
-import { FC } from "react";
+import { WidthContext } from "Componens/main/widthWrapper";
+import { FC, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -19,10 +21,14 @@ export const DescriptionPlayer: FC<IDescriptionPlayer> = ({
     navigete(-1);
   };
 
+  const width = useContext(WidthContext);
+
   return (
     <div className={styles["descrItem"]}>
       <div className={styles["topDescr"]}>
-        <div onClick={onClickBack}>BTN</div>
+        <div onClick={onClickBack}>
+          <Icon icon={width > 900 ? "arrowLeftWhite" : "closeWhite"} />
+        </div>
         <div>Katia Txi</div>
       </div>
       <div className={styles["content"]}>

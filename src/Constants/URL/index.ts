@@ -11,7 +11,7 @@ export const URL_SUPPORT = "/support";
 export const URL_TRANSACTIONS = "/transactions";
 
 // URL USER
-export const URL_USER_COURSE = "/p";
-export const URL_USER_COURSE_$ID = "/p" + URL_COURSE_$ID;
+export const URL_USER_COURSE = "/personal";
+export const URL_USER_COURSE_$ID = "/personal" + URL_COURSE_$ID;
 export const URL_USER_COURSE_ID = (id: string | number) =>
-  "/p" + URL_COURSE_ID(id);
+  "/personal" + URL_COURSE_ID(id);

@@ -3,6 +3,8 @@
     "signIn": "Вход",
     "signUp": "Регистрация",
     "or": "или",
+    "start": "Начать",
+    "back": "Назад",
     "transactionsStatus": {
       "paid": "Оплачено",
       "processing": "Обрабатывается",
@@ -59,7 +61,8 @@
         "permanentAccess": "постоянный доступ",
         "daysAccess": "дней доступа"
       }
-    }
+    },
+    "nextLesson": "Следующий урок"
   },
   "noCourses": {
     "title": "У вас нет купленных курсов",

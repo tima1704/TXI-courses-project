@@ -1,0 +1,13 @@
+.title {
+  padding: 16px;
+
+  font-size: 22px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

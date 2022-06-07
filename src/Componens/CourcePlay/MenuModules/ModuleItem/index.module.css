@@ -48,6 +48,14 @@
   line-height: 21px;
 }
 
+.titleRow img {
+  transition: 0.3s transform;
+}
+
+.activeIMG {
+  transform: rotate(-180deg);
+}
+
 .titleProgress {
   font-weight: 400;
   font-size: 18px;

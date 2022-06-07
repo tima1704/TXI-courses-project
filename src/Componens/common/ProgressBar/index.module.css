@@ -24,13 +24,8 @@
   background-color: rgba(186, 186, 186, 0.811);
 }
 
-.startCours {
-  width: 120px;
-  margin-left: 50px;
-}
-
 .progress_item {
-  transition: 0.1s;
+  transition: 0.1s width;
   border-radius: 30px;
   height: 100%;
   background-color: rgb(0, 66, 10);
@@ -41,29 +36,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    font-size: 12px;
-    padding: 5px;
-  }
-  
-  .startCours {
-    font-size: 10px;
-  }
-}
-@media (max-width: 1090px) {
-  .progress_background {
-    display: none;
-  }
-}
-@media (max-width: 699px) {
-  .progress_background {
-    display: block;
-    width: 100%;
-  }
-}
 
-@media (max-width: 490px) {
-  .progress_background {
-    display: none;
+    font-size: 12px;
+    padding: 12px 20px;
+    border-width: 1px;
   }
 }

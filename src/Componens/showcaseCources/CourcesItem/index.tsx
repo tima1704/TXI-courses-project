@@ -21,6 +21,7 @@ export const CourceItem: FC<CourceItemProps> = ({
   user,
 }) => {
   const { t } = useTranslation();
+
   return (
     <div className={c(styles["item_wrapper"], "anim_opacity")}>
       <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
@@ -33,18 +34,24 @@ export const CourceItem: FC<CourceItemProps> = ({
             {courseMainInfo.description}
           </div>
           <div className={styles["item_row"]}>
-            {
-              user ?
-                <>
-                  <ProgresBar />
-                  <Button variant="grey" className={styles["startCours"]}>Начать</Button>
-                </>
-                :
-                <>
-                  <div className={styles["price"]}>{t("showcaseCoursces.courcesItem.price")}</div>
-                  <Button variant="primary">{t("showcaseCoursces.courcesItem.buy")}</Button>
-                </>
-            }
+            {user ? (
+              <>
+                <ProgresBar
+                  value={courseMainInfo.progress ? +courseMainInfo.progress : 0}
+                  classNameBar={styles["progressBar"]}
+                />
+                <Button className={styles["startCours"]}>
+                  {t("common.start")}
+                </Button>
+              </>
+            ) : (
+              <>
+                <div className={styles["price"]}>
+                  {t("showcaseCoursces.courcesItem.price")}
+                </div>
+                <Button>{t("showcaseCoursces.courcesItem.buy")}</Button>
+              </>
+            )}
           </div>
         </div>
       </Link>

@@ -7,7 +7,7 @@
   transition: transform 0.5s ease;
   cursor: pointer;
 }
-.item_row .price{
+.item_row .price {
   font-size: 20px;
 }
 .item_img {
@@ -36,7 +36,7 @@
   line-height: 18px;
   margin: 10px 0px 20px 0px;
 }
-.startCours{
+.startCours {
   width: 120px;
   margin-left: 50px;
 }
@@ -51,7 +51,6 @@
   font-size: 30px;
   line-height: 35px;
 }
-
 
 .item:hover {
   transform: translateY(-10px);
@@ -102,7 +101,30 @@
   }
 }
 @media (max-width: 320px) {
-  .item_img img{
+  .item_img img {
     height: 180px;
+  }
+
+  .startCours {
+    margin-left: 10px;
+  }
+}
+
+/* PROGRESS BAR */
+@media (max-width: 850px) {
+  .progressBar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .progressBar {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  .progressBar {
+    display: none;
   }
 }

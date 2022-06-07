@@ -9,7 +9,7 @@
 }
 
 .content {
-  height: calc(100vh - 233px);
+  height: calc(100vh - 272px);
   overflow-y: auto;
 }
 
@@ -21,9 +21,3 @@
   color: var(--text-white);
 }
 
-.contentText {
-  padding: 16px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 26px;
-}
