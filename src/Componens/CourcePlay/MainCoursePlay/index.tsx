@@ -24,8 +24,6 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
     ICourceUserContent | undefined
   >(width > 900 ? courseModules?.[0]?.courseContents?.[0] : undefined);
 
-  console.log(progress);
-
   const {
     progressModel,
     setProgressModel,
