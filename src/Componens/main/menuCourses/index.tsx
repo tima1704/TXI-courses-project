@@ -1,9 +1,7 @@
 import classNames from "classnames";
-import { Icon } from "Componens/common/Icon";
 import { URL_SUPPORT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
-import { FC, useContext, useState } from "react";
-import useCollapse from "react-collapsed";
+import { FC, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { WidthContext } from "../widthWrapper";
@@ -16,68 +14,63 @@ export const MenuCourses: FC = () => {
 
   const onClickOpenLoginPopUp = () => {
     setModalViewAction("login");
-    onClickCollapse();
   };
 
   const { t } = useTranslation();
 
   const widthScreen = useContext(WidthContext);
-  const [isExpanded, setExpanded] = useState(false);
-  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-
-  const onClickCollapse = () => {
-    setExpanded((v) => !v);
-  };
 
   return (
     <div className="container anim_opacity">
-      {widthScreen > 550 ? (
-        <div className={styles["menu"]}>
-          <div className={styles["leftInfo"]}>
-            <div className={styles["title"]}>{t("menuCourses.courseMenu.onlinecourse")}</div>
+      {/* {widthScreen > 550 ? ( */}
+      <div className={styles["menu"]}>
+        <div className={styles["leftInfo"]}>
+          <div className={styles["title"]}>
+            {t("menuCourses.courseMenu.onlinecourse")}
+          </div>
 
+          <NavLink
+            to={URL_HOME}
+            className={({ isActive }) =>
+              classNames(styles["menuItems"], styles["menuLink"], {
+                [styles["activeMenu"]]: isActive,
+              })
+            }
+          >
+            {t("menuCourses.courseMenu.allprograms")}
+          </NavLink>
+          {isAuth ? (
             <NavLink
-              to={URL_HOME}
+              to={URL_USER_COURSE}
               className={({ isActive }) =>
                 classNames(styles["menuItems"], styles["menuLink"], {
                   [styles["activeMenu"]]: isActive,
                 })
               }
             >
-              {t("menuCourses.courseMenu.allprograms")}
+              {t("menuCourses.courseMenu.yourcourses")}
             </NavLink>
-            {isAuth ? (
-              <NavLink
-                to={URL_USER_COURSE}
-                className={({ isActive }) =>
-                  classNames(styles["menuItems"], styles["menuLink"], {
-                    [styles["activeMenu"]]: isActive,
-                  })
-                }
-              >
-                {t("menuCourses.courseMenu.yourcourses")}
-              </NavLink>
-            ) : (
-              <span
-                className={classNames(styles["menuItems"], styles["menuLink"])}
-                onClick={onClickOpenLoginPopUp}
-              >
-                {t("menuCourses.courseMenu.yourcourses")}
-              </span>
-            )}
-          </div>
-          <NavLink
-            to={URL_SUPPORT}
-            className={({ isActive }) =>
-              classNames(styles["menuItems"], {
-                [styles["activeMenu"]]: isActive,
-              })
-            }
-          >
-            {t("supportPage.support")}
-          </NavLink>
+          ) : (
+            <span
+              className={classNames(styles["menuItems"], styles["menuLink"])}
+              onClick={onClickOpenLoginPopUp}
+            >
+              {t("menuCourses.courseMenu.yourcourses")}
+            </span>
+          )}
         </div>
-      ) : (
+        <NavLink
+          to={URL_SUPPORT}
+          className={({ isActive }) =>
+            classNames(styles["menuItems"], {
+              [styles["activeMenu"]]: isActive,
+            })
+          }
+        >
+          {t("supportPage.support")}
+        </NavLink>
+      </div>
+      {/* ) : (
         <div className={styles["menuM"]}>
           <div
             className={classNames(styles["labelM"], {
@@ -138,7 +131,7 @@ export const MenuCourses: FC = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
