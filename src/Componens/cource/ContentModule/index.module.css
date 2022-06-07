@@ -46,6 +46,9 @@
 .titleRow {
   word-wrap: break-word;
 }
+.BigtitleRow{
+  word-wrap: break-word;
+}
 
 .btn {
   font-weight: 400;
@@ -76,6 +79,9 @@
     margin-bottom: 4px;
   }
   .titleRow {
+    font-size: 20px;
+  }
+  .BigtitleRow{
     font-size: 20px;
   }
   .btn span {
@@ -115,10 +121,15 @@
     font-size: 13px;
     line-height: 13px;
     color: var(--grey-black);
-    margin-bottom: 0px;
+    margin-bottom: 6px;
   }
   .titleRow {
     font-size: 17px;
+    line-height: 20px;
+  }
+  .BigtitleRow{
+    font-size: 17px;
+    line-height: 20px;
   }
   .chevron{
     position: relative;
@@ -129,6 +140,9 @@
   .titleRow {
     font-size: 15px;
   }
+  .BigtitleRow{
+    font-size: 15px;
+  }
   .itemNumber {
     width: 37px;
     height: 37px;
@@ -136,7 +150,6 @@
   }
   .itemNumberTitle {
     font-size: 12px;
-    margin: 0px;
     position: relative;
     top: 4px;
   }
@@ -144,6 +157,11 @@
 @media (max-width: 390px) {
   .titleRow {
     font-size: 12px;
+    line-height: 15px;
+  }
+  .BigtitleRow {
+    font-size: 10px;
+    line-height: 15px;
   }
   .itemNumber {
     bottom: 0;
@@ -151,13 +169,11 @@
     height: 30px;
     margin-right: 20px;
     font-size: 13px;
-    margin-bottom: 13px;
+    margin-bottom: 8px;
   }
   .itemNumberTitle {
     font-weight: 400;
     font-size: 10px;
-    line-height: 10px;
     color: var(--grey-black);
-    margin-bottom: 0px;
   }
 }

@@ -1,14 +1,13 @@
 import classNames from "classnames";
-import { Icon } from "Componens/common/Icon";
 import { URL_SUPPORT, URL_HOME, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
-import { FC, useContext, useState } from "react";
-import useCollapse from "react-collapsed";
+import { FC, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { WidthContext } from "../widthWrapper";
 
 import styles from "./index.module.css";
+import { MenuCoursesModile } from "./MenuCoursesMobile";
 
 export const MenuCourses: FC = () => {
   const isAuth = useAppSelector((state) => state.App.isAuth);
@@ -16,25 +15,20 @@ export const MenuCourses: FC = () => {
 
   const onClickOpenLoginPopUp = () => {
     setModalViewAction("login");
-    onClickCollapse();
   };
 
   const { t } = useTranslation();
 
   const widthScreen = useContext(WidthContext);
-  const [isExpanded, setExpanded] = useState(false);
-  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
-
-  const onClickCollapse = () => {
-    setExpanded((v) => !v);
-  };
 
   return (
     <div className="container anim_opacity">
       {widthScreen > 550 ? (
         <div className={styles["menu"]}>
           <div className={styles["leftInfo"]}>
-            <div className={styles["title"]}>{t("menuCourses.courseMenu.onlinecourse")}</div>
+            <div className={styles["title"]}>
+              {t("menuCourses.courseMenu.onlinecourse")}
+            </div>
 
             <NavLink
               to={URL_HOME}
@@ -78,6 +72,9 @@ export const MenuCourses: FC = () => {
           </NavLink>
         </div>
       ) : (
+        <MenuCoursesModile/>
+      )
+      /* ) : (
         <div className={styles["menuM"]}>
           <div
             className={classNames(styles["labelM"], {
@@ -138,7 +135,7 @@ export const MenuCourses: FC = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
