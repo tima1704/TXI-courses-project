@@ -1,8 +1,8 @@
 const Config = {
   socials: {
-    youTube: "",
-    telegram: "",
-    instagram: "",
+    youTube: "//www.youtube.com/channel/UC7SS_tO1GzupxJNd28pejNQ",
+    telegram: "//t.me/KatiaTxiLive",
+    instagram: "//www.instagram.com/katiatxi/",
   },
 };
 
