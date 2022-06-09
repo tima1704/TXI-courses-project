@@ -6,7 +6,10 @@
 .body {
   min-height: calc(10vh - 175px);
 }
-
+.price_table{
+  display: flex;
+  align-items: center;
+}
 .table_transactions {
   display: flex;
   justify-content: center;
@@ -115,6 +118,8 @@ table tr:nth-child(2n + 1) td {
   font-size: 18px;
 }
 .priceMobile {
+  display: flex;
+  align-items: center;
   font-weight: 600;
 }
 .bottom_content span {
