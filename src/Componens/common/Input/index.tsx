@@ -7,8 +7,8 @@ import styles from "./index.module.css";
 
 interface InputProps
   extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
   > {
   className?: string;
   classNameInput?: string;
@@ -23,7 +23,6 @@ export const Input: FC<InputProps> = ({
 }) => {
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps } = useCollapse({ isExpanded });
-
   useEffect(() => {
     if (error) {
       setExpanded(true);
@@ -36,11 +35,13 @@ export const Input: FC<InputProps> = ({
     <div className={className}>
       <input
         {...props}
-        className={classNames(styles["input"], {
-          [classNameInput]: classNameInput,
-          [styles["error"]]: !!error,
-        })}
+        className={classNames(styles["input"])}
       />
+      <div className={classNames(styles["lineInput"], {
+        [classNameInput]: classNameInput,
+        [styles["error"]]: !!error,
+      })}></div>
+      <div className={styles["input_line"]}></div>
       <div {...getCollapseProps()}>
         <div className={styles["error_message"]}>{error?.message}</div>
       </div>

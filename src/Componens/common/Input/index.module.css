@@ -1,9 +1,9 @@
 .input {
+  position: relative;
   margin: 4px 0;
   height: 28px;
   padding: 0 1px 5px;
   border: none;
-  border-bottom: 2px solid rgba(105, 105, 105, 0.553);
   font-size: 0.6rem;
   transition: 0.3s ease border-bottom, 0.3s ease background-color,
     0.3s ease opacity;
@@ -11,20 +11,21 @@
   font-size: 14px;
   line-height: 16px;
 }
-
-.input:focus {
-  border-bottom: 2px solid var(--decor-color);
+.lineInput{
+  width: 100%;
+  background-color: var(--grey-black);
+  height: 1px;
 }
 
-.input:disabled {
+
+.lineInput:disabled {
   background-color: #d6d7d9;
   opacity: 0.4;
 }
 
 .error {
-  border-bottom: 1px solid var(--danger-color);
+  background-color:  var(--danger-color);
 }
-
 .error_message {
   font-size: 11px;
   line-height: 13px;
