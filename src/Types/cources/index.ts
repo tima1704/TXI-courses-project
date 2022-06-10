@@ -1,4 +1,5 @@
 import { TRegion } from "Types/common";
+import { TTransactionsCurrency } from "Types/transactions";
 
 export type courseStatus = "active" | "draft" | "closed";
 
@@ -37,7 +38,7 @@ export type CourseContentType = "text" | "video";
 export interface ICourcePrice {
   id: number;
   sum: string;
-  currency: string;
+  currency: TTransactionsCurrency;
   days: number;
 }
 

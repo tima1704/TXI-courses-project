@@ -10,6 +10,7 @@ import { getUrlImg } from "Helpers/common";
 import { Button } from "Componens/common/Button";
 import ProgresBar from "Componens/common/ProgressBar";
 import { useTranslation } from "react-i18next";
+import { LinkTo } from "Componens/common/Links";
 
 interface CourceItemProps extends ICource {
   user?: boolean;
@@ -24,7 +25,7 @@ export const CourceItem: FC<CourceItemProps> = ({
 
   return (
     <div className={c(styles["item_wrapper"], "anim_opacity")}>
-      <Link to={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
+      <LinkTo link={!user ? URL_COURSE_ID(id) : URL_USER_COURSE_ID(id)}>
         <div className={styles["item"]}>
           <div className={styles["item_img"]}>
             <img src={getUrlImg(courseMainInfo.img)} alt="cource" />
@@ -54,7 +55,7 @@ export const CourceItem: FC<CourceItemProps> = ({
             )}
           </div>
         </div>
-      </Link>
+      </LinkTo>
     </div>
   );
 };
