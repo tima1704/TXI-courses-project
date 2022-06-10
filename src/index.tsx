@@ -22,6 +22,7 @@ import "../node_modules/video-react/dist/video-react.css";
 import { Loading } from "Componens/common";
 
 export const queryClient = new QueryClient();
+export const AppStore = Store;
 
 ReactDOM.render(
   <React.StrictMode>
