@@ -27,7 +27,7 @@ export const LoginModal: FC = () => {
     setModalViewAction("register");
   };
   const onClickEdditAccount = () => {
-    setModalViewAction("sentEmailMessege")
+    setModalViewAction("editProfile")
   };
   const { t } = useTranslation();
   return (
