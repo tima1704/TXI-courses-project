@@ -4,12 +4,19 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import { IValidError } from "Types/common";
 
+interface IVariables {
+  data: FormData;
+  email: string;
+}
+
 export const useRegistration = () => {
   const [errors, setErrors] = useState<IValidError[]>([]);
   const { setModalViewAction } = useAppDispatch();
 
   const { mutate, isLoading: isDisabled } = useMutation(
-    ProfileService.registration,
+    ({ data, email }: IVariables) => {
+      return ProfileService.registration(data, email);
+    },
     {
       onMutate: () => {
         setErrors([]);

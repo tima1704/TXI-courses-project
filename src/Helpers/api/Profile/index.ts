@@ -1,6 +1,8 @@
 import axios, { AxiosError } from "axios";
 import { API_AUTH, API_LOGIN } from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
+import { setModalViewAction } from "Redux/ModalReducer/actions";
+import { AppStore } from "index";
 import { IValidError } from "Types/common";
 import { ILogin, ILoginRes, IUserRes } from "Types/login";
 import { ISuccessRes, IValidErrorRes } from "Types/responce";
@@ -24,9 +26,12 @@ export const ProfileService = {
         throw e.response?.data.errors;
       });
   },
-  async registration(data: any) {
+  async registration(data: any, email: string) {
     return axios
       .post("https://katiatxi.club/txi/register", data)
+      .then(() => {
+        ProfileService.sendEmailAfterRegistration(email);
+      })
       .catch((e: AxiosError) => {
         if (e.response?.data && Array.isArray(e.response?.data)) {
           const errors: string[] = e.response.data;
@@ -60,7 +65,31 @@ export const ProfileService = {
         }
       });
   },
-  async sendEmailAfterRegistration(data: any) {
-    return axios.post("https://katiatxi.club/confirm-email-send", data);
+  async sendEmailAfterRegistration(email: string) {
+    return axios
+      .post(
+        "https://katiatxi.club/confirm-email-send",
+        { email },
+        {
+          params: { courses: true },
+        }
+      )
+      .then(() => {
+        AppStore?.dispatch(setModalViewAction("sentMail"));
+      })
+      .catch((e) => {
+        AppStore?.dispatch(setModalViewAction("someWrong"));
+        throw e;
+      });
+  },
+  async confirmEmail(confirmId: string) {
+    return axios
+      .post("https://katiatxi.club/confirm-email", { confirmId })
+      .then((res) => {
+        AppStore?.dispatch(setModalViewAction("login"));
+      })
+      .catch((e) => {
+        AppStore?.dispatch(setModalViewAction("someWrong"));
+      });
   },
 };

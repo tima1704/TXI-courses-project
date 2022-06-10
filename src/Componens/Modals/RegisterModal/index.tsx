@@ -54,7 +54,7 @@ export const RegisterPage: FC = () => {
       formData.append("rotate", "0");
     }
 
-    mutate(formData);
+    mutate({ data: formData, email: data.email });
   };
 
   return (
@@ -64,11 +64,11 @@ export const RegisterPage: FC = () => {
           {t("modals.registerModal.title")}
         </div>
         <div className={styles["user_img"]}>
-          < input
+          <input
             type={"file"}
             id={"file"}
             onChange={onChangeFile}
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
           />
         </div>
         <div>
@@ -115,12 +115,16 @@ export const RegisterPage: FC = () => {
           <Button
             onClick={onClickLogin}
             className={styles["loginBtn"]}
-            type="button">
+            type="button"
+          >
             {t("modals.registerModal.signIn")}
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          <a href="">{t("modals.registerModal.text.0")}<span>{t("modals.registerModal.text.1")}</span></a>
+          <a href="">
+            {t("modals.registerModal.text.0")}
+            <span>{t("modals.registerModal.text.1")}</span>
+          </a>
         </div>
       </form>
     </div>

@@ -1,5 +1,11 @@
 import React from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 import {
   URL_COURSE_$ID,
@@ -25,12 +31,20 @@ import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { WidthWrapper } from "Componens/main/widthWrapper";
 import { Modals } from "Componens/Modals";
 import Transactions from "Pages/Transactions";
+import { ProfileService } from "Helpers/api/Profile";
 
 function App() {
   const { checkAuth } = useAppDispatch();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   React.useEffect(() => {
     checkAuth();
+
+    if (searchParams.get("confirm-email")) {
+      ProfileService.confirmEmail(searchParams.get("confirm-email") as string);
+      setSearchParams("");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -38,6 +52,7 @@ function App() {
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
+
   React.useEffect(() => {
     if (isAuth && pathname === URL_HOME) {
       navigate(URL_USER_COURSE);
