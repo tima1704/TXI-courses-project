@@ -13,7 +13,8 @@
   background-color: gray;
   margin-bottom: 30px;
 }
-.login_form input {
+.input_register {
+  border: none;
   margin: 15px 0;
   font-size: 14px;
   letter-spacing: 0.5px;

@@ -6,8 +6,9 @@ import { useTransactions } from "Hooks/api/useTransactions";
 import moment from "moment";
 import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { TTransactionsStatus } from "Types/transactions";
+import { TTransactionsStatus, TTransactionsCurrency } from "Types/transactions";
 import styles from "Styles/pageStyles/Transactions.module.css";
+import { TransactionsCurrency } from "Componens/Transations/transactionsCurrency";
 
 const TransactionsFunc: FC = () => {
   const widthScreen = useContext(WidthContext);
@@ -96,8 +97,8 @@ const TransactionsFunc: FC = () => {
                           <TransactionStatus status={item.status} />
                         </td>
                         <td className={styles["price_table"]}>
-                          {item.coursePrice?.currency}
                           {item.coursePrice?.sum}
+                          <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />
                         </td>
                       </tr>
                     );
@@ -135,8 +136,8 @@ const TransactionsFunc: FC = () => {
                           <div>
                             <span>{t("transactions.headers.price_table")}</span>
                             <p className={styles["priceMobile"]}>
-                              {item.coursePrice?.currency}
                               {item.coursePrice?.sum}
+                              <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />
                             </p>
                           </div>
                           <div>
