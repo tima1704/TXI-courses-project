@@ -84,7 +84,7 @@ export const RegisterPage: FC = () => {
         </div>
         <div>
           <Input
-          className={styles["input_register"]}
+            className={styles["input_register"]}
             id="email"
             type={"email"}
             placeholder={t("modals.registerModal.inputPlaceholder.email")}
@@ -95,7 +95,7 @@ export const RegisterPage: FC = () => {
         </div>
         <div>
           <Input
-          className={styles["input_register"]}
+            className={styles["input_register"]}
             id="password"
             type={"password"}
             placeholder={t("modals.registerModal.inputPlaceholder.password")}

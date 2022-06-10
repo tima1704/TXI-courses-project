@@ -4,17 +4,20 @@ import styles from "./index.module.css";
 import { Icon } from "../../common/Icon";
 import Config from "Configs";
 import classNames from "classnames";
-
+import { LinkTo } from "Componens/common/Links";
+import { URL_HOME } from "Constants/URL";
 export const Footer: FC = () => {
   return (
     <footer className={"container anim_opacity"}>
       <div className={styles["footer"]}>
         <div className={styles["footer_top"]}>
-          <img
-            src={Logo}
-            className={classNames(styles["footer_logo"], "scale")}
-            alt={"Logo"}
-          />
+          <LinkTo link={URL_HOME}>
+            <img
+              src={Logo}
+              className={classNames(styles["footer_logo"], "scale")}
+              alt={"Logo"}
+            />
+          </LinkTo>
           <div className={styles["social_row"]}>
             <a href={Config.socials.telegram}>
               <Icon icon={"telegram"} className={"scale"} />
