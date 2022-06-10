@@ -79,7 +79,7 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          <p>{sum}<TransactionsCurrency currency={currency as TTransactionsCurrency}/></p>
+          <p><TransactionsCurrency currency={currency as TTransactionsCurrency}/>{sum}</p>
         </div>
         <div className={styles["prices__item_descr"]}>
           {days === 3650 ? `${t("cource.price.priceItem.permanentAccess")}` : `${days} ${t("cource.price.priceItem.daysAccess")}`}

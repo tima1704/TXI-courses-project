@@ -14,6 +14,9 @@ import SomeWrong from "./TextModals/somethingWrong";
 import PasswordChanged from "./TextModals/passwordChanged";
 import NewPassword from "./NewPasswordModal";
 import CloudErrors from "./TextModals/сloudErrors";
+import SentEmailMessageModal from "./TextModals/sentEmailMessage";
+import SomeWrongEmailModal from "./TextModals/emailErrorMessege";
+
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
@@ -58,6 +61,8 @@ export const Modals: FC = () => {
         {typeModal === "passwordChanged" && <PasswordChanged />}
         {typeModal === "newPassword" && <NewPassword />}
         {typeModal === "cloudErrors" && <CloudErrors/>}
+        {typeModal === "emailErrorMessage" && <SomeWrongEmailModal/>}
+        {typeModal === "sentEmailMessege" && <SentEmailMessageModal/>}
       </div>
     </div>
   );
