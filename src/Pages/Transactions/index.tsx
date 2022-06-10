@@ -8,7 +8,7 @@ import { FC, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { TTransactionsStatus, TTransactionsCurrency } from "Types/transactions";
 import styles from "Styles/pageStyles/Transactions.module.css";
-import { TransactionsCurrency } from "Componens/Transations/transactionsCurrency";
+import { TransactionsCurrency } from "Componens/common/Currency";
 
 const TransactionsFunc: FC = () => {
   const widthScreen = useContext(WidthContext);

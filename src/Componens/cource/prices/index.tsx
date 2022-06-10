@@ -7,7 +7,8 @@ import styles from "./index.module.css";
 import { useAppSelector } from "Hooks/redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { URL_USER_COURSE_ID } from "Constants/URL";
-
+import  { TransactionsCurrency } from 'Componens/common/Currency' 
+import { TTransactionsCurrency } from "Types/transactions";
 interface CourcePricesProps {
   prices: ICourcePrice[];
 }
@@ -78,7 +79,7 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          {currency} {sum}
+          <p>{sum}<TransactionsCurrency currency={currency as TTransactionsCurrency}/></p>
         </div>
         <div className={styles["prices__item_descr"]}>
           {days === 3650 ? `${t("cource.price.priceItem.permanentAccess")}` : `${days} ${t("cource.price.priceItem.daysAccess")}`}
