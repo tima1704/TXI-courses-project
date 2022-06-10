@@ -13,11 +13,11 @@ const ForgotPasswordModal = () => {
                     </div>
                </div>
                <div className={styles["body_modal"]}>
-                    <form>
+                    <div>
                          <Input
                               type="email"
                               placeholder={t("modals.forgotPassword.forgotPlaceHolder.email")} />
-                    </form>
+                    </div>
                </div>
                <div className={styles["footer_modal"]}>
                     <Button

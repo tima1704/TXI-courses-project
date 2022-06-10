@@ -38,9 +38,11 @@ export const Input: FC<InputProps> = ({
         {...props}
         className={classNames(styles["input"], {
           [classNameInput]: classNameInput,
-          [styles["error"]]: !!error,
         })}
       />
+      <div className={classNames(styles["line_input"], {
+        [styles["error"]]: !!error,
+      } )}/>
       <div {...getCollapseProps()}>
         <div className={styles["error_message"]}>{error?.message}</div>
       </div>

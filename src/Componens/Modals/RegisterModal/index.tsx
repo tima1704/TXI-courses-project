@@ -64,7 +64,7 @@ export const RegisterPage: FC = () => {
           {t("modals.registerModal.title")}
         </div>
         <div className={styles["user_img"]}>
-          <input
+          < input
             type={"file"}
             id={"file"}
             onChange={onChangeFile}
@@ -73,6 +73,7 @@ export const RegisterPage: FC = () => {
         </div>
         <div>
           <Input
+            className={styles["input_register"]}
             id="name"
             type={"name"}
             placeholder={t("modals.registerModal.inputPlaceholder.name")}
@@ -83,6 +84,7 @@ export const RegisterPage: FC = () => {
         </div>
         <div>
           <Input
+          className={styles["input_register"]}
             id="email"
             type={"email"}
             placeholder={t("modals.registerModal.inputPlaceholder.email")}
@@ -93,6 +95,7 @@ export const RegisterPage: FC = () => {
         </div>
         <div>
           <Input
+          className={styles["input_register"]}
             id="password"
             type={"password"}
             placeholder={t("modals.registerModal.inputPlaceholder.password")}

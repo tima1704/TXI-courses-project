@@ -14,9 +14,11 @@
 .title_modal{
      margin-bottom: 35px;
 }
+.body_modal div{
+     margin-bottom: 70px;
+}
 .body_modal input{
      width: 100%;
-     margin-bottom: 70px;
 }
 
 @media(max-width: 500px) {

@@ -2,7 +2,7 @@ export interface IModalView {
   type?: TModals;
 }
 
-export type TModals = "login" | "register" | "editProfile" | "errorCoursePaid" | "sentMail" | "someWrong" | "newPassword" | "passwordChanged";
+export type TModals = "login" | "register" | "editProfile" | "errorCoursePaid" | "sentMail" | "someWrong" | "newPassword" | "passwordChanged" | "cloudErrors";
 
 export enum ModalActionsTypes {
   SET_MODAL_VIEW = "SET_MODAL_VIEW",
