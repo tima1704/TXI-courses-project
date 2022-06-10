@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
+import { LinkTo } from "Componens/common/Links";
 import { TOKEN } from "Constants/App";
 import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
@@ -62,19 +63,19 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
         <div className={styles["links"]}>
           {/* <div></div> */}
           <div>
-            <Link to={URL_USER_COURSE} onClick={onClickCloseMenu}>
+            <LinkTo link={URL_USER_COURSE} onClick={onClickCloseMenu}>
               {t("header.menuAuth.mycourses")}
-            </Link>
+            </LinkTo>
           </div>
           <div>
-            <Link to={URL_TRANSACTIONS} onClick={onClickCloseMenu}>
+            <LinkTo link={URL_TRANSACTIONS} onClick={onClickCloseMenu}>
               {t("header.menuAuth.transactions")}
-            </Link>
+            </LinkTo>
           </div>
           <div>
-            <Link to={URL_SUPPORT} onClick={onClickCloseMenu}>
+            <LinkTo link={URL_SUPPORT} onClick={onClickCloseMenu}>
               {t("supportPage.support")}
-            </Link>
+            </LinkTo>
           </div>
         </div>
         <div className={styles["buttonRow"]}>

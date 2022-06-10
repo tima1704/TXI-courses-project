@@ -1,5 +1,6 @@
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
+import { LinkTo } from "Componens/common/Links";
 import { TOKEN } from "Constants/App";
 import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
@@ -49,17 +50,17 @@ export const MenuAuth: FC = () => {
             <div className={styles["userDrop"]}>
               {/* <div>Аккаунт</div> */}
               <div className={styles["userItems"]}>
-                <Link to={URL_USER_COURSE}>
+                <LinkTo link={URL_USER_COURSE} onClick={() => {}}>
                   {t("header.menuAuth.mycourses")}
-                </Link>
+                </LinkTo>
               </div>
               <div className={styles["userItems"]}>
-                <Link to={URL_TRANSACTIONS}>
+                <LinkTo link={URL_TRANSACTIONS} onClick={() => {}}>
                   {t("header.menuAuth.transactions")}
-                </Link>
+                </LinkTo>
               </div>
               <div className={styles["userItems"]}>
-                <Link to={URL_SUPPORT}>{t("supportPage.support")}</Link>
+                <LinkTo link={URL_SUPPORT} onClick={() => {}}>{t("supportPage.support")}</LinkTo>
               </div>
               <div className={styles["userItems"]} onClick={onClickExit}>
                 {t("header.menuAuth.goOut")}

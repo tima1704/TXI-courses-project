@@ -2,7 +2,6 @@ import { FC, useContext, useMemo } from "react";
 import React from "react";
 import classNames from "classnames";
 import Logo from "Svg/logo.svg";
-import { Link } from "react-router-dom";
 import { URL_HOME } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 
@@ -11,6 +10,7 @@ import { MenuHeader } from "./MenuHeader";
 import { MenuAuth } from "./MenuAuth";
 import { WidthContext } from "../widthWrapper";
 import { Icon } from "Componens/common/Icon";
+import { LinkTo } from "Componens/common/Links";
 
 interface IHeader {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,9 +36,9 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
       <div className={styles["header"]}>
         <div className={styles["logo_menu"]}>
           <div className={styles["ImgLogoMenu"]}>
-            <Link to={URL_HOME}>
+            <LinkTo link={URL_HOME} onClick={() => {}}>
               <img src={Logo} alt="Logo" className="scale" />
-            </Link>
+            </LinkTo>
           </div>
           {widthScreen > 900 && <MenuHeader />}
         </div>

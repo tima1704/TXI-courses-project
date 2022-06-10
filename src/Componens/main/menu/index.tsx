@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
+import { LinkTo } from "Componens/common/Links";
 import Config from "Configs";
 import { URL_HOME } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
@@ -78,7 +79,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               <a href={"https://katiatxi.club/ru/video/"}>{t("burger.mobmenu.video")}</a>
             </li>
             <li>
-              <Link to={URL_HOME}>{t("burger.mobmenu.education")}</Link>
+              <LinkTo onClick={() => {}} link={URL_HOME}>{t("burger.mobmenu.education")}</LinkTo>
             </li>
             <li>
               <a href={"https://katiatxi.club/ru/projects/"}>{t("burger.mobmenu.projects")}</a>
