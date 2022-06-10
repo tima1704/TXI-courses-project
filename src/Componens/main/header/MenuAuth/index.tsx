@@ -50,17 +50,17 @@ export const MenuAuth: FC = () => {
             <div className={styles["userDrop"]}>
               {/* <div>Аккаунт</div> */}
               <div className={styles["userItems"]}>
-                <LinkTo link={URL_USER_COURSE} onClick={() => {}}>
+                <LinkTo link={URL_USER_COURSE}>
                   {t("header.menuAuth.mycourses")}
                 </LinkTo>
               </div>
               <div className={styles["userItems"]}>
-                <LinkTo link={URL_TRANSACTIONS} onClick={() => {}}>
+                <LinkTo link={URL_TRANSACTIONS}>
                   {t("header.menuAuth.transactions")}
                 </LinkTo>
               </div>
               <div className={styles["userItems"]}>
-                <LinkTo link={URL_SUPPORT} onClick={() => {}}>{t("supportPage.support")}</LinkTo>
+                <LinkTo link={URL_SUPPORT}>{t("supportPage.support")}</LinkTo>
               </div>
               <div className={styles["userItems"]} onClick={onClickExit}>
                 {t("header.menuAuth.goOut")}

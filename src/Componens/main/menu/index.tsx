@@ -79,7 +79,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               <a href={"https://katiatxi.club/ru/video/"}>{t("burger.mobmenu.video")}</a>
             </li>
             <li>
-              <LinkTo onClick={() => {}} link={URL_HOME}>{t("burger.mobmenu.education")}</LinkTo>
+              <LinkTo link={URL_HOME}>{t("burger.mobmenu.education")}</LinkTo>
             </li>
             <li>
               <a href={"https://katiatxi.club/ru/projects/"}>{t("burger.mobmenu.projects")}</a>

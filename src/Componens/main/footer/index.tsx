@@ -11,7 +11,7 @@ export const Footer: FC = () => {
     <footer className={"container anim_opacity"}>
       <div className={styles["footer"]}>
         <div className={styles["footer_top"]}>
-          <LinkTo link={URL_HOME} onClick={() => {}}>
+          <LinkTo link={URL_HOME}>
             <img
               src={Logo}
               className={classNames(styles["footer_logo"], "scale")}

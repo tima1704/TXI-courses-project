@@ -11,8 +11,8 @@ export const NoByCources = () => {
     <div className={classNames(styles["wrapper"], "body")}>
       <div className={styles["content"]}>
         <div className={styles["title"]}>{t("noCourses.title")}</div>
-        <LinkTo link={URL_HOME} onClick={() => {}}>
-          <Button className={styles["link"]}>{t("noCourses.link")}</Button>
+        <LinkTo link={URL_HOME} className={styles["link"]}>
+          <Button>{t("noCourses.link")}</Button>
         </LinkTo>
       </div>
     </div>

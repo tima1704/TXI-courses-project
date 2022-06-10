@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 interface LinkProprs {
      link: string,
-     onClick: any,
+     onClick?: any,
+     className?: string
 }
 export const LinkTo: React.FC<LinkProprs> = ({
      link,
      onClick,
      children,
+     className = ""
 }) => {
      const onTop = () => {
           window.scrollTo({
@@ -19,6 +21,6 @@ export const LinkTo: React.FC<LinkProprs> = ({
           }
      }
      return (
-          <Link onClick={onTop} to={link}>{children}</Link>
+          <Link className={className} onClick={onTop} to={link}>{children}</Link>
      );
 };

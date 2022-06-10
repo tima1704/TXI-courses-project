@@ -36,7 +36,7 @@ export const Header: FC<IHeader> = ({ setOpenMenu }) => {
       <div className={styles["header"]}>
         <div className={styles["logo_menu"]}>
           <div className={styles["ImgLogoMenu"]}>
-            <LinkTo link={URL_HOME} onClick={() => {}}>
+            <LinkTo link={URL_HOME}>
               <img src={Logo} alt="Logo" className="scale" />
             </LinkTo>
           </div>
