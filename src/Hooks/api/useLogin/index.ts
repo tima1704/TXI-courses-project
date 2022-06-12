@@ -29,3 +29,55 @@ export const useLogin = () => {
 
   return { mutate, isDisabled, errors };
 };
+
+export const useResetPasswordSent = () => {
+  const [errors, setErrors] = useState<IValidError[]>([]);
+  const { setModalViewAction } = useAppDispatch();
+
+  const { mutate, isLoading: isDisabled } = useMutation(
+    ProfileService.sendEmailResetPassword,
+    {
+      onMutate: () => {
+        setErrors([]);
+      },
+      onSuccess: async (data) => {
+        setModalViewAction("sentMail");
+      },
+      onError: (errorsRes: IValidError[]) => {
+        if (Array.isArray(errorsRes)) {
+          setErrors(errorsRes);
+        }
+      },
+    }
+  );
+
+  return { errors, mutate, isDisabled };
+};
+
+export const useResetPassword = (setSearchParams: any) => {
+  const [errors, setErrors] = useState<IValidError[]>([]);
+  const { setModalViewAction } = useAppDispatch();
+
+  const { mutate, isLoading: isDisabled } = useMutation(
+    ProfileService.resetPassword,
+    {
+      onMutate: () => {
+        setErrors([]);
+      },
+      onSuccess: async (data) => {
+        setModalViewAction("passwordChanged");
+        setSearchParams("");
+      },
+      onError: (errorsRes: IValidError[]) => {
+        if (Array.isArray(errorsRes)) {
+          if (errorsRes.find((i) => i.name === "idReset")) {
+            setModalViewAction("someWrong");
+          }
+          setErrors(errorsRes);
+        }
+      },
+    }
+  );
+
+  return { errors, mutate, isDisabled };
+};

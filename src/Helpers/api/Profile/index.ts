@@ -75,10 +75,10 @@ export const ProfileService = {
         }
       )
       .then(() => {
-        AppStore?.dispatch(setModalViewAction("sentMail"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
       })
       .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("someWrong"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
         throw e;
       });
   },
@@ -89,7 +89,45 @@ export const ProfileService = {
         AppStore?.dispatch(setModalViewAction("login"));
       })
       .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("someWrong"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
+      });
+  },
+  async sendEmailResetPassword(email: string) {
+    return axios
+      .post(
+        "https://katiatxi.club/reset-password-send",
+        { email },
+        {
+          params: { courses: true },
+        }
+      )
+      .then(() => {
+        return true;
+      })
+      .catch((e: AxiosError) => {
+        if (e.response?.data.input) {
+          // eslint-disable-next-line no-throw-literal
+          throw [
+            { name: e.response?.data.input, message: "email is not valid" },
+          ];
+        }
+        throw e;
+      });
+  },
+  async resetPassword(data: any) {
+    return axios
+      .post("https://katiatxi.club/reset-password", data)
+      .then(() => {
+        return true;
+      })
+      .catch((e: AxiosError) => {
+        if (e.response?.data.input) {
+          // eslint-disable-next-line no-throw-literal
+          throw [
+            { name: e.response?.data.input, message: e.response?.data.message },
+          ];
+        }
+        throw e;
       });
   },
 };

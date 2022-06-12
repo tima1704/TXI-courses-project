@@ -1,5 +1,4 @@
 import { ProfileService } from "Helpers/api/Profile";
-import { useAppDispatch } from "Hooks/redux";
 import { useState } from "react";
 import { useMutation } from "react-query";
 import { IValidError } from "Types/common";
@@ -11,7 +10,6 @@ interface IVariables {
 
 export const useRegistration = () => {
   const [errors, setErrors] = useState<IValidError[]>([]);
-  const { setModalViewAction } = useAppDispatch();
 
   const { mutate, isLoading: isDisabled } = useMutation(
     ({ data, email }: IVariables) => {
@@ -20,9 +18,6 @@ export const useRegistration = () => {
     {
       onMutate: () => {
         setErrors([]);
-      },
-      onSuccess: (data) => {
-        setModalViewAction("login");
       },
       onError: (errorsRes: IValidError[]) => {
         if (Array.isArray(errorsRes)) {

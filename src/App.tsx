@@ -34,7 +34,7 @@ import Transactions from "Pages/Transactions";
 import { ProfileService } from "Helpers/api/Profile";
 
 function App() {
-  const { checkAuth } = useAppDispatch();
+  const { checkAuth, setModalViewAction } = useAppDispatch();
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -44,6 +44,10 @@ function App() {
     if (searchParams.get("confirm-email")) {
       ProfileService.confirmEmail(searchParams.get("confirm-email") as string);
       setSearchParams("");
+    }
+
+    if (searchParams.get("reset-password")) {
+      setModalViewAction("newPassword");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

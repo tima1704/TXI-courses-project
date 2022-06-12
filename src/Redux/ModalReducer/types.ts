@@ -5,13 +5,15 @@ export interface IModalView {
 export type TModals =
   | "login"
   | "register"
-  | "editProfile"
+  | "forgotPassword"
   | "errorCoursePaid"
   | "sentMail"
   | "someWrong"
   | "newPassword"
   | "passwordChanged"
-  | "cloudErrors";
+  | "cloudErrors"
+  | "emailErrorMessage"
+  | "sentEmailMessege";
 
 export enum ModalActionsTypes {
   SET_MODAL_VIEW = "SET_MODAL_VIEW",
