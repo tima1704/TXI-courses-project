@@ -54,7 +54,7 @@ export const Modals: FC = () => {
         </div>
         {typeModal === "login" && <LoginModal />}
         {typeModal === "register" && <RegisterPage />}
-        {typeModal === "editProfile" && <FgPassword />}
+        {typeModal === "forgotPassword" && <FgPassword />}
         {typeModal === "errorCoursePaid" && <ErrorCourceModal />}
         {typeModal === "sentMail" && <MailModal />}
         {typeModal === "someWrong" && <SomeWrong />}
