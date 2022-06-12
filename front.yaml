@@ -8,7 +8,7 @@ metadata:
     app: front-course-${CI_ENVIRONMENT_NAME}
   name: front-course-${CI_ENVIRONMENT_NAME}
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 100
   selector:
     matchLabels:
@@ -28,15 +28,15 @@ spec:
         - containerPort: 80
         resources:
           limits:
-            cpu: 500m
-            memory: 1000Mi
-      affinity:
-         podAntiAffinity:
-           requiredDuringSchedulingIgnoredDuringExecution:
-           - labelSelector:
-               matchLabels:
-                 app: front-course-${CI_ENVIRONMENT_NAME}
-             topologyKey: "kubernetes.io/hostname"
+            cpu: 2500m
+            memory: 2000Mi
+#      affinity:
+#         podAntiAffinity:
+#           requiredDuringSchedulingIgnoredDuringExecution:
+#           - labelSelector:
+#               matchLabels:
+#                 app: front-course-${CI_ENVIRONMENT_NAME}
+#             topologyKey: "kubernetes.io/hostname"
       tolerations:
       - effect: NoExecute
         key: node.kubernetes.io/not-ready
