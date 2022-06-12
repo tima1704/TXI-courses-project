@@ -75,10 +75,10 @@ export const ProfileService = {
         }
       )
       .then(() => {
-        AppStore?.dispatch(setModalViewAction("sentMail"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
       })
       .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("someWrong"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
         throw e;
       });
   },
@@ -89,7 +89,7 @@ export const ProfileService = {
         AppStore?.dispatch(setModalViewAction("login"));
       })
       .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("someWrong"));
+        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
       });
   },
 };
