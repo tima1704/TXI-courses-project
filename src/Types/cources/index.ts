@@ -34,12 +34,15 @@ export interface ICourceContent {
 }
 
 export type CourseContentType = "text" | "video";
+export type TPriceType = "pay" | "recurrent";
 
 export interface ICourcePrice {
   id: number;
   sum: string;
   currency: TTransactionsCurrency;
   days: number;
+  type: TPriceType;
+  maxPeriod?: number;
 }
 
 export interface ICourceUserItem extends ICource {

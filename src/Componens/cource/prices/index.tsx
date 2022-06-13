@@ -7,8 +7,7 @@ import styles from "./index.module.css";
 import { useAppSelector } from "Hooks/redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { URL_USER_COURSE_ID } from "Constants/URL";
-import  { TransactionsCurrency } from 'Componens/common/Currency' 
-import { TTransactionsCurrency } from "Types/transactions";
+import { TransactionsCurrency } from "Componens/common/Currency";
 interface CourcePricesProps {
   prices: ICourcePrice[];
 }
@@ -29,7 +28,14 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
     </div>
   );
 };
-const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
+const PriceItem: FC<ICourcePrice> = ({
+  sum,
+  days,
+  currency,
+  id,
+  type,
+  maxPeriod,
+}) => {
   const { t } = useTranslation();
 
   const { isAuth, user } = useAppSelector((s) => s.App);
@@ -42,21 +48,32 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
   useEffect(() => {
     if (pay && user) {
       const publcId = process.env.REACT_APP_PUBLIC_API_CLOUD_PAYMENTS;
-      const amount = +pay.amount;
+      let amount = +pay.amount;
       const currency = pay.currency;
       const invoiceId = pay.invoiceId;
       const email = user?.email || "";
-      const accountId = user?.id || "";
+      let data: any = {};
+      if (pay.type === "recurrent") {
+        data.CloudPayments = {
+          recurrent: {
+            interval: "Month",
+            period: 1,
+            maxPeriods: pay.maxPeriod - 1,
+          },
+        };
+        amount = amount / pay.maxPeriod;
+      }
       Pay(
         {
           publicId: publcId,
           description: "",
           amount: amount,
           currency: currency,
-          accountId: accountId,
+          accountId: invoiceId,
           invoiceId: invoiceId,
           email: email,
           skin: "mini",
+          data,
         },
         () => {
           navigate(URL_USER_COURSE_ID(courseId as string));
@@ -79,10 +96,26 @@ const PriceItem: FC<ICourcePrice> = ({ sum, days, currency, id }) => {
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          <p><TransactionsCurrency currency={currency as TTransactionsCurrency}/>{sum}</p>
+          <p>
+            {type === "recurrent" && maxPeriod ? (
+              <>
+                {maxPeriod}
+                {"x"}
+                <TransactionsCurrency currency={currency} />
+                {(+sum / maxPeriod).toFixed(2)}
+              </>
+            ) : (
+              <>
+                <TransactionsCurrency currency={currency} />
+                {sum}
+              </>
+            )}
+          </p>
         </div>
         <div className={styles["prices__item_descr"]}>
-          {days === 3650 ? `${t("cource.price.priceItem.permanentAccess")}` : `${days} ${t("cource.price.priceItem.daysAccess")}`}
+          {days === 3650
+            ? `${t("cource.price.priceItem.permanentAccess")}`
+            : `${days} ${t("cource.price.priceItem.daysAccess")}`}
         </div>
       </div>
       <button
