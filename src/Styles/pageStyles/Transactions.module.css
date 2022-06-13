@@ -1,21 +1,20 @@
 .table_header {
-  background-color: #656878;
+  background-color: var(--text-transaction);
   color: #fff;
 }
-
 .body {
   min-height: calc(10vh - 175px);
 }
-.price_table{
-  display: flex;
-  align-items: center;
+.noItems {
+  font-size: 20px;
+  margin: 20px 0;
+  color: var(--text-transaction);
 }
 .table_transactions {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
 .table_header tr {
   text-align: left;
 }
@@ -59,7 +58,9 @@ table tr:nth-child(2n + 1) td {
 .price_table {
   padding: 10px;
 }
-
+.row_currency {
+  display: flex;
+}
 .body_table tr td {
   font-size: 15px;
   line-height: 15px;
@@ -109,7 +110,7 @@ table tr:nth-child(2n + 1) td {
 }
 .top_content span {
   font-size: 20px;
-  color: #656878;
+  color: var(--text-transaction);
 }
 .price_content p {
   padding: 8px 0;
@@ -117,14 +118,22 @@ table tr:nth-child(2n + 1) td {
 .top_content p {
   font-size: 18px;
 }
-.priceMobile {
+.mobile_row_currency{
   display: flex;
-  align-items: center;
+  margin: 10px 0;
+}
+.priceMobile {
+  font-size: 16px;
   font-weight: 600;
+}
+.last_day_block{
+  padding-top: 2px;
+  position: relative;
+  bottom: 2px;
 }
 .bottom_content span {
   font-size: 20px;
-  color: #656878;
+  color: var(--text-transaction);
 }
 .item_top p {
   margin: 8px 0;
@@ -154,13 +163,23 @@ table tr:nth-child(2n + 1) td {
 @media (max-width: 500px) {
   .title_transactMobile h3 {
     font-size: 35px;
-    margin: 0 0 70px 0;
+    margin: 30px 0 30px 0;
   }
 }
 @media (max-width: 450px) {
+  .title_transactMobile h3 {
+    font-size: 35px;
+    margin: 30px 0 50px 0;
+  }
+  .mobile_row_currency{
+    margin: 8px 0;
+  }
+  .priceMobile {
+    font-size: 13px;
+  }
   .top_content span {
     font-size: 15px;
-    color: #656878;
+    color: var(--text-transaction);
   }
   .top_content p {
     font-size: 14px;

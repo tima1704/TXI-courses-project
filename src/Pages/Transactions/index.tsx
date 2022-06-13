@@ -74,13 +74,13 @@ const TransactionsFunc: FC = () => {
               </thead>
               <tbody className={styles["body_table"]}>
                 {dataTransactions.length < 1 ? (
-                  <tr>
-                    <td>{t("transactions.noitems")}</td>
-                  </tr>
+                  <div className={styles["noItems"]}>
+                    {t("transactions.noitems")}
+                  </div>
                 ) : (
                   dataTransactions.map((item) => {
                     return (
-                      <tr>
+                      <tr key={item.id + "decstop-key"}>
                         <td className={styles["order_table"]}>{item.id}</td>
                         <td className={styles["product_table"]}>
                           {item.course?.courseMainInfo.title}
@@ -97,7 +97,9 @@ const TransactionsFunc: FC = () => {
                           <TransactionStatus status={item.status} />
                         </td>
                         <td className={styles["price_table"]}>
-                          <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />{item.coursePrice?.sum}
+                          <div className={styles["row_currency"]}>
+                            <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} /><p>{item.coursePrice?.sum}</p>
+                          </div>
                         </td>
                       </tr>
                     );
@@ -119,7 +121,7 @@ const TransactionsFunc: FC = () => {
               ) : (
                 dataTransactions.map((item) => {
                   return (
-                    <div className={styles["element_transaction"]}>
+                    <div key={item.id + "mobile-key"} className={styles["element_transaction"]}>
                       <div className={styles["top_content"]}>
                         <div className={styles["item_top"]}>
                           <div>
@@ -134,11 +136,13 @@ const TransactionsFunc: FC = () => {
                         <div className={styles["price_content"]}>
                           <div>
                             <span>{t("transactions.headers.price_table")}</span>
-                            <p className={styles["priceMobile"]}>
-                              <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />{item.coursePrice?.sum}
-                            </p>
+                            <div className={styles["priceMobile"]}>
+                              <div className={styles["mobile_row_currency"]}>
+                                <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />{item.coursePrice?.sum}
+                              </div>
+                            </div>
                           </div>
-                          <div>
+                          <div className={styles["last_day_block"]}>
                             <span>{t("transactions.headers.lastdate")}</span>
                             <p>
                               {moment(new Date(+item.expirationDate)).format(
@@ -158,11 +162,11 @@ const TransactionsFunc: FC = () => {
                         <div className={styles["status_item"]}>
                           <div>
                             <span>{t("transactions.headers.status")}</span>
-                            <p className={styles["status_item_text"]}>
+                            <div className={styles["status_item_text"]}>
                               <TransactionStatus
                                 status={item.status as TTransactionsStatus}
                               />
-                            </p>
+                            </div>
                           </div>
                         </div>
                       </div>
