@@ -25,6 +25,7 @@ import Error from "./Error.svg";
 import ArrowLeftWhite from "./arrow-left-white.svg";
 import CloseWhite from "./Close-white.svg";
 import Reject from "./reject.svg";
+import Photo from "./Photo.svg";
 
 const Icons = {
   video: Video,
@@ -52,6 +53,7 @@ const Icons = {
   arrowLeftWhite: ArrowLeftWhite,
   closeWhite: CloseWhite,
   reject: Reject,
+  photo: Photo,
 };
 
 type IconsName = keyof typeof Icons;

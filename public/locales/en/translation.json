@@ -208,6 +208,7 @@
   },
   "errors": {
     "registrations": {
+      "file": "Картинка обязательна",
       "name": "Name not a valid",
       "surname": "Suename not a valid",
       "email": "Email not valid or already in use",

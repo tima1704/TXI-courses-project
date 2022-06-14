@@ -1,0 +1,59 @@
+.inputImage {
+  margin-bottom: 30px;
+}
+
+.user_img {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-color: gray;
+  object-fit: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_img_wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.user_img_input {
+  margin-left: 16px;
+}
+
+.rotate {
+  cursor: pointer;
+}
+
+.error_message {
+  font-size: 11px;
+  line-height: 13px;
+  color: var(--danger-color);
+  margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+  .inputImage {
+    margin-bottom: 25px;
+  }
+  .user_img {
+    width: 55px;
+    height: 55px;
+  }
+  .error_message {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 378px) {
+  .inputImage {
+    margin-bottom: 20px;
+  }
+
+  .error_message {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+}
