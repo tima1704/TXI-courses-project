@@ -13,18 +13,19 @@
   background-color: gray;
   margin-bottom: 30px;
 }
+.content_input_Register input{
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
 .input_register {
   border: none;
   margin: 15px 0;
-  font-size: 14px;
-  letter-spacing: 0.5px;
 }
 .text_footer {
   margin-top: 20px;
   line-height: 17px;
   font-size: 16px;
   width: 70%;
-
   text-align: left;
   color: gray;
   font-weight: 400;
@@ -57,7 +58,6 @@
   width: 155px;
   font-size: 12px;
 }
-
 .login_title {
   font-weight: 500;
   transition: 0.5s;
@@ -69,6 +69,9 @@
   margin: 20px 0;
 }
 @media (max-width: 500px) {
+  .input_register{
+    font-size: 15px !important;
+  }
   .login {
     margin: 30px 10px;
   }
@@ -81,17 +84,19 @@
   }
   .create_button {
     width: 140px;
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
   .loginBtn {
     width: 90px;
   }
-
   .text_footer a {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 @media (max-width: 378px) {
+  .login_form button{
+    margin-top: 13px;
+  }
   .login {
     margin: 5px 0px;
   }
@@ -99,25 +104,26 @@
     margin-bottom: 30px;
   }
   .loginBtn {
-    width: 70px;
+    width: 80px;
     padding: 10px !important;
-    font-size: 11px !important;
+    font-size: 13px !important;
   }
-
   .text_footer {
     text-decoration: none;
-    margin-top: 10px;
-    line-height: 10px;
-    padding-right: 70px;
+    margin-top: 20px;
+    width: 90%;
+    line-height: 15px;
+  }
+  .text_footer a {
+    font-size: 12px !important;
   }
   .create_button {
     padding: 10px;
-    width: 120px;
-    font-size: 10px !important;
+    width: 130px;
+    font-size: 12px !important;
   }
   .login_form input {
-    margin: 15px 0;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0px;
   }
   .user_img {

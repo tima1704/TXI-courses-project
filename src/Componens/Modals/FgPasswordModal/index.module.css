@@ -22,9 +22,12 @@
 }
 
 @media (max-width: 500px) {
-  .body_modal input {
+  .footer_modal{
     width: 100%;
-    margin-bottom: 50px;
+  }
+  .body_modal input {
+    font-size: 15px;
+    width: 100%;
   }
   .Forgot_Modal {
     padding: 20px 20px;
@@ -35,7 +38,7 @@
     margin-bottom: 20px;
   }
   .text_modal p {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 15px;
     color: #656878;
   }
@@ -43,7 +46,13 @@
 @media (max-width: 378px) {
   .body_modal input {
     width: 100%;
+  }
+  .body_modal{
     margin-bottom: 50px;
+    font-size: 14px ;
+  }
+  .footer_modal button{
+    font-size: 11px;
   }
   .Forgot_Modal {
     padding: 10px 10px;
@@ -52,12 +61,12 @@
     margin-bottom: 25px;
   }
   .title_modal h3 {
+    font-size: 20px;
     font-weight: 500;
-    font-size: 18px;
     margin-bottom: 18px;
   }
   .text_modal p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 13px;
     color: #656878;
   }

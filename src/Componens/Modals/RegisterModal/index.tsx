@@ -71,7 +71,7 @@ export const RegisterPage: FC = () => {
             // style={{ display: "none" }}
           />
         </div>
-        <div>
+        <div className={styles["content_input_Register"]}>
           <Input
             className={styles["input_register"]}
             id="name"
@@ -82,7 +82,7 @@ export const RegisterPage: FC = () => {
             disabled={isDisabled}
           />
         </div>
-        <div>
+        <div className={styles["content_input_Register"]}>
           <Input
             className={styles["input_register"]}
             id="email"
@@ -93,7 +93,7 @@ export const RegisterPage: FC = () => {
             disabled={isDisabled}
           />
         </div>
-        <div>
+        <div className={styles["content_input_Register"]}>
           <Input
             className={styles["input_register"]}
             id="password"
