@@ -4,8 +4,6 @@ import { LinkTo } from "Componens/common/Links";
 import { URL_HOME } from "Constants/URL";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-
 import styles from "./index.module.css";
 
 export const MenuHeader: FC = () => {

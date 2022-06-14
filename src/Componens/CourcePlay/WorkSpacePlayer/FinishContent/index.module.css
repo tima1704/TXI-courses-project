@@ -1,0 +1,24 @@
+.finish_content{
+     margin: 20px 0;
+}
+.body_content h3{
+     font-size: 30px;
+     margin: 30px 0px 50px 0px;
+}
+.body_content p{
+     font-size: 18px;
+     line-height: 25px;
+     margin-bottom: 30px;
+}
+.body_content span{
+     font-size: 18px;
+}
+.finish_content button{
+     margin-top: 50px;
+}
+
+@media(max-width: 900px){
+     .finish_content{
+          margin: 20px 20px;
+     }
+}

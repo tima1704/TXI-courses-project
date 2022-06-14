@@ -7,7 +7,6 @@ import { URL_HOME } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 import { MenuUser } from "./menuUser";
 

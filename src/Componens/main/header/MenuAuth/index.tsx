@@ -6,8 +6,6 @@ import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-
 import styles from "./index.module.css";
 
 export const MenuAuth: FC = () => {

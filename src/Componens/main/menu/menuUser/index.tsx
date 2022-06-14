@@ -8,7 +8,6 @@ import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
 
