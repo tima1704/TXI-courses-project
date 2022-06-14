@@ -1,6 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { API_PAYMENTS, API_PAYMENTS_TRANSACTIONS } from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
+import { TPriceType } from "Types/cources";
 import { ISuccessRes, IValidErrorRes } from "Types/responce";
 import { ITransaction } from "Types/transactions";
 
@@ -8,6 +9,8 @@ export interface IInvoice {
   invoiceId: number;
   amount: number;
   currency: string;
+  type: TPriceType;
+  maxPeriod: number;
 }
 
 export const PaymentsServices = {

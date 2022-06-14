@@ -1,43 +1,52 @@
 {
   "common": {
-    "signIn": "Sign In",
-    "signUp": "Registration",
-    "or": "or"
+    "signIn": "Sing in",
+    "signUp": "Register",
+    "or": "or",
+    "start": "Start",
+    "back": "Back",
+    "transactionsStatus": {
+      "paid": "Paid",
+      "processing": "In progress",
+      "fail": "Fail",
+      "rejected": "Returned"
+    }
   },
   "header": {
     "menu": {
       "main": ["Katia", "Txi"],
-      "blog": "Push",
+      "blog": "Blog",
       "video": "Video",
-      "education": "Training",
+      "education": "Education",
       "projects": "Projects",
       "purchases": "Purchases"
     },
     "menuAuth": {
       "mycourses": "My courses",
-      "goOut": "Go out"
+      "transactions": "Transactions",
+      "goOut": "Sing out"
     }
   },
   "footer": {
-    "copyright": "Copyright 2022 kt.All rights reserved."
+    "copyright": "Copyright 2022 Katia Txi. All rights reserved."
   },
   "burger": {
     "mobmenu": {
       "main": ["Katia", "Txi"],
-      "blog": "Push",
+      "blog": "Blog",
       "video": "Video",
-      "education": "Training",
-      "projects": "Projectss",
-      "purchases": "Purchaseses"
+      "education": "Education",
+      "projects": "Projects",
+      "purchases": "Purchases"
     }
   },
   "menuCourses": {
     "courseMenu": {
-      "onlinecourse": "Online training",
-      "allprograms": "All programs",
-      "yourcourses": "Your courseses",
-      "onlineLearning": "Online training",
-      "mycourses": "My coursess"
+      "onlinecourse": "Online courses",
+      "allprograms": "All courses",
+      "yourcourses": "My courses",
+      "onlineLearning": "Online courses",
+      "mycourses": "My courses"
     }
   },
   "cource": {
@@ -47,70 +56,172 @@
     },
     "price": {
       "PaymentOptions": "Payment options:",
-      "choose": "Choose"
-    }
+      "choose": "Buy now",
+      "priceItem": {
+        "period": "Месяц",
+        "permanentAccess": "One-time payment",
+        "daysAccess": "days access",
+        "installmentPlan": "Рассрочка на",
+        "planPeriod": "месяца"
+      }
+    },
+    "nextLesson": "Next lesson"
+  },
+  "noCourses": {
+    "title": "You have not purchased courses yet",
+    "link": "Go to course"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "headers": {
+      "order": "Order ID #",
+      "product": "Product",
+      "date": "Order date",
+      "lastdate": "Expires",
+      "status": "Payment status",
+      "price_table": "Current Value"
+    },
+    "noitems": "Not found"
   },
   "supportPage": {
     "support": "Support",
-    "emailSupport": "support@katiatxi.club",
-    "textSupport": "We will be happy to get your review or help you with any questions by Ovash order..",
+    "emailSupport": "support@wildhumans.club",
+    "textSupport": "We will be happy to receive your feedback or help you with any questions about your order.",
     "WhatIsYourQuestion": "What is your question?",
     "inputsText": {
-      "name": "NAME: *",
-      "numberOrder": "ORDER NUMBER: *",
-      "phone": "Phone*",
-      "email": "EMAIL: *",
-      "commentQuestion": "Commentary / Questionon: *",
+      "name": "Your name: *",
+      "numberOrder": "Order ID: *",
+      "phone": "Your phone: *",
+      "email": "Your e-mail: *",
+      "commentQuestion": "Your question: *",
       "send": "Send"
     },
     "inputPlaceholder": {
-      "name": "Enter your namename",
-      "numberOrder": "Enter the order numberer",
-      "phone": "Enter the phone number",
-      "email": "Enter mail",
-      "commentQuestion": "Enter the comment / question"
+      "name": "Enter your name",
+      "numberOrder": "Enter your order id",
+      "phone": "Enter your phone number",
+      "email": "Enter your e-mail",
+      "commentQuestion": "Enter your question"
     }
   },
   "modals": {
     "loginModal": {
-      "title": "Sign In",
+      "title": "Sing In",
       "ForgotPassword": "Forgot your password?",
-      "signIn": "Sign In",
-      "createAccount": "Create account",
+      "signIn": "Sing In",
+      "createAccount": "Create an account",
       "loginPlaceholder": {
-        "email": "Enter email address",
-        "password": "enter password"
+        "email": "Enter your e-mail",
+        "password": "Password"
       }
     },
     "registerModal": {
-      "title": "Create an accountnt",
-      "createAccount": "Create account",
-      "signIn": "Sign in",
-      "text": ["Pressing “Create an account” I agree to process ", "personal data"],
+      "title": "Create an account",
+      "createAccount": "Create an account",
+      "signIn": "Sing In",
+      "text": [
+        "By clicking 'Create an account' I agree to the processing",
+        "personal data"
+      ],
       "inputPlaceholder": {
-        "name": "How can I call you?",
-        "email": "Enter email address",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Enter your e-mail",
         "password": "Create a password"
       }
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "info": "Enter your user account's verified email address and we will send you a password reset link.",
+      "send": "Send password reset link",
+      "forgotPlaceHolder": {
+        "email": "Enter your e-mail"
+      }
+    },
+    "newPassword": {
+      "title": "Change password",
+      "newPasswordInput": {
+        "password": "Enter new password",
+        "confirmPassword": "Confirm the password"
+      },
+      "apply": "Apply"
+    },
+    "subscribedCource": {
+      "title": "Your are already enrollment",
+      "text": [
+        "For any questions about the course, modules, payment you can contact the support team at:",
+        "support@wildhumans.club"
+      ]
+    },
+    "setMail": {
+      "title": "The mail was send",
+      "text": "The link to reset your password has been sent to your email."
+    },
+    "passwordChange": {
+      "title": "Well done!",
+      "text": "The new password has been successfully set. You will be redirected to the main page."
+    },
+    "setEmailMessege": {
+      "title": "The mail was send",
+      "text": "Your account has been successfully registered. We have sent you an email, please check your email."
+    },
+    "someEmailWrong": {
+      "title": "Oops",
+      "text": "The link you used is invalid. Please submit a new request."
+    },
+    "someWrong": {
+      "title": "Oops",
+      "text": "The link you used is invalid. If you have forgotten your password, please submit a new request."
+    },
+    "cloudErrors": {
+      "title": "Operation cannot be processed",
+      "text": "Contact your bank or use another card"
     }
   },
   "showcaseCoursces": {
     "courcesItem": {
       "price": "$180",
-      "buy": "buy"
+      "buy": "More"
     },
     "noByCource": {
-      "noCource": "You have no bought courses",
-      "RouteToCource": "Go to the courses"
+      "noCource": "You have not purchased courses yet",
+      "RouteToCource": "Go to courses"
     }
   },
   "CourcePlay": {
     "moduleItem": {
       "module": "Module"
+    },
+    "finish": {
+      "title": "Поздравляем!",
+      "text": "Поздравляем с прохождением курса.Доступ к видео у вас остаётся навсегда, чтобы вы могли в любой момент освежить память.",
+      "discount": "Так-же, дарим вам 30% скидки на любоый новый курс!",
+      "backToCourses": "К списку курсов"
     }
   },
   "cookies": {
-    "info": "Using our site, you agree that we use cookies🍪",
-    "agree": "I agree"
+    "info": "By using our site, you agree to our use of cookies 🍪",
+    "agree": "Accept"
+  },
+  "pay": {
+    "descrition": "Оплата курса на"
+  },
+  "errors": {
+    "registrations": {
+      "name": "Name not a valid",
+      "surname": "Suename not a valid",
+      "email": "Email not valid or already in use",
+      "password": "Password not a valid"
+    },
+    "login": {
+      "email": "Email введен некорректно или уже используется",
+      "password": "Не верный пароль"
+    },
+    "support": {
+      "name": "Поле имя не может быть пустым",
+      "phone": "Номер телефона не может быть пустым",
+      "email": "Email не может быть пустым",
+      "description": "Введите вашу проблему"
+    }
   }
 }

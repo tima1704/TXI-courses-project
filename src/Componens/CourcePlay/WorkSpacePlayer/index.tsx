@@ -5,6 +5,7 @@ import { t } from "i18next";
 import { FC, useContext } from "react";
 import { ICourceUserContent } from "Types/cources";
 import { FileContent } from "./FileContent";
+import { FinishContent } from "./FinishContent";
 import { ImageContent } from "./ImageContent";
 
 import styles from "./index.module.css";
@@ -59,6 +60,7 @@ export const WorkSpacePlayer: FC<WorkSpacePlayerProps> = ({
         {data.type === "file" && (
           <FileContent data={data.data} title={data.title} />
         )}
+        {data.type === "finish" && <FinishContent />}
       </div>
     </div>
   );

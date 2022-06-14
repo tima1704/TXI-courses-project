@@ -7,9 +7,13 @@
 }
 
 .menu__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding-left: 2rem;
+  -webkit-transition: 0.5s width;
+  -o-transition: 0.5s width;
   transition: 0.5s width;
   width: 100%;
   max-width: 565px;
