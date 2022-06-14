@@ -61,7 +61,11 @@
 
 .chevron {
   margin-left: 15px;
+  -webkit-transition: 0.2s -webkit-transform;
+  transition: 0.2s -webkit-transform;
+  -o-transition: 0.2s transform;
   transition: 0.2s transform;
+  transition: 0.2s transform, 0.2s -webkit-transform;
 }
 .chevronActive {
   -webkit-transform: rotate(-180deg);
