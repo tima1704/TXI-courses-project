@@ -53,6 +53,7 @@ export const RegisterPage: FC = () => {
 
     if (!data.file) {
       setErrors([{ name: "file", message: "errors.registrations.file" }]);
+      return;
     }
 
     const formData = new FormData();
