@@ -14,12 +14,11 @@
   width: 155px;
   margin-right: 8px;
   color: #000;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: inherit;
 }
 .login_button {
   width: 100px;
 }
-
 .login_input {
   padding: 0px !important;
   width: 100%;
@@ -38,14 +37,18 @@
   position: relative;
   transition: 0.2s color;
 }
-
 @media (max-width: 500px) {
   .block_inputs input {
-    width: 220px;
-    font-size: 12px !important;
+    font-size: 15px !important;
+  }
+  .block_inputs{
+    margin: 10px 0;
   }
   .fGPassword {
-    font-size: 12px;
+    font-size: 13px;
+  }
+  .login_input{
+    margin-bottom: 30px;
   }
   .login_title {
     position: relative;
@@ -54,13 +57,13 @@
   .login_button {
     padding: 10px;
     width: 90px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .create_account {
     padding: 10px;
-    width: 110px;
-    font-size: 10px;
-    margin-right: 16px;
+    width: 130px;
+    font-size: 12px;
+    margin-left: 10px;
     position: relative;
     left: 2px;
   }
@@ -69,20 +72,9 @@
     bottom: 10px;
     padding: 5px 30px;
   }
-  .fGPassword {
-    font-size: 10px;
-  }
-
 }
 
 @media (max-width: 378px) {
-  .block_inputs input {
-    width: 220px;
-    font-size: 10px !important;
-  }
-  .fGPassword {
-    font-size: 10px;
-  }
   .login_form {
     position: relative;
     bottom: 10px;
@@ -90,10 +82,20 @@
   }
   .create_account {
     padding: 10px;
-    width: 100px;
-    margin-right: 16px;
-    font-size: 10px;
+    width: 100%;
+    margin-left: 0px;
     position: relative;
-    left: 10px;
+  }
+  .login_button {
+    width: 100px;
+  }
+}
+@media (max-width: 300px) {
+  .create_account{
+    font-size: 11px;
+  }
+  .login_button {
+    width: 80px;
+    font-size: 11px;
   }
 }

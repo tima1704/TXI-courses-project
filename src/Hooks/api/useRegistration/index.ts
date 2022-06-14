@@ -27,5 +27,5 @@ export const useRegistration = () => {
     }
   );
 
-  return { mutate, isDisabled, errors };
+  return { mutate, isDisabled, errors, setErrors };
 };

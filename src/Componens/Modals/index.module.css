@@ -47,7 +47,8 @@
 
 @media(max-width: 378px) {
   .modal {
-    width: 280px;
+    margin: 0 10px;
+    width: 100%;
     background: var(--text-white);
     padding: 30px;
   }

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { FC, useEffect, useState } from "react";
 import useCollapse from "react-collapsed";
+import { useTranslation } from "react-i18next";
 import { IValidError } from "Types/common";
 
 import styles from "./index.module.css";
@@ -21,6 +22,7 @@ export const Input: FC<InputProps> = ({
   error,
   ...props
 }) => {
+  const { t } = useTranslation();
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps } = useCollapse({ isExpanded });
 
@@ -40,11 +42,15 @@ export const Input: FC<InputProps> = ({
           [classNameInput]: classNameInput,
         })}
       />
-      <div className={classNames(styles["line_input"], {
-        [styles["error"]]: !!error,
-      } )}/>
+      <div
+        className={classNames(styles["line_input"], {
+          [styles["error"]]: !!error,
+        })}
+      />
       <div {...getCollapseProps()}>
-        <div className={styles["error_message"]}>{error?.message}</div>
+        <div className={styles["error_message"]}>
+          {error && t(error.message)}
+        </div>
       </div>
     </div>
   );

@@ -4,14 +4,18 @@ import { useRegistration } from "Hooks/api/useRegistration";
 import { useAppDispatch } from "Hooks/redux";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { ImageInput } from "./ImageInput";
 
 import styles from "./index.module.css";
+type Trotate = 0 | 1 | 2 | 3;
 
 interface IRegData {
-  file?: any;
+  file?: File;
   name: string;
+  surname: string;
   email: string;
   password: string;
+  rotate: Trotate;
 }
 
 export const RegisterPage: FC = () => {
@@ -23,11 +27,13 @@ export const RegisterPage: FC = () => {
 
   const [data, setData] = useState<IRegData>({
     name: "",
+    surname: "",
     email: "",
     password: "",
+    rotate: 0,
   });
 
-  const { mutate, isDisabled, errors } = useRegistration();
+  const { mutate, isDisabled, errors, setErrors } = useRegistration();
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setData({ ...data, [e.target.id]: e.target.value });
@@ -38,20 +44,27 @@ export const RegisterPage: FC = () => {
     setData({ ...data, file });
   };
 
+  const onChangeRotate = (rotate: Trotate) => {
+    setData({ ...data, rotate });
+  };
+
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+
+    if (!data.file) {
+      setErrors([{ name: "file", message: "errors.registrations.file" }]);
+      return;
+    }
+
     const formData = new FormData();
 
-    const nameSurname = data.name.split(" ");
-    formData.append("name", nameSurname[0]);
-    if (nameSurname[1]) {
-      formData.append("surname", nameSurname[1]);
-    }
+    formData.append("name", data.name);
+    formData.append("surname", data.surname);
     formData.append("email", data.email);
     formData.append("password", data.password);
     if (data.file) {
       formData.append("file", data.file);
-      formData.append("rotate", "0");
+      formData.append("rotate", data.rotate.toString());
     }
 
     mutate({ data: formData, email: data.email });
@@ -63,47 +76,52 @@ export const RegisterPage: FC = () => {
         <div className={styles["login_title"]}>
           {t("modals.registerModal.title")}
         </div>
-        <div className={styles["user_img"]}>
-          <input
-            type={"file"}
-            id={"file"}
-            onChange={onChangeFile}
-            // style={{ display: "none" }}
-          />
-        </div>
-        <div>
-          <Input
-            className={styles["input_register"]}
-            id="name"
-            type={"name"}
-            placeholder={t("modals.registerModal.inputPlaceholder.name")}
-            onChange={onChange}
-            error={errors.find((e) => e.name === "name")}
-            disabled={isDisabled}
-          />
-        </div>
-        <div>
-          <Input
-            className={styles["input_register"]}
-            id="email"
-            type={"email"}
-            placeholder={t("modals.registerModal.inputPlaceholder.email")}
-            onChange={onChange}
-            error={errors.find((e) => e.name === "email")}
-            disabled={isDisabled}
-          />
-        </div>
-        <div>
-          <Input
-            className={styles["input_register"]}
-            id="password"
-            type={"password"}
-            placeholder={t("modals.registerModal.inputPlaceholder.password")}
-            onChange={onChange}
-            error={errors.find((e) => e.name === "password")}
-            disabled={isDisabled}
-          />
-        </div>
+        <ImageInput
+          onChangeFile={onChangeFile}
+          value={data.file}
+          rotate={data.rotate}
+          onChangeRotate={onChangeRotate}
+          error={errors.find((e) => e.name === "file")}
+        />
+        <Input
+          className={styles["input_register"]}
+          id="name"
+          type={"name"}
+          placeholder={t("modals.registerModal.inputPlaceholder.name")}
+          onChange={onChange}
+          error={errors.find((e) => e.name === "name")}
+          disabled={isDisabled}
+          value={data.name}
+        />
+        <Input
+          className={styles["input_register"]}
+          id="surname"
+          type={"surname"}
+          placeholder={t("modals.registerModal.inputPlaceholder.surname")}
+          onChange={onChange}
+          error={errors.find((e) => e.name === "surname")}
+          disabled={isDisabled}
+        />
+        <Input
+          className={styles["input_register"]}
+          id="email"
+          type={"email"}
+          placeholder={t("modals.registerModal.inputPlaceholder.email")}
+          onChange={onChange}
+          error={errors.find((e) => e.name === "email")}
+          disabled={isDisabled}
+          value={data.email}
+        />
+        <Input
+          className={styles["input_register"]}
+          id="password"
+          type={"password"}
+          placeholder={t("modals.registerModal.inputPlaceholder.password")}
+          onChange={onChange}
+          error={errors.find((e) => e.name === "password")}
+          disabled={isDisabled}
+          value={data.password}
+        />
         <div className={styles["footer_register"]}>
           <Button
             type="submit"
@@ -113,6 +131,7 @@ export const RegisterPage: FC = () => {
             {t("modals.registerModal.createAccount")}
           </Button>
           <Button
+            variant="grey"
             onClick={onClickLogin}
             className={styles["loginBtn"]}
             type="button"
@@ -121,7 +140,7 @@ export const RegisterPage: FC = () => {
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          <a href="">
+          <a href="/">
             {t("modals.registerModal.text.0")}
             <span>{t("modals.registerModal.text.1")}</span>
           </a>

@@ -1,7 +1,5 @@
 .anim_opacity {
-  -webkit-animation-name: opacity;
   animation-name: opacity;
-  -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s;
 }
 

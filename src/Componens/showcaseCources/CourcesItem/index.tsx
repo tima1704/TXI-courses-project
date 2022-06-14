@@ -46,9 +46,9 @@ export const CourceItem: FC<CourceItemProps> = ({
               </>
             ) : (
               <>
-                <div className={styles["price"]}>
+                {/* <div className={styles["price"]}>
                   {t("showcaseCoursces.courcesItem.price")}
-                </div>
+                </div> */}
                 <Button>{t("showcaseCoursces.courcesItem.buy")}</Button>
               </>
             )}
