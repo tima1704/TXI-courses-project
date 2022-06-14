@@ -203,6 +203,10 @@
       "surname": "Suename not a valid",
       "email": "Email not valid or already in use",
       "password": "Password not a valid"
+    },
+    "login": {
+      "email": "Email введен некорректно или уже используется",
+      "password": "Не верный пароль"
     }
   }
 }
