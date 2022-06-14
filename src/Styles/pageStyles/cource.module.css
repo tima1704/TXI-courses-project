@@ -10,7 +10,7 @@
   font-weight: 500;
   font-size: 60px;
   line-height: 69px;
-  margin: 100px 0;
+  margin-bottom: 60px;
   width: 65%;
 }
 
@@ -48,7 +48,6 @@
     font-size: 40px;
     line-height: 45px;
     width: 100%;
-    margin: 70px 0;
   }
 
   .cource_img img {
