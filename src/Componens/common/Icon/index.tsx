@@ -51,40 +51,17 @@ const Icons = {
   error: Error,
   arrowLeftWhite: ArrowLeftWhite,
   closeWhite: CloseWhite,
-  reject: Reject
+  reject: Reject,
 };
+
+type IconsName = keyof typeof Icons;
 
 interface IconProps
   extends React.DetailedHTMLProps<
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   > {
-  icon:
-    | "video"
-    | "image"
-    | "text"
-    | "exit"
-    | "arrowLeft"
-    | "enter"
-    | "youTube"
-    | "telegram"
-    | "instagram"
-    | "file"
-    | "chevronDown"
-    | "cloud"
-    | "mastercard"
-    | "visa"
-    | "chevronDownWhite"
-    | "close"
-    | "closeGrey"
-    | "menu"
-    | "check"
-    | "success"
-    | "spinner"
-    | "error"
-    | "arrowLeftWhite"
-    | "closeWhite"
-    | "reject";
+  icon: IconsName;
   className?: string;
 }
 
