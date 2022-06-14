@@ -65,7 +65,9 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
       nextModule = courseModules[positionContent[0] + 1]?.courseContents[0];
     }
 
-    setActiveContent(nextModule);
+    setActiveContent(
+      nextModule || { id: 0, title: "", type: "finish", data: "" }
+    );
 
     const courseModuleId = courseModules[positionContent[0]].id;
     const newProgressModel = {
