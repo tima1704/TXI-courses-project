@@ -99,10 +99,10 @@ const PriceItem: FC<ICourcePrice> = ({
           <p>
             {type === "recurrent" && maxPeriod ? (
               <>
-                {maxPeriod}
-                {"x"}
                 <TransactionsCurrency currency={currency} />
                 {(+sum / maxPeriod).toFixed(2)}
+                {" / "}
+                {t("cource.price.priceItem.period")}
               </>
             ) : (
               <>
@@ -113,6 +113,11 @@ const PriceItem: FC<ICourcePrice> = ({
           </p>
         </div>
         <div className={styles["prices__item_descr"]}>
+          {type === "recurrent" &&
+            `${t("cource.price.priceItem.installmentPlan")} ${maxPeriod} ${t(
+              "cource.price.priceItem.planPeriod"
+            )} • `}
+
           {days === 3650
             ? `${t("cource.price.priceItem.permanentAccess")}`
             : `${days} ${t("cource.price.priceItem.daysAccess")}`}

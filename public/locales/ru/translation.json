@@ -58,8 +58,11 @@
       "PaymentOptions": "Варианты оплаты:",
       "choose": "Выбрать",
       "priceItem": {
+        "period": "Месяц",
         "permanentAccess": "Постоянный доступ",
-        "daysAccess": "дней доступа"
+        "daysAccess": "дней доступа",
+        "installmentPlan": "Рассрочка на",
+        "planPeriod": "месяца"
       }
     },
     "nextLesson": "Следующий урок"

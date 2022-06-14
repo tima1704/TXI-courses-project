@@ -58,8 +58,11 @@
       "PaymentOptions": "Payment options:",
       "choose": "Buy now",
       "priceItem": {
+        "period": "Месяц",
         "permanentAccess": "One-time payment",
-        "daysAccess": "days access"
+        "daysAccess": "days access",
+        "installmentPlan": "Рассрочка на",
+        "planPeriod": "месяца"
       }
     },
     "nextLesson": "Next lesson"
