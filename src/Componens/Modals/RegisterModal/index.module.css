@@ -5,18 +5,7 @@
   justify-content: center;
   margin: 50px 50px;
 }
-.user_img {
-  cursor: pointer;
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  background-color: gray;
-  margin-bottom: 30px;
-}
-.content_input_Register input{
-  letter-spacing: 0.5px;
-  font-size: 15px;
-}
+
 .input_register {
   border: none;
   margin: 15px 0;
@@ -75,13 +64,7 @@
   .login {
     margin: 30px 10px;
   }
-  .user_img {
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    background-color: gray;
-    margin-bottom: 25px;
-  }
+
   .create_button {
     width: 140px;
     font-size: 12px !important;
@@ -125,12 +108,5 @@
   .login_form input {
     font-size: 14px;
     letter-spacing: 0px;
-  }
-  .user_img {
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    background-color: gray;
-    margin-bottom: 20px;
   }
 }
