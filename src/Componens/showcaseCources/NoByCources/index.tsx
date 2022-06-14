@@ -1,7 +1,6 @@
 import { Button } from "Componens/common/Button";
 import { URL_HOME } from "Constants/URL";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { LinkTo } from "Componens/common/Links";
