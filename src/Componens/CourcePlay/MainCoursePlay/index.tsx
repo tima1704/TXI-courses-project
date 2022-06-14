@@ -113,31 +113,33 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
   };
 
   return (
-    <div className={styles["main"]}>
-      <div
-        className={classNames(styles["right"], {
-          [styles["none"]]: activeContent,
-        })}
-      >
-        <DescriptionPlayer title={title} progressPercent={progressPercent} />
-        <MenuModules
-          modules={courseModules}
-          setActiveContent={setActiveContent}
-          progressModel={progressModel}
-        />
-      </div>
-      <div
-        className={classNames(styles["workSpace"], {
-          [styles["none"]]: !activeContent,
-        })}
-      >
-        {activeContent && (
-          <WorkSpacePlayer
-            data={activeContent}
-            onClickNextLesson={onClickNextLesson}
-            onCLickCansel={onCLickCanselActiveContent}
+    <div className={styles["wrapper"]}>
+      <div className={styles["main"]}>
+        <div
+          className={classNames(styles["right"], {
+            [styles["none"]]: activeContent,
+          })}
+        >
+          <DescriptionPlayer title={title} progressPercent={progressPercent} />
+          <MenuModules
+            modules={courseModules}
+            setActiveContent={setActiveContent}
+            progressModel={progressModel}
           />
-        )}
+        </div>
+        <div
+          className={classNames(styles["workSpace"], {
+            [styles["none"]]: !activeContent,
+          })}
+        >
+          {activeContent && (
+            <WorkSpacePlayer
+              data={activeContent}
+              onClickNextLesson={onClickNextLesson}
+              onCLickCansel={onCLickCanselActiveContent}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

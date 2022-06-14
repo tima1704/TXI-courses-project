@@ -1,15 +1,16 @@
 import { host } from "Constants/API";
 import { TOKEN } from "Constants/App";
 import { FC, useMemo } from "react";
+import ReactPlayer from "react-player";
 
-import {
-  BigPlayButton,
-  ControlBar,
-  LoadingSpinner,
-  PlaybackRateMenuButton,
-  Player,
-  // @ts-ignore:disable-next-line
-} from "video-react";
+// import {
+//   BigPlayButton,
+//   ControlBar,
+//   LoadingSpinner,
+//   PlaybackRateMenuButton,
+//   Player,
+//   // @ts-ignore:disable-next-line
+// } from "video-react";
 
 import styles from "./index.module.css";
 
@@ -24,16 +25,22 @@ export const VideoContent: FC<IVideoContnet> = ({ data, title }) => {
   }, [data]);
 
   return (
-    <div style={{ width: "100%" }}>
-      <div>
-        <Player src={urlContent} playsInline>
+    <div className={styles["videoContainer"]}>
+      <ReactPlayer
+        controls
+        className={styles["video"]}
+        url={urlContent}
+        width={"100%"}
+        height={"100%"}
+        config={{ file: { attributes: { controlslist: ["nodownload"] } } }}
+      />
+      {/* <Player src={urlContent} playsInline>
           <BigPlayButton position="center" />
           <LoadingSpinner />
           <ControlBar>
             <PlaybackRateMenuButton rates={[2, 1, 0.5]} />
           </ControlBar>
-        </Player>
-      </div>
+        </Player> */}
       <div className={styles["title"]}>{title}</div>
     </div>
   );
