@@ -46,7 +46,7 @@
 .titleRow {
   word-wrap: break-word;
 }
-.BigtitleRow{
+.BigtitleRow {
   word-wrap: break-word;
 }
 
@@ -64,6 +64,8 @@
   transition: 0.2s transform;
 }
 .chevronActive {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
@@ -81,7 +83,7 @@
   .titleRow {
     font-size: 20px;
   }
-  .BigtitleRow{
+  .BigtitleRow {
     font-size: 20px;
   }
   .btn span {
@@ -103,7 +105,7 @@
   }
 }
 @media (max-width: 550px) {
-  .item{
+  .item {
     border-bottom: 1px solid var(--decor-grey);
   }
 }
@@ -127,11 +129,11 @@
     font-size: 17px;
     line-height: 20px;
   }
-  .BigtitleRow{
+  .BigtitleRow {
     font-size: 17px;
     line-height: 20px;
   }
-  .chevron{
+  .chevron {
     position: relative;
     bottom: 10px;
   }
@@ -140,7 +142,7 @@
   .titleRow {
     font-size: 15px;
   }
-  .BigtitleRow{
+  .BigtitleRow {
     font-size: 15px;
   }
   .itemNumber {
