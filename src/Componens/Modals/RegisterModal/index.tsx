@@ -131,6 +131,7 @@ export const RegisterPage: FC = () => {
             {t("modals.registerModal.createAccount")}
           </Button>
           <Button
+            variant="grey"
             onClick={onClickLogin}
             className={styles["loginBtn"]}
             type="button"

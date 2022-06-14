@@ -14,7 +14,7 @@
   width: 155px;
   margin-right: 8px;
   color: #000;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: inherit;
 }
 .login_button {
   width: 100px;
@@ -37,10 +37,9 @@
   position: relative;
   transition: 0.2s color;
 }
-
 @media (max-width: 500px) {
   .block_inputs input {
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
   .block_inputs{
     margin: 10px 0;
@@ -62,9 +61,9 @@
   }
   .create_account {
     padding: 10px;
-    width: 110px;
-    font-size: 11px;
-    margin-right: 16px;
+    width: 130px;
+    font-size: 12px;
+    margin-left: 10px;
     position: relative;
     left: 2px;
   }
@@ -83,10 +82,20 @@
   }
   .create_account {
     padding: 10px;
-    width: 100px;
-    margin-right: 16px; 
-    font-size: 10px;
+    width: 100%;
+    margin-left: 0px;
     position: relative;
-    left: 10px;
+  }
+  .login_button {
+    width: 100px;
+  }
+}
+@media (max-width: 300px) {
+  .create_account{
+    font-size: 11px;
+  }
+  .login_button {
+    width: 80px;
+    font-size: 11px;
   }
 }
