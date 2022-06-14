@@ -36,8 +36,7 @@
   color: #000;
   font-weight: 500;
   width: 115px;
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(127, 127, 127, 0.434);
+  background-color: inherit;
 }
 .login_form button {
   font-size: 14px;
