@@ -166,6 +166,9 @@
 }
 
 @media (max-width: 720px) {
+  .title__leftSupport h3{
+    margin-top: 70px;
+  }
   .rightBlock__supportPage {
     display: block;
     margin-left: 0;
