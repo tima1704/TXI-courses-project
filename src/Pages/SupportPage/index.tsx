@@ -4,7 +4,7 @@ import { Button } from "Componens/common/Button";
 import { useSupport } from "Hooks/api/useSupport";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./index.module.css";
+import styles from "Styles/pageStyles/support.module.css";
 
 export const SupportPage: FC = () => {
   const { t } = useTranslation();

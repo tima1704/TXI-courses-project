@@ -143,6 +143,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
           <ul className={styles["langsList"]}>
             {regions.map((item) => (
               <li
+                key={item.id}
                 onClick={() => onClickSelectLang(item.id)}
                 className={classNames({
                   [styles["activeLang"]]: item.id === languageApp,

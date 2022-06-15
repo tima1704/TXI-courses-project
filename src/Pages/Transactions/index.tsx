@@ -98,7 +98,7 @@ const TransactionsFunc: FC = () => {
                         </td>
                         <td className={styles["price_table"]}>
                           <div className={styles["row_currency"]}>
-                            <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} /><p>{item.coursePrice?.sum}</p>
+                            <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />&nbsp;<p>{item.coursePrice?.sum}</p>
                           </div>
                         </td>
                       </tr>
@@ -138,7 +138,7 @@ const TransactionsFunc: FC = () => {
                             <span>{t("transactions.headers.price_table")}</span>
                             <div className={styles["priceMobile"]}>
                               <div className={styles["mobile_row_currency"]}>
-                                <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />{item.coursePrice?.sum}
+                                <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />&nbsp;{item.coursePrice?.sum}
                               </div>
                             </div>
                           </div>

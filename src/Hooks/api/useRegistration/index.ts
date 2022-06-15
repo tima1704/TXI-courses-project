@@ -6,14 +6,15 @@ import { IValidError } from "Types/common";
 interface IVariables {
   data: FormData;
   email: string;
+  name: string;
 }
 
 export const useRegistration = () => {
   const [errors, setErrors] = useState<IValidError[]>([]);
 
   const { mutate, isLoading: isDisabled } = useMutation(
-    ({ data, email }: IVariables) => {
-      return ProfileService.registration(data, email);
+    ({ data, email, name }: IVariables) => {
+      return ProfileService.registration(data, email, name);
     },
     {
       onMutate: () => {

@@ -96,21 +96,21 @@ const PriceItem: FC<ICourcePrice> = ({
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          <p>
+          <div className={styles["flex_currency"]}>
             {type === "recurrent" && maxPeriod ? (
               <>
                 <TransactionsCurrency currency={currency} />
-                {(+sum / maxPeriod).toFixed(2)}
+                &nbsp;{(+sum / maxPeriod).toFixed(2)}
                 {" / "}
                 {t("cource.price.priceItem.period")}
               </>
             ) : (
               <>
                 <TransactionsCurrency currency={currency} />
-                {sum}
+                &nbsp;{sum}
               </>
             )}
-          </p>
+          </div>
         </div>
         <div className={styles["prices__item_descr"]}>
           {type === "recurrent" &&
