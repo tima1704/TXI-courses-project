@@ -1,0 +1,10 @@
+.file_content{
+     padding: 16px;
+}
+.file_content a{
+     display: flex;
+     align-items: center;
+}
+.file_content img{
+     margin-right: 5px;
+}
