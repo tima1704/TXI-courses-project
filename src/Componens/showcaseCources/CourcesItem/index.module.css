@@ -75,7 +75,7 @@
 
 @media (max-width: 460px) {
   .item_img {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
   }
   .item_descr{
     font-size: 13px;
@@ -87,7 +87,7 @@
   .item_title {
     font-size: 22px;
     line-height: 23px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
   }
 
   .item_wrapper {
