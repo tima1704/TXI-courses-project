@@ -34,7 +34,7 @@
   padding: 0px 7px 9px;
 }
 .linkItem:first-child {
-  margin: 0px 7px 0px 30px;
+  margin: 0px 7px 0px 23px;
 }
 .linkItemActive {
   border-bottom: 1px solid var(--decor-color);
