@@ -30,12 +30,12 @@ const currencySymbol = {
   AUD: "$",
   HKD: "$",
   AED: "د.إ",
-  KZT: "",
-  UZS: "",
-  BGN: "",
-  GEL: "",
-  KGS: "",
-  AMD: "",
+  KZT: "KZT",
+  UZS: "UZS",
+  BGN: "BGN",
+  GEL: "GEL",
+  KGS: "KGS",
+  AMD: "AMD",
 };
 
 export const TransactionsCurrency: FC<TransactionStatusProps> = ({
