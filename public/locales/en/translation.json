@@ -58,11 +58,11 @@
       "PaymentOptions": "Payment options:",
       "choose": "Buy now",
       "priceItem": {
-        "period": "Месяц",
+        "period": "Mounth",
         "permanentAccess": "One-time payment",
         "daysAccess": "days access",
-        "installmentPlan": "Рассрочка на",
-        "planPeriod": "месяца"
+        "installmentPlan": "Installment for",
+        "planPeriod": "months"
       }
     },
     "nextLesson": "Next lesson"
@@ -193,10 +193,9 @@
       "module": "Module"
     },
     "finish": {
-      "title": "Поздравляем!",
-      "text": "Поздравляем с прохождением курса. Доступ к видео у вас остаётся навсегда, чтобы вы могли в любой момент освежить память.",
-      "discount": "Так-же, дарим вам 30% скидки на любой новый курс!",
-      "backToCourses": "К списку курсов"
+      "title": "Congratulations!",
+      "text": "You have successfully completed all course modules. \n\n We are sure that the knowledge you have gained within the framework of this topic will become an important foundation for your further self-development and discovery of new facets of yourself. \n\n For the benefit of! \n\n Yours, \n\n Team KATIA TXI COURSES",
+      "backToCourses": "Go back to all courses"
     }
   },
   "cookies": {
@@ -208,21 +207,21 @@
   },
   "errors": {
     "registrations": {
-      "file": "Картинка обязательна",
+      "file": "Image not a valid",
       "name": "Name not a valid",
       "surname": "Suename not a valid",
       "email": "Email not valid or already in use",
       "password": "Password not a valid"
     },
     "login": {
-      "email": "Email введен некорректно или уже используется",
-      "password": "Не верный пароль"
+      "email": "Email not valid",
+      "password": "Password not a valid"
     },
     "support": {
-      "name": "Поле имя не может быть пустым",
-      "phone": "Номер телефона не может быть пустым",
-      "email": "Email не может быть пустым",
-      "description": "Введите вашу проблему"
+      "name": "Name not a valid",
+      "phone": "Phone not a valid",
+      "email": "E-mail not a valid",
+      "description": "Enter your question"
     }
   }
 }

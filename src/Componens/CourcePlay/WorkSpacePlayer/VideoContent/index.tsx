@@ -28,7 +28,7 @@ export const VideoContent: FC<IVideoContnet> = ({ data, title }) => {
       localStorage.getItem(TOKEN)
     );
   }, [data]);
-  console.log(urlContent);
+  
   return (
     <div className={styles["videoContainer"]}>
       <ReactPlayer
