@@ -47,7 +47,7 @@ h1 {
 }
 
 .h1_grey {
-  border-bottom: 2px solid var(--decor-grey);
+  border-bottom: 1px solid var(--decor-grey);
   font-size: 0.8rem;
   font-weight: 400;
 }
@@ -87,7 +87,7 @@ li {
 }
 
 .decorLine {
-  height: 2px;
+  height: 1px;
   width: 100%;
   background: var(--decor-grey);
 }
