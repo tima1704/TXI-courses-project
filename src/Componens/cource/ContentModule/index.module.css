@@ -156,9 +156,6 @@
   }
 }
 @media (max-width: 473px) {
-  .titleRow {
-    font-size: 15px;
-  }
   .BigtitleRow {
     font-size: 15px;
   }
@@ -177,10 +174,6 @@
   }
 }
 @media (max-width: 390px) {
-  .titleRow {
-    font-size: 12px;
-    line-height: 15px;
-  }
   .BigtitleRow {
     font-size: 10px;
     line-height: 15px;
