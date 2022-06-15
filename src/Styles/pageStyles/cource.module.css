@@ -75,9 +75,11 @@
   .cource_title {
     font-weight: 500;
     font-size: 22px;
-    line-height: 27px;
+    line-height: 26px;
     margin: 25px 0;
   }
+
+
 
   .cource_img img {
     height: 180px;
