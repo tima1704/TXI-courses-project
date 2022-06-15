@@ -21,9 +21,14 @@ interface IVideoContnet {
 
 export const VideoContent: FC<IVideoContnet> = ({ data, title }) => {
   const urlContent = useMemo(() => {
-    return host + data + "?token=" + localStorage.getItem(TOKEN);
+    return (
+      host +
+      data.replace("video", "file") +
+      "?token=" +
+      localStorage.getItem(TOKEN)
+    );
   }, [data]);
-
+  console.log(urlContent);
   return (
     <div className={styles["videoContainer"]}>
       <ReactPlayer
