@@ -67,7 +67,11 @@ export const RegisterPage: FC = () => {
       formData.append("rotate", data.rotate.toString());
     }
 
-    mutate({ data: formData, email: data.email });
+    mutate({
+      data: formData,
+      email: data.email,
+      name: `${data.name} ${data.surname}`,
+    });
   };
 
   return (

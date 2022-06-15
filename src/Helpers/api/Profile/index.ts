@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { API_AUTH, API_LOGIN } from "Constants/API";
+import { API_AUTH, API_LOGIN, API_SEND_EMAIL_REG } from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
 import { setModalViewAction } from "Redux/ModalReducer/actions";
 import { AppStore } from "index";
@@ -26,11 +26,11 @@ export const ProfileService = {
         throw e.response?.data.errors;
       });
   },
-  async registration(data: any, email: string) {
+  async registration(data: any, email: string, name: string) {
     return axios
       .post("https://katiatxi.club/txi/register", data)
       .then(() => {
-        ProfileService.sendEmailAfterRegistration(email);
+        ProfileService.sendEmailAfterRegistration(email, name);
       })
       .catch((e: AxiosError) => {
         if (e.response?.data && Array.isArray(e.response?.data)) {
@@ -65,22 +65,25 @@ export const ProfileService = {
         }
       });
   },
-  async sendEmailAfterRegistration(email: string) {
-    return axios
-      .post(
-        "https://katiatxi.club/confirm-email-send",
-        { email },
-        {
-          params: { courses: true },
-        }
-      )
-      .then(() => {
-        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
-      })
-      .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
-        throw e;
-      });
+  async sendEmailAfterRegistration(email: string, name: string) {
+    return await Promise.all([
+      await axios
+        .post(
+          "https://katiatxi.club/confirm-email-send",
+          { email },
+          {
+            params: { courses: true },
+          }
+        )
+        .then(() => {
+          AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
+        })
+        .catch((e) => {
+          AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
+          throw e;
+        }),
+      await axios.post(API_SEND_EMAIL_REG, { email, name }),
+    ]);
   },
   async confirmEmail(confirmId: string) {
     return axios

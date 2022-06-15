@@ -2,6 +2,7 @@ export const host = process.env.REACT_APP_API_URL;
 
 export const API_AUTH = host + "/auth";
 export const API_LOGIN = host + "/login";
+export const API_SEND_EMAIL_REG = host + "/register-send-email";
 
 export const API_REGIONS = host + "/regions";
 
