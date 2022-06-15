@@ -26,12 +26,21 @@ export const ContentModule: FC<ICourceModule> = ({
   return (
     <div className={styles["item"]}>
       <div className={styles["moduleRow"]}>
-        <div className={styles["itemNumber"]}>{itemNumberString}</div>
+        <div className={styles["itemNumberWrapper"]}>
+          <div className={styles["itemNumber"]}>{itemNumberString}</div>
+        </div>
         <div className={styles["itemTitle"]}>
           <div className={styles["itemNumberTitle"]}>
-            {itemNumberString}{t("cource.contentModule.module")}
+            {itemNumberString}
+            {t("cource.contentModule.module")}
           </div>
-          <div className={title.length > 40 ? styles["BigtitleRow"] : styles["titleRow"]}>{title}</div>
+          <div
+            className={
+              title.length > 40 ? styles["BigtitleRow"] : styles["titleRow"]
+            }
+          >
+            {title}
+          </div>
         </div>
         <div
           className={styles["btn"]}
@@ -39,20 +48,24 @@ export const ContentModule: FC<ICourceModule> = ({
             onClick: () => setExpanded((prevExpanded) => !prevExpanded),
           })}
         >
-          <span>{t("cource.contentModule.showContent")}</span>
-          <Icon
-            icon={"chevronDown"}
-            className={classNames(styles["chevron"], {
-              [styles["chevronActive"]]: isExpanded,
-            })}
-          />
+          <div>
+            <span>{t("cource.contentModule.showContent")}</span>
+            <Icon
+              icon={"chevronDown"}
+              className={classNames(styles["chevron"], {
+                [styles["chevronActive"]]: isExpanded,
+              })}
+            />
+          </div>
         </div>
       </div>
-      <div className={styles["contentWrapper"]} {...getCollapseProps()}>
+      <div {...getCollapseProps()}>
         <div className={styles["heightContentWrapper"]} />
-        {courseContents.map(({ id, title, type }) => (
-          <ContentItem key={id + type + "content"} {...{ id, title, type }} />
-        ))}
+        <div className={styles["contentWrapper"]} style={{ width: "100%" }}>
+          {courseContents.map(({ id, title, type }) => (
+            <ContentItem key={id + type + "content"} {...{ id, title, type }} />
+          ))}
+        </div>
       </div>
     </div>
   );
