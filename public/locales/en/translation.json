@@ -90,7 +90,7 @@
     "WhatIsYourQuestion": "What is your question?",
     "inputsText": {
       "name": "Your name: *",
-      "numberOrder": "Order ID: *",
+      "numberOrder": "Order ID:",
       "phone": "Your phone: *",
       "email": "Your e-mail: *",
       "commentQuestion": "Your question: *",
