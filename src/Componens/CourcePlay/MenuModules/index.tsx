@@ -8,12 +8,14 @@ interface MenuModulesProps {
   modules: ICourceUserModule[];
   setActiveContent: React.Dispatch<React.SetStateAction<any | undefined>>;
   progressModel: any;
+  activeContentId: number | undefined;
 }
 
 export const MenuModules: FC<MenuModulesProps> = ({
   modules,
   setActiveContent,
   progressModel,
+  activeContentId,
 }) => {
   return (
     <div className={styles["menu"]}>
@@ -26,6 +28,7 @@ export const MenuModules: FC<MenuModulesProps> = ({
             index={index}
             setActiveContent={setActiveContent}
             progressModel={progressModel[item.id]}
+            activeContentId={activeContentId}
           />
         ))}
     </div>

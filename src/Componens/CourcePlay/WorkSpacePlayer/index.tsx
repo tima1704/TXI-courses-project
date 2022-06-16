@@ -16,12 +16,16 @@ interface WorkSpacePlayerProps {
   data: ICourceUserContent;
   onClickNextLesson: () => void;
   onCLickCansel: () => void;
+  onClickStartCourseAgain: () => void;
+  isFinish: boolean;
 }
 
 export const WorkSpacePlayer: FC<WorkSpacePlayerProps> = ({
   data,
   onClickNextLesson,
   onCLickCansel,
+  onClickStartCourseAgain,
+  isFinish,
 }) => {
   const width = useContext(WidthContext);
 
@@ -36,7 +40,10 @@ export const WorkSpacePlayer: FC<WorkSpacePlayerProps> = ({
           </Button>
         )}
         {width > 900 ? (
-          <Button variant="white" onClick={onClickNextLesson}>
+          <Button
+            variant="white"
+            onClick={isFinish ? onClickStartCourseAgain : onClickNextLesson}
+          >
             {t("cource.nextLesson")}
           </Button>
         ) : (

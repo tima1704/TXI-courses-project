@@ -1,14 +1,14 @@
-import { WidthContext } from "Componens/main/widthWrapper";
 import classNames from "classnames";
 import { useProgress, useProgressSave } from "Hooks/api/useProgress";
-import { FC, useCallback, useContext, useMemo, useState } from "react";
+import { FC, useCallback, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { ICourceUserContent, ICourceUserItem } from "Types/cources";
+import { ICourceUserItem } from "Types/cources";
 import { DescriptionPlayer } from "../DescriptionPlayer";
 import { MenuModules } from "../MenuModules";
 import { WorkSpacePlayer } from "../WorkSpacePlayer";
 
 import styles from "./index.module.css";
+import { useActiveContent } from "Hooks/common/useActiveContent";
 
 export const MainCoursePlay: FC<ICourceUserItem> = ({
   courseMainInfo,
@@ -16,13 +16,9 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
   progress,
 }) => {
   const { title } = courseMainInfo;
-  const { courseModules } = courceModulesMain;
+  const courseModules = courceModulesMain?.courseModules;
 
-  const width = useContext(WidthContext);
-
-  const [activeContent, setActiveContent] = useState<
-    ICourceUserContent | undefined
-  >(width > 900 ? courseModules?.[0]?.courseContents?.[0] : undefined);
+  const { activeContent, setActiveContent } = useActiveContent(courseModules);
 
   const {
     progressModel,
@@ -112,6 +108,10 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
     setActiveContent(undefined);
   };
 
+  const onClickStartCourseAgain = () => {
+    setActiveContent(courseModules?.[0]?.courseContents?.[0] || undefined);
+  };
+
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["main"]}>
@@ -125,6 +125,7 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
             modules={courseModules}
             setActiveContent={setActiveContent}
             progressModel={progressModel}
+            activeContentId={activeContent?.id}
           />
         </div>
         <div
@@ -137,6 +138,8 @@ export const MainCoursePlay: FC<ICourceUserItem> = ({
               data={activeContent}
               onClickNextLesson={onClickNextLesson}
               onCLickCansel={onCLickCanselActiveContent}
+              onClickStartCourseAgain={onClickStartCourseAgain}
+              isFinish={activeContent?.id === 0}
             />
           )}
         </div>

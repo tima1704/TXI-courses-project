@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
-import { FC, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import useCollapse from "react-collapsed";
 import { useTranslation } from "react-i18next";
 import { ICourceUserModule } from "Types/cources";
@@ -11,6 +11,7 @@ interface ICourceUserModuleProps extends ICourceUserModule {
   index: number;
   setActiveContent: React.Dispatch<React.SetStateAction<any | undefined>>;
   progressModel?: any;
+  activeContentId: number | undefined;
 }
 
 export const ModuleItem: FC<ICourceUserModuleProps> = ({
@@ -19,8 +20,15 @@ export const ModuleItem: FC<ICourceUserModuleProps> = ({
   index,
   setActiveContent,
   progressModel,
+  activeContentId,
 }) => {
   const [isExpanded, setExpanded] = useState(false);
+  useEffect(() => {
+    if (activeContentId) {
+      setExpanded(courseContents.some((i) => i.id === activeContentId));
+    }
+  }, [courseContents, activeContentId]);
+
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
   const checkModule = useMemo(() => {
