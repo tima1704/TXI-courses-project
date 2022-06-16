@@ -14,7 +14,7 @@
   },
   "header": {
     "menu": {
-      "main": ["Катя", "Чи"],
+      "main": ["Катя ", " Чи"],
       "blog": "Блог",
       "video": "Видео",
       "education": "Обучение",
@@ -85,12 +85,12 @@
   },
   "supportPage": {
     "support": "Поддержка",
-    "emailSupport": "support@katiatxi.club",
+    "emailSupport": "support@wildhumans.club",
     "textSupport": "Мы будем рады получить ваш отзыв или помочь вам с любыми вопросами о вашем заказе.",
     "WhatIsYourQuestion": "Какой у вас вопрос?",
     "inputsText": {
       "name": "ИМЯ: *",
-      "numberOrder": "НОМЕР ЗАКАЗА: *",
+      "numberOrder": "НОМЕР ЗАКАЗА:",
       "phone": "ТЕЛЕФОН: *",
       "email": "EMAIL: *",
       "commentQuestion": "КОМЕНТАРИЙ / ВОПРОС: *",

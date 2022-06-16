@@ -69,7 +69,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         <div className={styles["content"]}>
           <ul className={styles["links"]}>
             <li>
-              <a href={"https://katiatxi.club/ru/about/"}> {t("burger.mobmenu.main.0")}{t("burger.mobmenu.main.1")}</a>
+              <a href={"https://katiatxi.club/ru/about/"}> {t("burger.mobmenu.main.0")}&nbsp;{t("burger.mobmenu.main.1")}</a>
             </li>
             <li>
               <a href={"https://katiatxi.club/ru/blog/"}>{t("burger.mobmenu.blog")}</a>
