@@ -14,7 +14,7 @@
   },
   "header": {
     "menu": {
-      "main": ["Katia", "Txi"],
+      "main": ["Katia ", " Txi"],
       "blog": "Blog",
       "video": "Video",
       "education": "Education",
@@ -90,7 +90,7 @@
     "WhatIsYourQuestion": "What is your question?",
     "inputsText": {
       "name": "Your name: *",
-      "numberOrder": "Order ID: *",
+      "numberOrder": "Order ID:",
       "phone": "Your phone: *",
       "email": "Your e-mail: *",
       "commentQuestion": "Your question: *",
@@ -199,7 +199,7 @@
     }
   },
   "cookies": {
-    "info": "By using our site, you agree to our use of cookies 🍪",
+    "info": "By using our site, you agree to our use of cookies",
     "agree": "Accept"
   },
   "pay": {
