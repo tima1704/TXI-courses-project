@@ -100,7 +100,7 @@ const PriceItem: FC<ICourcePrice> = ({
             {type === "recurrent" && maxPeriod ? (
               <>
                 <TransactionsCurrency currency={currency} />
-                &nbsp;{(+sum / maxPeriod).toFixed(2)}
+                &nbsp;{(+sum / maxPeriod).toFixed(0)}
                 {" / "}
                 {t("cource.price.priceItem.period")}
               </>

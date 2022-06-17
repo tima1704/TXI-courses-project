@@ -1,0 +1,22 @@
+.error_page h3{
+     font-size: 70px;
+     font-weight: 600;
+}
+.error_page p{
+     font-weight: 400;
+     margin-top: 25px;
+     font-size: 15px;
+     line-height: 25px;
+}
+.home_url{
+     text-decoration: underline;
+}
+@media(max-width: 550px) {
+     .error_page h3{
+          font-size: 50px;
+     }
+     .error_page p{
+          line-height: 20px;
+          font-size: 13.3px;
+     }
+}
