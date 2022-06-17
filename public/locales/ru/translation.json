@@ -58,6 +58,7 @@
       "PaymentOptions": "Варианты оплаты:",
       "choose": "Выбрать",
       "priceItem": {
+        "free": "Бесплатно",
         "period": "Месяц",
         "permanentAccess": "Постоянный доступ",
         "daysAccess": "дней доступа",
