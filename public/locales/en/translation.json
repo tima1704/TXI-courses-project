@@ -58,6 +58,7 @@
       "PaymentOptions": "Payment options:",
       "choose": "Buy now",
       "priceItem": {
+        "free": "Free",
         "period": "Mounth",
         "permanentAccess": "One-time payment",
         "daysAccess": "days access",

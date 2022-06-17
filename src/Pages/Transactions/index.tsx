@@ -97,9 +97,20 @@ const TransactionsFunc: FC = () => {
                           <TransactionStatus status={item.status} />
                         </td>
                         <td className={styles["price_table"]}>
-                          <div className={styles["row_currency"]}>
-                            <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />&nbsp;<p>{item.coursePrice?.sum}</p>
-                          </div>
+                          {item.coursePrice?.sum &&
+                          +item.coursePrice.sum === 0 ? (
+                            t("cource.price.priceItem.free")
+                          ) : (
+                            <div className={styles["row_currency"]}>
+                              <TransactionsCurrency
+                                currency={
+                                  item.coursePrice
+                                    ?.currency as TTransactionsCurrency
+                                }
+                              />
+                              &nbsp;<p>{item.coursePrice?.sum}</p>
+                            </div>
+                          )}
                         </td>
                       </tr>
                     );
@@ -121,7 +132,10 @@ const TransactionsFunc: FC = () => {
               ) : (
                 dataTransactions.map((item) => {
                   return (
-                    <div key={item.id + "mobile-key"} className={styles["element_transaction"]}>
+                    <div
+                      key={item.id + "mobile-key"}
+                      className={styles["element_transaction"]}
+                    >
                       <div className={styles["top_content"]}>
                         <div className={styles["item_top"]}>
                           <div>
@@ -138,7 +152,20 @@ const TransactionsFunc: FC = () => {
                             <span>{t("transactions.headers.price_table")}</span>
                             <div className={styles["priceMobile"]}>
                               <div className={styles["mobile_row_currency"]}>
-                                <TransactionsCurrency currency={item.coursePrice?.currency as TTransactionsCurrency} />&nbsp;{item.coursePrice?.sum}
+                                {item.coursePrice?.sum &&
+                                +item.coursePrice.sum === 0 ? (
+                                  t("cource.price.priceItem.free")
+                                ) : (
+                                  <>
+                                    <TransactionsCurrency
+                                      currency={
+                                        item.coursePrice
+                                          ?.currency as TTransactionsCurrency
+                                      }
+                                    />
+                                    &nbsp;{item.coursePrice?.sum}
+                                  </>
+                                )}
                               </div>
                             </div>
                           </div>
