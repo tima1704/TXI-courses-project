@@ -79,7 +79,7 @@ export const ProfileService = {
           AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
         })
         .catch((e) => {
-          AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
+          AppStore?.dispatch(setModalViewAction("emailErrorMessage"));
           throw e;
         }),
       await axios.post(API_SEND_EMAIL_REG, { email, name }),
@@ -92,7 +92,7 @@ export const ProfileService = {
         AppStore?.dispatch(setModalViewAction("login"));
       })
       .catch((e) => {
-        AppStore?.dispatch(setModalViewAction("sentEmailMessege"));
+        AppStore?.dispatch(setModalViewAction("emailErrorMessage"));
       });
   },
   async sendEmailResetPassword(email: string) {
