@@ -23,7 +23,7 @@ export const MenuHeader: FC = () => {
           )}
         >
           <a href={"https://katiatxi.club/ru/about/"}>
-            {t("header.menu.main.0")}{" "}
+            {t("header.menu.main.0")}&nbsp;
             <span className={styles["ch"]}> {t("header.menu.main.1")}</span>
           </a>
         </li>

@@ -90,7 +90,7 @@
     "textSupport": "We will be happy to receive your feedback or help you with any questions about your order.",
     "WhatIsYourQuestion": "What is your question?",
     "inputsText": {
-      "name": "Your name: *",
+      "name": "Your name and surname: *",
       "numberOrder": "Order ID:",
       "phone": "Your phone: *",
       "email": "Your e-mail: *",
@@ -224,5 +224,9 @@
       "email": "E-mail not a valid",
       "description": "Enter your question"
     }
+  },
+  "errorPage": {
+    "title": "Oops",
+    "main": ["We have not found such a page. You can return to ", "Main."]
   }
 }
