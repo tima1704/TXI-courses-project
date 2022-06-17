@@ -47,6 +47,10 @@ const PriceItem: FC<ICourcePrice> = ({
 
   useEffect(() => {
     if (pay && user) {
+      if (+pay.amount === 0) {
+        navigate(URL_USER_COURSE_ID(courseId as string));
+        return;
+      }
       const publcId = process.env.REACT_APP_PUBLIC_API_CLOUD_PAYMENTS;
       let amount = +pay.amount;
       const currency = pay.currency;
@@ -96,21 +100,27 @@ const PriceItem: FC<ICourcePrice> = ({
     <div className={styles["prices__item"]}>
       <div>
         <div className={styles["CurrencyPrice"]}>
-          <div className={styles["flex_currency"]}>
-            {type === "recurrent" && maxPeriod ? (
-              <>
-                <TransactionsCurrency currency={currency} />
-                &nbsp;{(+sum / maxPeriod).toFixed(2)}
-                {" / "}
-                {t("cource.price.priceItem.period")}
-              </>
-            ) : (
-              <>
-                <TransactionsCurrency currency={currency} />
-                &nbsp;{sum}
-              </>
-            )}
-          </div>
+          {+sum === 0 ? (
+            <div className={styles["flex_currency"]}>
+              {t("cource.price.priceItem.free")}
+            </div>
+          ) : (
+            <div className={styles["flex_currency"]}>
+              {type === "recurrent" && maxPeriod ? (
+                <>
+                  <TransactionsCurrency currency={currency} />
+                  &nbsp;{(+sum / maxPeriod).toFixed(2)}
+                  {" / "}
+                  {t("cource.price.priceItem.period")}
+                </>
+              ) : (
+                <>
+                  <TransactionsCurrency currency={currency} />
+                  &nbsp;{sum}
+                </>
+              )}
+            </div>
+          )}
         </div>
         <div className={styles["prices__item_descr"]}>
           {type === "recurrent" &&
