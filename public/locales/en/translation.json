@@ -184,6 +184,10 @@
     "cloudErrors": {
       "title": "Operation cannot be processed",
       "text": "Contact your bank or use another card"
+    },
+    "sendSupport": {
+      "title": "Your request has been sent!",
+      "text": "We will answer it shortly. Thank you!"
     }
   },
   "showcaseCoursces": {
