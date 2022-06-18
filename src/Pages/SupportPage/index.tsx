@@ -5,6 +5,7 @@ import Config from "Configs";
 import { useSupport } from "Hooks/api/useSupport";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
+
 import styles from "Styles/pageStyles/support.module.css";
 
 export const SupportPage: FC = () => {
@@ -47,6 +48,11 @@ export const SupportPage: FC = () => {
               rel="noreferrer"
             >
               {t("supportPage.policy.accept")}
+            </a>
+          </p>
+          <p>
+            <a href={Config.paymentSettings} target={"_blank"} rel="noreferrer">
+              {t("supportPage.reccurentSettings")}
             </a>
           </p>
         </div>

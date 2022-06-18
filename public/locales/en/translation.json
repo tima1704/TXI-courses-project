@@ -93,6 +93,7 @@
       "personData": "Privacy Policy",
       "accept": "User Agreement"
     },
+    "reccurentSettings": "Subscription settings",
     "inputsText": {
       "name": "Your name and surname: *",
       "numberOrder": "Order ID:",
