@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
+import Config from "Configs";
 import { useSupport } from "Hooks/api/useSupport";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
@@ -30,6 +31,24 @@ export const SupportPage: FC = () => {
           </div>
           <span>{t("supportPage.emailSupport")}</span>
           <p>{t("supportPage.textSupport")}</p>
+          <p>
+            <a
+              href={Config.policy.privacyPolic}
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              {t("supportPage.policy.personData")}
+            </a>
+          </p>
+          <p>
+            <a
+              href={Config.policy.userAgreement}
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              {t("supportPage.policy.accept")}
+            </a>
+          </p>
         </div>
       </div>
       <div className={styles["rightBlock__supportPage"]}>

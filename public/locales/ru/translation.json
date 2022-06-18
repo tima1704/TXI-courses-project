@@ -88,6 +88,10 @@
     "support": "Поддержка",
     "emailSupport": "support@wildhumans.club",
     "textSupport": "Мы будем рады получить ваш отзыв или помочь вам с любыми вопросами о вашем заказе.",
+    "policy": {
+      "personData": "Политика о пресональны даннных",
+      "accept": "Пользовательское соглашение"
+    },
     "WhatIsYourQuestion": "Какой у вас вопрос?",
     "inputsText": {
       "name": "ИМЯ И ФАМИЛИЯ: *",
