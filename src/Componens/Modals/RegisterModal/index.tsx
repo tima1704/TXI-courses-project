@@ -1,5 +1,6 @@
 import { Input } from "Componens/common";
 import { Button } from "Componens/common/Button";
+import Config from "Configs";
 import { useRegistration } from "Hooks/api/useRegistration";
 import { useAppDispatch } from "Hooks/redux";
 import React, { FC, useState } from "react";
@@ -144,8 +145,12 @@ export const RegisterPage: FC = () => {
           </Button>
         </div>
         <div className={styles["text_footer"]}>
-          <a href="/">
-            {t("modals.registerModal.text.0")}
+          {t("modals.registerModal.text.0")}
+          <a
+            href={Config.policy.privacyPolic}
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <span>{t("modals.registerModal.text.1")}</span>
           </a>
         </div>

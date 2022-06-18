@@ -4,6 +4,10 @@ const Config = {
     telegram: "//t.me/KatiaTxiLive",
     instagram: "//www.instagram.com/katiatxi/",
   },
+  policy: {
+    privacyPolic: "/docs/policy.pdf",
+    userAgreement: "/docs/soglas.pdf",
+  },
 };
 
 export default Config;
