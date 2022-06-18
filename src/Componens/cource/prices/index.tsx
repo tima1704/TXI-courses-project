@@ -66,19 +66,21 @@ const PriceItem: FC<PriceItemProps> = ({
         return;
       }
       const publcId = process.env.REACT_APP_PUBLIC_API_CLOUD_PAYMENTS;
-      let amount = +pay.amount;
       const currency = pay.currency;
       const invoiceId = pay.invoiceId;
       const email = user?.email || "";
-
+      let amount = +pay.amount;
+      if (type === "recurrent" && pay.maxPeriod) {
+        amount = amount / pay.maxPeriod;
+      }
       const receipt = {
         Items: [
           {
             label: titleCourse, //наименование товара
-            price: +pay.amount, //цена
+            price: amount, //цена
             quantity: 1.0, //количество
             measurementUnit: "шт",
-            amount: +pay.amount, //сумма
+            amount: amount, //сумма
             vat: 0, //ставка НДС
             method: pay.type === "recurrent" ? 5 : 1, // тег-1214 признак способа расчета - признак способа расчета
             object: 4, // тег-1212 признак предмета расчета - признак предмета товара, работы, услуги, платежа, выплаты, иного предмета расчета
@@ -88,7 +90,7 @@ const PriceItem: FC<PriceItemProps> = ({
         email: email, //e-mail покупателя, если нужно отправить письмо с чеком
         isBso: false, //чек является бланком строгой отчетности
         amounts: {
-          electronic: +pay.amount, // Сумма оплаты электронными деньгами
+          electronic: amount, // Сумма оплаты электронными деньгами
           advancePayment: 0.0, // Сумма из предоплаты (зачетом аванса) (2 знака после запятой)
           credit: 0.0, // Сумма постоплатой(в кредит) (2 знака после запятой)
           provision: 0.0, // Сумма оплаты встречным предоставлением (сертификаты, др. мат.ценности) (2 знака после запятой)
@@ -104,12 +106,11 @@ const PriceItem: FC<PriceItemProps> = ({
           CustomerReceipt: receipt,
           recurrent: {
             interval: "Month",
-            period: 1,
+            period: 1, // Сколько раз в interval
             maxPeriods: pay.maxPeriod - 1,
             customerReceipt: receipt,
           },
         };
-        amount = amount / pay.maxPeriod;
       }
       Pay(
         {
