@@ -5,6 +5,7 @@ import { useRegistration } from "Hooks/api/useRegistration";
 import { useAppDispatch } from "Hooks/redux";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IValidError } from "Types/common";
 import { ImageInput } from "./ImageInput";
 
 import styles from "./index.module.css";
@@ -51,9 +52,40 @@ export const RegisterPage: FC = () => {
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-
+    const errorsValidation: IValidError[] = [];
     if (!data.file) {
-      setErrors([{ name: "file", message: "errors.registrations.file" }]);
+      errorsValidation.push({
+        name: "file",
+        message: "errors.registrations.file",
+      });
+    }
+    if (!data.name || data.name.length < 2) {
+      errorsValidation.push({
+        name: "name",
+        message: "errors.registrations.name",
+      });
+    }
+    if (!data.surname || data.surname.length < 3) {
+      errorsValidation.push({
+        name: "surname",
+        message: "errors.registrations.surname",
+      });
+    }
+    if (!data.password || data.password.length < 6) {
+      errorsValidation.push({
+        name: "password",
+        message: "errors.registrations.password",
+      });
+    }
+    if (!data.email || data.email.length < 3 || !data.email.includes("@")) {
+      errorsValidation.push({
+        name: "email",
+        message: "errors.registrations.emailFrontValidate",
+      });
+    }
+
+    if (errorsValidation.length > 0) {
+      setErrors(errorsValidation);
       return;
     }
 
