@@ -1,5 +1,5 @@
 import { SupportServices } from "Helpers/api/Support";
-import { useAppSelector } from "Hooks/redux";
+import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import { IValidError } from "Types/common";
@@ -18,6 +18,7 @@ export const useSupport = () => {
   const [data, setData] = useState(initialDataSupport);
 
   const user = useAppSelector((s) => s.App.user);
+  const { setModalViewAction } = useAppDispatch();
 
   useEffect(() => {
     if (user) {
@@ -40,6 +41,7 @@ export const useSupport = () => {
       },
       onSuccess: () => {
         setData(initialDataSupport);
+        setModalViewAction("sendSupport");
       },
       onError: (errorsRes: IValidError[] | any) => {
         if (Array.isArray(errorsRes)) {

@@ -16,6 +16,7 @@ import NewPassword from "./NewPasswordModal";
 import CloudErrors from "./TextModals/сloudErrors";
 import SentEmailMessageModal from "./TextModals/sentEmailMessage";
 import SomeWrongEmailModal from "./TextModals/emailErrorMessege";
+import { SendSupport } from "./TextModals/sendSupport";
 
 export const Modals: FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -35,7 +36,7 @@ export const Modals: FC = () => {
       } else {
         bodyRef.current.style.overflowY = "auto";
       }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typeModal]);
 
   if (!typeModal) {
@@ -60,9 +61,10 @@ export const Modals: FC = () => {
         {typeModal === "someWrong" && <SomeWrong />}
         {typeModal === "passwordChanged" && <PasswordChanged />}
         {typeModal === "newPassword" && <NewPassword />}
-        {typeModal === "cloudErrors" && <CloudErrors/>}
-        {typeModal === "emailErrorMessage" && <SomeWrongEmailModal/>}
-        {typeModal === "sentEmailMessege" && <SentEmailMessageModal/>}
+        {typeModal === "cloudErrors" && <CloudErrors />}
+        {typeModal === "emailErrorMessage" && <SomeWrongEmailModal />}
+        {typeModal === "sentEmailMessege" && <SentEmailMessageModal />}
+        {typeModal === "sendSupport" && <SendSupport />}
       </div>
     </div>
   );

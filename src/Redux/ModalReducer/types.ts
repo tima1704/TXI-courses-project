@@ -13,7 +13,8 @@ export type TModals =
   | "passwordChanged"
   | "cloudErrors"
   | "emailErrorMessage"
-  | "sentEmailMessege";
+  | "sentEmailMessege"
+  | "sendSupport";
 
 export enum ModalActionsTypes {
   SET_MODAL_VIEW = "SET_MODAL_VIEW",
