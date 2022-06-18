@@ -1,11 +1,13 @@
 import { FC } from "react";
 import Logo from "Svg/logo.svg";
-import styles from "./index.module.css";
 import { Icon } from "../../common/Icon";
 import Config from "Configs";
 import classNames from "classnames";
 import { LinkTo } from "Componens/common/Links";
 import { URL_HOME } from "Constants/URL";
+
+import styles from "./index.module.css";
+
 export const Footer: FC = () => {
   return (
     <footer className={"container anim_opacity"}>
@@ -22,9 +24,9 @@ export const Footer: FC = () => {
             <a href={Config.socials.telegram}>
               <Icon icon={"telegram"} className={"scale"} />
             </a>
-            <a href={Config.socials.instagram}>
+            {/* <a href={Config.socials.instagram}>
               <Icon icon={"instagram"} className={"scale"} />
-            </a>
+            </a> */}
             <a href={Config.socials.youTube}>
               <Icon icon={"youTube"} className={"scale"} />
             </a>
