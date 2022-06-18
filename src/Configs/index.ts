@@ -8,6 +8,7 @@ const Config = {
     privacyPolic: "/docs/policy.pdf",
     userAgreement: "/docs/soglas.pdf",
   },
+  paymentSettings: "https://my.cloudpayments.ru/",
 };
 
 export default Config;
