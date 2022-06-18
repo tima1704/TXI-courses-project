@@ -10,9 +10,13 @@ import { URL_USER_COURSE_ID } from "Constants/URL";
 import { TransactionsCurrency } from "Componens/common/Currency";
 interface CourcePricesProps {
   prices: ICourcePrice[];
+  titleCourse: string;
 }
 
-export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
+export const CourcePrices: FC<CourcePricesProps> = ({
+  prices,
+  titleCourse,
+}) => {
   const { t } = useTranslation();
   return (
     <div className={styles["prices"]}>
@@ -22,19 +26,29 @@ export const CourcePrices: FC<CourcePricesProps> = ({ prices }) => {
 
       <div className={styles["right_contentPrices"]}>
         {prices.map((price) => (
-          <PriceItem {...price} key={"price" + price.id} />
+          <PriceItem
+            {...price}
+            key={"price" + price.id}
+            titleCourse={titleCourse}
+          />
         ))}
       </div>
     </div>
   );
 };
-const PriceItem: FC<ICourcePrice> = ({
+
+interface PriceItemProps extends ICourcePrice {
+  titleCourse: string;
+}
+
+const PriceItem: FC<PriceItemProps> = ({
   sum,
   days,
   currency,
   id,
   type,
   maxPeriod,
+  titleCourse,
 }) => {
   const { t } = useTranslation();
 
@@ -56,13 +70,43 @@ const PriceItem: FC<ICourcePrice> = ({
       const currency = pay.currency;
       const invoiceId = pay.invoiceId;
       const email = user?.email || "";
-      let data: any = {};
+
+      const receipt = {
+        Items: [
+          {
+            label: titleCourse, //наименование товара
+            price: +pay.amount, //цена
+            quantity: 1.0, //количество
+            measurementUnit: "шт",
+            amount: +pay.amount, //сумма
+            vat: 0, //ставка НДС
+            method: pay.type === "recurrent" ? 5 : 1, // тег-1214 признак способа расчета - признак способа расчета
+            object: 4, // тег-1212 признак предмета расчета - признак предмета товара, работы, услуги, платежа, выплаты, иного предмета расчета
+          },
+        ],
+        taxationSystem: 0, //система налогообложения; необязательный, если у вас одна система налогообложения
+        email: email, //e-mail покупателя, если нужно отправить письмо с чеком
+        isBso: false, //чек является бланком строгой отчетности
+        amounts: {
+          electronic: +pay.amount, // Сумма оплаты электронными деньгами
+          advancePayment: 0.0, // Сумма из предоплаты (зачетом аванса) (2 знака после запятой)
+          credit: 0.0, // Сумма постоплатой(в кредит) (2 знака после запятой)
+          provision: 0.0, // Сумма оплаты встречным предоставлением (сертификаты, др. мат.ценности) (2 знака после запятой)
+        },
+      };
+      let data: any = {
+        CloudPayments: {
+          CustomerReceipt: receipt,
+        },
+      };
       if (pay.type === "recurrent") {
         data.CloudPayments = {
+          CustomerReceipt: receipt,
           recurrent: {
             interval: "Month",
             period: 1,
             maxPeriods: pay.maxPeriod - 1,
+            customerReceipt: receipt,
           },
         };
         amount = amount / pay.maxPeriod;
