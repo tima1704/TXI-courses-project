@@ -127,9 +127,9 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
             <a href={Config.socials.telegram}>
               <Icon icon={"telegram"} />
             </a>
-            <a href={Config.socials.instagram}>
+            {/* <a href={Config.socials.instagram}>
               <Icon icon={"instagram"} />
-            </a>
+            </a> */}
             <a href={Config.socials.youTube}>
               <Icon icon={"youTube"} />
             </a>
