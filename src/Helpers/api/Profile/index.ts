@@ -111,7 +111,7 @@ export const ProfileService = {
         if (e.response?.data.input) {
           // eslint-disable-next-line no-throw-literal
           throw [
-            { name: e.response?.data.input, message: "email is not valid" },
+            { name: e.response?.data.input, message: "errors.login.email" },
           ];
         }
         throw e;
