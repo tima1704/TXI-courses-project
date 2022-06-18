@@ -14,7 +14,7 @@
   margin-top: 20px;
   line-height: 17px;
   font-size: 16px;
-  width: 70%;
+  width: 75%;
   text-align: left;
   color: gray;
   font-weight: 400;
@@ -92,7 +92,7 @@
   .text_footer {
     text-decoration: none;
     margin-top: 20px;
-    width: 90%;
+    width: 100%;
     line-height: 15px;
   }
   .text_footer a {

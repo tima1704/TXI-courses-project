@@ -126,7 +126,9 @@
       "signIn": "Sing In",
       "text": [
         "By clicking 'Create an account' I agree to the processing",
-        "personal data"
+        "personal data",
+        "and",
+        "user agreement"
       ],
       "inputPlaceholder": {
         "name": "Name",

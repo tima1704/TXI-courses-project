@@ -185,6 +185,14 @@ export const RegisterPage: FC = () => {
           >
             <span>{t("modals.registerModal.text.1")}</span>
           </a>
+          {` ${t("modals.registerModal.text.2")} `}
+          <a
+            href={Config.policy.userAgreement}
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <span>{t("modals.registerModal.text.3")}</span>
+          </a>
         </div>
       </form>
     </div>
