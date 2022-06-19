@@ -53,12 +53,12 @@ export const RegisterPage: FC = () => {
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const errorsValidation: IValidError[] = [];
-    if (!data.file) {
-      errorsValidation.push({
-        name: "file",
-        message: "errors.registrations.file",
-      });
-    }
+    // if (!data.file) {
+    //   errorsValidation.push({
+    //     name: "file",
+    //     message: "errors.registrations.file",
+    //   });
+    // }
     if (!data.name || data.name.length < 2) {
       errorsValidation.push({
         name: "name",
@@ -138,6 +138,7 @@ export const RegisterPage: FC = () => {
           onChange={onChange}
           error={errors.find((e) => e.name === "surname")}
           disabled={isDisabled}
+          value={data.surname}
         />
         <Input
           className={styles["input_register"]}

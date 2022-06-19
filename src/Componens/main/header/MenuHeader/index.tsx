@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { Icon } from "Componens/common/Icon";
 import { LinkTo } from "Componens/common/Links";
+import { hostTXI } from "Constants/API";
 import { URL_HOME } from "Constants/URL";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,16 +23,16 @@ export const MenuHeader: FC = () => {
             styles["menu__nav_item_active"]
           )}
         >
-          <a href={"https://katiatxi.club/ru/about/"}>
+          <a href={hostTXI+"/ru/about/"}>
             {t("header.menu.main.0")}&nbsp;
             <span className={styles["ch"]}> {t("header.menu.main.1")}</span>
           </a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/blog/"}>{t("header.menu.blog")}</a>
+          <a href={hostTXI + "/ru/blog/"}>{t("header.menu.blog")}</a>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/video/"}>
+          <a href={hostTXI + "/ru/video/"}>
             {t("header.menu.video")}
           </a>
         </li>
@@ -41,7 +42,7 @@ export const MenuHeader: FC = () => {
           </LinkTo>
         </li>
         <li className={styles["menu__nav_item"]}>
-          <a href={"https://katiatxi.club/ru/projects/"}>
+          <a href={hostTXI + "/ru/projects/"}>
             {t("header.menu.projects")}
           </a>
         </li>
