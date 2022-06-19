@@ -1,5 +1,14 @@
 import axios, { AxiosError } from "axios";
-import { API_AUTH, API_LOGIN, API_SEND_EMAIL_REG } from "Constants/API";
+import {
+  API_AUTH,
+  API_CONFIRM_EMAIL,
+  API_CONFIRM_EMAIL_SEND,
+  API_LOGIN,
+  API_REGISTRATION,
+  API_RESET_PASSWORD,
+  API_RESET_PASSWORD_SEND,
+  API_SEND_EMAIL_REG,
+} from "Constants/API";
 import HttpHeadersAuthorization from "Helpers/common";
 import { setModalViewAction } from "Redux/ModalReducer/actions";
 import { AppStore } from "index";
@@ -28,7 +37,7 @@ export const ProfileService = {
   },
   async registration(data: any, email: string, name: string) {
     return axios
-      .post("https://katiatxi.club/txi/register", data)
+      .post(API_REGISTRATION, data)
       .then(() => {
         ProfileService.sendEmailAfterRegistration(email, name);
       })
@@ -69,7 +78,7 @@ export const ProfileService = {
     return await Promise.all([
       await axios
         .post(
-          "https://katiatxi.club/confirm-email-send",
+          API_CONFIRM_EMAIL_SEND,
           { email },
           {
             params: { courses: true },
@@ -87,7 +96,7 @@ export const ProfileService = {
   },
   async confirmEmail(confirmId: string) {
     return axios
-      .post("https://katiatxi.club/confirm-email", { confirmId })
+      .post(API_CONFIRM_EMAIL, { confirmId })
       .then((res) => {
         AppStore?.dispatch(setModalViewAction("login"));
       })
@@ -98,7 +107,7 @@ export const ProfileService = {
   async sendEmailResetPassword(email: string) {
     return axios
       .post(
-        "https://katiatxi.club/reset-password-send",
+        API_RESET_PASSWORD_SEND,
         { email },
         {
           params: { courses: true },
@@ -119,7 +128,7 @@ export const ProfileService = {
   },
   async resetPassword(data: any) {
     return axios
-      .post("https://katiatxi.club/reset-password", data)
+      .post(API_RESET_PASSWORD, data)
       .then(() => {
         return true;
       })

@@ -20,3 +20,11 @@ export const API_COURCE_PLAY = `${API_COURCES}`;
 // Payments
 export const API_PAYMENTS = host + "/payment";
 export const API_PAYMENTS_TRANSACTIONS = API_PAYMENTS + "/all";
+
+// TXI
+export const hostTXI = process.env.REACT_APP_TXI_URL;
+export const API_REGISTRATION = hostTXI + "/txi/register";
+export const API_CONFIRM_EMAIL_SEND = hostTXI + "/confirm-email-send";
+export const API_CONFIRM_EMAIL = hostTXI + "/confirm-email";
+export const API_RESET_PASSWORD_SEND = hostTXI + "/reset-password-send";
+export const API_RESET_PASSWORD = hostTXI + "/reset-password";

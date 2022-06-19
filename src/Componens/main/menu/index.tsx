@@ -3,6 +3,7 @@ import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { LinkTo } from "Componens/common/Links";
 import Config from "Configs";
+import { hostTXI } from "Constants/API";
 import { URL_HOME } from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useMemo, useState } from "react";
@@ -69,22 +70,28 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
         <div className={styles["content"]}>
           <ul className={styles["links"]}>
             <li>
-              <a href={"https://katiatxi.club/ru/about/"}> {t("burger.mobmenu.main.0")}&nbsp;{t("burger.mobmenu.main.1")}</a>
+              <a href={hostTXI + "/ru/about/"}>
+                {t("burger.mobmenu.main.0")}&nbsp;{t("burger.mobmenu.main.1")}
+              </a>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/blog/"}>{t("burger.mobmenu.blog")}</a>
+              <a href={hostTXI + "/ru/blog/"}>{t("burger.mobmenu.blog")}</a>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/video/"}>{t("burger.mobmenu.video")}</a>
+              <a href={hostTXI + "/ru/video/"}>{t("burger.mobmenu.video")}</a>
             </li>
             <li>
               <LinkTo link={URL_HOME}>{t("burger.mobmenu.education")}</LinkTo>
             </li>
             <li>
-              <a href={"https://katiatxi.club/ru/projects/"}>{t("burger.mobmenu.projects")}</a>
+              <a href={hostTXI + "/ru/projects/"}>
+                {t("burger.mobmenu.projects")}
+              </a>
             </li>
             <li>
-              <a href={"https://wildhumansclub.com/"}>{t("burger.mobmenu.purchases")}</a>
+              <a href={"https://wildhumansclub.com/"}>
+                {t("burger.mobmenu.purchases")}
+              </a>
             </li>
           </ul>
           {!isAuth ? (
@@ -134,9 +141,7 @@ export const Menu: FC<IMenu> = ({ openMenu, setOpenMenu }) => {
               <Icon icon={"youTube"} />
             </a>
           </div>
-          <div className={styles["policy"]}>
-            {t("footer.copyright")}
-          </div>
+          <div className={styles["policy"]}>{t("footer.copyright")}</div>
         </div>
       ) : (
         <div className={styles["content"]}>
