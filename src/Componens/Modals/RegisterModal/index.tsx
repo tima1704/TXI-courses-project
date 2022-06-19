@@ -45,6 +45,9 @@ export const RegisterPage: FC = () => {
     const file = e.target.files?.[0];
     setData({ ...data, file });
   };
+  const resetFile = () => {
+    setData({ ...data, file: undefined });
+  };
 
   const onChangeRotate = (rotate: Trotate) => {
     setData({ ...data, rotate });
@@ -115,6 +118,7 @@ export const RegisterPage: FC = () => {
         </div>
         <ImageInput
           onChangeFile={onChangeFile}
+          resetFile={resetFile}
           value={data.file}
           rotate={data.rotate}
           onChangeRotate={onChangeRotate}

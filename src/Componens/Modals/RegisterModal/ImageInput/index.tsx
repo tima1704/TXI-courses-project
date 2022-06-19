@@ -14,6 +14,7 @@ interface ImageInputProps {
   onChangeRotate: (rotate: Trotate) => void;
   rotate: Trotate;
   error?: IValidError;
+  resetFile: () => void;
 }
 
 export const ImageInput: FC<ImageInputProps> = ({
@@ -22,6 +23,7 @@ export const ImageInput: FC<ImageInputProps> = ({
   rotate,
   onChangeRotate,
   error,
+  resetFile,
 }) => {
   const refInputFile = createRef<HTMLInputElement>();
   const refImg = createRef<HTMLImageElement>();
@@ -65,10 +67,12 @@ export const ImageInput: FC<ImageInputProps> = ({
   const { getCollapseProps } = useCollapse({ isExpanded });
   useEffect(() => {
     if (error) {
+      resetFile();
       setExpanded(true);
     } else {
       setExpanded(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   return (

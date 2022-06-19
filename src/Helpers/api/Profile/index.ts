@@ -69,9 +69,14 @@ export const ProfileService = {
 
             return { name, message };
           });
-        } else {
-          throw e;
         }
+        if (e.response?.status === 413) {
+          const errors: IValidError[] = [
+            { name: "file", message: "errors.registrations.file" },
+          ];
+          throw errors;
+        }
+        throw e;
       });
   },
   async sendEmailAfterRegistration(email: string, name: string) {
