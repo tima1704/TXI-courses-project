@@ -219,7 +219,7 @@
   },
   "errors": {
     "registrations": {
-      "file": "Image not a valid",
+      "file": "The format is not supported. You can continue without photos.",
       "name": "Name not a valid",
       "surname": "Suename not a valid",
       "email": "Email not valid or already in use",
