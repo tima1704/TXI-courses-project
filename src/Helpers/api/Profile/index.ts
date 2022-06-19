@@ -38,8 +38,8 @@ export const ProfileService = {
   async registration(data: any, email: string, name: string) {
     return axios
       .post(API_REGISTRATION, data)
-      .then(() => {
-        ProfileService.sendEmailAfterRegistration(email, name);
+      .then(async () => {
+        await ProfileService.sendEmailAfterRegistration(email, name);
       })
       .catch((e: AxiosError) => {
         if (e.response?.data && Array.isArray(e.response?.data)) {
