@@ -2,19 +2,27 @@ import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { LinkTo } from "Componens/common/Links";
 import { TOKEN } from "Constants/App";
-import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
+import {
+  URL_HOME,
+  URL_SUPPORT,
+  URL_TRANSACTIONS,
+  URL_USER_COURSE,
+} from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import styles from "./index.module.css";
 
 export const MenuAuth: FC = () => {
   const { isAuth, user } = useAppSelector((state) => state.App);
   const { setModalViewAction, checkAuth } = useAppDispatch();
+  const navigetion = useNavigate();
 
   const onClickExit = () => {
     localStorage.removeItem(TOKEN);
     checkAuth();
+    navigetion(URL_HOME, { replace: true });
   };
   const { t } = useTranslation();
 

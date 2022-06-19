@@ -3,11 +3,17 @@ import { Button } from "Componens/common/Button";
 import { Icon } from "Componens/common/Icon";
 import { LinkTo } from "Componens/common/Links";
 import { TOKEN } from "Constants/App";
-import { URL_SUPPORT, URL_TRANSACTIONS, URL_USER_COURSE } from "Constants/URL";
+import {
+  URL_HOME,
+  URL_SUPPORT,
+  URL_TRANSACTIONS,
+  URL_USER_COURSE,
+} from "Constants/URL";
 import { useAppDispatch, useAppSelector } from "Hooks/redux";
 import { FC, useState } from "react";
 import useCollapse from "react-collapsed";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 
@@ -19,6 +25,7 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
   const user = useAppSelector((state) => state.App.user);
 
   const { checkAuth } = useAppDispatch();
+  const navigetion = useNavigate();
 
   const [isExpanded, setExpanded] = useState(false);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
@@ -30,6 +37,7 @@ export const MenuUser: FC<MenuUserProps> = ({ onClickCloseMenu }) => {
     localStorage.removeItem(TOKEN);
     checkAuth();
     onClickCloseMenu();
+    navigetion(URL_HOME, { replace: true });
   };
 
   const { t } = useTranslation();
