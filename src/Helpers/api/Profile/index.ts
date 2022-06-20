@@ -29,7 +29,7 @@ export const ProfileService = {
   },
   async login(data: ILogin) {
     return axios
-      .post<ISuccessRes<ILoginRes>>(API_LOGIN, data)
+      .post<ISuccessRes<ILoginRes | "sendEmail">>(API_LOGIN, data)
       .then((res) => res.data.data)
       .catch((e: AxiosError<IValidErrorRes>) => {
         throw e.response?.data.errors;

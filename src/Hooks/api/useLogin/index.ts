@@ -16,6 +16,10 @@ export const useLogin = () => {
       setErrors([]);
     },
     onSuccess: async (data) => {
+      if (data === "sendEmail") {
+        setModalViewAction("sentEmailMessege");
+        return;
+      }
       if (data?.jwt) {
         localStorage.setItem(TOKEN, data.jwt);
       }
